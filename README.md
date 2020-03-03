@@ -13,11 +13,11 @@ A repo for the the basics of Git and GitHub!
       - Local version control system maintains track of files within the local system. This approach is very common and simple. This type is also error prone which means the chances of accidentally writing to the wrong file is higher.
    - Centralized VCS (CVCS)
       - In this approach, all the changes in the files are tracked under the centralized server. The centralized server includes all the information of versioned files, and list of clients that check out files from that central place.
-      - Example: Tortoise SVN
+      - Eg: Tortoise SVN
    - Distributed VCS (DVCS)
       - Distributed version control systems come into picture to overcome the drawback of centralized version control system. 
-      - The clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
-      - Example: Git
+      - Clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
+      - Eg: Git
 
 ## Git
 - Git is a distributed version control system (DVCS) and has an emphasis on speed and performance. 
@@ -86,10 +86,10 @@ A repo for the the basics of Git and GitHub!
       - xyz
    - modified
       - xyz
-- Staging
-   - xyz
-   - Need of staging
+   - Staging
       - xyz
+      - Need of staging
+         - xyz
 
 - `git status`
    - xyz
