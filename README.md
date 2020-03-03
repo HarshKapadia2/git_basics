@@ -27,17 +27,25 @@ A repo for the all the basics of git!
 - It is a shell, ie, a CLI to use git
 - git jargon: Repo
 - It can be described as the heart of any version control system. Repository is the central defined place where all the developers or programmers work and store their code. Apart from storing files, repositories also maintain the history. In version control systems, repositories are accessed over a network which acts like a server and version control tool as a client. On establishing successful connection, clients store or retrieve their changes.
+- Repos (Part 1)
+   - Git stores information in a data structure called a repository.
+   - The Git repository is stored in the same directory as the project itself, in a subdirectory called .git.
+   - Apart from storing files, repositories also maintain the history.
    - Local repo
       - xyz
    - Remote repo
       - xyz
+      - `git remote`
 
 ## Basic git commands
 - `git config`
-   - xyz
+   - `git config --global user.name '<name>'` (write your name in `''`)
+   - `git config --global user.email '<e-mail_id>'`
+   - `git config --list`
 
 - `git init`
-   - xyz
+   - To initialize a local git repo in the location where the bash is pointing.
+   - A hidden folder '.git' is created.
 
 - `git pull`
    - xyz
@@ -66,6 +74,12 @@ A repo for the all the basics of git!
 
 - `git commit`
    - xyz
+   - **(TRY THIS)** Always pull before committing.
+   - Commit _related_ changes.
+   - Commit changes frequently.
+   - _Don't_ commit half-done work.
+   - Naming of commits
+      - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`.
    - .gitignore
       - xyz
 
@@ -126,10 +140,7 @@ A repo for the all the basics of git!
    - xyz
 
 ## GitHub basics
-- [Repos](https://www.sbf5.com/~cduan/technical/git/git-1.shtml)
-   - Git stores information in a data structure called a repository.
-   - The Git repository is stored in the same directory as the project itself, in a subdirectory called .git.
-   - Apart from storing files, repositories also maintain the history. 
+- [Repos](https://www.sbf5.com/~cduan/technical/git/git-1.shtml) (Part 2)
    - In version control systems, repositories are accessed over a network which acts like a server and version control tool as a   client. On establishing successful connection, clients store or retrieve their changes.
    - Making a Repo
    - Demo
@@ -144,8 +155,6 @@ A repo for the all the basics of git!
 - [Forking repos](https://www.toolsqa.com/git/git-fork/)
    - A fork is a copy of a repository. Forking a repository allows to freely experiment with changes without affecting the original project.
    - When a user forks a repository, all the files in the repository are automatically copied to the user’s account on GitHub and it feels like the user’s own repository. The user is then free to use this repository either for their purpose or experiment with changes in the code. Through git forking, the users can develop their own modifications to the code that belongs to someone else.
-   - Naming of commits after changes
-      - xyz
    - To make changes to the original project, make a PR.
 - PRs
    - A pull request is a method of submitting contributions to an open development project.
