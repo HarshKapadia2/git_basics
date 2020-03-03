@@ -1,32 +1,33 @@
 # git_basics
-A repo for the all the basics of git!
+A repo for the the basics of Git and GitHub!
 
 ## VCS
 - In computer software engineering, revision control is any kind of practice that tracks and provides control over changes to source code. 
-- Software developers sometimes use revision control software to maintain documentation and configuration files as well as source code. 
+- Software developers use revision control software to maintain documentation and configuration files as well as source code. 
 - As teams design, develop and deploy software, it is common for multiple versions of the same software to be deployed in different sites and for the software's developers to be working simultaneously on updates. 
 - Bugs or features of the software are often only present in certain versions (because of the fixing of some problems and the introduction of others as the program develops). Therefore, for the purposes of locating and fixing bugs, it is vitally important to be able to retrieve and run different versions of the software to determine in which version(s) the problem occurs. 
 - It may also be necessary to develop two versions of the software concurrently: for instance, where one version has bugs fixed, but no new features (branch), while the other version is where new features are worked on (trunk).
  - [Types of VCS](https://blog.eduonix.com/software-development/learn-three-types-version-control-systems/)
    - DJ workshop .pdf has a nice diagram
-   - Local VCS
+   - Local VCS (LVCS)
       - Local version control system maintains track of files within the local system. This approach is very common and simple. This type is also error prone which means the chances of accidentally writing to the wrong file is higher.
-   - Centralized VCS
+   - Centralized VCS (CVCS)
       - In this approach, all the changes in the files are tracked under the centralized server. The centralized server includes all the information of versioned files, and list of clients that check out files from that central place.
-			- Example: Tortoise SVN
-   - Distributed VCS
+      - Example: Tortoise SVN
+   - Distributed VCS (DVCS)
       - Distributed version control systems come into picture to overcome the drawback of centralized version control system. 
-			- The clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
-			- Example: Git
+      - The clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
+      - Example: Git
 
 ## Git
-- Git is the distributed version control system and has an emphasis on speed and performance. It is supported by all operating systems. Git is open source software distributed under the terms of the GNU (General Public License).
+- Git is a distributed version control system (DVCS) and has an emphasis on speed and performance. 
+- It is supported by all operating systems. 
+- Git is open source software distributed under the terms of the GNU (General Public License).
 - The official website is https://git-scm.com/
 
 ## Git-Bash
 - It is a shell, ie, a CLI to use git
-- git jargon: Repo
-- It can be described as the heart of any version control system. Repository is the central defined place where all the developers or programmers work and store their code. Apart from storing files, repositories also maintain the history. In version control systems, repositories are accessed over a network which acts like a server and version control tool as a client. On establishing successful connection, clients store or retrieve their changes.
+- The official website is https://git-scm.com/
 - Repos (Part 1)
    - Git stores information in a data structure called a repository.
    - The Git repository is stored in the same directory as the project itself, in a subdirectory called .git.
@@ -36,32 +37,49 @@ A repo for the all the basics of git!
    - Remote repo
       - xyz
       - `git remote`
-         - Lists the remote repo when you are in a local git repo in the CLI.
+         - Lists the remote repo when you are in a local git repo in the CLI
+	 - To add a remote repo to a local repo
+	    - Go to GitHub and create a repo without a license, README.md or .gitignore.
+	    - In the bash, use cmd `git remote add origin <link_to_repo>.git`
+	    - Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+	 - To remove origin (remote repo)
+	    - `git remote rm origin` 
 
 ## Basic git commands
 - `git config`
-   - `git config --global user.name '<name>'` (write your name in `''`)
+   - `git config --global user.name '<name>'`
    - `git config --global user.email '<e-mail_id>'`
    - `git config --list`
 
 - `git init`
-   - To initialize a local git repo in the location where the bash is pointing.
+   - To initialize a local git repo in the location to which the bash is pointing.
    - A hidden folder '.git' is created.
 
 - `git pull`
    - Pull the latest code from the remote repo.
+   - `git pull origin <branch_name>`
+   - Eg: `git pull origin master`
+   - In simple terms, `git pull` does a `git fetch` followed by a `git merge`.
+   - `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
 
 - `git fetch`
-   - xyz
+   - **SYNTAX?**
+   - When you `git fetch`, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. 
+   - This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. 
+   - To integrate the commits into your master branch, you use `git merge`.
 
 - `git clone`
    - Clone a remote repo into the current folder (to which the git CLI is pointing).
    - A new folder will be created with the name of the repo.
    - `git clone <link_to_repo>.git`
    - Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
+   
+![](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
 
 - `git add`
    - xyz
+   - .gitignore
+      - xyz
    - untracked
       - xyz
    - added
@@ -77,15 +95,14 @@ A repo for the all the basics of git!
    - xyz
 
 - `git commit`
-   - xyz
    - **(TRY THIS)** Always pull before committing.
    - Commit _related_ changes.
    - Commit changes frequently.
    - _Don't_ commit half-done work.
-   - Naming of commits
-      - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`.
-   - .gitignore
-      - xyz
+   - `git commit -m "<commit_msg>"`
+   - Commit message
+      - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`. 
+      - Eg: `git commit -m "Update README.md"`
 
 - `git log`
    - xyz
@@ -152,7 +169,7 @@ A repo for the all the basics of git!
       - README.md
          - xyz
          - md = [Markdown](https://www.youtube.com/watch?v=HUBNt18RFbo)
-- GitHub is not git.
+- **GitHub is not git.**
    - Git is a revision control system, a tool to manage your source code history.
    - GitHub is a hosting service for Git repositories.
    - So they are not the same thing: Git is the tool, GitHub is the service for projects that use Git.
