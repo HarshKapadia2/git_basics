@@ -159,6 +159,9 @@ A repo for the the basics of Git and GitHub!
    - xyz
    - Difference between merge and rebase
       - xyz
+      
+- `git help`
+   - Alternative `git help <command>`
 
 ## Branches
 - xyz
@@ -228,3 +231,9 @@ A repo for the the basics of Git and GitHub!
 ## Communities & meetups
 - [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
+
+## Misc resources for Git
+- https://www.git-tower.com/learn
+- https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be
+- http://rogerdudler.github.io/git-guide/
+- http://git-school.github.io/visualizing-git/
