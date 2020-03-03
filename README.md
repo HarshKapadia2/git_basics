@@ -36,6 +36,7 @@ A repo for the all the basics of git!
    - Remote repo
       - xyz
       - `git remote`
+         - Lists the remote repo when you are in a local git repo in the CLI.
 
 ## Basic git commands
 - `git config`
@@ -48,13 +49,16 @@ A repo for the all the basics of git!
    - A hidden folder '.git' is created.
 
 - `git pull`
-   - xyz
+   - Pull the latest code from the remote repo.
 
 - `git fetch`
    - xyz
 
 - `git clone`
-   - xyz
+   - Clone a remote repo into the current folder (to which the git CLI is pointing).
+   - A new folder will be created with the name of the repo.
+   - `git clone <link_to_repo>.git`
+   - Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
 
 - `git add`
    - xyz
