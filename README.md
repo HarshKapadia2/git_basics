@@ -218,11 +218,12 @@ A repo for the the basics of Git and GitHub!
    - Upload valid college ID and e-mail (personal e-mail if you don't have a college-provided e-mail ID)
    - Will have to be renewed.
 
-## Open Source
-- 
+## Open Source 
+- OSS - Open Source Software
+- [Why and how to contribute to Open Source](https://rubygarage.org/blog/how-contribute-to-open-source-projects)
 - [GSoC](https://summerofcode.withgoogle.com/) & [GSSoC](https://www.gssoc.tech/)
 - [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
 
 ## Communities & meetups
-- 
+- [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
