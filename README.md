@@ -33,17 +33,25 @@ A repo for the the basics of Git and GitHub!
    - The Git repository is stored in the same directory as the project itself, in a subdirectory called .git.
    - Apart from storing files, repositories also maintain the history.
    - Local repo
-      - xyz
+      - What makes git so awesome is that it is a DVCS. Your local repository has exactly the same features and functionality as any other git repository. 
+      - So a git repo on a local machine (eg: your laptop) is the same as a git repo on GitHub (granted GitHub adds additional features, but at its core you're dealing with git repos) which is the same as your coworker's local repo.
+      - A local repo does not HAVE to have a remote repo.
+      - `touch`
+         - To create a file in the directory to which the bash is pointing.
+         - `touch <file_name.ext>`
+         - Eg: `touch README.md`
    - Remote repo
-      - xyz
+      - Remote repository is the repo on the server.
+      - So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a git requirement.
       - `git remote`
          - Lists the remote repo when you are in a local git repo in the CLI
 	 - To add a remote repo to a local repo
 	    - Go to GitHub and create a repo without a license, README.md or .gitignore.
 	    - In the bash, use cmd `git remote add origin <link_to_repo>.git`
 	    - Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+	    - Do add a license, README.md and .gitignore (more on all 3 later).
 	 - To remove origin (remote repo)
-	    - `git remote rm origin` 
+	    - `git remote rm origin`
 
 ## Basic git commands
 - `git config`
@@ -56,14 +64,15 @@ A repo for the the basics of Git and GitHub!
    - A hidden folder '.git' is created.
 
 - `git pull`
-   - Pull the latest code from the remote repo.
+   - Pulls the latest code from the remote repo.
    - `git pull origin <branch_name>`
    - Eg: `git pull origin master`
-   - In simple terms, `git pull` does a `git fetch` followed by a `git merge`.
-   - `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
+   - [Difference between `git pull` and `git fetch`](https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull)
+      - In simple terms, `git pull` does a `git fetch` followed by a `git merge`.
+      - `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
 
 - `git fetch`
-   - **SYNTAX?**
+   - `git fetch origin`
    - When you `git fetch`, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. 
    - This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. 
    - To integrate the commits into your master branch, you use `git merge`.
@@ -144,7 +153,7 @@ A repo for the the basics of Git and GitHub!
 ## Common mistakes and how to correct them
 - xyz
 
-## Conflict handling (CLI)
+## Conflict handling [(CLI)](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts)
 - xyz
 - `git diff`
    - xyz
@@ -163,12 +172,11 @@ A repo for the the basics of Git and GitHub!
 ## GitHub basics
 - [Repos](https://www.sbf5.com/~cduan/technical/git/git-1.shtml) (Part 2)
    - In version control systems, repositories are accessed over a network which acts like a server and version control tool as a   client. On establishing successful connection, clients store or retrieve their changes.
-   - Making a Repo
-   - Demo
-      - [Licenses](https://choosealicense.com/)
-      - README.md
-         - xyz
-         - md = [Markdown](https://www.youtube.com/watch?v=HUBNt18RFbo)
+   - Private and public repos
+   - [Licenses](https://choosealicense.com/)
+   - README.md
+      - xyz
+      - md = [Markdown](https://www.youtube.com/watch?v=HUBNt18RFbo)
 - **GitHub is not git.**
    - Git is a revision control system, a tool to manage your source code history.
    - GitHub is a hosting service for Git repositories.
@@ -185,7 +193,8 @@ A repo for the the basics of Git and GitHub!
    - Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
    - Most software projects have a bug tracker of some kind. GitHub’s tracker is called Issues, and has its own section in every repository.
    - Anyone can raise issues.
-- Conflict Handling (GUI)
+- Starring repos
+- Conflict Handling [(GUI)](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/merge-conflicts)
    - xyz
 - GitHub Desktop
    - GUI (like Atlassian Bitbucket, Sourcetree, etc.)
