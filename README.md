@@ -45,13 +45,13 @@ A repo for the the basics of Git and GitHub!
       - So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a git requirement.
       - `git remote`
          - Lists the remote repo when you are in a local git repo in the CLI
-	 - To add a remote repo to a local repo
-	    - Go to GitHub and create a repo without a license, README.md or .gitignore.
-	    - In the bash, use cmd `git remote add origin <link_to_repo>.git`
-	    - Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
-	    - Do add a license, README.md and .gitignore (more on all 3 later).
-	 - To remove origin (remote repo)
-	    - `git remote rm origin`
+         - To add a remote repo to a local repo
+            - Go to GitHub and create a repo without a license, README.md or .gitignore.
+            - In the bash, type `git remote add origin <link_to_repo>.git`
+            - Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+            - Do add a license, README.md and .gitignore (more on all 3 later).
+         - To remove origin (remote repo)
+            - `git remote rm origin`
 
 ## Basic git commands
 - `git config`
@@ -83,7 +83,7 @@ A repo for the the basics of Git and GitHub!
    - `git clone <link_to_repo>.git`
    - Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
    
-![](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
+![Picture depicting git add and git commit concepts with staging area + local and remote repo](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
 
 - `git add`
    - `git add <file_name.ext>`
@@ -106,14 +106,13 @@ A repo for the the basics of Git and GitHub!
    - Staging
       - To stage a file is simply to prepare it finely for a commit. 
       - Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
-      - Need of staging
-         - xyz
 
 - `git status`
-   - xyz
+   - Used to display the current status of the working directory.
+   - Shows the list of untracked, modified and added files.
 
 - `git commit`
-   - **(TRY THIS)** Always pull before committing.
+   - **Always pull before committing.**
    - Commit _related_ changes.
    - Commit changes frequently.
    - _Don't_ commit half-done work.
@@ -121,6 +120,12 @@ A repo for the the basics of Git and GitHub!
    - Commit message
       - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`. 
       - Eg: `git commit -m "Update README.md"`
+   - Partially commiting staged changes
+      - `git commit -m "Add only_this_file.ext from all staged files" only_this_file.ext`
+
+- `git stash`
+   - Saving changes temporarily.
+   - [Commands and explanation](https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing)
 
 - `git log`
    - xyz
