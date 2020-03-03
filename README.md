@@ -129,6 +129,7 @@ A repo for the the basics of Git and GitHub!
 
 - `git log`
    - xyz
+   - `git log --graph --oneline`
 
 - `git push`
    - xyz
