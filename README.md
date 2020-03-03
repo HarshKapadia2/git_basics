@@ -86,17 +86,26 @@ A repo for the the basics of Git and GitHub!
 ![](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
 
 - `git add`
-   - xyz
+   - `git add <file_name.ext>`
+      - Adds <file_name.ext> to the staging area.
+   - `git add *.ext`
+      - All files with '.ext' extension will be added to the staging area (except files in .gitignore).
+   - `git add .`
+      - All untracked and modified files will be sent to staging area (except files in .gitignore).
    - .gitignore
-      - xyz
+      - .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 
+      - It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
    - untracked
-      - xyz
+      - All files not in .gitignore and that have never been added to the repo.
    - added
-      - xyz
+      - All files not in .gitignore and that have been added to the repo.
+      - The files are in their latest version (ie, they have not been modified since they were last added).
    - modified
-      - xyz
+      - All files not in .gitignore, that have been added to the repo and have been modified since.
+      - The files are NOT in their latest version (ie, they have been modified since they were last added).
    - Staging
-      - xyz
+      - To stage a file is simply to prepare it finely for a commit. 
+      - Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
       - Need of staging
          - xyz
 
@@ -153,7 +162,7 @@ A repo for the the basics of Git and GitHub!
 ## Common mistakes and how to correct them
 - xyz
 
-## Conflict handling [(CLI)](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts)
+## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
 - xyz
 - `git diff`
    - xyz
@@ -194,11 +203,15 @@ A repo for the the basics of Git and GitHub!
    - Most software projects have a bug tracker of some kind. GitHub’s tracker is called Issues, and has its own section in every repository.
    - Anyone can raise issues.
 - Starring repos
-- Conflict Handling [(GUI)](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/merge-conflicts)
+- Conflict Handling ([GUI Version](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/merge-conflicts))
    - xyz
 - GitHub Desktop
    - GUI (like Atlassian Bitbucket, Sourcetree, etc.)
    - 
+- [GitHub Student Developer's Pack](https://education.github.com/pack)
+   - Free and gives TONS for features.
+   - Upload valid college ID and e-mail (personal e-mail if you don't have a college-provided e-mail ID)
+   - Will have to be renewed.
 
 ## Open Source
 - 
