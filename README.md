@@ -1,6 +1,8 @@
 # git_basics
 A repo for the the basics of Git and GitHub!
 
+**Disclaimer:** I have used a lot of resources from the internet to learn and then compile this repo and have tried linking all the resources used. Do let me know if I've missed linking any resource, I will gladly add it!
+
 ## VCS
 - In computer software engineering, revision control is any kind of practice that tracks and provides control over changes to source code. 
 - Software developers use revision control software to maintain documentation and configuration files as well as source code. 
@@ -35,7 +37,8 @@ A repo for the the basics of Git and GitHub!
    - Local repo
       - What makes git so awesome is that it is a DVCS. Your local repository has exactly the same features and functionality as any other git repository. 
       - So a git repo on a local machine (eg: your laptop) is the same as a git repo on GitHub (granted GitHub adds additional features, but at its core you're dealing with git repos) which is the same as your coworker's local repo.
-      - A local repo does not HAVE to have a remote repo.
+      - The Local Repository is everything in your '.git' directory. Mainly what you will see in your Local Repository are all of your checkpoints or commits. It is the area that saves everything (so don’t delete it).
+      - A local repo does NOT need to have a remote repo.
       - `touch`
          - To create a file in the directory to which the bash is pointing.
          - `touch <file_name.ext>`
@@ -129,6 +132,7 @@ A repo for the the basics of Git and GitHub!
 ![Picture showing working of git commit](https://miro.medium.com/max/803/1*EeAyiw_zUGDWZjTCe9z6ag.jpeg)
 
 - `git commit`
+   - A commit is simply a checkpoint telling git to track all changes that have occurred up to this point using our last commit as a comparison.
    - **Always pull before committing/pushing.**
    - Commit _related_ changes.
    - Commit changes frequently.
@@ -140,6 +144,14 @@ A repo for the the basics of Git and GitHub!
       - Eg: `git commit -m "Update README.md"`
    - Partially commiting staged changes
       - `git commit -m "Add only_this_file.ext from all staged files" only_this_file.ext`
+   - `git ls-tree --full-tree -r HEAD`
+      - This command shows all files within your git repo that it’s tracking.
+   - To see more information about a specific commit use `git show <commit_SHA1>`
+      - Eg: `git show d8ca511a`
+      - SHA = Secure Hashing Algo. A 40 digit hexadecimal number.
+      - Git gives a unique SHA1 to every commit.
+      - Use `git log` to get the SHA1 of the required commit.
+      - All 40 characters are NOT needed for this command. The first 7 to 8 characters of the SHA1 will do.
 
 - `git stash`
    - Saving changes temporarily.
@@ -194,7 +206,10 @@ A repo for the the basics of Git and GitHub!
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
 - xyz
 - `git diff`
-   - xyz
+   - This command shows the code differences between a file in the Staging Area and the edits made to that file that currently exist in the Working Tree.
+   - Use `git diff <file_name.ext>` to view the differences of just one file.
+   - To see the changes in the Staging Area use `git diff --staged`
+   - `git status` and `git diff` should be used frequently as they give information about the current working state and what git is aware of. They allow one to see what changes have occurred since their last checkpoint and are what one can use to guide themselves to atomic commits.
 
 ## Git CLIs vs GUIs
 - CLI pros
@@ -252,9 +267,10 @@ A repo for the the basics of Git and GitHub!
 - [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
 
-# Misc resources for Git
+### Misc resources for Git
+- [Getting started with Git and GitHub](https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be)
+- [Structure of Git](https://www.youtube.com/watch?v=yI0BtEzdGtw)
 - https://www.git-tower.com/learn
-- https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be
 - http://rogerdudler.github.io/git-guide/
 - http://git-school.github.io/visualizing-git/
 
