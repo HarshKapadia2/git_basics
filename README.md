@@ -96,7 +96,7 @@ A repo for the the basics of Git and GitHub!
       - All untracked and modified files will be sent to staging area (except files in .gitignore).
    - `git add -u`
       - Stages modified and deleted files, without including new files.
-   - `git rm --cached <file_name.ext>` (use "" if file name has spaces in between)
+   - `git rm --cached <file_name.ext>` (use `""` if file name has spaces in between)
       - To unstage file (ie, remove file from staging area)
    - .gitignore
       - .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 
@@ -109,12 +109,12 @@ A repo for the the basics of Git and GitHub!
    - modified
       - All files not in .gitignore, that have been added to the repo and have been modified since.
       - The files are NOT in their latest version (ie, they have been modified since they were last added).
-   - Staging (Staging Area / Index)
+   - [Staging (Staging Area / Index)](https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c)
       - It notes the added files in the working directory.
       - To stage a file is simply to prepare it finely for a commit. 
       - Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
       - If you modified a staged file by mistake, you can revert to the staged version of the file using `git checkout <file_name.ext>`
-   - Working tree
+   - [Working tree](https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c)
       - It notes the untracked files in the working directory.
       - Any changes to files will be marked and seen in the Working Tree.
       - Here if you make changes and do not explicitly save them to git, you will lose the changes made to your files.
@@ -126,12 +126,15 @@ A repo for the the basics of Git and GitHub!
       - The files in your Working Tree (untracked and modified files)
       - The files in your Staging Area (added files)
 
+![Picture showing working of git commit](https://miro.medium.com/max/803/1*EeAyiw_zUGDWZjTCe9z6ag.jpeg)
+
 - `git commit`
    - **Always pull before committing/pushing.**
    - Commit _related_ changes.
    - Commit changes frequently.
    - _Don't_ commit half-done work.
-   - `git commit -m "<commit_msg>"`
+   - `git commit` will launch a text editor prompting you for a commit message. After you’ve entered a message, save the file and close the editor using `:wq` or just save and exit the editor to create the actual commit.
+   - To avoid this, you can directly give the commit message using`git commit -m "<commit_msg>"`
    - Commit message
       - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`. 
       - Eg: `git commit -m "Update README.md"`
