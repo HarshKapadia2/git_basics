@@ -62,6 +62,8 @@ A repo for the the basics of Git and GitHub!
 - `git init`
    - To initialize a local git repo in the location to which the bash is pointing.
    - A hidden folder '.git' is created.
+   
+![Picture from: https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c](https://miro.medium.com/max/1273/1*E4povWZ5H-K3OaguFQJ0IQ.png)
 
 - `git pull`
    - Pulls the latest code from the remote repo.
@@ -92,6 +94,10 @@ A repo for the the basics of Git and GitHub!
       - All files with '.ext' extension will be added to the staging area (except files in .gitignore).
    - `git add .`
       - All untracked and modified files will be sent to staging area (except files in .gitignore).
+   - `git add -u`
+      - Stages modified and deleted files, without including new files.
+   - `git rm --cached <file_name.ext>` (use "" if file name has spaces in between)
+      - To unstage file (ie, remove file from staging area)
    - .gitignore
       - .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 
       - It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
@@ -103,16 +109,25 @@ A repo for the the basics of Git and GitHub!
    - modified
       - All files not in .gitignore, that have been added to the repo and have been modified since.
       - The files are NOT in their latest version (ie, they have been modified since they were last added).
-   - Staging
+   - Staging (Staging Area / Index)
+      - It notes the added files in the working directory.
       - To stage a file is simply to prepare it finely for a commit. 
       - Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
+      - If you modified a staged file by mistake, you can revert to the staged version of the file using `git checkout <file_name.ext>`
+   - Working tree
+      - It notes the untracked files in the working directory.
+      - Any changes to files will be marked and seen in the Working Tree.
+      - Here if you make changes and do not explicitly save them to git, you will lose the changes made to your files.
+      - If you make changes to files in your working tree git will recognize that are modified, but until you tell git “Hey pay attention to these files,” it won’t save anything that goes on in them.
 
 - `git status`
    - Used to display the current status of the working directory.
-   - Shows the list of untracked, modified and added files.
+   - This command will show you two things: 
+      - The files in your Working Tree (untracked and modified files)
+      - The files in your Staging Area (added files)
 
 - `git commit`
-   - **Always pull before committing.**
+   - **Always pull before committing/pushing.**
    - Commit _related_ changes.
    - Commit changes frequently.
    - _Don't_ commit half-done work.
@@ -128,7 +143,9 @@ A repo for the the basics of Git and GitHub!
    - [Commands and explanation](https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing)
 
 - `git log`
-   - xyz
+   - A `git log` is a running record of commits.
+   - Implicitly means `git log HEAD`
+   - It shows all the commits reachable from the current HEAD (where the next commit will attach).
    - `git log --graph --oneline`
 
 - `git push`
@@ -232,8 +249,10 @@ A repo for the the basics of Git and GitHub!
 - [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
 
-## Misc resources for Git
+# Misc resources for Git
 - https://www.git-tower.com/learn
 - https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be
 - http://rogerdudler.github.io/git-guide/
 - http://git-school.github.io/visualizing-git/
+
+![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
