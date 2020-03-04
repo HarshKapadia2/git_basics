@@ -256,3 +256,9 @@ A repo for the the basics of Git and GitHub!
 - http://git-school.github.io/visualizing-git/
 
 ![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
+
+# BYE BYE! (: 
+## Star this repo if you liked it and don't forget to share it with your friends/coworkers!
+
+### Misc resources used in this repo (that weren't linkable above)
+- https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
