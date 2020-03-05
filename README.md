@@ -213,11 +213,6 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 ## Common mistakes and how to correct them
 - xyz
-- Amending a commit
-   - Suppose someone makes a faulty commit, ie, commits wrong files or forgets to commit a file or commits extra files.
-   - If they make a new commit, it might create a confusion for the future or for some other developer as there will be 2 commits doing almost the same thing.
-   - Here is where `git commit --amend` or `git commit --amend -m "<new_commit_msg>"` comes into the picture.
-   - 
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
 - xyz
@@ -290,10 +285,10 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - http://rogerdudler.github.io/git-guide/
 - http://git-school.github.io/visualizing-git/
 
-![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
-
-# BYE BYE! ( : 
-## Star this repo if you liked it and don't forget to share it with your friends/coworkers!
-
 ### Misc resources used in this repo (that weren't linkable above)
 - https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
+
+# BYE BYE! ( : 
+**Star this repo if you liked it and don't forget to share it with your friends/coworkers!**
+
+![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
