@@ -1,7 +1,9 @@
 # git_basics
 A repo for the the basics of Git and GitHub!
 
-**Disclaimer:** I have used a lot of resources from the internet to learn and then compile this repo and have tried linking all the resources used. Do let me know if I've missed linking any resource, I will gladly add it!
+This repo will always be a work in progress, so do make PRs to add your knowledge to it and correct any mistakes that might've been made!
+
+**Disclaimer:** I have used a lot of resources from the internet to learn and then compile this repo and have tried linking all the resources used (either as hyperlinks and at the bottom of the file). Do let me know if I've missed linking any resource that I have used and I will gladly add it! Contact me at `harshgkapadia@gmail.com` or on Twitter `@harshgkapadia`. You can also make an issue!
 
 ## VCS
 - In computer software engineering, revision control is any kind of practice that tracks and provides control over changes to source code. 
@@ -152,6 +154,9 @@ A repo for the the basics of Git and GitHub!
       - Git gives a unique SHA1 to every commit.
       - Use `git log` to get the SHA1 of the required commit.
       - All 40 characters are NOT needed for this command. The first 7 to 8 characters of the SHA1 will do.
+   - To view the contents of committed or staged files, use `git show :<file_name.ext>`
+   - Amending a commit
+      - Refer to the 'Common mistakes and how to correct them' section below.
 
 - `git stash`
    - Saving changes temporarily.
@@ -161,7 +166,13 @@ A repo for the the basics of Git and GitHub!
    - A `git log` is a running record of commits.
    - Implicitly means `git log HEAD`
    - It shows all the commits reachable from the current HEAD (where the next commit will attach).
-   - `git log --graph --oneline`
+   - `git log --oneline` displays the first 7 characters of the SHA1 and the commit msg.
+   - `git log --stat` displays the files and no. of lines added or removed, in each commit.
+   - `git log --patch` or `git log -p -<no_of_commits_to_be_displayed>` gives details of files changed, specific changes and location of changes in the file.
+   - `git log <commit_SHA1>` will display the details of that commit. (The first 7 to 8 characters of the SHA1 will do.)
+   - `git log --graph` will display commits as a graph. To make it look better, use the `--oneline` or/and `--decorate` flags.
+      - Eg: `git log --graph --oneline --decorate`
+   - `git log <branch_name>` will display the commit log of that branch.
 
 - `git push`
    - xyz
@@ -202,6 +213,11 @@ A repo for the the basics of Git and GitHub!
 
 ## Common mistakes and how to correct them
 - xyz
+- Amending a commit
+   - Suppose someone makes a faulty commit, ie, commits wrong files or forgets to commit a file or commits extra files.
+   - If they make a new commit, it might create a confusion for the future or for some other developer as there will be 2 commits doing almost the same thing.
+   - Here is where `git commit --amend` or `git commit --amend -m "<new_commit_msg>"` comes into the picture.
+   - 
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
 - xyz
@@ -276,7 +292,7 @@ A repo for the the basics of Git and GitHub!
 
 ![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
 
-# BYE BYE! (: 
+# BYE BYE! ( : 
 ## Star this repo if you liked it and don't forget to share it with your friends/coworkers!
 
 ### Misc resources used in this repo (that weren't linkable above)
