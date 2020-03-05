@@ -278,6 +278,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
 
+## Misc
 ### Misc resources for Git
 - [Getting started with Git and GitHub](https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be)
 - [Structure of Git](https://www.youtube.com/watch?v=yI0BtEzdGtw)
@@ -285,7 +286,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - http://rogerdudler.github.io/git-guide/
 - http://git-school.github.io/visualizing-git/
 
-### Misc resources used in this repo (that weren't linkable above)
+### Misc resources used in this repo (that weren't linkable above in hyperlinks)
 - https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
 
 # BYE BYE! ( : 
