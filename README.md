@@ -175,9 +175,15 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git log <branch_name>` will display the commit log of that branch.
 
 - `git push`
-   - xyz
-
-- `git merge`
+   - This command is used to transfer files from the local repo to the remote repo.
+   - To set up a remote repo, refer to the 'remote repo' section above.
+   - `git push -u <remote_alias> <remote_branch_to_be_pushed_to>`
+   - [Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
+   - fast fwd and non fast fwd merges.
+   - [What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
+   - 
+   
+- [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
    - xyz
 
 - `git revert`
@@ -261,7 +267,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - Conflict Handling ([GUI Version](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/merge-conflicts))
    - xyz
 - GitHub Desktop
-   - GUI (like Atlassian Bitbucket, Sourcetree, etc.)
+   - GUI (like Atlassian BitBucket, SourceTree, etc.)
    - 
 - [GitHub Student Developer's Pack](https://education.github.com/pack)
    - Free and gives TONS for features.
