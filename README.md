@@ -178,9 +178,9 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - This command is used to transfer files from the local repo to the remote repo.
    - To set up a remote repo, refer to the 'remote repo' section above.
    - `git push -u <remote_alias> <remote_branch_to_be_pushed_to>`
-   - [Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
+   - ![Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
    - fast fwd and non fast fwd merges.
-   - [What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
+   - ![What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
    - 
    
 - [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
