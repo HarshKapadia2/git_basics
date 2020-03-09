@@ -72,6 +72,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 - `git pull`
    - Pulls the latest code from the remote repo.
+   - The `git pull` command is used to fetch and download content from a remote repository and immediately update the local repository to match the content (ie, `git fetch` followed by a `git merge`).
    - `git pull origin <branch_name>`
    - Eg: `git pull origin master`
    - [Difference between `git pull` and `git fetch`](https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull)
@@ -79,13 +80,14 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
       - `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
 
 - `git fetch`
-   - `git fetch origin`
+   - `git fetch <remote_name> <branch_name>`
+   - Eg: `git fetch origin master`
    - When you `git fetch`, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. 
    - This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. 
    - To integrate the commits into your master branch, you use `git merge`.
 
 - `git clone`
-   - Clone a remote repo into the current folder (to which the git CLI is pointing).
+   - Clone/copy an entire remote repo into the current folder (to which the git CLI is pointing).
    - A new folder will be created with the name of the repo.
    - `git clone <link_to_repo>.git`
    - Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
@@ -174,20 +176,20 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
       - Eg: `git log --graph --oneline --decorate`
    - `git log <branch_name>` will display the commit log of that branch.
 
+- [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+   - xyz
+   - Merges are of mainly two types
+      - Fast forward merges (usually for small and short develop-duration features)
+      - Three way merges (usually for long ranging tasks and features)
+      ![Pic illustrating the two types of merges](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1)
+
 - `git push`
    - This command is used to transfer files from the local repo to the remote repo.
    - To set up a remote repo, refer to the 'remote repo' section above.
    - `git push -u <remote_alias> <remote_branch_to_be_pushed_to>`
-   - ![Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
-   - fast fwd and non fast fwd merges.
-   - ![What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
-   - 
-   
-- [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
-   - xyz
-
-- `git revert`
-   - xyz
+   ![Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
+   ![What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
+   - From the above picture, one can make out that Git will allow pushing only if the push results in a fast-forward merge.
 
 - `git reset`
    - xyz
@@ -264,11 +266,12 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - Most software projects have a bug tracker of some kind. GitHub’s tracker is called Issues, and has its own section in every repository.
    - Anyone can raise issues.
 - Starring repos
+   - Save a repo for future reference.
 - Conflict Handling ([GUI Version](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/merge-conflicts))
    - xyz
 - GitHub Desktop
    - GUI (like Atlassian BitBucket, SourceTree, etc.)
-   - 
+   - Used for collaboration among developers and during competitions like hackathons.
 - [GitHub Student Developer's Pack](https://education.github.com/pack)
    - Free and gives TONS for features.
    - Upload valid college ID and e-mail (personal e-mail if you don't have a college-provided e-mail ID)
