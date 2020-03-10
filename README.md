@@ -12,16 +12,18 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - Bugs or features of the software are often only present in certain versions (because of the fixing of some problems and the introduction of others as the program develops). Therefore, for the purposes of locating and fixing bugs, it is vitally important to be able to retrieve and run different versions of the software to determine in which version(s) the problem occurs. 
 - It may also be necessary to develop two versions of the software concurrently: for instance, where one version has bugs fixed, but no new features (branch), while the other version is where new features are worked on (trunk).
  - [Types of VCS](https://blog.eduonix.com/software-development/learn-three-types-version-control-systems/)
-   - DJ workshop .pdf has a nice diagram
    - Local VCS (LVCS)
       - Local version control system maintains track of files within the local system. This approach is very common and simple. This type is also error prone which means the chances of accidentally writing to the wrong file is higher.
+      ![LVCS pic](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.slidesharecdn.com%2Fopendesigndefinitionokfest-120924044126-phpapp01%2F95%2Fopen-design-definition-workshop-open-knowledge-festival-2012-31-728.jpg%3Fcb%3D1349086478&f=1&nofb=1)
    - Centralized VCS (CVCS)
       - In this approach, all the changes in the files are tracked under the centralized server. The centralized server includes all the information of versioned files, and list of clients that check out files from that central place.
       - Eg: Tortoise SVN
+      ![CVCS pic](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Finvistruct.com%2Fwp-content%2Fuploads%2F2012%2F08%2Fcentralized-vc.png&f=1&nofb=1)
    - Distributed VCS (DVCS)
       - Distributed version control systems come into picture to overcome the drawback of centralized version control system. 
       - Clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
       - Eg: Git
+      ![DVCS pic](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FtRfgX.png&f=1&nofb=1)
 
 ## Git
 - Git is a distributed version control system (DVCS) and has an emphasis on speed and performance. 
@@ -68,7 +70,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - To initialize a local git repo in the location to which the bash is pointing.
    - A hidden folder '.git' is created.
    
-![Picture from: https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c](https://miro.medium.com/max/1273/1*E4povWZ5H-K3OaguFQJ0IQ.png)
+   ![Picture from: https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c](https://miro.medium.com/max/1273/1*E4povWZ5H-K3OaguFQJ0IQ.png)
 
 - `git pull`
    - Pulls the latest code from the remote repo.
@@ -92,7 +94,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git clone <link_to_repo>.git`
    - Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
    
-![Picture depicting git add and git commit concepts with staging area + local and remote repo](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
+   ![Picture depicting git add and git commit concepts with staging area + local and remote repo](https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570)
 
 - `git add`
    - `git add <file_name.ext>`
@@ -133,7 +135,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
       - The files in your Working Tree (untracked and modified files)
       - The files in your Staging Area (added files)
 
-![Picture showing working of git commit](https://miro.medium.com/max/803/1*EeAyiw_zUGDWZjTCe9z6ag.jpeg)
+   ![Picture showing working of git commit](https://miro.medium.com/max/803/1*EeAyiw_zUGDWZjTCe9z6ag.jpeg)
 
 - `git commit`
    - A commit is simply a checkpoint telling git to track all changes that have occurred up to this point using our last commit as a comparison.
@@ -177,7 +179,13 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git log <branch_name>` will display the commit log of that branch.
 
 - [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
-   - xyz
+   - Merging is Git's way of putting a forked history back together again. 
+   - The `git merge` command lets you take the independent lines of development created by `git branch` and integrate them into a single branch.
+   - Preparing to merge
+      - You have to be in the branch (`git checkout <receiving_ranch>`) you want to merge another branch into.
+      - Make sure the receiving branch and the merging branch are up-to-date with the latest remote changes.
+      - Merge using `git merge <branch_to_be_merged>`
+      - Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
    - Merges are of mainly two types
       - Fast forward merges (usually for small and short develop-duration features)
       - Three way merges (usually for long ranging tasks and features)
@@ -189,7 +197,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git push -u <remote_alias> <remote_branch_to_be_pushed_to>`
    ![Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
    ![What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
-   - From the above picture, one can make out that Git will allow pushing only if the push results in a fast-forward merge.
+   - From the above picture, one can make out that Git will allow pushing only if the push results in a **fast-forward merge**.
 
 - `git reset`
    - xyz
@@ -218,12 +226,23 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - xyz
 - `git checkout`
    - xyz
+- `git merge --no-ff <branch_name>`
+   - If one wants to do a fast forward merge, but even then create a new merge commit for the symbolic merging.
+   - This is useful for documenting all merges that occur in a repository.
 
 ## Common mistakes and how to correct them
 - xyz
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
-- xyz
+- Git can automatically merge commits unless there are changes that conflict in both commit sequences.
+- Eg: If in the [two branches that are trying to be merged](https://www.atlassian.com/git/tutorials/using-branches/git-merge), both have changes in the same part of the same file, Git won't be able to figure out which version to use.
+- To represent the differences, visual markers used by are: `<<<<<<<`, `=======` and `>>>>>>>`.
+- Generally the content before the `=======` marker is the receiving branch and the part after is the merging branch.
+- Once one has identified conflicting sections, they can go in and fix up the merge to their liking. 
+- When they're ready to finish the merge, all they have to do is run `git add` on the conflicted file(s) to tell Git that they're resolved. 
+- Then, one has to run a normal `git commit` to generate the merge commit.
+- **Note:** Merge conflicts will only occur in the event of a 3-way merge. It’s not possible to have conflicting changes in a fast-forward merge. 
+- Conflicts can occur for single files as well. They have to be handled in the same way as above.
 - `git diff`
    - This command shows the code differences between a file in the Staging Area and the edits made to that file that currently exist in the Working Tree.
    - Use `git diff <file_name.ext>` to view the differences of just one file.
