@@ -179,17 +179,21 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git log <branch_name>` will display the commit log of that branch.
 
 - [`git merge`](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+   - The `git merge` command's primary responsibility is to combine separate branches and resolve any conflicting edits.
    - Merging is Git's way of putting a forked history back together again. 
    - The `git merge` command lets you take the independent lines of development created by `git branch` and integrate them into a single branch.
    - Preparing to merge
       - You have to be in the branch (`git checkout <receiving_ranch>`) you want to merge another branch into.
       - Make sure the receiving branch and the merging branch are up-to-date with the latest remote changes.
-      - Merge using `git merge <branch_to_be_merged>`
+      - Merge using `git merge <merging_branch>`
       - Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
    - Merges are of mainly two types
       - Fast forward merges (usually for small and short develop-duration features)
       - Three way merges (usually for long ranging tasks and features)
       ![Pic illustrating the two types of merges](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1)
+   - Managing merge conflicts (using both CLIs and GUIs) is covered later.
+   - `git merge --abort`
+      - Executing `git merge` with the `--abort` option/flag will exit from the merge process and return the branch to the state before the merge began.
 
 - `git push`
    - This command is used to transfer files from the local repo to the remote repo.
@@ -198,14 +202,16 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    ![Picture for above command](https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg)
    ![What `git push` does diagram](https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg)
    - From the above picture, one can make out that Git will allow pushing only if the push results in a **fast-forward merge**.
+   ![Fast fwd merge pic](https://confluence.atlassian.com/bitbucket/files/329977726/330172160/6/1379375305773/fastforward.png)
 
 - `git reset`
    - xyz
-   - Option 1: 
+   - **Just `git reset` cmd fn**
+   - Option 1: (hard)
       - xyz
-   - Option 2: 
+   - Option 2: (soft)
       - xyz
-   - Option 3:
+   - Option 3: (mixed)
       - xyz
 
 - `git revert`
@@ -226,7 +232,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - xyz
 - `git checkout`
    - xyz
-- `git merge --no-ff <branch_name>`
+- `git merge --no-ff <branch_name>` **CHECK THIS**
    - If one wants to do a fast forward merge, but even then create a new merge commit for the symbolic merging.
    - This is useful for documenting all merges that occur in a repository.
 
@@ -234,16 +240,25 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - xyz
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
+- Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 - Git can automatically merge commits unless there are changes that conflict in both commit sequences.
 - Eg: If in the [two branches that are trying to be merged](https://www.atlassian.com/git/tutorials/using-branches/git-merge), both have changes in the same part of the same file, Git won't be able to figure out which version to use.
+- [There are different types of merge conflicts.](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts)
+   - Git fails to start the merge (due to unsaved local changes, so use `git stash`, `git commit`, `git reset`, `git checkout` etc to stabilize local.)
+   - Git fails the ongoing merge (Git will do its best to merge the files but will leave things for the developer to resolve manually in the conflicted files.)
 - To represent the differences, visual markers used by are: `<<<<<<<`, `=======` and `>>>>>>>`.
 - Generally the content before the `=======` marker is the receiving branch and the part after is the merging branch.
-- Once one has identified conflicting sections, they can go in and fix up the merge to their liking. 
-- When they're ready to finish the merge, all they have to do is run `git add` on the conflicted file(s) to tell Git that they're resolved. 
-- Then, one has to run a normal `git commit` to generate the merge commit.
+- Resolving a merge conflict
+   - Use `git status` to identify the merge issues.
+   - The most direct way to resolve a merge conflict is to edit the conflicted file. Open the file in a text editor and make the necessary changes to resolve the conflict. (Eg: Add the missing lines, delete the extra lines, etc...)
+   - When the developer is ready to finish the merge, all they have to do is run `git add <file_name>` on the conflicted file(s) to tell Git that they're resolved. 
+   - Then, one has to run a normal `git commit -m "<commit_msg>"` to generate the merge commit.
+   - Git will see that the conflict has been resolved and creates a new merge commit to finalize the merge.
 - **Note:** Merge conflicts will only occur in the event of a 3-way merge. It’s not possible to have conflicting changes in a fast-forward merge. 
 - Conflicts can occur for single files as well. They have to be handled in the same way as above.
 - `git diff`
+   - `git diff` helps find differences between states of a repository/files.
+   - This is useful in predicting and preventing merge conflicts.
    - This command shows the code differences between a file in the Staging Area and the edits made to that file that currently exist in the Working Tree.
    - Use `git diff <file_name.ext>` to view the differences of just one file.
    - To see the changes in the Staging Area use `git diff --staged`
