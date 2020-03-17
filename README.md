@@ -6,7 +6,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 **Disclaimer:** I have used a lot of resources from the internet to learn and then compile this repo and have tried linking all the resources used (either as hyperlinks and at the bottom of the file). Do let me know if I've missed linking any resource that I have used and I will gladly add it! Contact me at `harshgkapadia@gmail.com` or on Twitter `@harshgkapadia`. You can also make an issue!
 
-## VCS
+## Version Control System (VCS)
 - In computer software engineering, revision control is any kind of practice that tracks and provides control over changes to source code. 
 - Software developers use revision control software to maintain documentation and configuration files as well as source code. 
 - As teams design, develop and deploy software, it is common for multiple versions of the same software to be deployed in different sites and for the software's developers to be working simultaneously on updates. 
@@ -33,11 +33,11 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - The official website is https://git-scm.com/
 
 ## Git-Bash
-- It is a shell, ie, a CLI to use git
+- It is a shell, ie, a CLI to use git.
 - The official website is https://git-scm.com/
 - Repos (Part 1)
    - Git stores information in a data structure called a repository.
-   - The Git repository is stored in the same directory as the project itself, in a subdirectory called .git.
+   - The Git repository is stored in the same directory as the project itself, in a subdirectory called '.git'. (Enable hidden folders to see the '.git' folder.)
    - Apart from storing files, repositories also maintain the history.
    - Local repo
       - What makes git so awesome is that it is a DVCS. Your local repository has exactly the same features and functionality as any other git repository. 
