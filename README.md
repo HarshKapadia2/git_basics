@@ -335,6 +335,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - https://www.git-tower.com/learn
 - http://rogerdudler.github.io/git-guide/
 - http://git-school.github.io/visualizing-git/
+- https://www.atlassian.com/git
 
 ### Misc resources used in this repo (that weren't linkable above in hyperlinks)
 - https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
