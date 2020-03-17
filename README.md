@@ -2,6 +2,7 @@
 A repo for the the basics of Git and GitHub!
 
 This repo will always be a work in progress, so do make PRs to add your knowledge to it and correct any mistakes that might've been made!
+(TBC = To be continued)
 
 **Disclaimer:** I have used a lot of resources from the internet to learn and then compile this repo and have tried linking all the resources used (either as hyperlinks and at the bottom of the file). Do let me know if I've missed linking any resource that I have used and I will gladly add it! Contact me at `harshgkapadia@gmail.com` or on Twitter `@harshgkapadia`. You can also make an issue!
 
@@ -205,39 +206,42 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    ![Fast fwd merge pic](https://confluence.atlassian.com/bitbucket/files/329977726/330172160/6/1379375305773/fastforward.png)
 
 - `git reset`
-   - xyz
+   - TBC
    - **Just `git reset` cmd fn**
    - Option 1: (hard)
-      - xyz
+      - TBC
    - Option 2: (soft)
-      - xyz
+      - TBC
    - Option 3: (mixed)
-      - xyz
+      - TBC
 
 - `git revert`
-   - xyz
+   - TBC
 
 - `git remote`
-   - xyz
+   - TBC
 
 - `git rebase`
-   - xyz
+   - TBC
    - Difference between merge and rebase
-      - xyz
+      - TBC
       
 - `git help`
    - Alternative `git help <command>`
 
 ## Branches
-- xyz
+- TBC
 - `git checkout`
-   - xyz
+   - TBC
 - `git merge --no-ff <branch_name>` **CHECK THIS**
    - If one wants to do a fast forward merge, but even then create a new merge commit for the symbolic merging.
    - This is useful for documenting all merges that occur in a repository.
 
 ## Common mistakes and how to correct them
-- xyz
+- TBC
+- Temp resources
+   - https://ohshitgit.com/
+   - https://www.youtube.com/watch?v=FdZecVxzJbk
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
 - Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
@@ -266,14 +270,17 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 ## Git CLIs vs GUIs
 - CLI pros
-   - xyz
+   - TBC
 - CLI cons
-   - xyz
+   - TBC
 
 - GUI pros
-   - xyz
+   - TBC
 - GUI cons
-   - xyz
+   - TBC
+
+- Temp resource
+   - https://www.danclarke.com/git-gui-vs-cli
 
 ## GitHub basics
 - [Repos](https://www.sbf5.com/~cduan/technical/git/git-1.shtml) (Part 2)
@@ -281,7 +288,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - Private and public repos
    - [Licenses](https://choosealicense.com/)
    - README.md
-      - xyz
+      - TBC
       - md = [Markdown](https://www.youtube.com/watch?v=HUBNt18RFbo)
 - **GitHub is not git.**
    - Git is a revision control system, a tool to manage your source code history.
