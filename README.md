@@ -58,6 +58,8 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
             - In the bash, type `git remote add origin <link_to_repo>.git`
             - Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
             - Do add a license, README.md and .gitignore (more on all 3 later).
+         - `git remote -v`
+            - It gives the shortname and corresponding url of the "remote" (aka the remote repo)
          - To remove origin (remote repo)
             - `git remote rm origin`
 
