@@ -233,8 +233,15 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 ## Branches
 - TBC
-- `git checkout`
+- `git branch <new_branch_name>`
+   - Creates new branch
+- `git switch`
    - TBC
+- `git checkout`
+   - Has multiple uses (covered in specific topics), but here in context of branches.
+   - TBC
+- `git checkout -b <new_branch_name>`
+   - Creates new branch and switches to it
 - `git merge --no-ff <branch_name>` **CHECK THIS**
    - If one wants to do a fast forward merge, but even then create a new merge commit for the symbolic merging.
    - This is useful for documenting all merges that occur in a repository.
