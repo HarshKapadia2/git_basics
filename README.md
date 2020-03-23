@@ -245,6 +245,9 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 - `git merge --no-ff <branch_name>` **CHECK THIS**
    - If one wants to do a fast forward merge, but even then create a new merge commit for the symbolic merging.
    - This is useful for documenting all merges that occur in a repository.
+- `git branch -d <branch_name>` (`-D` flag does the same thing)
+   - To delete branch.
+   - To use this command, use `git checkout <branch_name>` to switch to a different branch and then run the above command.
 
 ## Common mistakes and how to correct them
 - TBC
