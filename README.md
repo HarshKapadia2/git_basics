@@ -64,6 +64,10 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
             - `git remote rm origin`
 
 ## Basic git commands
+- `git help`
+   - Alternative `git help <command>` or `git help <concept>`
+   - Gives a description of the command and the options (flags) that can be used with it or describes the concept.
+   
 - `git config`
    - `git config --global user.name '<name>'`
    - `git config --global user.email '<e-mail_id>'`
@@ -227,9 +231,6 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - TBC
    - Difference between merge and rebase
       - TBC
-      
-- `git help`
-   - Alternative `git help <command>`
 
 ## Branches
 - TBC
