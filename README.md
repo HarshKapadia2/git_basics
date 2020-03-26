@@ -146,12 +146,18 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 - `git commit`
    - A commit is simply a checkpoint telling git to track all changes that have occurred up to this point using our last commit as a comparison.
+   - Short, crisp and to-the-point commit messages are preferred.
+   - If extra information is needed to be given, add it to the description of the commit.
    - **Always pull before committing/pushing.**
    - Commit _related_ changes.
    - Commit changes frequently.
-   - _Don't_ commit half-done work.
+      - This makes it easier to revert back to older versions to correct mistakes.
+   - _Don't_ commit half-done or incomplete work.
    - `git commit` will launch a text editor prompting you for a commit message. After you’ve entered a message, save the file and close the editor using `:wq` or just save and exit the editor to create the actual commit.
    - To avoid this, you can directly give the commit message using`git commit -m "<commit_msg>"`
+   - `git commit -m "<commit_msg>" -m "<commit_description>"`
+   - `git commit -a -m "<commit_msg>"`
+      - The `--all` or `-a` automatically stages files that have been modified or deleted, but untracked files are not affected.
    - Commit message
       - Use the imperative, present tense ('change', not 'changed' or 'changes') to be consistent with generated messages from commands like `git merge`. 
       - Eg: `git commit -m "Update README.md"`
