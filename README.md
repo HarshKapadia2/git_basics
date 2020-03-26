@@ -342,13 +342,18 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 ## Misc
 ### Misc resources for Git
-- [Getting started with Git and GitHub](https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be)
-- [Structure of Git](https://www.youtube.com/watch?v=yI0BtEzdGtw)
-- https://www.git-tower.com/learn
-- http://rogerdudler.github.io/git-guide/
-- http://git-school.github.io/visualizing-git/
-- https://www.atlassian.com/git
-- https://explainshell.com/
+- Videos
+   - [Getting started with Git and GitHub (YouTube - Traversy Media)](https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be)
+   - [Structure of Git (YouTube)](https://www.youtube.com/watch?v=yI0BtEzdGtw)
+- Visualize Git
+   - http://git-school.github.io/visualizing-git/
+- Documentation for Git
+   - https://www.git-tower.com/learn
+   - http://rogerdudler.github.io/git-guide/
+   - https://www.atlassian.com/git
+- Search commands (with explanation)
+   - https://explainshell.com/
+   - https://dashdash.io/
 
 ### Misc resources used in this repo (that weren't linkable above in hyperlinks)
 - https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
