@@ -60,8 +60,9 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
             - Do add a license, README.md and .gitignore (more on all 3 later).
          - `git remote -v`
             - It gives the shortname and corresponding url of the "remote" (aka the remote repo)
-         - To remove origin (remote repo)
-            - `git remote rm origin`
+         - To remove remote repo
+            - `git remote rm <remote_repo_alias>`
+               - Eg: `git remote rm origin`
 
 ## Basic git commands
 - `git help`
