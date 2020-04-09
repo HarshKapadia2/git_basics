@@ -110,11 +110,16 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git add *.ext`
       - All files with '.ext' extension will be added to the staging area (except files in .gitignore).
    - `git add .`
-      - All untracked and modified files will be sent to staging area (except files in .gitignore).
+      - Recursive command to send all untracked and modified files to the staging area (except files in .gitignore).
+   - `git add -n .`
+      - Shows files that will be added, but does not add them.
+      - Run other `git add` commands to actually add files to the staging area.
    - `git add -u`
       - Stages modified and deleted files, without including new files.
    - `git rm --cached <file_name.ext>` (use `""` if file name has spaces in between)
-      - To unstage file (ie, remove file from staging area)
+      - To unstage a particular file (ie, remove file from the staging area)
+   - `git rm -r --cached .`
+      - Recursive command to remove all files from the staging area
    - .gitignore
       - .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 
       - It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
