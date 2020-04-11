@@ -1,5 +1,8 @@
-# git_basics
-A repo for the the basics of Git and GitHub!
+# ***git_basics***
+<a href="#contributing"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square"></a>
+<img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat-square">
+<br>
+**A repo for the the basics of Git and GitHub!**
 
 This repo will always be a work in progress, so do make PRs to add your knowledge to it and correct any mistakes that might've been made!
 (TBC = To be continued)
