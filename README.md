@@ -267,8 +267,11 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 
 ## Common mistakes and how to correct them
 - TBC
-- Changes are made to files and the user wants to revert the files to the last commit state (files are not staged)
-   - [`git checkout HEAD .`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+- Modificaions are made to files and the user wants to revert the files to the current commit state (The files are not staged)
+   - [`git checkout HEAD .`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting) 
+      - To revert all modified files to current commit state
+   - `git checkout HEAD <file_name.ext>`
+      - To revert a particular modified file to current commit state
 - Temp resources
    - https://ohshitgit.com/
    - https://www.youtube.com/watch?v=FdZecVxzJbk
