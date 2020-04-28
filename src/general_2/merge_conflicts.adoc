@@ -1,0 +1,13 @@
+
+=== Merge Conflicts
+
+==== CLI
+
+==== GUI
+
+.Related
+****
+* link:index.adoc#_git_merge[git merge]
+****
+
+'''

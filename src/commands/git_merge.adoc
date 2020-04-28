@@ -20,7 +20,22 @@ Preparing to merge:
     * Merge using `git merge <merging_branch>`
     * Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't already in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
 
+Merges are of mainly two types:
+
+    * Fast forward merges (usually for small and short develop-duration features)
+    * Three way merges (usually for long ranging tasks and features)
+
+image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and three-way merges", alt="Types of merges", link="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1"]
+
 Further details https://www.atlassian.com/git/tutorials/using-branches/git-merge[here].
+
+NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:index.adoc#_merge_conflicts[here].
+
+==== Options/Flags
+
+===== --abort
+
+* This will exit from the merge process and return the branch to the state before the merge began.
 
 .Related
 ****
@@ -28,6 +43,7 @@ Further details https://www.atlassian.com/git/tutorials/using-branches/git-merge
 * link:index.adoc#_git_branch[git branch]
 * link:index.adoc#_git_pull[git pull]
 * link:index.adoc#_git_fetch[git fetch]
+* link:index.adoc#_merge_conflicts[Merge Conflicts]
 ****
 
 '''
