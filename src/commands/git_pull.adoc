@@ -11,14 +11,14 @@ image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remot
 
 Eg: `git pull origin master`
 
-=== Prerequisites
+==== Prerequisites
 
 The following terms are required to be understood:
 
 * link:index.adoc#_aliases[Aliases]
 * link:index.adoc#_repository[Repository (repo)]
 
-=== Description
+==== Description
 
 Pulls (brings) the latest code from the remote repo.
 
