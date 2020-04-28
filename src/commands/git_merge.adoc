@@ -1,0 +1,33 @@
+
+=== git merge
+
+==== Command
+
+`git merge <branch_name>`
+
+==== Description
+
+The `git merge` command's primary responsibility is to combine separate branches and resolve any conflicting edits.
+
+Merging is Git's way of putting a forked history back together again.
+
+The `git merge` command lets you take the independent lines of development created by link:index.adoc#_git_branch[`git branch`] or link:index.adoc#_git_checkout[`git checkout`] and integrate them into a single branch.
+
+Preparing to merge:
+
+    * Make sure to be in the branch (`link:index.adoc#_git_checkout[git checkout] <receiving_ranch>`) you want to merge another branch into (let this branch be called `receiving_branch`).
+    * Make sure the receiving branch and the merging branch are up-to-date with the latest remote changes.
+    * Merge using `git merge <merging_branch>`
+    * Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't already in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
+
+Further details https://www.atlassian.com/git/tutorials/using-branches/git-merge[here].
+
+.Related
+****
+* link:index.adoc#_git_checkout[git checkout]
+* link:index.adoc#_git_branch[git branch]
+* link:index.adoc#_git_pull[git pull]
+* link:index.adoc#_git_fetch[git fetch]
+****
+
+'''
