@@ -3,14 +3,4 @@
 
 * A repository (repo) is simply a place where the history of your work is stored. It often lives in a `.git` subdirectory of your working directory/copy - a copy of the most recent state of the files you're working on.
 
-.Related
-****
-* link:index.adoc#_untracked_files[Untracked files]
-* link:index.adoc#_added_files[Added files]
-* link:index.adoc#_modified_files[Modified files]
-* link:index.adoc#_gitignore_file[.gitignore file]
-* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
-* link:index.adoc#_working_tree[Working tree]
-****
-
 '''

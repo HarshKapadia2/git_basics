@@ -1,2 +1,9 @@
 
 === Common Mistakes & How To Correct Them
+
+.Related
+****
+* link:index.adoc#_git_commit[git commit]
+****
+
+'''

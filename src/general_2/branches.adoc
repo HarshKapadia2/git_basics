@@ -1,0 +1,9 @@
+
+=== Branches
+
+.Related
+****
+* link:index.adoc#_git_branch[git branch]
+****
+
+'''

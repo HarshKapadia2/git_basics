@@ -1,0 +1,10 @@
+
+=== git branch
+
+.Related
+****
+* link:index.adoc#_git_merge[git merge]
+* link:index.adoc#_branches[Branches]
+****
+
+'''

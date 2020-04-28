@@ -24,6 +24,7 @@ This means that, for example, instead of typing `git commit`, you just need to t
 * link:index.adoc#_git_push[git push]
 * link:index.adoc#_git_remote[git remote]
 * link:index.adoc#_git_clone[git clone]
+* link:index.adoc#_git_fetch[git fetch]
 ****
 
 '''

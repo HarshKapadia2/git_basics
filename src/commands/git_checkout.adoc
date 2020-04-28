@@ -1,0 +1,9 @@
+
+=== git checkout
+
+.Related
+****
+* link:index.adoc#_git_merge[git merge]
+****
+
+'''
