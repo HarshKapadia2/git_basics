@@ -7,7 +7,7 @@ image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remot
 
 ==== Command
 
-`git pull <remote_repo_alias> <branch_name>`
+`git pull <remote_repo_alias> <remote_branch_name>`
 
 Eg: `git pull origin master`
 
