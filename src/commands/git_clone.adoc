@@ -1,0 +1,23 @@
+
+=== git clone
+
+==== Command
+
+`git clone <remote_repo_url>.git`
+
+Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
+
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_aliases[Aliases]
+* link:index.adoc#_repository[Repository (repo)]
+
+==== Description
+
+Clone/copy an entire remote repo into the current folder (to which the git CLI is pointing).
+
+A new folder will be created with the name of the repo. `cd` (change directory) into that folder to start using it.
+
+'''
