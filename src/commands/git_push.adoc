@@ -1,0 +1,25 @@
+
+=== git push
+
+==== Command
+
+`git push -u <remote_repo_alias> <remote_branch_name>`
+
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_aliases[Aliases]
+* link:index.adoc#_repository[Repository (repo)]
+
+==== Description
+
+This command is used to transfer files from the local repo to the remote repo.
+
+To set up a remote repo, refer to link:index.adoc#_git_remote[`git remote`] and link:index.adoc#creating_a_repo[`creating a repo on GitHub`].
+
+image::git-push.jpeg[caption="", role="thumb", title="What does git push do?", alt="Git push illustration", link="https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg"]
+
+image::fast-forward-merge.png[caption="", role="thumb", title="How a fast forward merge takes place with `git push`", alt="Fast forward merge", link="https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg"]
+
+NOTE: From the two pictures above, it can be inferred that Git will allow pushing only if the push results in a fast-forward merge.
