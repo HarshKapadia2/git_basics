@@ -42,12 +42,37 @@ TIP: _Don't_ commit half-done or incomplete work.
 
 ==== Options/Flags
 
-hgd
+===== No option
+
+* Just running `git commit` will launch a text editor prompting you for a commit message.
+* After you’ve entered a message, save the file and close the editor using `:wq` or just save and exit the editor to create the actual commit.
+
+===== -m "<commit_msg>"
+
+* Avoids opening a text editor by providing the commit message in the Command Prompt, Terminal, Powershell, etc...
+
+===== -m "<commit_message>" -m "<commit_description>"
+
+* Enter the commit message and commit description if needed.
+
+===== -a or --all
+
+* Automatically stages files that have been modified or deleted, but untracked files are not affected.
+* Eg: `git commit -a -m "<commit_message>" -m "<commit_description>"`
+
+===== -m "Add only_this_file.ext from all staged files" only_this_file.ext
+
+* Partially commiting staged changes
+
+===== git ls-tree --full-tree -r HEAD
+
+* This command shows all files within your git repo that it’s tracking.
 
 .Related
 ****
 * link:index.adoc#_git_log[git log]
 * link:index.adoc#_git_show[git show]
+* link:index.adoc#_common_mistakes_how_to_correct_them[Ammending a commit]
 ****
 
 '''

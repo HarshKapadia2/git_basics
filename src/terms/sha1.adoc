@@ -14,3 +14,5 @@ image::working-of-commit.jpeg[]
 * link:index.adoc#_git_log[git log]
 * link:index.adoc#_git_show[git show]
 ****
+
+'''

@@ -12,3 +12,5 @@
 * link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
 * link:index.adoc#_working_tree[Working tree]
 ****
+
+'''

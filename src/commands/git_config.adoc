@@ -20,8 +20,15 @@ NOTE: The global name and e-mail need to be set just once, ie, before Git is use
 
 TIP: Enter the full name and the e-mail ID registered with your GitHub account.
 
+* link:index.adoc#_aliases[Aliases] can also be set using this flag.
+
 ===== --list
 * Lists the configurations of Git.
 * Eg: `git config --list`
+
+.Related
+****
+* link:index.adoc#_aliases[Set aliases]
+****
 
 '''

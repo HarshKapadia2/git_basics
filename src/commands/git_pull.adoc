@@ -1,0 +1,32 @@
+
+image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remote commands chart #2", alt="Git local & remote commands chart #2", link="https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c"]
+
+'''
+
+=== git pull
+
+==== Command
+
+`git pull <remote_repo_alias> <branch_name>`
+
+Eg: `git pull origin master`
+
+=== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_aliases[Aliases]
+* link:index.adoc#_repository[Repository (repo)]
+
+=== Description
+
+Pulls (brings) the latest code from the remote repo.
+
+To fetch and download content from a remote repository and immediately update the local repository to match the content.
+
+https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull[Difference between `git pull` and `git fetch`]
+
+* In simple terms, `git pull` does a `git fetch` followed by a `git merge`.
+* `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
+
+'''

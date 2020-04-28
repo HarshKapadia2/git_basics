@@ -34,13 +34,17 @@ NOTE: One might want to familiarize themselves with [these] Git terms before sta
 
 *Okay, let's start!*
 
-== General
+== General #1
 
-include::general.adoc[]
+include::general_1.adoc[]
 
 == Commands
 
 include::commands.adoc[]
+
+== General #2
+
+include::general_2.adoc[]
 
 == Terms
 

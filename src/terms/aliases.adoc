@@ -1,0 +1,29 @@
+
+=== Aliases
+
+[quote, Pro Git by Scott Chacon and Ben Straub, https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases]
+[Aliases] make your Git experience simpler, easier, and more familiar...
+
+* If you don’t want to type the entire text of each of the Git commands, you can easily set up an alias for each command using `git config`. Here are a couple of examples you may want to set up:
++
+ git config --global alias.co checkout
+ git config --global alias.br branch
+ git config --global alias.ci commit
+ git config --global alias.st status
++
+This means that, for example, instead of typing `git commit`, you just need to type `git ci`. As you go on using Git, you’ll probably use other commands frequently as well; don’t hesitate to create new aliases.
+
+* An alias can be given to the remote link:index.adoc#_repository[repo] as well, to make pulling and pushing easier.
+    ** You can set aliases if you add a remote (ie, remote repo) using link:index.adoc#_git_remote[`git remote`].
+    ** If you clone a repo using link:index.adoc#_git_clone[`git clone`], the default alias of the remote repo is `origin`.
+
+.Related
+****
+* link:index.adoc#_git_config[git config]
+* link:index.adoc#_git_pull[git pull]
+* link:index.adoc#_git_push[git push]
+* link:index.adoc#_git_remote[git remote]
+* link:index.adoc#_git_clone[git clone]
+****
+
+'''

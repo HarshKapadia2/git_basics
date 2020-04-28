@@ -13,3 +13,5 @@
 * link:index.adoc#_git_rm[git rm]
 * link:index.adoc#_git_commit[git commit]
 ****
+
+'''
