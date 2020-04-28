@@ -1,0 +1,35 @@
+
+=== git rm
+
+==== Command
+
+`git rm <flags> <file_name.ext>` where `ext`stands for the extension of the file.
+
+==== Prerequisite
+
+The following term is required to be understood:
+
+* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
+
+==== Description
+
+To remove files from the working tree and from the index.
+
+==== Options/Flags
+
+===== --cached <file_name.ext>
+
+* To unstage a particular file (ie, remove file from the staging area).
+* use `""` if the file name has spaces in between.
+
+===== -r --cached .
+
+* Eg: `git rm -r --cached .`
+* Recursive command to remove all files from the staging area.
+
+.Related
+****
+* link:index.adoc#_git_add[Add files to staging area (`git add`)]
+****
+
+'''

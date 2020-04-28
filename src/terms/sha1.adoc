@@ -1,0 +1,16 @@
+
+=== SHA1
+
+* SHA = Secure Hashing Algorithm
+* It is a 40 digit hexadecimal number.
+* Every commit has a unique SHA1 associated with it.
+* All 40 characters are NOT needed for commands. The first 7 to 8 characters of the SHA1 will do.
+
+image::working-of-commit.jpeg[]
+
+.Related
+****
+* link:index.adoc#_git_commit[git commit]
+* link:index.adoc#_git_log[git log]
+* link:index.adoc#_git_show[git show]
+****

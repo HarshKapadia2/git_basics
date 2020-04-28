@@ -1,0 +1,25 @@
+
+=== git status
+
+==== Commands
+
+`git status`
+
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_untracked_files[Untracked files]
+* link:index.adoc#_added_files[Added files]
+* link:index.adoc#_modified_files[Modified files]
+* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
+* link:index.adoc#_working_tree[Working tree]
+
+==== Description
+
+* Run this command at any time to display the current status of the working directory.
+* This command shows two things: 
+    ** The files in your Working Tree (untracked and modified files)
+    ** The files in your Staging Area (added files)
+
+'''

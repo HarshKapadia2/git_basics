@@ -1,0 +1,23 @@
+=== git help
+
+==== Command
+
+`git help <options>`
+
+==== Description
+
+Give information about Git or a certain Git command (from the man pages in the Git package itself).
+
+==== Options/Flags
+
+===== No option
+
+* Synopsis of the git command and a list of the most commonly used Git commands are printed on the standard output.
+
+===== <command_name> or <concept>
+
+* Any Git command name (eg: commit, add, etc...) can be entered.
+* A man (manual) page which is included in the Git package will be opened in the browser.
+* Eg: `git help add`
+
+'''

@@ -1,0 +1,10 @@
+
+=== Git
+
+* Git is a free and open source distributed version control system (DVCS) and has an emphasis on speed and performance. 
+* It is supported by all operating systems. 
+* Git is open source software distributed under the terms of the GNU (General Public License).
+* The official website is https://git-scm.com/
+
+[quote, git-scm, www.git-scm.com]
+git --distributed-is-the-new-centralized

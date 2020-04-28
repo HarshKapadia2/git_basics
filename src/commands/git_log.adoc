@@ -1,0 +1,54 @@
+
+=== git log
+
+==== Command
+
+`git log <options_&_flags>`
+
+==== Prequisite
+
+The following term is required to be understood:
+
+* link:index.adoc#_sha1[SHA1]
+
+==== Description
+
+It is a running record of commits. It shows all the commits reachable from the current HEAD (where the next commit will attach).
+
+Implicitly means `git log HEAD`.
+
+==== Options/Flags
+
+===== <commit_SHA1>
+
+* It will display the details of that commit.
+* For more details of the commit, use link:index.adoc#_git_show[`git show`].
+
+===== <branch_name>
+
+* It will display the commit log of that branch.
+
+===== --oneline
+
+* Displays the first 7 characters of the SHA1 and the commit message.
+
+===== --graph
+
+* It will display commits as a graph.
+* To make it look better, use the `--oneline` or/and `--decorate` flags.
+* Eg: `git log --graph --oneline --decorate`
+
+===== --stat
+
+*  Displays the files and no. of lines added or removed, in each commit.
+
+===== '--patch' or '-p -<no_of_commits_to_be_displayed>'
+
+* Gives details of files changed, specific changes and location of changes in the file.
+
+.Related
+****
+* link:index.adoc#_git_show[git show]
+****
+
+'''

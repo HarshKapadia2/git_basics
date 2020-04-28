@@ -1,0 +1,12 @@
+
+=== git init
+
+==== Command
+
+`git init`
+
+==== Description
+
+To initialize a local git link:index.adoc#_repository[repository (repo)] in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialised.
+
+'''

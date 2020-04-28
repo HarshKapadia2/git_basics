@@ -1,0 +1,34 @@
+
+=== git show
+
+==== Command
+
+`git show <options>`
+
+==== Prequisite
+
+The following term is required to be understood:
+
+* link:index.adoc#_sha1[SHA1]
+
+==== Description
+
+To see information about a specific commit or file. Use link:index.adoc#_git_log[`git log`] to get the SHA1 of the required commit.
+
+==== Options/Flags
+
+===== <commit's SHA1>
+
+* To see more information about a specific commit than what `git log <commit's_SHA1>` shows.
+
+===== :<file_name.ext>
+
+* To view the contents of committed or staged files.
+* Eg: `git show :test_file.txt`
+
+.Related
+****
+* link:index.adoc#_git_log[git log]
+****
+
+'''

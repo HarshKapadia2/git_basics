@@ -1,0 +1,27 @@
+
+=== git config
+
+==== Command
+
+`git config <flags>`
+
+==== Description
+
+Get and set repository or global options.
+
+==== Options/Flags
+
+===== --global
+
+* `git config --global user.name '<name>'`
+* `git config --global user.email '<e-mail_id>'`
+
+NOTE: The global name and e-mail need to be set just once, ie, before Git is used for the first time (but it can be modified later if need be).
+
+TIP: Enter the full name and the e-mail ID registered with your GitHub account.
+
+===== --list
+* Lists the configurations of Git.
+* Eg: `git config --list`
+
+'''

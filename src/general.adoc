@@ -1,0 +1,4 @@
+include::general/vcs.adoc[]
+include::general/vcs_types.adoc[]
+include::general/git.adoc[]
+include::general/git_bash.adoc[]

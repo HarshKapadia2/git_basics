@@ -1,0 +1,60 @@
+
+image::git-local-remote.png[caption="", role="thumb", title="Git local & remote commands chart", alt="Git local & remote commands chart", link="https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570"]
+
+'''
+
+=== git add
+
+==== Command
+
+`git add <flags> <file_name.ext>` where `ext`stands for the extension of the file.
+
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_untracked_files[Untracked files]
+* link:index.adoc#_added_files[Added files]
+* link:index.adoc#_modified_files[Modified files]
+* link:index.adoc#_gitignore_file[.gitignore file]
+* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
+* link:index.adoc#_working_tree[Working tree]
+
+==== Description
+
+To add files to the staging area (refer to picture above).
+
+==== Options/Flags
+
+===== <file_name.ext>
+
+* Adds a single file to the staging area.
+* If file is located in a folder, use `directory_name/<file_name.ext>`
+* Multiple file names in one command are allowed with a whitespace in between them.
+* Eg: `git add dir/dir1_file.txt`
+
+===== *.ext
+
+* All files with '.ext' extension will be added to the staging area (except for the file names in the .gitignore file).
+
+===== . (period)
+
+* Eg: `git add .`
+* Recursive command to send all untracked and modified files to the staging area (except for the file names in the .gitignore file).
+
+===== -n .
+
+* Eg: `git add -n .`
+* Shows files that will be added, but does not add them.
+* Run other `git add` commands to actually add files to the staging area.
+
+===== -u
+
+* Stages modified and deleted files, without including new (untracked) files.
+
+.Related
+****
+* link:index.adoc#_git_rm[Remove staged (added) files (`git rm`)]
+****
+
+'''

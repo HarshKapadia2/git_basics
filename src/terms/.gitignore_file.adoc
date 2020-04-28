@@ -1,0 +1,18 @@
+
+=== .gitignore file
+
+* .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 
+* It's usually used to avoid committing transient files from the working directory/copy (a copy of the most recent state of the files you're working on) that aren't useful to other collaborators, such as compilation products, temporary files that IDEs create, etc.
+
+==== Syntax
+
+* Comments start with `#`.
+* Ignored file names to be written in the format `file_name.ext`. eg: `test.txt`
+* `*.ext` ignores all files with the extension `.ext`.
+* If a file is in a directory, use `dir_name/file_name.ext`.
+* A resource for .gitignore file templates for different programming languages: https://github.com/github/gitignore
+
+.Related
+****
+* link:index.adoc#_git_add[git add]
+****
