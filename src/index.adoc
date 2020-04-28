@@ -46,6 +46,10 @@ include::commands.adoc[]
 
 include::general_2.adoc[]
 
+== GitHub
+
+include::github.adoc[]
+
 == Terms
 
 include::terms.adoc[]

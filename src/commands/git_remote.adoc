@@ -1,0 +1,6 @@
+
+=== git remote
+
+// remove stuff in remote repo in the git-bash section
+
+'''
