@@ -26,6 +26,8 @@ Further details https://www.atlassian.com/git/tutorials/using-branches/git-check
 * Switches to / views / checks out a branch with the name `new_branch_name`.
 * Eg: `git checkout feature_branch`
 
+NOTE: link:index.adoc#_git_switch[`git switch`] can also be used to achieve the same result.
+
 ===== -b <new_branch_name>
 
 * Creates a new branch & checks it out (switches to it) as well.
@@ -48,6 +50,8 @@ NOTE: This condition will land you in a link:index.adoc#_head[detached HEAD] sta
 
 * To replace a modified file in the working directory/copy with the added/committed state.
 * If there are no staged changes, then the copy of the file in the local link:index.adoc#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
+
+NOTE: link:index.adoc#_git_restore[`git restore`] can also be used to achieve the same result.
 
 .Related
 ****
