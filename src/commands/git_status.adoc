@@ -22,4 +22,11 @@ The following terms are required to be understood:
     ** The files in your Working Tree (untracked and modified files)
     ** The files in your Staging Area (added files)
 
+==== Options/Flags
+
+===== -s
+
+* Gives the summary of files
+* `??` implies untracked files, `A` implies added files, `M (red)` implies unadded modified files, `M (green)` implies added modified files, etc...
+
 '''
