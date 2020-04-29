@@ -1,6 +1,47 @@
 
 === git remote
 
-// remove stuff in remote repo in the git-bash section
+==== Command
+
+`git remote <options_&_flags>`
+
+==== Prerequisites
+
+The following term is required to be understood:
+
+* link:index.adoc#_aliases[Aliases]
+* link:index.adoc#_repository[Repository (repo)]
+
+==== Description
+
+Helps to make or break connections to the remote repo from the local repo.
+
+To add a remote repo to a local repo:
+
+    * On GitHub, create a repo without a [license], [README.md] or link:index.adoc#_gitignore_file[.gitignore].
+    * In the bash, type `git remote add origin <link_to_repo>.git`
+    * Do add a license, README.md and .gitignore (more on all 3 later).
+
+==== Options/Flags
+
+===== <no_option>
+
+* Lists the remote repos.
+
+===== -v
+
+* It gives the link:index.adoc#_aliases[alias] and corresponding URL of the `remote` (aka the remote repo).
+
+===== add <remote_repo_alias> <remote_repo_url>.git
+
+* To add a remote repo to a local repo.
+* Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+
+===== rm <remote_repo_alias>
+
+* Removes the remote repo from the local repo.
+* Eg: `git remote rm origin`
+
+NOTE: This command only removes the connection between the local and remote repo. It does not delete any data.
 
 '''

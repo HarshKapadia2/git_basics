@@ -5,6 +5,13 @@
 
 `git merge <branch_name>`
 
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:index.adoc#_head[HEAD]
+* link:index.adoc#_branches[Branches]
+
 ==== Description
 
 The `git merge` command's primary responsibility is to combine separate branches and resolve any conflicting edits.
@@ -20,12 +27,18 @@ Preparing to merge:
     * Merge using `git merge <merging_branch>`
     * Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't already in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
 
+NOTE: This *does not* create a new commit signifying the merge.
+
+NOTE: The branch can be safely deleted.
+    
 Merges are of mainly two types:
 
     * Fast forward merges (usually for small and short develop-duration features)
     * Three way merges (usually for long ranging tasks and features)
 
 image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and three-way merges", alt="Types of merges", link="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1"]
+
+NOTE: link:index.adoc#_git_push[`git push`] is allowed only if you have a fast forward merge.
 
 Further details https://www.atlassian.com/git/tutorials/using-branches/git-merge[here].
 
@@ -37,6 +50,13 @@ NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:inde
 
 * This will exit from the merge process and return the branch to the state before the merge began.
 
+===== --no-ff <merging_branch_name>
+
+* If a fast forward merge is to be carried out, but even then create a new merge commit for the symbolic merging, this flag & option can be used.
+* The text editor will open for a message. Save the merge message and close the file in the editor to complete the merge.
+
+NOTE: This is useful for documenting all merges that occur in a repository, as a merge without this flag does not create a new commit.
+
 .Related
 ****
 * link:index.adoc#_git_checkout[git checkout]
@@ -44,6 +64,7 @@ NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:inde
 * link:index.adoc#_git_pull[git pull]
 * link:index.adoc#_git_fetch[git fetch]
 * link:index.adoc#_merge_conflicts[Merge Conflicts]
+* link:index.adoc#_git_branch[git branch]
 ****
 
 '''

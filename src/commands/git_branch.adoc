@@ -1,10 +1,61 @@
 
 === git branch
 
+==== Command
+
+`git branch <flags> <options>`
+
+==== Prerequisites
+
+The following term is required to be understood:
+
+* link:index.adoc#_branches[Branches]
+
+==== Description
+
+The `git branch` command lets the user create, list, rename and delete branches.
+
+It doesn’t let the user switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the link:index.adoc#_git_checkout[`git checkout`] and link:index.adoc#_git_merge[`git merge`] commands.
+
+Further details https://www.atlassian.com/git/tutorials/using-branches[here].
+
+==== Options/Flags
+
+===== --list or <no_option>
+
+* List all of the branches in the link:index.adoc#_repository[repository].
+
+===== -a
+
+* Lists all remote branches.
+
+===== <branch_name>
+
+* Creates a new branch, but this does not check out the new branch.
+* Use link:index.adoc#_git_checkout[`git checkout`] to check out (view/switch to) the new branch.
+
+===== -d <branch_name>
+
+* Delete the specified branch.
+
+TIP: If the currently checked out branch is to be deleted, link:index.adoc#_git_checkout[switch to a different branch] and then run the above command.
+
+NOTE: This is a safe operation as Git prevents the deletion of the branch if it has unmerged changes.
+
+===== -D <branch_name>
+
+* Force delete the specified branch, even if it has unmerged changes.
+
+TIP: If the currently checked out branch is to be deleted, link:index.adoc#_git_checkout[switch to a different branch] and then run the above command.
+
+===== -m <new_branch_name>
+
+* Rename the current branch to `new_branch_name`.
+
 .Related
 ****
 * link:index.adoc#_git_merge[git merge]
-* link:index.adoc#_branches[Branches]
+* link:index.adoc#_git_checkout[git checkout]
 ****
 
 '''

@@ -11,6 +11,7 @@ The following terms are required to be understood:
 
 * link:index.adoc#_aliases[Aliases]
 * link:index.adoc#_repository[Repository (repo)]
+* link:index.adoc#_branches[Branches]
 
 ==== Description
 

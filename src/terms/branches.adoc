@@ -1,0 +1,21 @@
+
+=== Branches
+
+image::branches.png[]
+
+* In Git, branches are a part of everyday development process.
+* Git branches are effectively a pointer to a snapshot of changes.
+* When a new feature is to be added or a bug — no matter how big or how small has to be fixed, a new branch is created to encapsulate the changes.
+* This makes it harder for unstable code to get merged into the main code base, and it gives the chance to clean up the future history before merging it into the main branch.
+* By default, the `master` branch is the default branch.
+
+.Related
+****
+* link:index.adoc#_git_branch[git branch]
+* link:index.adoc#_git_checkout[git checkout]
+* link:index.adoc#_git_restore[git restore]
+* link:index.adoc#_git_switch[git switch]
+* link:index.adoc#_git_merge[git merge]
+****
+
+'''

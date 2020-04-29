@@ -1,3 +1,2 @@
-include::general_2/branches.adoc[]
 include::general_2/merge_conflicts.adoc[]
 include::general_2/common_mistakes_&_corrections.adoc[]

@@ -1,0 +1,23 @@
+
+=== Repositories & its types
+
+* link:index.adoc#_repository[What is a repository (repo)?]
+
+* *Local repo*
+    ** Local repository is the repo on the local machine (eg: laptop).
+    ** The local repository has exactly the same features and functionality as any other Git repository. 
+    ** So a Git repo on a local machine (eg: your laptop) is the same as a git repo on GitHub (granted GitHub adds additional features, but at its core they're both Git repos) which is the same as your coworker's local repo.
+    ** The local repo is everything in your '.git' directory. Mainly what is seen in the local repo are all of the user's checkpoints or commits. It is the area that saves everything (so don’t delete it).
+    ** `touch`
+        *** To create a file in the directory to which the bash is pointing.
+        *** `touch <file_name.ext>`
+        *** Eg: `touch create_this_file.txt`
+
+NOTE: A local repo does not need to have a remote repo.
+
+* *Remote repo*
+    ** Remote repository is the repo on the server.
+    ** So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a Git requirement.
+    ** A remote repo and local repo connection is handled using the link:index.adoc#_git_remote[`git remote`] command.
+    
+'''

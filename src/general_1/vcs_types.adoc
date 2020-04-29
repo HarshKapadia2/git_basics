@@ -21,3 +21,5 @@ image::cvcs.png[450, 450]
 * Eg: Git
 
 image::dvcs.png[500, 500]
+
+'''

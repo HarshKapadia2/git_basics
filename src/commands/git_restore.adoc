@@ -1,0 +1,21 @@
+
+=== git restore
+
+==== Command
+
+`git restore <file_name.ext>`
+
+==== Description
+
+To replace a modified file in the working directory/copy with the added/committed state version of that file.
+
+If there are no staged changes, then the copy of the file in the local link:index.adoc#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
+
+Similar to link:index.adoc#_git_checkout[`git checkout`].
+
+.Related
+****
+* link:index.adoc#_git_checkout[git checkout]
+****
+
+'''

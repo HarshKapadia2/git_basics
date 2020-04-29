@@ -1,0 +1,36 @@
+
+=== HEAD
+
+* HEAD is a reference to the latest commit in the current link:index.adoc#_branches[branch].
+* When a commit is made, Git automatically sets the HEAD to the lastest commit.
+
+NOTE: HEAD is contextual. It will point to the latest commit in the current branch.
+
+image::working-of-commit.jpeg[]
+
+* To check where the current HEAD is pointing, use `cat .git/HEAD`.
+
+** Eg:
+
+ # in the master branch
+ $ cat .git/HEAD
+ # output
+ ref: refs/heads/master
+
+ git checkout test_branch
+ # switched to test branch
+ $ git .git/HEAD
+ # output
+ ref: refs/heads/test_branch
+
+* When the HEAD points to a commit that is not the lastest commit in a branch, that is a *detached HEAD*. A specific commit can be referred to, using link:index.adoc#_git_checkout[`git checkout`].
+
+.Related
+****
+* link:index.adoc#_git_checkout[git checkout]
+* link:index.adoc#_git_commit[git commit]
+* link:index.adoc#_git_log[git log]
+* link:index.adoc#_git_merge[git merge]
+****
+
+'''

@@ -2,33 +2,7 @@
 === Git-Bash
 
 * It is a shell, ie, a CLI to use git.
-* Once Git is installed, it can be used with Command Prompt, Powershell, Terminal, Zsh, etc as well. It is not compulsory to use Git Bash.
-* The official website is https://git-scm.com/
-* Repos (Part 1)
-    ** Git stores information in a data structure called a repository.
-    ** The Git repository is stored in the same directory as the project itself, in a subdirectory called '.git'. (Enable hidden folders to see the '.git' folder.)
-    ** Apart from storing files, repositories also maintain the history.
-    ** Local repo
-        *** What makes git so awesome is that it is a DVCS. Your local repository has exactly the same features and functionality as any other git repository. 
-        *** So a git repo on a local machine (eg: your laptop) is the same as a git repo on GitHub (granted GitHub adds additional features, but at its core you're dealing with git repos) which is the same as your coworker's local repo.
-        *** The Local Repository is everything in your '.git' directory. Mainly what you will see in your Local Repository are all of your checkpoints or commits. It is the area that saves everything (so don’t delete it).
-        *** A local repo does NOT need to have a remote repo.
-        *** `touch`
-            **** To create a file in the directory to which the bash is pointing.
-            **** `touch <file_name.ext>`
-            **** Eg: `touch README.md`
-    ** Remote repo
-        *** Remote repository is the repo on the server.
-        *** So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a git requirement.
-        *** `git remote`
-            **** Lists the remote repo when you are in a local git repo in the CLI
-            **** To add a remote repo to a local repo
-                ***** Go to GitHub and create a repo without a license, README.md or .gitignore.
-                ***** In the bash, type `git remote add origin <link_to_repo>.git`
-                ***** Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
-                ***** Do add a license, README.md and .gitignore (more on all 3 later).
-            **** `git remote -v`
-                ***** It gives the shortname and corresponding url of the "remote" (aka the remote repo)
-            **** To remove remote repo
-                ***** `git remote rm <remote_repo_alias>`
-                ***** Eg: `git remote rm origin`
+* Once Git is installed, it can be used with Command Prompt, Powershell, Terminal, Zsh, etc as well. It is not mandatory to use Git Bash.
+* The official website to download Git-Bash is https://git-scm.com/
+
+'''

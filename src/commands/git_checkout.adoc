@@ -7,9 +7,10 @@
 
 ==== Prerequisites
 
-The following term is required to be understood:
+The following terms are required to be understood:
 
 * link:index.adoc#_head[HEAD]
+* link:index.adoc#_branches[Branches]
 
 ==== Description
 
@@ -48,7 +49,7 @@ NOTE: This condition will land you in a link:index.adoc#_head[detached HEAD] sta
 
 ===== <file_name.ext>
 
-* To replace a modified file in the working directory/copy with the added/committed state.
+* To replace a modified file in the working directory/copy with the added/committed state version of that file.
 * If there are no staged changes, then the copy of the file in the local link:index.adoc#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
 
 NOTE: link:index.adoc#_git_restore[`git restore`] can also be used to achieve the same result.

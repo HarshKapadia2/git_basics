@@ -1,6 +1,12 @@
 
-=== Repository (Repo)
+=== Repository
 
-* A repository (repo) is simply a place where the history of your work is stored. It often lives in a `.git` subdirectory of your working directory/copy - a copy of the most recent state of the files you're working on.
+* Git stores information in a data structure called a repository (repo).
+* Simply put, a repo is a place where the history of the user's work is stored. 
+* Repositories are of two types:
+    ** Local repo
+    ** Remote repo
++
+For more information on the types of repos, refer to link:index.adoc#_repositories_its_types[this] section.
 
 '''

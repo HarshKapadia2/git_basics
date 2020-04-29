@@ -1,0 +1,26 @@
+
+=== git
+
+==== Command
+
+`git <flags> <options>`
+
+==== Description
+
+Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+
+[quote, git-scm, https://git-scm.com/docs/git]
+git - the stupid content tracker
+
+==== Options/Flags
+
+===== --version
+
+* Prints the Git suite version that the git program came from.
+
+===== --help
+
+* Prints the synopsis and a list of the most commonly used commands.
+* If the flag `--all` or `-a`is given then all available commands are printed.
+
+'''

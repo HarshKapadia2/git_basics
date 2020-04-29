@@ -13,6 +13,7 @@ The following terms are required to be understood:
 
 * link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
 * link:index.adoc#_sha1[SHA1]
+* link:index.adoc#_head[HEAD]
 
 ==== Description
 
@@ -24,7 +25,7 @@ Every commit has a *commit message* associated with it which describes the overa
 
 TIP: Short, crisp and to-the-point commit messages are preferred (<50 characters).
 
-TIP: Use the imperative, present tense ('change', not 'changed' or 'changes') in commit messages to be consistent with generated messages from commands like `git merge`. Eg: `git commit -m "Update README.md"`
+TIP: Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like `git merge`. Eg: `git commit -m "Update README.md"`
 
 If extra information is needed to be given, add it to the *description* of the commit.
 
@@ -32,7 +33,7 @@ Every commit has a unique *SHA1* associated with it.
 
 Use link:index.adoc#_git_log[`git log`] & link:index.adoc#_git_show[`git show`] commands to get information on commits. 
 
-IMPORTANT: Always pull before committing & pushing.
+IMPORTANT: Always link:index.adoc#_git_pull[pull] before committing & pushing.
 
 TIP: Commit _related_ changes.
 

@@ -7,9 +7,11 @@
 
 ==== Prequisite
 
-The following term is required to be understood:
+The following terms are required to be understood:
 
 * link:index.adoc#_sha1[SHA1]
+* link:index.adoc#_head[HEAD]
+* link:index.adoc#_branches[Branches]
 
 ==== Description
 
