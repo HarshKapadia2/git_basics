@@ -1,9 +1,60 @@
 
 === git checkout
 
+==== Command
+
+`git checkout <flags> <options>`
+
+==== Prerequisites
+
+The following term is required to be understood:
+
+* link:index.adoc#_head[HEAD]
+
+==== Description
+
+The git checkout command operates upon three distinct entities: files, commits, and branches.
+
+The git checkout command lets you navigate between the branches created by link:index.adoc#_git_branch[`git branch`].
+
+Further details https://www.atlassian.com/git/tutorials/using-branches/git-checkout[here].
+
+==== Options/Flags
+
+===== <new_branch_name>
+
+* Switches to / views / checks out a branch with the name `new_branch_name`.
+* Eg: `git checkout feature_branch`
+
+===== -b <new_branch_name>
+
+* Creates a new branch & checks it out (switches to it) as well.
+
+NOTE: The new branch is created from the curent HEAD.
+
+===== -b <new_branch_name> <existing_branch_name>
+
+* Creates a new branch & checks it out (switches to it) as well.
+
+NOTE: The new branch is created from the last commit of the `existing_branch_name`.
+
+===== <commit's_SHA>
+
+* You can checkout a specific commit.
+
+NOTE: This condition will land you in a link:index.adoc#_head[detached HEAD] state.
+
+===== <file_name.ext>
+
+* To replace a modified file in the working directory/copy with the added/committed state.
+* If there are no staged changes, then the copy of the file in the local link:index.adoc#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
+
 .Related
 ****
 * link:index.adoc#_git_merge[git merge]
+* link:index.adoc#_git_branch[git branch]
+* link:index.adoc#_git_restore[git restore]
+* link:index.adoc#_git_switch[git switch]
 ****
 
 '''
