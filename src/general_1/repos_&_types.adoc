@@ -1,7 +1,7 @@
 
 === Repositories & its types
 
-* link:index.adoc#_repository[What is a repository (repo)?]
+* link:index.html#_repository[What is a repository (repo)?]
 
 * *Local repo*
     ** Local repository is the repo on the local machine (eg: laptop).
@@ -18,6 +18,6 @@ NOTE: A local repo does not need to have a remote repo.
 * *Remote repo*
     ** Remote repository is the repo on the server.
     ** So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a Git requirement.
-    ** A remote repo and local repo connection is handled using the link:index.adoc#_git_remote[`git remote`] command.
+    ** A remote repo and local repo connection is handled using the link:index.html#_git_remote[`git remote`] command.
     
 '''

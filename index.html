@@ -1,0 +1,3195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="author" content="By Harsh Kapadia">
+<title>git_basics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>git_basics</h1>
+<div class="details">
+<span id="author" class="author">By Harsh Kapadia</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_abstract">Abstract</a></li>
+<li><a href="#_preface">Preface</a></li>
+<li><a href="#_general_1">General #1</a>
+<ul class="sectlevel2">
+<li><a href="#_version_controlling_systems_vcs">Version Controlling Systems (VCS)</a></li>
+<li><a href="#_types_of_version_control_systems_vcs">Types of Version Control Systems (VCS)</a></li>
+<li><a href="#_git">Git</a></li>
+<li><a href="#_git_bash">Git-Bash</a></li>
+<li><a href="#_repositories_its_types">Repositories &amp; its types</a></li>
+</ul>
+</li>
+<li><a href="#_commands">Commands</a>
+<ul class="sectlevel2">
+<li><a href="#_git_2">git</a></li>
+<li><a href="#_git_help">git help</a></li>
+<li><a href="#_git_config">git config</a></li>
+<li><a href="#_git_init">git init</a></li>
+<li><a href="#_git_add">git add</a></li>
+<li><a href="#_git_status">git status</a></li>
+<li><a href="#_git_commit">git commit</a></li>
+<li><a href="#_git_log">git log</a></li>
+<li><a href="#_git_rm">git rm</a></li>
+<li><a href="#_git_pull">git pull</a></li>
+<li><a href="#_git_fetch">git fetch</a></li>
+<li><a href="#_git_clone">git clone</a></li>
+<li><a href="#_git_merge">git merge</a></li>
+<li><a href="#_git_branch">git branch</a></li>
+<li><a href="#_git_checkout">git checkout</a></li>
+<li><a href="#_git_remote">git remote</a></li>
+<li><a href="#_git_push">git push</a></li>
+<li><a href="#_git_show">git show</a></li>
+<li><a href="#_git_stash">git stash</a></li>
+<li><a href="#_git_reset">git reset</a></li>
+<li><a href="#_git_revert">git revert</a></li>
+<li><a href="#_git_rebase">git rebase</a></li>
+<li><a href="#_git_bisect">git bisect</a></li>
+<li><a href="#_git_diff">git diff</a></li>
+<li><a href="#_git_switch">git switch</a></li>
+<li><a href="#_git_restore">git restore</a></li>
+</ul>
+</li>
+<li><a href="#_general_2">General #2</a>
+<ul class="sectlevel2">
+<li><a href="#_merge_conflicts">Merge Conflicts</a></li>
+<li><a href="#_common_mistakes_how_to_correct_them">Common Mistakes &amp; How To Correct Them</a></li>
+</ul>
+</li>
+<li><a href="#_github">GitHub</a></li>
+<li><a href="#_terms">Terms</a>
+<ul class="sectlevel2">
+<li><a href="#_repository">Repository</a></li>
+<li><a href="#_untracked_files">Untracked Files</a></li>
+<li><a href="#_added_files">Added Files</a></li>
+<li><a href="#_modified_files">Modified Files</a></li>
+<li><a href="#_gitignore_file">.gitignore file</a></li>
+<li><a href="#_staging_staging_areaindex">Staging (staging area/index)</a></li>
+<li><a href="#_working_tree">Working Tree</a></li>
+<li><a href="#_sha1">SHA1</a></li>
+<li><a href="#_aliases">Aliases</a></li>
+<li><a href="#_head">HEAD</a></li>
+<li><a href="#_branches">Branches</a></li>
+</ul>
+</li>
+<li><a href="#_misc">Misc</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_abstract">Abstract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This book contains some basic concepts, commands &amp; conventions for Git &amp; GitHub.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preface">Preface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The open source community is amazing and very friendly. Contributing to it is always exciting if done in the spirit of improving the community and enjoying oneself.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+We rise by lifting others.
+</blockquote>
+<div class="attribution">
+&#8212; Robert Ingersoll
+</div>
+</div>
+<div class="paragraph">
+<p>Knowing the basics of Git &amp; GitHub is the only prerequisite to start contributing to the FOSS (free &amp; open source software) community and learning Git sometimes feels like a dauting task, because it is a little complicated. So to make this task easier, we have made this easy guide that will help anyone get started and keep helping them along their open source journey.</p>
+</div>
+<div class="paragraph">
+<p>This guide is made from a lot of resources collected over time. They have been hyperlinked wherever possible &amp; if not, they have been included in the [misc] section at the end of the book.</p>
+</div>
+<div class="paragraph">
+<p>We would love everyone&#8217;s help to keep this guide updated and error free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is <a href="https://github.com/HarshKapadia2/git_basics" class="bare">https://github.com/HarshKapadia2/git_basics</a>.</p>
+</div>
+<div class="paragraph">
+<p>For any further questions, please feel free to contact the author, Harsh Kapadia, at <a href="https://twitter.com/harshgkapadia" class="bare">https://twitter.com/harshgkapadia</a> or via e-mail at <a href="mailto:harshgkapadia@gmail.com">harshgkapadia@gmail.com</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+One might want to familiarize themselves with [these] Git terms before starting, although they will be linked at places where they are required as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Okay, let&#8217;s start!</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_general_1">General #1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_version_controlling_systems_vcs">Version Controlling Systems (VCS)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In computer software engineering, revision control is any kind of practice that tracks and provides control over changes to source code.</p>
+</li>
+<li>
+<p>As teams design, develop and deploy software, it is common for multiple versions of the same software to be deployed in different sites and for the software&#8217;s developers to be working simultaneously on updates.</p>
+</li>
+<li>
+<p>Bugs or features of the software are often only present in certain versions (because of the fixing of some problems and the introduction of others as the program develops). Therefore, for the purposes of locating and fixing bugs, it is vitally important to be able to retrieve and run different versions of the software to determine in which version(s) the problem occurs.</p>
+</li>
+<li>
+<p>It may also be necessary to develop two versions of the software concurrently: for instance, where one version has bugs fixed, but no new features (branch), while the other version is where new features are worked on (trunk).</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_types_of_version_control_systems_vcs">Types of Version Control Systems (VCS)</h3>
+<div class="sect3">
+<h4 id="_local_vcs_lvcs">Local VCS (LVCS)</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Local version control system maintains track of files within the local system. This approach is very common and simple. This type is also error prone which means the chances of accidentally writing to the wrong file is higher.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/lvcs.jpg" alt="500" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_centralized_vcs_cvcs">Centralized VCS (CVCS)</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>In this approach, all the changes in the files are tracked under the centralized server. The centralized server includes all the information of versioned files, and list of clients that check out files from that central place.</p>
+</li>
+<li>
+<p>Eg: Tortoise SVN</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cvcs.png" alt="450" width="450">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_distributed_vcs_dvcs">Distributed VCS (DVCS)</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Distributed version control systems come into picture to overcome the drawback of centralized version control system.</p>
+</li>
+<li>
+<p>Clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.</p>
+</li>
+<li>
+<p>Eg: Git</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dvcs.png" alt="500" width="500">
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git">Git</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Git is a free and open source distributed version control system (DVCS) and has an emphasis on speed and performance.</p>
+</li>
+<li>
+<p>It is supported by all operating systems.</p>
+</li>
+<li>
+<p>Git is open source software distributed under the terms of the GNU (General Public License).</p>
+</li>
+<li>
+<p>The official website is <a href="https://git-scm.com/" class="bare">https://git-scm.com/</a></p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+git --distributed-is-the-new-centralized
+</blockquote>
+<div class="attribution">
+&#8212; git-scm<br>
+<cite>https://git-scm.com/</cite>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_bash">Git-Bash</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>It is a shell, ie, a CLI to use git.</p>
+</li>
+<li>
+<p>Once Git is installed, it can be used with Command Prompt, Powershell, Terminal, Zsh, etc as well. It is not mandatory to use Git Bash.</p>
+</li>
+<li>
+<p>The official website to download Git-Bash is <a href="https://git-scm.com/" class="bare">https://git-scm.com/</a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_repositories_its_types">Repositories &amp; its types</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_repository">What is a repository (repo)?</a></p>
+</li>
+<li>
+<p><strong>Local repo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Local repository is the repo on the local machine (eg: laptop).</p>
+</li>
+<li>
+<p>The local repository has exactly the same features and functionality as any other Git repository.</p>
+</li>
+<li>
+<p>So a Git repo on a local machine (eg: your laptop) is the same as a git repo on GitHub (granted GitHub adds additional features, but at its core they&#8217;re both Git repos) which is the same as your coworker&#8217;s local repo.</p>
+</li>
+<li>
+<p>The local repo is everything in your '.git' directory. Mainly what is seen in the local repo are all of the user&#8217;s checkpoints or commits. It is the area that saves everything (so don’t delete it).</p>
+</li>
+<li>
+<p><code>touch</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a file in the directory to which the bash is pointing.</p>
+</li>
+<li>
+<p><code>touch &lt;file_name.ext&gt;</code></p>
+</li>
+<li>
+<p>Eg: <code>touch create_this_file.txt</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+A local repo does not need to have a remote repo.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Remote repo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Remote repository is the repo on the server.</p>
+</li>
+<li>
+<p>So while most people treat a particular repo as the central repo (the one on GitHub), that&#8217;s a process choice, not a Git requirement.</p>
+</li>
+<li>
+<p>A remote repo and local repo connection is handled using the <a href="index.html#_git_remote"><code>git remote</code></a> command.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commands">Commands</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_git_2">git</h3>
+<div class="sect3">
+<h4 id="_command">Command</h4>
+<div class="paragraph">
+<p><code>git &lt;flags&gt; &lt;options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+git - the stupid content tracker
+</blockquote>
+<div class="attribution">
+&#8212; git-scm<br>
+<cite>https://git-scm.com/docs/git</cite>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_version">--version</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Prints the Git suite version that the git program came from.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_help">--help</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Prints the synopsis and a list of the most commonly used commands.</p>
+</li>
+<li>
+<p>If the flag <code>--all</code> or `-a`is given then all available commands are printed.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_help">git help</h3>
+<div class="sect3">
+<h4 id="_command_2">Command</h4>
+<div class="paragraph">
+<p><code>git help &lt;options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_2">Description</h4>
+<div class="paragraph">
+<p>Give information about Git or a certain Git command (from the man pages in the Git package itself).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_2">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_no_option">No option</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Synopsis of the git command and a list of the most commonly used Git commands are printed on the standard output.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_command_name_or_concept">&lt;command_name&gt; or &lt;concept&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Any Git command name (eg: commit, add, etc&#8230;&#8203;) can be entered.</p>
+</li>
+<li>
+<p>A man (manual) page which is included in the Git package will be opened in the browser.</p>
+</li>
+<li>
+<p>Eg: <code>git help add</code></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_config">git config</h3>
+<div class="sect3">
+<h4 id="_command_3">Command</h4>
+<div class="paragraph">
+<p><code>git config &lt;flags&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_3">Description</h4>
+<div class="paragraph">
+<p>Get and set repository or global options.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_3">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_global">--global</h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>git config --global user.name '&lt;name&gt;'</code></p>
+</li>
+<li>
+<p><code>git config --global user.email '&lt;e-mail_id&gt;'</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The global name and e-mail need to be set just once, ie, before Git is used for the first time (but it can be modified later if need be).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Enter the full name and the e-mail ID registered with your GitHub account.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a> can also be set using this flag.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_list">--list</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists the configurations of Git.</p>
+</li>
+<li>
+<p>Eg: <code>git config --list</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Set aliases</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_init">git init</h3>
+<div class="sect3">
+<h4 id="_command_4">Command</h4>
+<div class="paragraph">
+<p><code>git init</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_4">Description</h4>
+<div class="paragraph">
+<p>To initialize a local git <a href="index.html#_repository">repository (repo)</a> in the location to which the bash is pointing. A hidden folder <code>.git</code> is created in the directory. None of the commands below will work if there is no local git repo initialised.</p>
+</div>
+<hr>
+<div class="imageblock thumb">
+<div class="content">
+<a class="image" href="https://greenido.files.wordpress.com/2013/07/git-local-remote.png?w=696&h=570"><img src="images/git-local-remote.png" alt="Git local &amp; remote commands chart #1"></a>
+</div>
+<div class="title">Git local &amp; remote commands chart #1</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_add">git add</h3>
+<div class="sect3">
+<h4 id="_command_5">Command</h4>
+<div class="paragraph">
+<p><code>git add &lt;flags&gt; &lt;file_name.ext&gt;</code> where `ext`stands for the extension of the file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_untracked_files">Untracked files</a></p>
+</li>
+<li>
+<p><a href="index.html#_added_files">Added files</a></p>
+</li>
+<li>
+<p><a href="index.html#_modified_files">Modified files</a></p>
+</li>
+<li>
+<p><a href="index.html#_gitignore_file">.gitignore file</a></p>
+</li>
+<li>
+<p><a href="index.html#_staging_staging_areaindex">Staging (staging area/index)</a></p>
+</li>
+<li>
+<p><a href="index.html#_working_tree">Working tree</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_5">Description</h4>
+<div class="paragraph">
+<p>To add files to the staging area (refer to picture above).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_4">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_file_name_ext">&lt;file_name.ext&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a single file to the staging area.</p>
+</li>
+<li>
+<p>If file is located in a folder, use <code>directory_name/&lt;file_name.ext&gt;</code></p>
+</li>
+<li>
+<p>Multiple file names in one command are allowed with a whitespace in between them.</p>
+</li>
+<li>
+<p>Eg: <code>git add dir/dir1_file.txt</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ext">*.ext</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>All files with '.ext' extension will be added to the staging area (except for the file names in the .gitignore file).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_period">. (period)</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Eg: <code>git add .</code></p>
+</li>
+<li>
+<p>Recursive command to send all untracked and modified files to the staging area (except for the file names in the .gitignore file).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_n">-n .</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Eg: <code>git add -n .</code></p>
+</li>
+<li>
+<p>Shows files that will be added, but does not add them.</p>
+</li>
+<li>
+<p>Run other <code>git add</code> commands to actually add files to the staging area.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_u">-u</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Stages modified and deleted files, without including new (untracked) files.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_rm">Remove staged (added) files (<code>git rm</code>)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_status">git status</h3>
+<div class="sect3">
+<h4 id="_commands_2">Commands</h4>
+<div class="paragraph">
+<p><code>git status</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_2">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_untracked_files">Untracked files</a></p>
+</li>
+<li>
+<p><a href="index.html#_added_files">Added files</a></p>
+</li>
+<li>
+<p><a href="index.html#_modified_files">Modified files</a></p>
+</li>
+<li>
+<p><a href="index.html#_staging_staging_areaindex">Staging (staging area/index)</a></p>
+</li>
+<li>
+<p><a href="index.html#_working_tree">Working tree</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_6">Description</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Run this command at any time to display the current status of the working directory.</p>
+</li>
+<li>
+<p>This command shows two things:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The files in your Working Tree (untracked and modified files)</p>
+</li>
+<li>
+<p>The files in your Staging Area (added files)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_5">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_s">-s</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Gives the summary of files</p>
+</li>
+<li>
+<p><code>??</code> implies untracked files, <code>A</code> implies added files, <code>M (red)</code> implies unadded modified files, <code>M (green)</code> implies added modified files, etc&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_commit">git commit</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/working-of-commit.jpeg" alt="working of commit">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_command_6">Command</h4>
+<div class="paragraph">
+<p><code>git commit &lt;flags_&amp;_options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prequisites">Prequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_staging_staging_areaindex">Staging (staging area/index)</a></p>
+</li>
+<li>
+<p><a href="index.html#_sha1">SHA1</a></p>
+</li>
+<li>
+<p><a href="index.html#_head">HEAD</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_7">Description</h4>
+<div class="paragraph">
+<p>A commit is simply a checkpoint telling Git to track all changes that have occurred up to the current point using the last commit as a comparison.</p>
+</div>
+<div class="paragraph">
+<p>A commit is carried out only if there are files in the staging area, so make sure to run <a href="index.html#_git_add"><code>git add</code></a> before this command.</p>
+</div>
+<div class="paragraph">
+<p>Every commit has a <strong>commit message</strong> associated with it which describes the overall change made.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Short, crisp and to-the-point commit messages are preferred (&lt;50 characters).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>. Eg: <code>git commit -m "Update README.md"</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If extra information is needed to be given, add it to the <strong>description</strong> of the commit.</p>
+</div>
+<div class="paragraph">
+<p>Every commit has a unique <strong>SHA1</strong> associated with it.</p>
+</div>
+<div class="paragraph">
+<p>Use <a href="index.html#_git_log"><code>git log</code></a> &amp; <a href="index.html#_git_show"><code>git show</code></a> commands to get information on commits.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Always <a href="index.html#_git_pull">pull</a> before committing &amp; pushing.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Commit <em>related</em> changes.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Commit changes frequently. This makes it easier to revert back to older versions to correct mistakes.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<em>Don&#8217;t</em> commit half-done or incomplete work.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_6">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_no_option_2">No option</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Just running <code>git commit</code> will launch a text editor prompting you for a commit message.</p>
+</li>
+<li>
+<p>After you’ve entered a message, save the file and close the editor using <code>:wq</code> or just save and exit the editor to create the actual commit.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m_commit_msg">-m "&lt;commit_msg&gt;"</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoids opening a text editor by providing the commit message in the Command Prompt, Terminal, Powershell, etc&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m_commit_message_m_commit_description">-m "&lt;commit_message&gt;" -m "&lt;commit_description&gt;"</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the commit message and commit description if needed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_a_or_all">-a or --all</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Automatically stages files that have been modified or deleted, but untracked files are not affected.</p>
+</li>
+<li>
+<p>Eg: <code>git commit -a -m "&lt;commit_message&gt;" -m "&lt;commit_description&gt;"</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m_add_only_this_file_ext_from_all_staged_files_only_this_file_ext">-m "Add only_this_file.ext from all staged files" only_this_file.ext</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Partially commiting staged changes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_git_ls_tree_full_tree_r_head">git ls-tree --full-tree -r HEAD</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>This command shows all files within your git repo that it’s tracking.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_log">git log</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_show">git show</a></p>
+</li>
+<li>
+<p><a href="index.html#_common_mistakes_how_to_correct_them">Ammending a commit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_log">git log</h3>
+<div class="sect3">
+<h4 id="_command_7">Command</h4>
+<div class="paragraph">
+<p><code>git log &lt;options_&amp;_flags&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prequisite">Prequisite</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_sha1">SHA1</a></p>
+</li>
+<li>
+<p><a href="index.html#_head">HEAD</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_8">Description</h4>
+<div class="paragraph">
+<p>It is a running record of commits. It shows all the commits reachable from the current HEAD (where the next commit will attach).</p>
+</div>
+<div class="paragraph">
+<p>Implicitly means <code>git log HEAD</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_7">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_commit_sha1">&lt;commit_SHA1&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>It will display the details of that commit.</p>
+</li>
+<li>
+<p>For more details of the commit, use <a href="index.html#_git_show"><code>git show</code></a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_branch_name">&lt;branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>It will display the commit log of that branch.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_oneline">--oneline</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Displays the first 7 characters of the SHA1 and the commit message.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_graph">--graph</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>It will display commits as a graph.</p>
+</li>
+<li>
+<p>To make it look better, use the <code>--oneline</code> or/and <code>--decorate</code> flags.</p>
+</li>
+<li>
+<p>Eg: <code>git log --graph --oneline --decorate</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_stat">--stat</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Displays the files and no. of lines added or removed, in each commit.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_patch_or_p_no_of_commits_to_be_displayed">'--patch' or '-p -&lt;no_of_commits_to_be_displayed&gt;'</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Gives details of files changed, specific changes and location of changes in the file.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_show">git show</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_rm">git rm</h3>
+<div class="sect3">
+<h4 id="_command_8">Command</h4>
+<div class="paragraph">
+<p><code>git rm &lt;flags&gt; &lt;file_name.ext&gt;</code> where `ext`stands for the extension of the file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisite">Prerequisite</h4>
+<div class="paragraph">
+<p>The following term is required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_staging_staging_areaindex">Staging (staging area/index)</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_9">Description</h4>
+<div class="paragraph">
+<p>To remove files from the working tree and from the index.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_8">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_cached_file_name_ext">--cached &lt;file_name.ext&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>To unstage a particular file (ie, remove file from the staging area).</p>
+</li>
+<li>
+<p>use <code>""</code> if the file name has spaces in between.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_r_cached">-r --cached .</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Eg: <code>git rm -r --cached .</code></p>
+</li>
+<li>
+<p>Recursive command to remove all files from the staging area.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">Add files to staging area (<code>git add</code>)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+<div class="imageblock thumb">
+<div class="content">
+<a class="image" href="https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c"><img src="images/git-local-remote-2.png" alt="Git local &amp; remote commands chart #2"></a>
+</div>
+<div class="title">Git local &amp; remote commands chart #2</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_pull">git pull</h3>
+<div class="sect3">
+<h4 id="_command_9">Command</h4>
+<div class="paragraph">
+<p><code>git pull &lt;remote_repo_alias&gt; &lt;remote_branch_name&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Eg: <code>git pull origin master</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_3">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a></p>
+</li>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_10">Description</h4>
+<div class="paragraph">
+<p>Pulls (brings) the latest code from the remote repo.</p>
+</div>
+<div class="paragraph">
+<p>To fetch and download content from a remote repository and immediately update the local repository to match the content.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull">Difference between <code>git pull</code> and <code>git fetch</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In simple terms, <code>git pull</code> does a <code>git fetch</code> followed by a <code>git merge</code>.</p>
+</li>
+<li>
+<p><code>git pull</code> automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_fetch">git fetch</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_fetch">git fetch</h3>
+<div class="sect3">
+<h4 id="_command_10">Command</h4>
+<div class="paragraph">
+<p><code>git fetch &lt;remote_repo_alias&gt; &lt;branch_name&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_4">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a></p>
+</li>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_11">Description</h4>
+<div class="paragraph">
+<p>On running <code>git fetch</code>, Git gathers any commits from the target branch that do not exist in the current local branch and stores them in the local repository. However, it does not merge them with the current branch (unlike <a href="index.html#_git_pull"><code>git pull</code></a>).</p>
+</div>
+<div class="paragraph">
+<p>This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files.</p>
+</div>
+<div class="paragraph">
+<p>To integrate the commits into your master branch, you use <a href="index.html#_git_merge"><code>git merge</code></a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_pull">git pull</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_clone">git clone</h3>
+<div class="sect3">
+<h4 id="_command_11">Command</h4>
+<div class="paragraph">
+<p><code>git clone &lt;remote_repo_url&gt;.git</code></p>
+</div>
+<div class="paragraph">
+<p>Eg: <code>git clone <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_5">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a></p>
+</li>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_12">Description</h4>
+<div class="paragraph">
+<p>Clone/copy an entire remote repo into the current folder (to which the git CLI is pointing).</p>
+</div>
+<div class="paragraph">
+<p>A new folder will be created with the name of the repo. <code>cd</code> (change directory) into that folder to start using it.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_merge">git merge</h3>
+<div class="sect3">
+<h4 id="_command_12">Command</h4>
+<div class="paragraph">
+<p><code>git merge &lt;branch_name&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_6">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_head">HEAD</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_13">Description</h4>
+<div class="paragraph">
+<p>The <code>git merge</code> command&#8217;s primary responsibility is to combine separate branches and resolve any conflicting edits.</p>
+</div>
+<div class="paragraph">
+<p>Merging is Git&#8217;s way of putting a forked history back together again.</p>
+</div>
+<div class="paragraph">
+<p>The <code>git merge</code> command lets you take the independent lines of development created by <a href="index.html#_git_branch"><code>git branch</code></a> or <a href="index.html#_git_checkout"><code>git checkout</code></a> and integrate them into a single branch.</p>
+</div>
+<div class="paragraph">
+<p>Preparing to merge:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure to be in the branch (<code><a href="index.html#_git_checkout">git checkout</a> &lt;receiving_ranch&gt;</code>) you want to merge another branch into (let this branch be called <code>receiving_branch</code>).</p>
+</li>
+<li>
+<p>Make sure the receiving branch and the merging branch are up-to-date with the latest remote changes.</p>
+</li>
+<li>
+<p>Merge using <code>git merge &lt;merging_branch&gt;</code></p>
+</li>
+<li>
+<p>Eg: If you want to merge the 'feature' branch into the 'master' branch, run <code>git checkout master</code> (if you aren&#8217;t already in the master branch, ie, if your HEAD points to another branch) and then run <code>git merge feature</code>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This <strong>does not</strong> create a new commit signifying the merge.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The branch can be safely deleted.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Merges are of mainly two types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fast forward merges (usually for small and short develop-duration features)</p>
+</li>
+<li>
+<p>Three way merges (usually for long ranging tasks and features)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<a class="image" href="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1"><img src="images/types-of-merges.jpg" alt="Types of merges"></a>
+</div>
+<div class="title">Fast forward and three-way merges</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<a href="index.html#_git_push"><code>git push</code></a> is allowed only if you have a fast forward merge.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Further details <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">here</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Managing <strong>merge conflicts</strong> (using both CLIs and GUIs) is covered <a href="index.html#_merge_conflicts">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_9">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_abort">--abort</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>This will exit from the merge process and return the branch to the state before the merge began.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_no_ff_merging_branch_name">--no-ff &lt;merging_branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>If a fast forward merge is to be carried out, but even then create a new merge commit for the symbolic merging, this flag &amp; option can be used.</p>
+</li>
+<li>
+<p>The text editor will open for a message. Save the merge message and close the file in the editor to complete the merge.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This is useful for documenting all merges that occur in a repository, as a merge without this flag does not create a new commit.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_branch">git branch</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_pull">git pull</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_fetch">git fetch</a></p>
+</li>
+<li>
+<p><a href="index.html#_merge_conflicts">Merge Conflicts</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_branch">git branch</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_branch">git branch</h3>
+<div class="sect3">
+<h4 id="_command_13">Command</h4>
+<div class="paragraph">
+<p><code>git branch &lt;flags&gt; &lt;options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_7">Prerequisites</h4>
+<div class="paragraph">
+<p>The following term is required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_14">Description</h4>
+<div class="paragraph">
+<p>The <code>git branch</code> command lets the user create, list, rename and delete branches.</p>
+</div>
+<div class="paragraph">
+<p>It doesn’t let the user switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the <a href="index.html#_git_checkout"><code>git checkout</code></a> and <a href="index.html#_git_merge"><code>git merge</code></a> commands.</p>
+</div>
+<div class="paragraph">
+<p>Further details <a href="https://www.atlassian.com/git/tutorials/using-branches">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_10">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_list_or_no_option">--list or &lt;no_option&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>List all of the branches in the <a href="index.html#_repository">repository</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_a">-a</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all remote branches.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_branch_name_2">&lt;branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a new branch, but this does not check out the new branch.</p>
+</li>
+<li>
+<p>Use <a href="index.html#_git_checkout"><code>git checkout</code></a> to check out (view/switch to) the new branch.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_d_branch_name">-d &lt;branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the specified branch.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If the currently checked out branch is to be deleted, <a href="index.html#_git_checkout">switch to a different branch</a> and then run the above command.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This is a safe operation as Git prevents the deletion of the branch if it has unmerged changes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_d_branch_name_2">-D &lt;branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Force delete the specified branch, even if it has unmerged changes.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If the currently checked out branch is to be deleted, <a href="index.html#_git_checkout">switch to a different branch</a> and then run the above command.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m_new_branch_name">-m &lt;new_branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Rename the current branch to <code>new_branch_name</code>.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_checkout">git checkout</h3>
+<div class="sect3">
+<h4 id="_command_14">Command</h4>
+<div class="paragraph">
+<p><code>git checkout &lt;flags&gt; &lt;options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_8">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_head">HEAD</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_15">Description</h4>
+<div class="paragraph">
+<p>The git checkout command operates upon three distinct entities: files, commits, and branches.</p>
+</div>
+<div class="paragraph">
+<p>The git checkout command lets you navigate between the branches created by <a href="index.html#_git_branch"><code>git branch</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>Further details <a href="https://www.atlassian.com/git/tutorials/using-branches/git-checkout">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_11">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_new_branch_name">&lt;new_branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Switches to / views / checks out a branch with the name <code>new_branch_name</code>.</p>
+</li>
+<li>
+<p>Eg: <code>git checkout feature_branch</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<a href="index.html#_git_switch"><code>git switch</code></a> can also be used to achieve the same result.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_b_new_branch_name">-b &lt;new_branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a new branch &amp; checks it out (switches to it) as well.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The new branch is created from the curent HEAD.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_b_new_branch_name_existing_branch_name">-b &lt;new_branch_name&gt; &lt;existing_branch_name&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a new branch &amp; checks it out (switches to it) as well.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The new branch is created from the last commit of the <code>existing_branch_name</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_commits_sha">&lt;commit&#8217;s_SHA&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>You can checkout a specific commit.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This condition will land you in a <a href="index.html#_head">detached HEAD</a> state.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_file_name_ext_2">&lt;file_name.ext&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>To replace a modified file in the working directory/copy with the added/committed state version of that file.</p>
+</li>
+<li>
+<p>If there are no staged changes, then the copy of the file in the local <a href="index.html#_repository">repository</a> is used, otherwise the current file is overwritten by the staged copy of the file.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<a href="index.html#_git_restore"><code>git restore</code></a> can also be used to achieve the same result.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_branch">git branch</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_restore">git restore</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_switch">git switch</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_remote">git remote</h3>
+<div class="sect3">
+<h4 id="_command_15">Command</h4>
+<div class="paragraph">
+<p><code>git remote &lt;options_&amp;_flags&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_9">Prerequisites</h4>
+<div class="paragraph">
+<p>The following term is required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a></p>
+</li>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_16">Description</h4>
+<div class="paragraph">
+<p>Helps to make or break connections to the remote repo from the local repo.</p>
+</div>
+<div class="paragraph">
+<p>To add a remote repo to a local repo:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On GitHub, create a repo without a [license], [README.md] or <a href="index.html#_gitignore_file">.gitignore</a>.</p>
+</li>
+<li>
+<p>In the bash, type <code>git remote add origin &lt;link_to_repo&gt;.git</code></p>
+</li>
+<li>
+<p>Do add a license, README.md and .gitignore (more on all 3 later).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_12">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_no_option_3">&lt;no_option&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists the remote repos.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_v">-v</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>It gives the <a href="index.html#_aliases">alias</a> and corresponding URL of the <code>remote</code> (aka the remote repo).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_remote_repo_alias_remote_repo_url_git">add &lt;remote_repo_alias&gt; &lt;remote_repo_url&gt;.git</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>To add a remote repo to a local repo.</p>
+</li>
+<li>
+<p>Eg: <code>git remote add origin <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_rm_remote_repo_alias">rm &lt;remote_repo_alias&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Removes the remote repo from the local repo.</p>
+</li>
+<li>
+<p>Eg: <code>git remote rm origin</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This command only removes the connection between the local and remote repo. It does not delete any data.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_push">git push</h3>
+<div class="sect3">
+<h4 id="_command_16">Command</h4>
+<div class="paragraph">
+<p><code>git push -u &lt;remote_repo_alias&gt; &lt;remote_branch_name&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_10">Prerequisites</h4>
+<div class="paragraph">
+<p>The following terms are required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_aliases">Aliases</a></p>
+</li>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_17">Description</h4>
+<div class="paragraph">
+<p>This command is used to transfer files from the local repo to the remote repo.</p>
+</div>
+<div class="paragraph">
+<p>To set up a remote repo, refer to <a href="index.html#_git_remote"><code>git remote</code></a> and <a href="index.html#creating_a_repo"><code>creating a repo on GitHub</code></a>.</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<a class="image" href="https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg"><img src="images/git-push.jpeg" alt="Git push illustration"></a>
+</div>
+<div class="title">What does git push do?</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<a class="image" href="https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg"><img src="images/fast-forward-merge.png" alt="Fast forward merge"></a>
+</div>
+<div class="title">How a fast forward merge takes place with <code>git push</code></div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+From the two pictures above, it can be inferred that Git will allow pushing only if the push results in a fast-forward merge.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_show">git show</h3>
+<div class="sect3">
+<h4 id="_command_17">Command</h4>
+<div class="paragraph">
+<p><code>git show &lt;options&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prequisite_2">Prequisite</h4>
+<div class="paragraph">
+<p>The following term is required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_sha1">SHA1</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_18">Description</h4>
+<div class="paragraph">
+<p>To see information about a specific commit or file. Use <a href="index.html#_git_log"><code>git log</code></a> to get the SHA1 of the required commit.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_13">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_commits_sha1">&lt;commit&#8217;s SHA1&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>To see more information about a specific commit than what <code>git log &lt;commit&#8217;s_SHA1&gt;</code> shows.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_file_name_ext_3">:&lt;file_name.ext&gt;</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>To view the contents of committed or staged files.</p>
+</li>
+<li>
+<p>Eg: <code>git show :test_file.txt</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_log">git log</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_stash">git stash</h3>
+<div class="sect3">
+<h4 id="_command_18">Command</h4>
+<div class="paragraph">
+<p><code>git stash</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_19">Description</h4>
+<div class="paragraph">
+<p>Saving changes temporarily.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing">Commands and explanation</a></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_reset">git reset</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_revert">git revert</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_rebase">git rebase</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_bisect">git bisect</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_diff">git diff</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_git_switch">git switch</h3>
+<div class="sect3">
+<h4 id="_command_19">Command</h4>
+<div class="paragraph">
+<p><code>git switch &lt;branch_name&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_11">Prerequisites</h4>
+<div class="paragraph">
+<p>The following term is required to be understood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_branches">Branches</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_20">Description</h4>
+<div class="paragraph">
+<p>Switch to/view/check out a branch.</p>
+</div>
+<div class="paragraph">
+<p>Similar to <a href="index.html#_git_checkout"><code>git checkout</code></a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_restore">git restore</h3>
+<div class="sect3">
+<h4 id="_command_20">Command</h4>
+<div class="paragraph">
+<p><code>git restore &lt;file_name.ext&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_21">Description</h4>
+<div class="paragraph">
+<p>To replace a modified file in the working directory/copy with the added/committed state version of that file.</p>
+</div>
+<div class="paragraph">
+<p>If there are no staged changes, then the copy of the file in the local <a href="index.html#_repository">repository</a> is used, otherwise the current file is overwritten by the staged copy of the file.</p>
+</div>
+<div class="paragraph">
+<p>Similar to <a href="index.html#_git_checkout"><code>git checkout</code></a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_general_2">General #2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_merge_conflicts">Merge Conflicts</h3>
+<div class="sect3">
+<h4 id="_cli">CLI</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_gui">GUI</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_common_mistakes_how_to_correct_them">Common Mistakes &amp; How To Correct Them</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_commit">git commit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_github">GitHub</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_terms">Terms</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_repository">Repository</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Git stores information in a data structure called a repository (repo).</p>
+</li>
+<li>
+<p>Simply put, a repo is a place where the history of the user&#8217;s work is stored.</p>
+</li>
+<li>
+<p>Repositories are of two types:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Local repo</p>
+</li>
+<li>
+<p>Remote repo</p>
+<div class="paragraph">
+<p>For more information on the types of repos, refer to <a href="index.html#_repositories_its_types">this</a> section.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_untracked_files">Untracked Files</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Newly created files are untracked files.</p>
+</li>
+<li>
+<p>They are files that have never been added to the local <a href="index.html#_repository">repository</a>.</p>
+</li>
+<li>
+<p>In short: Untracked files are those fileswhich are not in the <a href="index.html#_gitignore_file">.gitignore file</a> and that have never been added to the repo.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_added_files">Added Files</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All files not in .gitignore and that have been added to the staging area of the <a href="index.html#_repository">repository</a>.</p>
+</li>
+<li>
+<p>The files are in their latest version (ie, they have not been modified since they were last added).</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_modified_files">Modified Files</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All files not in the .gitignore, that have been added to the <a href="index.html#_repository">repository (repo)</a> and have been modified since.</p>
+</li>
+<li>
+<p>The files are NOT in their latest version (ie, they have been modified since they were last added).</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_gitignore_file">.gitignore file</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>.gitignore is a file which tells git which files (or patterns) in the directory it should ignore.</p>
+</li>
+<li>
+<p>It&#8217;s usually used to avoid committing transient files from the working directory/copy (a copy of the most recent state of the files you&#8217;re working on) that aren&#8217;t useful to other collaborators, such as compilation products, temporary files that IDEs create, etc.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_syntax">Syntax</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Comments start with <code>#</code>.</p>
+</li>
+<li>
+<p>Ignored file names to be written in the format <code>file_name.ext</code>. eg: <code>test.txt</code></p>
+</li>
+<li>
+<p><code>*.ext</code> ignores all files with the extension <code>.ext</code>.</p>
+</li>
+<li>
+<p>If a file is in a directory, use <code>dir_name/file_name.ext</code>.</p>
+</li>
+<li>
+<p>A resource for .gitignore file templates for different programming languages: <a href="https://github.com/github/gitignore" class="bare">https://github.com/github/gitignore</a></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_staging_staging_areaindex">Staging (staging area/index)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>It notes the added files in the working directory/copy - a copy of the most recent state of the files you&#8217;re working on.</p>
+</li>
+<li>
+<p>To stage a file is simply to prepare it finely for a commit.</p>
+</li>
+<li>
+<p>Refer to the <a href="index.html#_git_add">diagram</a>.</p>
+</li>
+<li>
+<p>Git, with its index allows you to commit only certain parts of the changes you&#8217;ve done since the last commit.</p>
+</li>
+<li>
+<p>Further Details can be found <a href="https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c">here</a>.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_rm">git rm</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_commit">git commit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_working_tree">Working Tree</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>It notes the untracked files in the working directory/copy - a copy of the most recent state of the files you&#8217;re working on.</p>
+</li>
+<li>
+<p>Any changes to files will be marked and seen in the Working Tree.</p>
+</li>
+<li>
+<p>Here if you make changes and do not explicitly save them to git, you will lose the changes made to your files.</p>
+</li>
+<li>
+<p>If you make changes to files in your working tree git will recognize that are modified, but until you tell git “Hey pay attention to these files,” it won’t save anything that goes on in them.</p>
+</li>
+<li>
+<p>Further details <a href="https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c">here</a>.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_add">git add</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_sha1">SHA1</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>SHA = Secure Hashing Algorithm</p>
+</li>
+<li>
+<p>It is a 40 digit hexadecimal number.</p>
+</li>
+<li>
+<p>Every commit has a unique SHA1 associated with it.</p>
+</li>
+<li>
+<p>All 40 characters are NOT needed for commands. The first 7 to 8 characters of the SHA1 will do.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/working-of-commit.jpeg" alt="working of commit">
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_commit">git commit</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_log">git log</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_show">git show</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_aliases">Aliases</h3>
+<div class="quoteblock">
+<blockquote>
+[Aliases] make your Git experience simpler, easier, and more familiar&#8230;&#8203;
+</blockquote>
+<div class="attribution">
+&#8212; Pro Git by Scott Chacon and Ben Straub<br>
+<cite>https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases</cite>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you don’t want to type the entire text of each of the Git commands, you can easily set up an alias for each command using <code>git config</code>. Here are a couple of examples you may want to set up:</p>
+<div class="literalblock">
+<div class="content">
+<pre>git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means that, for example, instead of typing <code>git commit</code>, you just need to type <code>git ci</code>. As you go on using Git, you’ll probably use other commands frequently as well; don’t hesitate to create new aliases.</p>
+</div>
+</li>
+<li>
+<p>An alias can be given to the remote <a href="index.html#_repository">repo</a> as well, to make pulling and pushing easier.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can set custom aliases if you add a remote (ie, remote repo) using <a href="index.html#_git_remote"><code>git remote</code></a>.</p>
+</li>
+<li>
+<p>If you clone a repo using <a href="index.html#_git_clone"><code>git clone</code></a>, the default alias of the remote repo is <code>origin</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_config">git config</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_pull">git pull</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_push">git push</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_remote">git remote</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_clone">git clone</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_fetch">git fetch</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_head">HEAD</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>HEAD is a reference to the latest commit in the current <a href="index.html#_branches">branch</a>.</p>
+</li>
+<li>
+<p>When a commit is made, Git automatically sets the HEAD to the lastest commit.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+HEAD is contextual. It will point to the latest commit in the current branch.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/working-of-commit.jpeg" alt="working of commit">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To check where the current HEAD is pointing, use <code>cat .git/HEAD</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eg:</p>
+<div class="literalblock">
+<div class="content">
+<pre># in the master branch
+$ cat .git/HEAD
+# output
+ref: refs/heads/master</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git checkout test_branch
+# switched to test branch
+$ git .git/HEAD
+# output
+ref: refs/heads/test_branch</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When the HEAD points to a commit that is not the lastest commit in a branch, that is a <strong>detached HEAD</strong>. A specific commit can be referred to, using <a href="index.html#_git_checkout"><code>git checkout</code></a>.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_commit">git commit</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_log">git log</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_branches">Branches</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/branches.png" alt="branches">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In Git, branches are a part of everyday development process.</p>
+</li>
+<li>
+<p>Git branches are effectively a pointer to a snapshot of changes.</p>
+</li>
+<li>
+<p>When a new feature is to be added or a bug — no matter how big or how small has to be fixed, a new branch is created to encapsulate the changes.</p>
+</li>
+<li>
+<p>This makes it harder for unstable code to get merged into the main code base, and it gives the chance to clean up the future history before merging it into the main branch.</p>
+</li>
+<li>
+<p>By default, the <code>master</code> branch is the default branch.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_branch">git branch</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_checkout">git checkout</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_restore">git restore</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_switch">git switch</a></p>
+</li>
+<li>
+<p><a href="index.html#_git_merge">git merge</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_misc">Misc</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-05-08 18:01:30 +0530
+</div>
+</div>
+</body>
+</html>

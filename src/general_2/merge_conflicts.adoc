@@ -7,7 +7,7 @@
 
 .Related
 ****
-* link:index.adoc#_git_merge[git merge]
+* link:index.html#_git_merge[git merge]
 ****
 
 '''

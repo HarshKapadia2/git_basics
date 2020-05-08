@@ -1,0 +1,59 @@
+= git_basics
+By Harsh Kapadia
+:toc:
+
+:author:    Harsh Kapadia
+:twitter:   https://twitter.com/harshgkapadia
+:e-mail:    harshgkapadia@gmail.com
+:date:      2020
+:version:   1.0.0
+:repo:      https://github.com/HarshKapadia2/git_basics
+:imagesdir: images
+:docinfo1:
+
+== Abstract
+
+This book contains some basic concepts, commands & conventions for Git & GitHub.
+
+== Preface
+
+The open source community is amazing and very friendly. Contributing to it is always exciting if done in the spirit of improving the community and enjoying oneself.
+
+[quote, Robert Ingersoll]
+We rise by lifting others.
+
+Knowing the basics of Git & GitHub is the only prerequisite to start contributing to the FOSS (free & open source software) community and learning Git sometimes feels like a dauting task, because it is a little complicated. So to make this task easier, we have made this easy guide that will help anyone get started and keep helping them along their open source journey.
+
+This guide is made from a lot of resources collected over time. They have been hyperlinked wherever possible & if not, they have been included in the [misc] section at the end of the book.
+
+We would love everyone's help to keep this guide updated and error free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is {repo}.
+
+For any further questions, please feel free to contact the author, {author}, at {twitter} or via e-mail at {e-mail}.
+
+NOTE: One might want to familiarize themselves with [these] Git terms before starting, although they will be linked at places where they are required as well.
+
+*Okay, let's start!*
+
+== General #1
+
+include::src/general_1.adoc[]
+
+== Commands
+
+include::src/commands.adoc[]
+
+== General #2
+
+include::src/general_2.adoc[]
+
+== GitHub
+
+include::src/github.adoc[]
+
+== Terms
+
+include::src/terms.adoc[]
+
+== Misc
+
+include::src/misc.adoc[]

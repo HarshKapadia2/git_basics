@@ -11,11 +11,11 @@ image::branches.png[]
 
 .Related
 ****
-* link:index.adoc#_git_branch[git branch]
-* link:index.adoc#_git_checkout[git checkout]
-* link:index.adoc#_git_restore[git restore]
-* link:index.adoc#_git_switch[git switch]
-* link:index.adoc#_git_merge[git merge]
+* link:index.html#_git_branch[git branch]
+* link:index.html#_git_checkout[git checkout]
+* link:index.html#_git_restore[git restore]
+* link:index.html#_git_switch[git switch]
+* link:index.html#_git_merge[git merge]
 ****
 
 '''

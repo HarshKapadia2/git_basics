@@ -9,9 +9,9 @@
 
 The following terms are required to be understood:
 
-* link:index.adoc#_sha1[SHA1]
-* link:index.adoc#_head[HEAD]
-* link:index.adoc#_branches[Branches]
+* link:index.html#_sha1[SHA1]
+* link:index.html#_head[HEAD]
+* link:index.html#_branches[Branches]
 
 ==== Description
 
@@ -24,7 +24,7 @@ Implicitly means `git log HEAD`.
 ===== <commit_SHA1>
 
 * It will display the details of that commit.
-* For more details of the commit, use link:index.adoc#_git_show[`git show`].
+* For more details of the commit, use link:index.html#_git_show[`git show`].
 
 ===== <branch_name>
 
@@ -50,7 +50,7 @@ Implicitly means `git log HEAD`.
 
 .Related
 ****
-* link:index.adoc#_git_show[git show]
+* link:index.html#_git_show[git show]
 ****
 
 '''

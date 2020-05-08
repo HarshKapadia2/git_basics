@@ -7,6 +7,6 @@
     ** Local repo
     ** Remote repo
 +
-For more information on the types of repos, refer to link:index.adoc#_repositories_its_types[this] section.
+For more information on the types of repos, refer to link:index.html#_repositories_its_types[this] section.
 
 '''

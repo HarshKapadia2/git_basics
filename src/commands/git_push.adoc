@@ -9,15 +9,15 @@
 
 The following terms are required to be understood:
 
-* link:index.adoc#_aliases[Aliases]
-* link:index.adoc#_repository[Repository (repo)]
-* link:index.adoc#_branches[Branches]
+* link:index.html#_aliases[Aliases]
+* link:index.html#_repository[Repository (repo)]
+* link:index.html#_branches[Branches]
 
 ==== Description
 
 This command is used to transfer files from the local repo to the remote repo.
 
-To set up a remote repo, refer to link:index.adoc#_git_remote[`git remote`] and link:index.adoc#creating_a_repo[`creating a repo on GitHub`].
+To set up a remote repo, refer to link:index.html#_git_remote[`git remote`] and link:index.html#creating_a_repo[`creating a repo on GitHub`].
 
 image::git-push.jpeg[caption="", role="thumb", title="What does git push do?", alt="Git push illustration", link="https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg"]
 

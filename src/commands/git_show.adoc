@@ -9,11 +9,11 @@
 
 The following term is required to be understood:
 
-* link:index.adoc#_sha1[SHA1]
+* link:index.html#_sha1[SHA1]
 
 ==== Description
 
-To see information about a specific commit or file. Use link:index.adoc#_git_log[`git log`] to get the SHA1 of the required commit.
+To see information about a specific commit or file. Use link:index.html#_git_log[`git log`] to get the SHA1 of the required commit.
 
 ==== Options/Flags
 
@@ -28,7 +28,7 @@ To see information about a specific commit or file. Use link:index.adoc#_git_log
 
 .Related
 ****
-* link:index.adoc#_git_log[git log]
+* link:index.html#_git_log[git log]
 ****
 
 '''

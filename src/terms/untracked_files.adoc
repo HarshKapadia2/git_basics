@@ -2,12 +2,12 @@
 === Untracked Files
 
 * Newly created files are untracked files.
-* They are files that have never been added to the local link:index.adoc#_repository[repository].
-* In short: Untracked files are those fileswhich are not in the link:index.adoc#_gitignore_file[.gitignore file] and that have never been added to the repo.
+* They are files that have never been added to the local link:index.html#_repository[repository].
+* In short: Untracked files are those fileswhich are not in the link:index.html#_gitignore_file[.gitignore file] and that have never been added to the repo.
 
 .Related
 ****
-* link:index.adoc#_git_add[git add]
+* link:index.html#_git_add[git add]
 ****
 
 '''

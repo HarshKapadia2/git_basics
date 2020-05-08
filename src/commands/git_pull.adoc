@@ -15,9 +15,9 @@ Eg: `git pull origin master`
 
 The following terms are required to be understood:
 
-* link:index.adoc#_aliases[Aliases]
-* link:index.adoc#_repository[Repository (repo)]
-* link:index.adoc#_branches[Branches]
+* link:index.html#_aliases[Aliases]
+* link:index.html#_repository[Repository (repo)]
+* link:index.html#_branches[Branches]
 
 ==== Description
 
@@ -32,8 +32,8 @@ https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull[Di
 
 .Related
 ****
-* link:index.adoc#_git_fetch[git fetch]
-* link:index.adoc#_git_merge[git merge]
+* link:index.html#_git_fetch[git fetch]
+* link:index.html#_git_merge[git merge]
 ****
 
 '''

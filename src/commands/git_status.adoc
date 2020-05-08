@@ -9,11 +9,11 @@
 
 The following terms are required to be understood:
 
-* link:index.adoc#_untracked_files[Untracked files]
-* link:index.adoc#_added_files[Added files]
-* link:index.adoc#_modified_files[Modified files]
-* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
-* link:index.adoc#_working_tree[Working tree]
+* link:index.html#_untracked_files[Untracked files]
+* link:index.html#_added_files[Added files]
+* link:index.html#_modified_files[Modified files]
+* link:index.html#_staging_staging_areaindex[Staging (staging area/index)]
+* link:index.html#_working_tree[Working tree]
 
 ==== Description
 

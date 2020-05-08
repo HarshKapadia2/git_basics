@@ -9,14 +9,14 @@
 
 The following terms are required to be understood:
 
-* link:index.adoc#_head[HEAD]
-* link:index.adoc#_branches[Branches]
+* link:index.html#_head[HEAD]
+* link:index.html#_branches[Branches]
 
 ==== Description
 
 The git checkout command operates upon three distinct entities: files, commits, and branches.
 
-The git checkout command lets you navigate between the branches created by link:index.adoc#_git_branch[`git branch`].
+The git checkout command lets you navigate between the branches created by link:index.html#_git_branch[`git branch`].
 
 Further details https://www.atlassian.com/git/tutorials/using-branches/git-checkout[here].
 
@@ -27,7 +27,7 @@ Further details https://www.atlassian.com/git/tutorials/using-branches/git-check
 * Switches to / views / checks out a branch with the name `new_branch_name`.
 * Eg: `git checkout feature_branch`
 
-NOTE: link:index.adoc#_git_switch[`git switch`] can also be used to achieve the same result.
+NOTE: link:index.html#_git_switch[`git switch`] can also be used to achieve the same result.
 
 ===== -b <new_branch_name>
 
@@ -45,21 +45,21 @@ NOTE: The new branch is created from the last commit of the `existing_branch_nam
 
 * You can checkout a specific commit.
 
-NOTE: This condition will land you in a link:index.adoc#_head[detached HEAD] state.
+NOTE: This condition will land you in a link:index.html#_head[detached HEAD] state.
 
 ===== <file_name.ext>
 
 * To replace a modified file in the working directory/copy with the added/committed state version of that file.
-* If there are no staged changes, then the copy of the file in the local link:index.adoc#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
+* If there are no staged changes, then the copy of the file in the local link:index.html#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
 
-NOTE: link:index.adoc#_git_restore[`git restore`] can also be used to achieve the same result.
+NOTE: link:index.html#_git_restore[`git restore`] can also be used to achieve the same result.
 
 .Related
 ****
-* link:index.adoc#_git_merge[git merge]
-* link:index.adoc#_git_branch[git branch]
-* link:index.adoc#_git_restore[git restore]
-* link:index.adoc#_git_switch[git switch]
+* link:index.html#_git_merge[git merge]
+* link:index.html#_git_branch[git branch]
+* link:index.html#_git_restore[git restore]
+* link:index.html#_git_switch[git switch]
 ****
 
 '''

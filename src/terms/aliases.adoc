@@ -13,18 +13,18 @@
 +
 This means that, for example, instead of typing `git commit`, you just need to type `git ci`. As you go on using Git, you’ll probably use other commands frequently as well; don’t hesitate to create new aliases.
 
-* An alias can be given to the remote link:index.adoc#_repository[repo] as well, to make pulling and pushing easier.
-    ** You can set custom aliases if you add a remote (ie, remote repo) using link:index.adoc#_git_remote[`git remote`].
-    ** If you clone a repo using link:index.adoc#_git_clone[`git clone`], the default alias of the remote repo is `origin`.
+* An alias can be given to the remote link:index.html#_repository[repo] as well, to make pulling and pushing easier.
+    ** You can set custom aliases if you add a remote (ie, remote repo) using link:index.html#_git_remote[`git remote`].
+    ** If you clone a repo using link:index.html#_git_clone[`git clone`], the default alias of the remote repo is `origin`.
 
 .Related
 ****
-* link:index.adoc#_git_config[git config]
-* link:index.adoc#_git_pull[git pull]
-* link:index.adoc#_git_push[git push]
-* link:index.adoc#_git_remote[git remote]
-* link:index.adoc#_git_clone[git clone]
-* link:index.adoc#_git_fetch[git fetch]
+* link:index.html#_git_config[git config]
+* link:index.html#_git_pull[git pull]
+* link:index.html#_git_push[git push]
+* link:index.html#_git_remote[git remote]
+* link:index.html#_git_clone[git clone]
+* link:index.html#_git_fetch[git fetch]
 ****
 
 '''

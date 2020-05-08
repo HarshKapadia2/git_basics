@@ -11,15 +11,15 @@ image::working-of-commit.jpeg[]
 
 The following terms are required to be understood:
 
-* link:index.adoc#_staging_staging_areaindex[Staging (staging area/index)]
-* link:index.adoc#_sha1[SHA1]
-* link:index.adoc#_head[HEAD]
+* link:index.html#_staging_staging_areaindex[Staging (staging area/index)]
+* link:index.html#_sha1[SHA1]
+* link:index.html#_head[HEAD]
 
 ==== Description
 
 A commit is simply a checkpoint telling Git to track all changes that have occurred up to the current point using the last commit as a comparison.
 
-A commit is carried out only if there are files in the staging area, so make sure to run link:index.adoc#_git_add[`git add`] before this command.
+A commit is carried out only if there are files in the staging area, so make sure to run link:index.html#_git_add[`git add`] before this command.
 
 Every commit has a *commit message* associated with it which describes the overall change made.
 
@@ -31,9 +31,9 @@ If extra information is needed to be given, add it to the *description* of the c
 
 Every commit has a unique *SHA1* associated with it.
 
-Use link:index.adoc#_git_log[`git log`] & link:index.adoc#_git_show[`git show`] commands to get information on commits. 
+Use link:index.html#_git_log[`git log`] & link:index.html#_git_show[`git show`] commands to get information on commits. 
 
-IMPORTANT: Always link:index.adoc#_git_pull[pull] before committing & pushing.
+IMPORTANT: Always link:index.html#_git_pull[pull] before committing & pushing.
 
 TIP: Commit _related_ changes.
 
@@ -71,9 +71,9 @@ TIP: _Don't_ commit half-done or incomplete work.
 
 .Related
 ****
-* link:index.adoc#_git_log[git log]
-* link:index.adoc#_git_show[git show]
-* link:index.adoc#_common_mistakes_how_to_correct_them[Ammending a commit]
+* link:index.html#_git_log[git log]
+* link:index.html#_git_show[git show]
+* link:index.html#_common_mistakes_how_to_correct_them[Ammending a commit]
 ****
 
 '''
