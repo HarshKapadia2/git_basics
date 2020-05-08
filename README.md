@@ -3,12 +3,21 @@
 <img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat-square">
 <a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat-square"></a>
 <br>
+<br>
+![Git_logo](https://www.git-scm.com/images/logo@2x.png)
+
 **A repo for the the basics of Git and GitHub!**
 
 ***Hosted at https://harshkapadia2.github.io/git_basics/***
 
 NOTE: The initial part of this repo is on the hosted site. The parts below are in the process of being migrated to the hosted version.
 
+## ***Contributions***
+- All contributors are most welcome!
+- Do view the [`CONTRIBUTING.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTING.md) file for further instructions, requirements/dependencies & local project setup instructions!
+- All the amazing contributors to this repo can be found in the [`CONTRIBUTORS.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
+
+---
 ---
 
 This repo will always be a work in progress, so do make PRs to add your knowledge to it and correct any mistakes that might've been made!
