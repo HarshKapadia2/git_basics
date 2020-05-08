@@ -8,7 +8,7 @@ By Harsh Kapadia
 :date:      2020
 :version:   1.0.0
 :repo:      https://github.com/HarshKapadia2/git_basics
-:imagesdir: images
+:imagesdir: src/images
 :docinfo1:
 
 == Abstract
