@@ -57,3 +57,10 @@ include::src/terms.adoc[]
 == Misc
 
 include::src/misc.adoc[]
+
+---
+
+PS: Be kind, humble and hardworking!
+
+[quote, Selena Gomez]
+Kindness always wins.
