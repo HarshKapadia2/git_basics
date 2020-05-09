@@ -14,7 +14,7 @@
    <a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat-square"></a>
    <br>
    <br>
-   <b><i>Hosted at https://harshkapadia2.github.io/git_basics/</i></b>
+   <i>Hosted at https://harshkapadia2.github.io/git_basics/</i>
    <br>
    <br>
 </p>
