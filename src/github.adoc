@@ -1,0 +1,1 @@
+include::github/what_is_github.adoc[]

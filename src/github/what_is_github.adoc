@@ -1,0 +1,9 @@
+
+=== What is GitHub?
+
+* *GitHub != Git*, ie, GitHub is not Git.
+    ** Git is a revision control system, a tool to manage your source code history.
+    ** *GitHub is a hosting service for Git link:index.html#_repository[repositories].*
+    ** So they are not the same thing: Git is the tool, GitHub is the service for projects that use Git.
+
+---
