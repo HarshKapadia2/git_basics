@@ -7,7 +7,8 @@
 **A repo for the basics of**
 <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
 **&**
-<img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub!" width=50>
+<img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub" width=50>
+**!**
 
 ***Hosted at https://harshkapadia2.github.io/git_basics/***
 
