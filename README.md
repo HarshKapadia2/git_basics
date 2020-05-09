@@ -1,16 +1,22 @@
 # ***git_basics***
-<a href="#contributing"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square"></a>
-<img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat-square">
-<a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat-square"></a>
-<br>
-<br>
-**A repo for the basics of**
-<img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
-**&**
-<img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub" width=50>
-**!**
 
-***Hosted at https://harshkapadia2.github.io/git_basics/***
+<p align=center>
+   <b>A repo for the basics of</b>
+   <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
+   <b>&</b>
+   <img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub" width=50>
+   <b>!</b>
+   <br>
+   <br>
+   <a href="#contributing"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square"></a>
+   <img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat-square">
+   <a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat-square"></a>
+   <br>
+   <br>
+<i>Hosted at https://harshkapadia2.github.io/git_basics/</i>
+   <br>
+   <br>
+</p>
 
 NOTE: The initial part of this repo is on the hosted site. The parts below are in the process of being migrated to the hosted version.
 
