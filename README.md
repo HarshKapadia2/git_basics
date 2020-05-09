@@ -1,11 +1,12 @@
-# ***git_basics***
-
 <p align=center>
+   <img src="https://github.com/HarshKapadia2/git_basics/blob/master/git_basics_logo.png" alt="git_basics">
+   <br>
    <b>A repo for the basics of</b>
    <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
    <b>&</b>
    <img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub" width=50>
    <b>!</b>
+   <br>
    <br>
    <br>
    <a href="#contributing"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square"></a>
@@ -18,7 +19,7 @@
    <br>
 </p>
 
-NOTE: The initial part of this repo is on the hosted site. The parts below are in the process of being migrated to the hosted version.
+---
 
 ## ***Contributions***
 - All contributors are most welcome!
@@ -27,6 +28,8 @@ NOTE: The initial part of this repo is on the hosted site. The parts below are i
 
 ---
 ---
+
+***NOTE: The initial part of this repo is on the [hosted site](https://harshkapadia2.github.io/git_basics/). The parts below are in the process of being migrated to the hosted version.***
 
 This repo will always be a work in progress, so do make PRs to add your knowledge to it and correct any mistakes that might've been made!
 (TBC = To be continued)
