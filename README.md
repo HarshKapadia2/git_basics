@@ -4,9 +4,10 @@
 <a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat-square"></a>
 <br>
 <br>
-![Git_logo](https://www.git-scm.com/images/logo@2x.png)
-
-**A repo for the the basics of Git and GitHub!**
+**A repo for the basics of**
+<img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
+**&**
+<img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub!" width=50>
 
 ***Hosted at https://harshkapadia2.github.io/git_basics/***
 
