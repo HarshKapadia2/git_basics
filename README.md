@@ -29,7 +29,7 @@
 
 ## ***Code of conduct***
 
-- Please view the [`CODE_OF_CONDUCT.md`](https://github.com/HarshKapadia2/attendance_management/blob/master/CODE_OF_CONDUCT.md) file for details.
+- Please view the [`CODE_OF_CONDUCT.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CODE_OF_CONDUCT.md) file for details.
 
 ---
 ---
