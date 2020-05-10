@@ -9,8 +9,8 @@
    <br>
    <br>
    <br>
-   <a href="#contributing"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat"></a>
-   <img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat">
+   <a href="https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTING.md"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat"></a>
+   <a href="https://github.com/HarshKapadia2/git_basics/blob/master/LICENSE"><img alt="Git MIT license" src="https://img.shields.io/github/license/HarshKapadia2/git_basics?style=flat"></a>
    <a href="#"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-brightgreen?style=flat"></a>
    <br>
    <br>
