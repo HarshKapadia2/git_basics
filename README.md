@@ -22,9 +22,14 @@
 ---
 
 ## ***Contributions***
+
 - All contributors are most welcome!
 - Do view the [`CONTRIBUTING.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTING.md) file for further instructions, requirements/dependencies & local project setup instructions!
 - All the amazing contributors to this repo can be found in the [`CONTRIBUTORS.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
+
+## ***Code of conduct***
+
+- Please view the [`CODE_OF_CONDUCT.md`](https://github.com/HarshKapadia2/attendance_management/blob/master/CODE_OF_CONDUCT.md) file for details.
 
 ---
 ---
@@ -35,6 +40,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
 (TBC = To be continued)
 
 ## Common mistakes and how to correct them
+
 - TBC
 - Modificaions are made to files and the user wants to revert the files to the current commit state (The files are not staged)
    - [`git checkout HEAD .`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting) 
@@ -46,6 +52,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - https://www.youtube.com/watch?v=FdZecVxzJbk
 
 ## Conflict handling ([CLI Version](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts))
+
 - Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 - Git can automatically merge commits unless there are changes that conflict in both commit sequences.
 - Eg: If in the [two branches that are trying to be merged](https://www.atlassian.com/git/tutorials/using-branches/git-merge), both have changes in the same part of the same file, Git won't be able to figure out which version to use.
@@ -71,6 +78,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - `git status` and `git diff` should be used frequently as they give information about the current working state and what git is aware of. They allow one to see what changes have occurred since their last checkpoint and are what one can use to guide themselves to atomic commits.
 
 ## Git CLIs vs GUIs
+
 - CLI pros
    - TBC
 - CLI cons
@@ -85,6 +93,7 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - https://www.danclarke.com/git-gui-vs-cli
 
 ## GitHub basics
+
 - [Repos](https://www.sbf5.com/~cduan/technical/git/git-1.shtml) (Part 2)
    - In version control systems, repositories are accessed over a network which acts like a server and version control tool as a   client. On establishing successful connection, clients store or retrieve their changes.
    - Private and public repos
@@ -120,18 +129,22 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - Upload valid college ID and e-mail (personal e-mail if you don't have a college-provided e-mail ID)
    - Will have to be renewed.
 
-## Open Source 
+## Open Source
+
 - OSS - Open Source Software
 - [Why and how to contribute to Open Source](https://rubygarage.org/blog/how-contribute-to-open-source-projects)
 - [GSoC](https://summerofcode.withgoogle.com/) & [GSSoC](https://www.gssoc.tech/)
 - [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
 
 ## Communities & meetups
+
 - [Reasons why you should attend tech meetups](https://interpropeople.com/7-reasons-go-tech-meetups/)
 - [Meetup app](https://www.meetup.com/apps/)
 
 ## Misc
+
 ### Misc resources for Git
+
 - Videos
    - [Getting started with Git and GitHub (YouTube - Traversy Media)](https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be)
    - [Structure of Git (YouTube)](https://www.youtube.com/watch?v=yI0BtEzdGtw)
@@ -146,9 +159,11 @@ This repo will always be a work in progress, so do make PRs to add your knowledg
    - https://dashdash.io/
 
 ### Misc resources used in this repo (that weren't linkable above in hyperlinks)
+
 - https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
 
 # BYE BYE! ( : 
+
 **Star this repo if you liked it and don't forget to share it with your friends/coworkers!**
 
 ![](https://miro.medium.com/max/1238/1*_UUaozFPd2qHfCFjlhIgGA.png)
