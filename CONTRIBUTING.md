@@ -1,5 +1,6 @@
 # Welcome, contributors! :smiley:
 
+- - Please be mindful of the [code of conduct](https://github.com/HarshKapadia2/git_basics/blob/master/CODE_OF_CONDUCT.md) while interacting or contributing!
 - Feel free to add or correct any information to/on this repo!
 - If you make a contribution, please do not forget to add your personal details to the [CONTRIBUTORS.md](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
 
