@@ -1286,36 +1286,6 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <p>A commit is carried out only if there are files in the staging area, so make sure to run <a href="index.html#_git_add"><code>git add</code></a> before this command.</p>
 </div>
 <div class="paragraph">
-<p>Every commit has a <strong>commit message</strong> associated with it which describes the overall change made.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-Short, crisp and to-the-point commit messages are preferred (&lt;50 characters).
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>. Eg: <code>git commit -m "Update README.md"</code>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If extra information is needed to be given, add it to the <strong>description</strong> of the commit.</p>
-</div>
-<div class="paragraph">
 <p>Every commit has a unique <strong>SHA1</strong> associated with it.</p>
 </div>
 <div class="paragraph">
@@ -1368,6 +1338,61 @@ Commit changes frequently. This makes it easier to revert back to older versions
 </td>
 </tr>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_commit_messagetitle">Commit message/title</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Every commit has a commit message associated with it which describes the overall change made.</p>
+</li>
+<li>
+<p>Short, crisp and to-the-point commit messages are preferred (&lt;50 characters).</p>
+</li>
+<li>
+<p>Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>. Eg: <code>git commit -m "Update README.md"</code></p>
+</li>
+<li>
+<p>General commit messge structure below</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  :sparkles: feat: add hat wobble (#26)
+  ^--------^ ^---^ ^------------^ ^---^
+       |       |         |          |
+       |       |         |          +----&gt; PR or issue resolved.
+       |       |         |
+       |       |         +----&gt; Summary in present tense.
+       |       |
+       |       +----&gt; Type:- chore, docs, feat, fix, refactor,style, test, etc.
+       |
+       +----&gt; Emoji:- :tada: :bookmark: :sparkles: :bug: :books: :wrench: :truck:</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Go through <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79">this</a> gist for more on types and emojis.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If extra information is needed to be given, add it to the <strong>description</strong> of the commit.</p>
+</li>
+<li>
+<p>When only changing documentation, include <code>[ci skip]</code> (ci = continuous integration) in the commit title.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -3460,12 +3485,6 @@ A contributor is a <a href="index.html#_collaborators">collaborator</a> only if 
 <li>
 <p>Work on the contribution(s) according to the [issues] and/or [<code>CONTRIBUTING.md</code>].</p>
 </li>
-<li>
-<p><a href="index.html#_git_push">Push</a> the code to the forked repo.</p>
-</li>
-<li>
-<p>Make a [pull request (PR)]!</p>
-</li>
 </ul>
 </div>
 <div class="admonitionblock tip">
@@ -3475,10 +3494,20 @@ A contributor is a <a href="index.html#_collaborators">collaborator</a> only if 
 <div class="title">Tip</div>
 </td>
 <td class="content">
-If an issue/issues has/have been resolved, then the/their <code>#</code> [number(s)] should be included in the PR message (do not confuse with <a href="index.html#_git_commit">commit message</a>). Eg: <code>Login button colour issue #26 , #32 &amp; #33 resolved.</code>
+If issues have/an issue has been resolved, then their/the <code>#</code> [number(s)] should be included in the <a href="index.html#_git_commit">commit message</a>. Eg: <code>:bug: bug: Login button position corrected (#26, #32, #33)</code>
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_git_push">Push</a> the code to the forked repo.</p>
+</li>
+<li>
+<p>Make a [pull request (PR)]!</p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">

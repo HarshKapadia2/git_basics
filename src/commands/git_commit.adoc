@@ -21,14 +21,6 @@ A commit is simply a checkpoint telling Git to track all changes that have occur
 
 A commit is carried out only if there are files in the staging area, so make sure to run link:index.html#_git_add[`git add`] before this command.
 
-Every commit has a *commit message* associated with it which describes the overall change made.
-
-TIP: Short, crisp and to-the-point commit messages are preferred (<50 characters).
-
-TIP: Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like `git merge`. Eg: `git commit -m "Update README.md"`
-
-If extra information is needed to be given, add it to the *description* of the commit.
-
 Every commit has a unique *SHA1* associated with it.
 
 Use link:index.html#_git_log[`git log`] & link:index.html#_git_show[`git show`] commands to get information on commits. 
@@ -40,6 +32,35 @@ TIP: Commit _related_ changes.
 TIP: Commit changes frequently. This makes it easier to revert back to older versions to correct mistakes.
 
 TIP: _Don't_ commit half-done or incomplete work.
+
+===== Commit message/title
+
+* Every commit has a commit message associated with it which describes the overall change made.
+
+* Short, crisp and to-the-point commit messages are preferred (<50 characters).
+
+* Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like `git merge`. Eg: `git commit -m "Update README.md"`
+
+* General commit messge structure below
+
+```
+  :sparkles: feat: add hat wobble (#26)
+  ^--------^ ^---^ ^------------^ ^---^
+       |       |         |          |
+       |       |         |          +----> PR or issue resolved (if any).
+       |       |         |
+       |       |         +----> Summary in present tense.
+       |       |
+       |       +----> Type:- chore, docs, feat, fix, refactor,style, test, etc.
+       |
+       +----> Emoji:- :tada: :bookmark: :sparkles: :bug: :books: :wrench: :truck:
+```
+
+IMPORTANT: Go through https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79[this] gist for more on types and emojis.
+
+* If extra information is needed to be given, add it to the *description* of the commit.
+
+* When only changing documentation, include `[ci skip]` (ci = continuous integration) in the commit title.
 
 ==== Options/Flags
 
