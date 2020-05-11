@@ -10,10 +10,11 @@ NOTE: A contributor is a link:index.html#_collaborators[collaborator] only if he
 * [Fork] the repo.
 * link:index.html#_git_clone[clone] the forked repo locally.
 * Work on the contribution(s) according to the [issues] and/or [`CONTRIBUTING.md`].
+
+TIP: Follow correct link:index.html#_git_commit[commit message] structure. Eg: `:bug: fix: Login button position corrected (#26, #32, #33)`
+
 * link:index.html#_git_push[Push] the code to the forked repo.
 * Make a [pull request (PR)]!
-
-TIP: If an issue/issues has/have been resolved, then the/their `#` [number(s)] should be included in the PR message (do not confuse with link:index.html#_git_commit[commit message]). Eg: `Login button colour issue #26 , #32 & #33 resolved.`
 
 .Related
 ****
