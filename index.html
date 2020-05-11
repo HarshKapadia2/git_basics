@@ -497,6 +497,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_github">GitHub</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_github">What is GitHub?</a></li>
+<li><a href="#_github_repositories">GitHub Repositories</a></li>
 </ul>
 </li>
 <li><a href="#_terms">Terms</a>
@@ -512,6 +513,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_aliases">Aliases</a></li>
 <li><a href="#_head">HEAD</a></li>
 <li><a href="#_branches">Branches</a></li>
+<li><a href="#_collaborators">Collaborators</a></li>
+<li><a href="#_contributors">Contributors</a></li>
 </ul>
 </li>
 <li><a href="#_misc">Misc</a></li>
@@ -705,6 +708,29 @@ git --distributed-is-the-new-centralized
 <p><a href="index.html#_repository">What is a repository (repo)?</a></p>
 </li>
 <li>
+<p>Types of repos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Local repo</p>
+</li>
+<li>
+<p>Remote repo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Public repo</p>
+</li>
+<li>
+<p>Private repo</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><strong>Local repo</strong></p>
 <div class="ulist">
 <ul>
@@ -763,15 +789,46 @@ A local repo does not need to have a remote repo.
 <p>Remote repository is the repo on the server.</p>
 </li>
 <li>
-<p>So while most people treat a particular repo as the central repo (the one on GitHub), that&#8217;s a process choice, not a Git requirement.</p>
+<p>So while most people treat a particular repo as the central repo (the one on <a href="index.html#_what_is_github">GitHub</a>), that&#8217;s a process choice, not a Git requirement.</p>
 </li>
 <li>
 <p>A remote repo and local repo connection is handled using the <a href="index.html#_git_remote"><code>git remote</code></a> command.</p>
+</li>
+<li>
+<p>It can be of two types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Local repo</p>
+</li>
+<li>
+<p>Remote repo</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>For more information on remote repos, refer to <a href="index.html#_github_repositories">this</a> section.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+<li>
+<p><a href="index.html#_what_is_github">GitHub</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <hr>
 </div>
@@ -2709,7 +2766,99 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </ul>
 </div>
 </li>
+<li>
+<p><a href="https://github.com/">GitHub</a> is just one such service for Git. Other prominent services include GitLab, Bitbucket, Git Kraken, etc.</p>
+</li>
 </ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_github_repositories">GitHub Repositories</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_repository">What is a repository (repo)?</a></p>
+</li>
+<li>
+<p><a href="index.html#_collaborators">Who are collaborators?</a></p>
+</li>
+<li>
+<p><a href="index.html#_contributors">Who are contributors?</a></p>
+</li>
+<li>
+<p>There are two types of repositories on GitHub (These are <a href="index.html#_repositories_its_types">remote repos</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Public repo</p>
+</li>
+<li>
+<p>Private repo</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Public repo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A public repository is a repo open for the world to view, download and use (ethically or unethically, depending upon the [license]).</p>
+</li>
+<li>
+<p>Contributors can raise [issues] on the repo and make a [pull request (PR)] to it.</p>
+</li>
+<li>
+<p>Collaborators and the owner can raise [issues] on the repo and push code to it.</p>
+</li>
+<li>
+<p>It is a good way to improve the software and help others by showcasing the code and features as well!</p>
+</li>
+<li>
+<p>A GitHub free user is allowed to make unlimited public repos with unlimited collaborators. (There is a limit on the number of collaborators that can be added by the owner/organisation in 24 hours.)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Private repo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A private repo is only open for viewing, downloading and uploading for the collaborator that the repo owner chooses.</p>
+</li>
+<li>
+<p>A private repo will only have collaborators as contributors. Contributors can raise [issues] on the repo and make a [pull request (PR)] to it.</p>
+</li>
+<li>
+<p>Collaborators and the owner can raise [issues] on the repo and push code to it.</p>
+</li>
+<li>
+<p>This type of repo is usually used to work on a project with or without a team, privately.</p>
+</li>
+<li>
+<p>A GitHub free user is allowed to make unlimited private repos with unlimited collaborators. (There is a limit on the number of collaborators that can be added by the owner/organisation in 24 hours.)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_repository">Repository (repo)</a></p>
+</li>
+<li>
+<p><a href="index.html#_repositories_its_types">Repos &amp; types</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <hr>
 </div>
@@ -2729,7 +2878,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <p>Simply put, a repo is a place where the history of the user&#8217;s work is stored.</p>
 </li>
 <li>
-<p>Repositories are of two types:</p>
+<p>Types of repos</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2737,14 +2886,42 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </li>
 <li>
 <p>Remote repo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Public repo</p>
+</li>
+<li>
+<p>Private repo</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>For more information on the types of repos, refer to <a href="index.html#_repositories_its_types">this</a> section.</p>
 </div>
 </li>
 </ul>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_repositories_its_types">Repos &amp; types</a></p>
+</li>
+<li>
+<p><a href="index.html#_what_is_github">GitHub</a></p>
+</li>
+<li>
+<p><a href="index.html#_github_repositories">GitHub repositories</a></p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 <hr>
 </div>
@@ -3204,6 +3381,119 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <hr>
+</div>
+<div class="sect2">
+<h3 id="_collaborators">Collaborators</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Collaborators are the <a href="index.html#_repository">repository (repo)</a> owner&#8217;s team members/partners.</p>
+</li>
+<li>
+<p>A collaborator has a lot of accesses that a repo owner has.</p>
+</li>
+<li>
+<p>They can directly push to the repository, merge PRs, etc.</p>
+</li>
+<li>
+<p>The owner of the repo can invite any number of collaborator from the <code>settings/manage access</code> section in the repo (there is a limit to the number of invites in 24 hrs).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+A <a href="index.html#_contributors">contributor</a> is a collaborator only if he is chosen to be a collaborator by the owner. So a collaborator is a contributor, but the vice versa is not always true.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_github_repositories">GitHub Repository</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_contributors">Contributors</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Contributors are people who contribute to <a href="index.html#_repository">repositories</a> to make them better.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+A contributor is a <a href="index.html#_collaborators">collaborator</a> only if he is chosen to be a collaborator by the owner. So a collaborator is a contributor, but the vice versa is not always true.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_general_contributor_instructions">General contributor instructions</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>[Fork] the repo.</p>
+</li>
+<li>
+<p><a href="index.html#_git_clone">clone</a> the forked repo locally.</p>
+</li>
+<li>
+<p>Work on the contribution(s) according to the [issues] and/or [<code>CONTRIBUTING.md</code>].</p>
+</li>
+<li>
+<p><a href="index.html#_git_push">Push</a> the code to the forked repo.</p>
+</li>
+<li>
+<p>Make a [pull request (PR)]!</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If an issue/issues has/have been resolved, then the/their <code>#</code> [number(s)] should be included in the PR message (do not confuse with <a href="index.html#_git_commit">commit message</a>). Eg: <code>Login button colour issue #26 , #32 &amp; #33 resolved.</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_github_repositories">GitHub Repository</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
 </div>
 </div>
 </div>

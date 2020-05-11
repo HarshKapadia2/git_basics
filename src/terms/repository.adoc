@@ -3,10 +3,21 @@
 
 * Git stores information in a data structure called a repository (repo).
 * Simply put, a repo is a place where the history of the user's work is stored. 
-* Repositories are of two types:
+
+* Types of repos
     ** Local repo
     ** Remote repo
+        *** Public repo
+        *** Private repo
+
 +
 For more information on the types of repos, refer to link:index.html#_repositories_its_types[this] section.
+
+.Related
+****
+* link:index.html#_repositories_its_types[Repos & types]
+* link:index.html#_what_is_github[GitHub]
+* link:index.html#_github_repositories[GitHub repositories]
+****
 
 '''

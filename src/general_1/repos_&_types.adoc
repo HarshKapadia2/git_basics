@@ -3,6 +3,12 @@
 
 * link:index.html#_repository[What is a repository (repo)?]
 
+* Types of repos
+    ** Local repo
+    ** Remote repo
+        *** Public repo
+        *** Private repo
+
 * *Local repo*
     ** Local repository is the repo on the local machine (eg: laptop).
     ** The local repository has exactly the same features and functionality as any other Git repository. 
@@ -17,7 +23,19 @@ NOTE: A local repo does not need to have a remote repo.
 
 * *Remote repo*
     ** Remote repository is the repo on the server.
-    ** So while most people treat a particular repo as the central repo (the one on GitHub), that's a process choice, not a Git requirement.
+    ** So while most people treat a particular repo as the central repo (the one on link:index.html#_what_is_github[GitHub]), that's a process choice, not a Git requirement.
     ** A remote repo and local repo connection is handled using the link:index.html#_git_remote[`git remote`] command.
-    
+    ** It can be of two types
+        *** Local repo
+        *** Remote repo
+
++
+For more information on remote repos, refer to link:index.html#_github_repositories[this] section.
+
+.Related
+****
+* link:index.html#_repository[Repository (repo)]
+* link:index.html#_what_is_github[GitHub]
+****
+        
 '''

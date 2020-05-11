@@ -1,0 +1,23 @@
+
+=== Contributors
+
+* Contributors are people who contribute to link:index.html#_repository[repositories] to make them better.
+
+NOTE: A contributor is a link:index.html#_collaborators[collaborator] only if he is chosen to be a collaborator by the owner. So a collaborator is a contributor, but the vice versa is not always true.
+
+==== General contributor instructions
+
+* [Fork] the repo.
+* link:index.html#_git_clone[clone] the forked repo locally.
+* Work on the contribution(s) according to the [issues] and/or [`CONTRIBUTING.md`].
+* link:index.html#_git_push[Push] the code to the forked repo.
+* Make a [pull request (PR)]!
+
+TIP: If an issue/issues has/have been resolved, then the/their `#` [number(s)] should be included in the PR message (do not confuse with link:index.html#_git_commit[commit message]). Eg: `Login button colour issue #26 , #32 & #33 resolved.`
+
+.Related
+****
+* link:index.html#_github_repositories[GitHub Repository]
+****
+
+'''

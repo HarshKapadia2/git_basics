@@ -1,0 +1,34 @@
+
+=== GitHub Repositories
+
+* link:index.html#_repository[What is a repository (repo)?]
+
+* link:index.html#_collaborators[Who are collaborators?]
+
+* link:index.html#_contributors[Who are contributors?]
+
+* There are two types of repositories on GitHub (These are link:index.html#_repositories_its_types[remote repos])
+    ** Public repo
+    ** Private repo
+
+* *Public repo*
+    ** A public repository is a repo open for the world to view, download and use (ethically or unethically, depending upon the [license]).
+    ** Contributors can raise [issues] on the repo and make a [pull request (PR)] to it.
+    ** Collaborators and the owner can raise [issues] on the repo and push code to it.
+    ** It is a good way to improve the software and help others by showcasing the code and features as well!
+    ** A GitHub free user is allowed to make unlimited public repos with unlimited collaborators. (There is a limit on the number of collaborators that can be added by the owner/organisation in 24 hours.)
+
+* *Private repo*
+    ** A private repo is only open for viewing, downloading and uploading for the collaborator that the repo owner chooses.
+    ** A private repo will only have collaborators as contributors. Contributors can raise [issues] on the repo and make a [pull request (PR)] to it.
+    ** Collaborators and the owner can raise [issues] on the repo and push code to it.
+    ** This type of repo is usually used to work on a project with or without a team, privately.
+    ** A GitHub free user is allowed to make unlimited private repos with unlimited collaborators. (There is a limit on the number of collaborators that can be added by the owner/organisation in 24 hours.)
+
+.Related
+****
+* link:index.html#_repository[Repository (repo)]
+* link:index.html#_repositories_its_types[Repos & types]
+****
+
+'''

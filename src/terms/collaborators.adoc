@@ -1,0 +1,16 @@
+
+=== Collaborators
+
+* Collaborators are the link:index.html#_repository[repository (repo)] owner's team members/partners.
+* A collaborator has a lot of accesses that a repo owner has. 
+* They can directly push to the repository, merge PRs, etc.
+* The owner of the repo can invite any number of collaborator from the `settings/manage access` section in the repo (there is a limit to the number of invites in 24 hrs).
+
+NOTE: A link:index.html#_contributors[contributor] is a collaborator only if he is chosen to be a collaborator by the owner. So a collaborator is a contributor, but the vice versa is not always true.
+
+.Related
+****
+* link:index.html#_github_repositories[GitHub Repository]
+****
+
+'''
