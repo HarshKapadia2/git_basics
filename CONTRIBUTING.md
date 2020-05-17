@@ -16,6 +16,7 @@
    - Browser entention for [Chrome or Edge - Asciidoctor.js Live Preview](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia)
 - Generate `index.html` from `index.adoc` in the root directory by running the command `asciidoctor index.adoc` in the root directory.
 - Add the following favicon.ico `link` tag to `index.html`, just above the `title` tag in the `head` section: `<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">`
+- **Commit your code using the [correct commit message structure](https://harshkapadia2.github.io/git_basics/#_git_commit).** Eg: ':bug: fix: Correct typo in git.adoc (#0)' which is typed as `:bug: fix: Correct typo in git.adoc (#0)`.
 - Push the code to your forked repo.
 - Make a PR!
 
