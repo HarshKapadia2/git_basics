@@ -1,0 +1,144 @@
+
+=== Internal Working of Git
+
+TIP: It is recommended that you go through this section only if you have some experience with Git. Absolute beginners do not need to know this.
+
+Let us explore some part of the internal working of Git through an example. I am using a Windows operating system and Git-Bash for this example.
+
+Run `git init` to initialize an empty Git [repo] in the `inside_git` directory (root directory). An empty hidden directory `.git` is created in the root folder.
+
+image::git-init.jpg[]
+
+Using `du -c` we can find the contents of the root directory `inside_git`. It shows the directories and the number of files inside them.
+
+image::du-c-1.jpg[]
+
+Create a new file in the root folder.
+
+image::touch-master_file_1.jpg[]
+
+Now the root directory contains the `.git` directory and the new file `master_file_1.txt`.
+
+image::ls-a-1.jpg[]
+
+Let us add the file to the [staging area] using [`git add .`] and run `du -c` once again.
+
+image::du-c-2.jpg[]
+
+As you can see, a new directory `e6` has been added to `./.git/objects` and it contains one file. Let us use the `dir` (or `ls`) command to find out which file is present in the dir `./.git/objects/e6`.
+
+image::dir-1.jpg[]
+
+The file name `9de29bb2d1d6434b8b29ae775ad8c2e48c5391` has 38 characters. On combining it with the folder name (`e6`) at the start, it becomes a 40 character string `e69de29bb2d1d6434b8b29ae775ad8c2e48c5391`. This is a [SHA1] (Securing Hashing Algo 1) hash. Git encodes the content of the file (and more things, we'll get to that soon) in this hash. Every add and commit produces their own unique SHA1 hash(es). The first two characters of the hash are used for bucketing the hashes into folders by Git. The case of two hashes colliding is very rare. *Git uses 4 to 7 characters to refer to a commit in short.*
+
+Now as mentioned in the previous paragraph, Git stores the contents of the file and other details in the hash. To check that out, we need to add some content to the file. The file will then have to be added again (this will produce another hash).
+
+image::add-to-master_file_1-1.jpg[]
+image::edit-master_file_1-1.jpg[]
+
+From the last command in the above picture one can make out that a new hash `1a3851c172420a2198cf8ca6f2b776589d955cc5` was generated. Now let us check its contents using the `cat` command.
+
+image::cat-1.jpg[]
+
+Oops! That's gibberish! So was what was said above a lie? No. Git actually compresses files and then hashes them. So to make sense of the hash, we need to de-compress it.
+
+image::de-compressed.jpg[]
+
+`blob 16Git is amazing!` is what we get back.
+
+Let us break that down:
+
+* `blob` is the file type. It is an abbreviation for 'binary large object'. 
++
+Files can be of three types in Git:
+
+    ** blob
+    ** commit
+    ** tree
+
++
+We will come to `commit` and `tree` soon.
+
+* `16` is the file size. `Git is amazing!` consists of 15 characters, but Git adds a null character (`\0`) before the data, making the length 16.
+* `Git is amazing!` is the file data that was originally entered.
+
+NOTE: If `blob 16\0Git is amazing!` is hashed using SHA1, the same hash (`1a3851c172420a2198cf8ca6f2b776589d955cc5`) will be generated.
+
+The process of finding the contents of the file using `cat` is pretty cumbersome. It is a better idea to use the [plumbing commands] provided by Git.
+
+Some of the commands that we need:
+
+* `git cat-file -p <hash>` (-p = pretty print) to display just the file data (contents).
+* `git cat-file -t <hash>` (-t = type) to display just the file type (blob, commit or tree).
+* `git cat-file -s <hash>` (-s = size) to display just the file size.
+
+Now let us commit the file using [`git commit`] and then run `du -c` again.
+
+image::commit-master_file_1-1.jpg[]
+
+From the above picture it can be noticed that two new directories `./.git/objects/1b` and `./.git/objects/d5` were created. Also, after commiting the file, Git gives us the first 7 characters of the SHA1 for that commit. Using the plumbing commands, let us first check the type of the file.
+
+image::cat-file-t-1.jpg[]
+
+So the type of the file is `commit`, telling us that this is a file generated through a commit.
+
+Now let us check the content of the commit file.
+
+image::cat-file-p-1.jpg[]
+
+Let us break down the output:
+
+* `tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc` is the SHA1 hash of the tree commit generated (remember that two files were generated in `./.git/objects` on committing the file). The tree is the [snapshot] of the current state of your local repository. We will look into the contents of the tree file soon.
+* Parent commit SHA1 hash (not present here - we will do it soon.)
+* The next line has the details of the author (the one who wrote the code):
+    ** Name
+    ** e-mail ID
+    ** Timestamp
+* The next line has the details of the committer (the one who pushed the code):
+    ** Name
+    ** e-mail ID
+    ** Timestamp
+* A blank line
+* Commit message
+* Commit description (if provided) (not present here)
+
+Now let us check the contents of the tree file. (take the hash from the commit file contents.)
+
+image::cat-file-p-2.jpg[]
+
+The tree file has entries of the files & directories in the current state of the repository, ie, the snapshot of the current state of the local repository.
+
+The format of each line is the same. Let us have a look at `100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5    master_file_1.txt`:
+
+* `100644` mode
+* `blob` is the file type (it can be of a tree type as well)
+* `1a3851c172420a2198cf8ca6f2b776589d955cc5` is the latest SHA1 hash of the added file. It is the same as the hash generated while adding the file to the staging area. This hash can be of a file (ie, blob - like in this case) or a tree file.
+* Name of the file.
+
+let us take a look at the connections between the commit, tree and blob files.
+
+image::connection-graph-1.png[500, 500]
+
+Let us now create another file, add it to Git and commit it.
+
+image::touch-master_file_2.jpg[]
+
+Just like what was done before, let us check the contents of the commit file (using part of the hash `8282663` as seen in the above picture).
+
+image::cat-file-p-3.jpg[]
+
+A new line `parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65`is seen. If you remember, then this is the hash of the previous commit. So Git is creating a graph. (We will have a look at the graph picture soon.) Also, the `HEAD` will now automatically point to this (latest) commit rather than the parent (previous) commit as it was doing before. To verify, let us have a look at where the `HEAD` is pointing.
+
+image::head-1.jpg[]
+
+Now let us check the contents of the tree of the latest commit.
+
+image::cat-file-p-4.jpg[]
+
+The new graph is as follows:
+
+image::connection-graph-2.png[500, 500]
+
+PS: This has been learnt from https://www.youtube.com/watch?v=DjOk0jnqsLk[here].
+
+'''
