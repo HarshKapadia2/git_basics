@@ -139,6 +139,28 @@ The new graph is as follows:
 
 image::connection-graph-2.png[500, 500]
 
+Let us now create a new file (`master_dir_1_file_3.txt`) inside a a directory (`dir_1`), add it, commit it and look at the contents of the commit file.
+
+image::mkdir_1.jpg[]
+
+The commit file has the same format as before. Now let us have a look at the contents of the tree file (with SHA `f6a65` as seen in the above picture).
+
+image::cat-file-p-5.jpg[]
+
+It is surprising to note that the tree `f6a65` points to another tree `abecf`! The name of the new tree is `dir_1`. Now let us have a look at the contents of the `dir_1` tree.
+
+image::cat-file-p-6.jpg[]
+
+So it points to the file inside the directory `dir_1`.
+
+Let us have a look at how the tree has connected itself to the blobs.
+
+image::tree-1.png[]
+
+Now let us have a look at the graph of the entire repository.
+
+image::connection-graph-3.png[]
+
 PS: This has been learnt from https://www.youtube.com/watch?v=DjOk0jnqsLk[here].
 
 '''
