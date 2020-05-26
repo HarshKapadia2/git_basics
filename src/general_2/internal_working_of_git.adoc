@@ -13,6 +13,8 @@ Using `du -c` we can find the contents of the root directory `inside_git`. It sh
 
 image::du-c-1.jpg[]
 
+==== Blob object
+
 Create a new file in the root folder.
 
 image::touch-master_file_1.jpg[]
@@ -48,7 +50,7 @@ image::de-compressed.jpg[]
 
 Let us break that down:
 
-* `blob` is the file type. It is an abbreviation for 'binary large object'. 
+* *`blob`* is the file type. It is an abbreviation for 'binary large object'. 
 +
 Files can be of three types in Git:
 
@@ -72,6 +74,8 @@ Some of the commands that we need:
 * `git cat-file -t <hash>` (-t = type) to display just the file type (blob, commit or tree).
 * `git cat-file -s <hash>` (-s = size) to display just the file size.
 
+==== Commit and tree objects
+
 Now let us commit the file using [`git commit`] and then run `du -c` again.
 
 image::commit-master_file_1-1.jpg[]
@@ -82,7 +86,7 @@ image::cat-file-t-1.jpg[]
 
 So the type of the file is `commit`, telling us that this is a file generated through a commit.
 
-Now let us check the content of the commit file.
+Now let us check the content of the *commit file*.
 
 image::cat-file-p-1.jpg[]
 
@@ -102,7 +106,7 @@ Let us break down the output:
 * Commit message
 * Commit description (if provided) (not present here)
 
-Now let us check the contents of the tree file. (take the hash from the commit file contents.)
+Now let us check the contents of the *tree file*. (Take the hash from the commit file contents.)
 
 image::cat-file-p-2.jpg[]
 
@@ -118,6 +122,8 @@ The format of each line is the same. Let us have a look at `100644 blob 1a3851c1
 let us take a look at the connections between the commit, tree and blob files.
 
 image::connection-graph-1.png[500, 500]
+
+==== Adding another file (parent commit)
 
 Let us now create another file, add it to Git and commit it.
 
@@ -138,6 +144,8 @@ image::cat-file-p-4.jpg[]
 The new graph is as follows:
 
 image::connection-graph-2.png[500, 500]
+
+==== Creating a directory
 
 Let us now create a new file (`master_dir_1_file_3.txt`) inside a a directory (`dir_1`), add it, commit it and look at the contents of the commit file.
 
@@ -162,5 +170,21 @@ Now let us have a look at the graph of the entire repository.
 image::connection-graph-3.png[]
 
 PS: This has been learnt from https://www.youtube.com/watch?v=DjOk0jnqsLk[here].
+
+==== Renaming a file
+
+Let us rename `master_file_1.txt` to `the_master_file.txt` and see how Git handles it internally.
+
+image::mv-1.jpg[]
+
+image::add-1.jpg[]
+
+When the file is committed, Git is smart enough to recognize that a file has been renamed and is not a new file, as can be seen in the last line of the above picture.
+
+Now let us check the contents of the commit and tree files.
+
+image::cat-file-p-7.jpg[]
+
+Take a look at the last line. The hash `1a385` is the same as master_file_1.txt (scroll up and check), just the name of the file has been changed by Git instead of creating a new blob file. This is efficient space management by Git!
 
 '''
