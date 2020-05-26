@@ -9,4 +9,17 @@
 
 To initialize a local git link:index.html#_repository[repository (repo)] in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialised.
 
+==== Options/Flags
+
+===== No option
+
+- Initializes new repo in the current directory.
+- Creates `./.git`.
+
+===== <new_folder_name>
+
+- Eg: `git init <new_folder_name>`
+- Initializes a new repo in `./<new_folder_name>`.
+- Creates `./<new_folder_name>/.git`.
+
 '''
