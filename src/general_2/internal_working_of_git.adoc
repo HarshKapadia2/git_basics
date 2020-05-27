@@ -278,6 +278,10 @@ NOTE: On pushing and/or pulling, these files are not deleted, just a pack file a
 
 * The `./.git/objects/e6` directory did not get removed as it was not related (connected) to any tree object.
 
+Finally, take a look at the log of the repository.
+
+image::log-1.jpg[]
+
 .Related
 ****
 * https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More details on the pack file]
