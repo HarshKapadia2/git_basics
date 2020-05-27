@@ -2859,7 +2859,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 </div>
 <div class="paragraph">
-<p>A new directory <code>e6</code> has been added to <code>./.git/objects</code> and it contains one file.</p>
+<p>Note that a new directory <code>e6</code> has been added to <code>./.git/objects</code>.</p>
 </div>
 <div class="paragraph">
 <p>Use the <code>dir</code> (or <code>ls</code>) command to find out which file is present in the dir <code>./.git/objects/e6</code>.</p>
@@ -2873,7 +2873,7 @@ It is recommended to go through this section only if the reader has some experie
 <p>The file name <code>9de29bb2d1d6434b8b29ae775ad8c2e48c5391</code> has 38 characters. On combining it with the folder name (<code>e6</code>) at the start, it becomes a 40 character string <code>e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</code>. This is a [SHA1] (Secure Hashing Algorithm 1) hash. Git encodes the content of the file (and more - more on that soon) in this hash. Every add and commit produces its own unique SHA1 hash(es). The first two characters of the hash are used for bucketing the hashes into folders by Git. The case of two hashes colliding is very rare. <strong>Git uses 4 to 8 characters to refer to a commit in short.</strong></p>
 </div>
 <div class="paragraph">
-<p>Now as mentioned in the previous paragraph, Git stores the contents of the file and other details in the hash. To check that out, some content to the file needs to be added. The file will then have to be added again (this will produce another hash).</p>
+<p>Now as mentioned in the previous paragraph, Git stores the contents of the file and other details in the hash. To check that out, some content needs to be added to the file. The file will then have to be added again (this will produce another hash).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3012,10 +3012,10 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <div class="ulist">
 <ul>
 <li>
-<p><code>tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc</code> is the SHA1 hash of the tree commit generated (remember that two files were generated in <code>./.git/objects</code> on committing the file). The tree is the [snapshot] of the current state of the local repository. The contents of the tree file will be looked into soon.</p>
+<p><code>tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc</code> is the other SHA1 hash that was generated (remember that two files were generated in <code>./.git/objects</code> on committing the file), of the type <code>tree</code>. The tree is the [snapshot] of the current state of the local repository. The contents of the tree file will be looked into soon.</p>
 </li>
 <li>
-<p>Parent commit SHA1 hash (not present here - will be looked into in the <code>Adding another file (parent commit)</code> section below.)</p>
+<p>Parent commit&#8217;s SHA1 hash (not present here - will be looked into in the <code>Adding another file (parent commit)</code> section below.)</p>
 </li>
 <li>
 <p>The next line has the details of the author (the one who wrote the code):</p>
@@ -3069,10 +3069,13 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>The tree file has entries of the files &amp; directories in the snapshot (current state) of the local repository.</p>
+<p><strong>The tree file has entries of the files &amp; directories in the snapshot (current state) of the local repository.</strong></p>
 </div>
 <div class="paragraph">
-<p>The format of each line is the same. Have a look at <code>100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file_1.txt</code>:</p>
+<p>The format of each line is the same.</p>
+</div>
+<div class="paragraph">
+<p>Have a look at <code>100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file_1.txt</code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3080,7 +3083,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <p><code>100644</code> is the mode, which is some sort of unix-style file permission and file type checking system.</p>
 </li>
 <li>
-<p><code>blob</code> is the file type. (It can be a <code>tree</code> object as well.)</p>
+<p><code>blob</code> is the file type. (It can be a <code>tree</code> object as well - covered in the <code>Creating a directory</code> section below.)</p>
 </li>
 <li>
 <p><code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> is the latest SHA1 hash of the added file. It is the same as the hash generated while adding the file to the staging area. This hash can be of a blob (like in this case) or a tree file (looked into in the <code>Creating a directory</code> section below).</p>
@@ -3097,6 +3100,18 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <div class="content">
 <img src="src/images/connection-graph-1.png" alt="600" width="600">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so is not connected to the tree <code>1b219</code>. Only the latest blob of every added file is connected to the new tree object when a commit is made.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -3118,12 +3133,15 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>A new line <code>parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65`is seen. Remember, this is the hash of the previous commit. So Git is creating a graph. (A picture is provided below.) Also, the [`HEAD</code>] will now automatically point to this (latest) commit rather than the parent (previous) commit as it was doing before. To verify, have a look at where the <code>HEAD</code> is pointing.</p>
+<p>A new line <code>parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65</code> is seen. Remember, this is the hash of the previous commit. <strong>So Git is creating a graph.</strong> (A picture is provided below.) Also, the [<code>HEAD</code>] will now automatically point to this (latest - <code>82826</code>) commit rather than the parent (previous - <code>d5b8f</code>) commit as it was doing before. To verify, have a look at where the <code>HEAD</code> is pointing.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="src/images/head-1.jpg" alt="600" width="600">
 </div>
+</div>
+<div class="paragraph">
+<p>It is pointing to the latest commit (<code>82826</code>).</p>
 </div>
 <div class="paragraph">
 <p>Now check the contents of the tree object of the latest commit.</p>
@@ -3134,7 +3152,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>Take a look at the new graph.</p>
+<p>Take a look at the new graph of the repository.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3156,7 +3174,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <p>The commit file has the same format as before.</p>
 </div>
 <div class="paragraph">
-<p>Now have a look at the contents of the tree file (with SHA <code>f6a65</code> as seen in the above picture).</p>
+<p>Now have a look at the contents of the tree file (with SHA1 hash <code>f6a65</code> as seen in the above picture).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3175,7 +3193,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>So it points to the file inside the directory <code>dir_1</code>.</p>
+<p>So it points to the file (<code>master_dir_1_file_3.txt</code>) inside the directory <code>dir_1</code>.</p>
 </div>
 <div class="paragraph">
 <p>Have a look at how the tree connected itself to the blobs.</p>
@@ -3221,7 +3239,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>Take a look at the last line. The hash <code>1a385</code> is the same as master_file_1.txt (scroll up and check), <strong>just the name of the file has been changed in the tree object by Git instead of creating a new blob file. This is efficient space management by Git!</strong></p>
+<p>Take a look at the last line. The hash <code>1a385</code> is same as the hash of the original file name (<code>master_file_1.txt</code>) (scroll up and check) and <strong>just the name of the file has been changed in the tree object by Git instead of creating a new blob file. This is efficient space management by Git!</strong></p>
 </div>
 <div class="paragraph">
 <p>Take a look at the structure of the repo.</p>
@@ -3256,7 +3274,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>On comparing the SHA1 hashes of <code>master_picture_1.png</code> in the latest (<code>6d2d2</code>) and previous (<code>27666</code>) tree, we can make out that they are <strong>different</strong>. So Git has created two different blobs (<code>ca893</code> and <code>1f7af</code>) for the same file, even when they have a very small difference.</p>
+<p>On comparing the SHA1 hashes of <code>master_picture_1.png</code> in the latest (<code>6d2d2</code>) and previous (<code>27666</code>) tree, we can make out that they are <strong>different</strong>. So Git has created two different blobs (<code>ca893</code> and <code>1f7af</code>) for the same file, even when they only have a very small difference.</p>
 </div>
 <div class="paragraph">
 <p>Run <code>du -c</code> now.</p>
@@ -3282,7 +3300,7 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 </table>
 </div>
 <div class="paragraph">
-<p>So is Git inefficient at handling huge files? No. The content of the file has changed and this produces a different SHA1 hash (<code>1f7af</code>) than the original SHA1 hash (<code>ca893</code>) and so Git is not able to identify the change. Having multiple copies of such a huge file is not a problem in the local storage, but it will take up a lot of bandwidth while [pushing] and [pulling] from a platform like [GitHub]. So to avoid this, Git uses <strong>Delta compression</strong>. It uses the difference (<code>diff.</code> in short) of one of the files and indicates the other as the parent. This is looked into in the <code>Pack file</code> section below.</p>
+<p>So is Git inefficient at handling huge files? No. The content of the file has changed and this produces a different SHA1 hash (<code>1f7af</code>) than the original SHA1 hash (<code>ca893</code>) and so Git is not able to handle the change like it did when a file was simply renamed. Having multiple copies of such a huge file is not a problem in the local storage, but it will take up a lot of bandwidth while [pushing] and [pulling] from a platform like [GitHub]. So to avoid this, Git uses <strong>Delta compression</strong>. It uses the difference (<code>diff.</code> in short) of one of the files and indicates the other as the parent. This is looked into in the <code>Pack file</code> section below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3323,11 +3341,23 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 <div class="paragraph">
 <p><span class="image"><img src="src/images/du-c-4.jpg" alt="600" width="600"></span></p>
 </div>
-<div class="paragraph">
-<p>Now the size of <code>./.git/objects/pack</code> in the above picture is 1380 kb and a lot of the files in <code>./.git/objects</code> have disappeared, except for <code>./.git/objects/e6</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The total size of the <code>.git</code> directory went down from 4220kb (seen in the first <code>du -c</code> picture in this sub-section) to 2838kb (as seen in the above picture). This is a 32.75% reduction in the size of the local repository!
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>All of this will be looked into, one by one:</p>
+<p>Notice in the above picture that the size of <code>./.git/objects/pack</code> is 1380 kb and a lot of the files in <code>./.git/objects</code> have disappeared, except for <code>./.git/objects/e6</code>.</p>
+</div>
+<div class="paragraph">
+<p>All of this will be looked into, one by one.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3342,7 +3372,7 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 <p>As mentioned above, two files (a pack file <code>.pack</code> and an index file <code>.idx</code>) are created.</p>
 </div>
 <div class="paragraph">
-<p>Have a look at the contents of both the files using the plumbing command <code>git verify-pack -v path/to/pack/file/&lt;file_name&gt;.pack</code>. (Works with <code>.idx</code> as well.)</p>
+<p>Have a look at the contents of both the files using the plumbing command <code>git verify-pack -v path/to/pack/file/&lt;file_name&gt;.pack</code> (-v = verbose). (Works with <code>.idx</code> as well.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3377,7 +3407,7 @@ A similar example can be found <a href="https://gist.github.com/matthewmcculloug
 <div class="title">Note</div>
 </td>
 <td class="content">
-The pack file has a graph in it, just like the commit, tree and blob files have one!
+<strong>The pack file has a graph in it, just like the commit, tree and blob files have one!</strong>
 </td>
 </tr>
 </table>
@@ -3399,7 +3429,7 @@ The <code>.idx</code> (index) file stores the same content as the <code>.pack</c
 <li>
 <p>Now look into the <code>./.git/objects</code> directory.</p>
 <div class="paragraph">
-<p>On running the aggressive garbage collection, Git got rid of all the files <span class="underline">that were related to commits</span> and added them to the pack file.</p>
+<p>On running the aggressive garbage collection, Git got rid of all the files <strong>that were related to commits</strong> and added them to the pack file.</p>
 </div>
 </li>
 </ul>
