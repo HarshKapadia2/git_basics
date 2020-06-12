@@ -1476,6 +1476,46 @@ Go through <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5
 </ul>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_amend">--amend</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>To change the commit message of the latest commit.</p>
+</li>
+<li>
+<p>This will open a text editor to change the commit message. Once the file is saved and closed, the changes are made.</p>
+</li>
+<li>
+<p>To do it directly from the command line use <code>git commit -m "&lt;new_commit_msg&gt;" -m "&lt;new_commit_description&gt;"</code>. (Commit description is optional.)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This command will change the commit message of the lastest commit only. Refer to [<code>git rebase</code>] for changing older commit messages.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this for unpushed commits only.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect4">
 <h5 id="_a_or_all">-a or --all</h5>
 <div class="ulist">
