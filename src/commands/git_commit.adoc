@@ -77,13 +77,13 @@ IMPORTANT: Go through https://gist.github.com/rishavpandey43/84665ffe3cea76400d8
 
 * Enter the commit message and commit description if needed.
 
-==== --amend
+===== --amend
 
 * To change the commit message of the latest commit.
 * This will open a text editor to change the commit message. Once the file is saved and closed, the changes are made.
 * To do it directly from the command line use `git commit -m "<new_commit_msg>" -m "<new_commit_description>"`. (Commit description is optional.)
 
-NOTE: This command will change the commit message of the lastest commit only. Refer to [`git rebase`] for changing older commit messages.
+NOTE: This command will change the commit message of the lastest commit only. Refer to link:index.html#_git_rebase[`git rebase`] for changing older commit messages.
 
 CAUTION: This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this for unpushed commits only.
 
