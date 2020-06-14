@@ -1276,14 +1276,36 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <div class="sect3">
 <h4 id="_optionsflags_6">Options/Flags</h4>
 <div class="sect4">
-<h5 id="_s">-s</h5>
+<h5 id="_s_or_short">-s or --short</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Gives the summary of files</p>
+<p>Gives a summary of untracked and staged (added) files.</p>
 </li>
 <li>
-<p><code>??</code> implies untracked files, <code>A</code> implies added files, <code>M (red)</code> implies unadded modified files, <code>M (green)</code> implies added modified files, etc&#8230;&#8203;</p>
+<p>Meanings of different symbols</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>??</code> implies untracked files.</p>
+</li>
+<li>
+<p><code>A</code> implies newly staged files.</p>
+</li>
+<li>
+<p><code>M (red)</code> implies modifications in a staged file that has not been staged again.</p>
+</li>
+<li>
+<p><code>M (green)</code> implies modifications in a staged file that has been staged again.</p>
+</li>
+<li>
+<p><code>D (red)</code> implies the deletion of a staged file that has not been staged again.</p>
+</li>
+<li>
+<p><code>D (green)</code> implies the deletion of a staged file that has been staged again.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

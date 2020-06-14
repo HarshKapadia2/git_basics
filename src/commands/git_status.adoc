@@ -24,9 +24,15 @@ The following terms are required to be understood:
 
 ==== Options/Flags
 
-===== -s
+===== -s or --short
 
-* Gives the summary of files
-* `??` implies untracked files, `A` implies added files, `M (red)` implies unadded modified files, `M (green)` implies added modified files, etc...
+* Gives a summary of untracked and staged (added) files.
+* Meanings of different symbols
+    ** `??` implies untracked files.
+    ** `A` implies newly staged files.
+    ** `M (red)` implies modifications in a staged file that has not been staged again.
+    ** `M (green)` implies modifications in a staged file that has been staged again.
+    ** `D (red)` implies the deletion of a staged file that has not been staged again.
+    ** `D (green)` implies the deletion of a staged file that has been staged again.
 
 '''
