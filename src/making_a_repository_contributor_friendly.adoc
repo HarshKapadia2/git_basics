@@ -1,5 +1,21 @@
 == Making a Repository Contributor Friendly
 
+Open source is all about opening up projects for the community to use and contribute to! Contributions are a very important aspect of open source. Contributions help the community in improving software/projects that they use, for themselves and others.
+
+To make contributions easier, the following files/tools are used in a repository
+
+    * link:index.html#_readme_md[`README.md`]
+    * link:index.html#_contributing_md[`CONTRIBUTING.md`]
+    * link:index.html#_license[`LICENSE`]
+    * link:index.html#_code_of_conduct[`CODE_OF_CONDUCT`]
+    * link:index.html#_issues[Issues]
+
+They are discussed below.
+
 include::github/readme.adoc[]
+include::github/contributing.adoc[]
+include::github/license.adoc[]
+include::github/code_of_conduct.adoc[]
+include::github/issues.adoc[]
 
 '''
