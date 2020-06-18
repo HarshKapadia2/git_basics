@@ -12,6 +12,8 @@ To make contributions easier, the following files/tools are used in a repository
 
 They are discussed below.
 
+TIP: A good place to get to know how a repository compares with the recommended community standards and add the missing files is the 'Community' tab in the 'Insights' section of a repository.
+
 include::github/readme.adoc[]
 include::github/contributing.adoc[]
 include::github/license.adoc[]
