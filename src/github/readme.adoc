@@ -34,7 +34,7 @@ Welcome all contributions & add a link to the `CONTRIBUTING.md` file.
 
 ## Code of Conduct
 
-Add a link to the `CODE_OF_CONDUCT` file.
+Add a link to the `CODE_OF_CONDUCT.md` file.
 ```
 
 NOTE: The above template was taken from link:https://github.com/HarshKapadia2/attendance_management/blob/master/README.md[here].
