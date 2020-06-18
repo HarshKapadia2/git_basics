@@ -1,0 +1,5 @@
+== Making a Repository Contributor Friendly
+
+include::github/readme.adoc[]
+
+'''
