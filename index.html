@@ -446,7 +446,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
+<ul class="sectlevel0">
 <li><a href="#_abstract">Abstract</a></li>
 <li><a href="#_preface">Preface</a></li>
 <li><a href="#_general_1">General #1</a>
@@ -499,6 +499,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_what_is_github">What is GitHub?</a></li>
 <li><a href="#_github_repositories">GitHub Repositories</a></li>
+<li><a href="#_making_a_repository_contributor_friendly">Making a Repository Contributor Friendly</a>
+<ul class="sectlevel2">
+<li><a href="#_readme_md">README.md</a></li>
+<li><a href="#_contributing_md">CONTRIBUTING.md</a></li>
+<li><a href="#_license">License</a></li>
+<li><a href="#_code_of_conduct">Code of Conduct</a></li>
+<li><a href="#_issues">Issues</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_terms">Terms</a>
@@ -527,17 +536,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_abstract">Abstract</h2>
-<div class="sectionbody">
+<h1 id="_abstract" class="sect0">Abstract</h1>
 <div class="paragraph">
 <p>This book contains some basic concepts, commands &amp; conventions for Git &amp; GitHub.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_preface">Preface</h2>
-<div class="sectionbody">
+<h1 id="_preface" class="sect0">Preface</h1>
 <div class="paragraph">
 <p>The open source community is amazing and very friendly. Contributing to it is always exciting if done in the spirit of improving the community and enjoying oneself.</p>
 </div>
@@ -585,11 +588,7 @@ One might want to familiarize themselves with <a href="index.html#_terms">these<
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_general_1">General #1</h2>
-<div class="sectionbody">
+<h1 id="_general_1" class="sect0">General #1</h1>
 <div class="sect2">
 <h3 id="_version_controlling_systems_vcs">Version Controlling Systems (VCS)</h3>
 <div class="ulist">
@@ -846,11 +845,7 @@ A local repo does not need to have a remote repo.
 </div>
 <hr>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_commands">Commands</h2>
-<div class="sectionbody">
+<h1 id="_commands" class="sect0">Commands</h1>
 <div class="sect2">
 <h3 id="_git_2">git</h3>
 <div class="sect3">
@@ -2830,11 +2825,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <hr>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_general_2">General #2</h2>
-<div class="sectionbody">
+<h1 id="_general_2" class="sect0">General #2</h1>
 <div class="sect2">
 <h3 id="_merge_conflicts">Merge Conflicts</h3>
 <div class="sect3">
@@ -3554,11 +3545,7 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 <hr>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_github">GitHub</h2>
-<div class="sectionbody">
+<h1 id="_github" class="sect0">GitHub</h1>
 <div class="sect2">
 <h3 id="_what_is_github">What is GitHub?</h3>
 <div class="ulist">
@@ -3581,6 +3568,15 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </li>
 <li>
 <p><a href="https://github.com/">GitHub</a> is just one such service for Git. Other prominent services include GitLab, Bitbucket, Git Kraken, etc.</p>
+</li>
+<li>
+<p>Official GitHub guides can be found <a href="https://guides.github.com/">here</a>.</p>
+</li>
+<li>
+<p>Official GitHub documentaion can be found <a href="https://help.github.com/en">here</a>.</p>
+</li>
+<li>
+<p>A guide to open source by GitHub can be found <a href="https://opensource.guide/">here</a>.</p>
 </li>
 </ul>
 </div>
@@ -3675,11 +3671,293 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 <hr>
 </div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_terms">Terms</h2>
+<h2 id="_making_a_repository_contributor_friendly">Making a Repository Contributor Friendly</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Open source is all about opening up projects for the community to use and contribute to! Contributions are a very important aspect of open source. Contributions help the community in improving software/projects that they use, for themselves and others.</p>
+</div>
+<div class="paragraph">
+<p>To make contributions easier, the following files/tools are used in a repository</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="index.html#_readme_md"><code>README.md</code></a></p>
+</li>
+<li>
+<p><a href="index.html#_contributing_md"><code>CONTRIBUTING.md</code></a></p>
+</li>
+<li>
+<p><a href="index.html#_license"><code>LICENSE</code></a></p>
+</li>
+<li>
+<p><a href="index.html#_code_of_conduct"><code>CODE_OF_CONDUCT.md</code></a></p>
+</li>
+<li>
+<p><a href="index.html#_issues">Issues</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>They are discussed below.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+A good place to get to know how a repository compares with the recommended community standards and add the missing files is the 'Community' tab in the 'Insights' section of a repository.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_readme_md">README.md</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>README.md</code> file is where all the details of the project are written.</p>
+</li>
+<li>
+<p><code>md</code> stands for 'Markdown', which is a lightweight and very easy to learn markup language to create rich text using a plain text editor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The syntax can be learnt <a href="https://www.youtube.com/watch?v=HUBNt18RFbo">here</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/tchapi/markdown-cheatsheet">Markdown cheat sheet</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A <code>README.md</code> file usually includes a brief description of the project with its features, a link to the <a href="index.html#_contributing_md"><code>CONTRIBUTING.md</code></a> file, a link to the <a href="index.html#_code_of_conduct"><code>CODE_OF_CONDUCT</code></a> file, a link to the <a href="index.html#_license"><code>LICENSE</code></a> file and any other section that the repository owner wants to add.</p>
+</li>
+<li>
+<p>Sample template</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># repo name (or logo/picture)
+&lt;Add badges (shields) here&gt;
+&lt;Hosting URL of project (if any)&gt;
+&lt;Tag line&gt;
+
+Description of project
+
+## Features
+
+Describe the features of your project.
+
+## Technologies used
+
+List all the technologies used
+
+## Installation
+
+Give steps to install and use your software/project. (Not for contribution purposes.)
+
+## Contributions
+
+Welcome all contributions &amp; add a link to the `CONTRIBUTING.md` file.
+
+## Code of Conduct
+
+Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The above template was taken from <a href="https://github.com/HarshKapadia2/attendance_management/blob/master/README.md">here</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges/shields can be found/made at <a href="https://shields.io/" class="bare">https://shields.io/</a>.</p>
+</li>
+<li>
+<p>For a sample README.md template and more information in READMEs, refer to <a href="https://www.makeareadme.com/" class="bare">https://www.makeareadme.com/</a>.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_contributing_md">CONTRIBUTING.md</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>CONTRIBUTING.md</code> file explains how a contributor should do things like format code, test fixes, and submit patches. It can also include instructions for contributors to set up a local environment.</p>
+</li>
+<li>
+<p><code>md</code> stands for 'Markdown', which is a lightweight and very easy to learn markup language to create rich text using a plain text editor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The syntax can be learnt <a href="https://www.youtube.com/watch?v=HUBNt18RFbo">here</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/tchapi/markdown-cheatsheet">Markdown cheat sheet</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A sample template can be found <a href="https://github.com/HarshKapadia2/attendance_management/blob/master/CONTRIBUTING.md">here</a>.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_license">License</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>An open source license protects contributors and users. Businesses and savvy developers won’t touch a project without this protection.</p>
+</li>
+<li>
+<p><a href="https://opensource.guide/legal/#why-do-people-care-so-much-about-the-legal-side-of-open-source">The need for an open source license.</a></p>
+</li>
+<li>
+<p>The license under which a project is released can be changed at any time.</p>
+</li>
+<li>
+<p>it’s hard to go wrong with the <a href="https://choosealicense.com/licenses/mit/">MIT license</a> as it’s short, very easy to understand and allows anyone to do anything so long as they keep a copy of the license, including the repository owner&#8217;s copyright notice.</p>
+</li>
+<li>
+<p>A good place to choose a license is <a href="https://choosealicense.com/" class="bare">https://choosealicense.com/</a>.</p>
+</li>
+<li>
+<p>A commonly used license can be added directly from the 'Community' tab in the 'Insights' section of a repository. If the license is not present in the license section, a file called <code>LICENSE</code> (without an extension) can be created and the content of the license can be pasted in it. (The contents can be found at <a href="https://choosealicense.com/." class="bare">https://choosealicense.com/.</a>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If certain software doesn’t have a license, that generally means that there is no permission from the creators of the software to use, modify or share the software. Although a code host such as GitHub may allow viewing and forking the code, this does not imply that anyone is permitted to use, modify, or share the software for any purpose.</p>
+</div>
+<div class="paragraph">
+<p>The options are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ask the maintainers nicely to add a license.</p>
+</li>
+<li>
+<p>Don’t use the software.</p>
+</li>
+<li>
+<p>Negotiate a private license with a lawyer.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://eddiejaoude.github.io/book-open-source-tips/#_licensing">Source of above warning</a></p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_code_of_conduct">Code of Conduct</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A Code of Conduct (CoC) facilitates healthy and constructive community behavior by establishing expectations for behavior for a project’s participants.</p>
+</li>
+<li>
+<p>The <a href="https://www.contributor-covenant.org/">Contributor Covenant</a> is a common CoC used by open source projects.</p>
+</li>
+<li>
+<p>A commonly used CoC can be added directly from the 'Community' tab in the 'Insights' section of a repository. If the CoC is not present in the CoC section, a file called <code>CODE_OF_CONDUCT.md</code> can be created and the content of the CoC can be pasted in it.</p>
+</li>
+<li>
+<p>For more information on CoC, refer to <a href="https://opensource.guide/code-of-conduct/">this</a> documentation.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_issues">Issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Most software projects have a bug tracker of some kind. <a href="index.html#_what_is_github">GitHub’s</a> tracker is called 'Issues', and has its own section in every repository.</p>
+</li>
+<li>
+<p>Issues are a great way to keep track of tasks, enhancements, and bugs for projects. They’re kind of like e-mail, except they can be shared and discussed with the rest of the team.</p>
+</li>
+<li>
+<p>If the <a href="index.html#_github_repositories">repository is public</a>, then anyone can raise an issue.</p>
+</li>
+<li>
+<p>Labels</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Issues have colour coded labels that help categorize and filter issues.</p>
+</li>
+<li>
+<p>Every issue can have multiple labels that can be modified at any time.</p>
+</li>
+<li>
+<p>Some labels are provided by GitHub and they can be custom created as well.</p>
+</li>
+<li>
+<p>Labels for new/beginner contributors:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>good-first-issue</p>
+</li>
+<li>
+<p><a href="index.html#_resources/:~:text=first%20timers%20only">first-timers-only</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Issues and pull requests (PRs) can be referred to using <code>#</code>. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So <code>#69</code> or <code>#420</code> are examples of how issues/PRs can be referred to, in commit messsages, PRs or issues.</p>
+</li>
+<li>
+<p>Refer to <a href="https://guides.github.com/features/issues/">this</a> guide for more on issues.</p>
+</li>
+</ul>
+</div>
+<hr>
+<hr>
+</div>
+</div>
+</div>
+<h1 id="_terms" class="sect0">Terms</h1>
 <div class="sect2">
 <h3 id="_repository">Repository</h3>
 <div class="ulist">
@@ -4312,11 +4590,7 @@ Follow correct <a href="index.html#_git_commit">commit message</a> structure. Eg
 <hr>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_misc">Misc</h2>
-<div class="sectionbody">
+<h1 id="_misc" class="sect0">Misc</h1>
 <div class="sect2">
 <h3 id="_resources">Resources</h3>
 <div class="sect3">
@@ -4464,11 +4738,9 @@ Kindness always wins.
 </div>
 </div>
 </div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-04 13:01:19 +0530
+Last updated 2020-06-18 15:58:24 +0530
 </div>
 </div>
 </body>
