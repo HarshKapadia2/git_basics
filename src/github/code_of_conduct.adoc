@@ -1,5 +1,5 @@
 
-=== CODE_OF_CONDUCT.md
+=== Code of Conduct
 
 * A Code of Conduct (CoC) facilitates healthy and constructive community behavior by establishing expectations for behavior for a project’s participants.
 * The link:https://www.contributor-covenant.org/[Contributor Covenant] is a common CoC used by open source projects.
