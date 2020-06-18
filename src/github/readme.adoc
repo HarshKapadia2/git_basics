@@ -24,6 +24,10 @@ Describe the features of your project.
 
 List all the technologies used
 
+## Installation
+
+Give steps to install and use your software/project. (Not for contribution purposes.)
+
 ## Contributions
 
 Welcome all contributions & add a link to the `CONTRIBUTING.md` file.
