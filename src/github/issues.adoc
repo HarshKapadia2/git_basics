@@ -1,0 +1,17 @@
+
+=== Issues
+
+* Most software projects have a bug tracker of some kind. link:index.html#_what_is_github[GitHub’s] tracker is called 'Issues', and has its own section in every repository.
+* Issues are a great way to keep track of tasks, enhancements, and bugs for projects. They’re kind of like e-mail, except they can be shared and discussed with the rest of the team.
+* If the link:index.html#_github_repositories[repository is public], then anyone can raise an issue.
+* Labels
+    ** Issues have colour coded labels that help categorize and filter issues.
+    ** Every issue can have multiple labels that can be modified at any time.
+    ** Some labels are provided by GitHub and they can be custom created as well.
+    ** Labels for new/beginner contributors:
+        *** good-first-issue
+        *** link:index.html#_resources/:~:text=first%20timers%20only[first-timers-only]
+* Issues and pull requests (PRs) can be referred to using `#`. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So `#69` or `#420` are examples of how issues/PRs can be referred to, in commit messsages, PRs or issues.
+* Refer to link:https://guides.github.com/features/issues/[this] guide for more on issues.
+
+'''
