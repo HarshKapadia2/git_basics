@@ -1,0 +1,11 @@
+
+=== CONTRIBUTING.md
+
+* The `CONTRIBUTING.md` file explains how a contributor should do things like format code, test fixes, and submit patches. It can also include instructions for contributors to set up a local environment.
+* `md` stands for 'Markdown', which is a lightweight and very easy to learn markup language to create rich text using a plain text editor.
+    ** The syntax can be learnt link:https://www.youtube.com/watch?v=HUBNt18RFbo[here].
+    ** link:https://github.com/tchapi/markdown-cheatsheet[Markdown cheat sheet]
+
+* A sample template can be found link:https://github.com/HarshKapadia2/attendance_management/blob/master/CONTRIBUTING.md[here].
+
+'''
