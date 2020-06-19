@@ -8,3 +8,4 @@ The following amazing people have contributed to this repo!
 
 ## Author
 - Harsh Kapadia (HarshKapadia2, harshgkapadia@gmail.com)
+- Kartik Soneji (KartikSoneji, kartiksoneji@rocketmail.com)

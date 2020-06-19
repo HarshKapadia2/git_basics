@@ -12,6 +12,12 @@
 * If a file is in a directory, use `dir_name/file_name.ext`.
 * A resource for .gitignore file templates for different programming languages: https://github.com/github/gitignore
 
+===== Ignore files without modifying `.gitignore`
+
+* You can ignore a file/folder only for your local repository without modifying `.gitignore` by adding a pattern in `.git/info/exclude`.
+* The syntax is the same as for `.gitignore`.
+* This is useful if you want to keep a local `TODO` list, but don't want to commit it to the repository, and don't want to modify `.gitignore` for everyone.
+
 .Related
 ****
 * link:index.html#_git_add[git add]
