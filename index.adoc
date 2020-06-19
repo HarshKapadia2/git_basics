@@ -63,3 +63,7 @@ include::src/misc.adoc[]
 
 [quote, Selena Gomez]
 Kindness always wins.
+
+[quote, Helen Keller]
+Alone, we can do so little;
+Together we can do so much.
