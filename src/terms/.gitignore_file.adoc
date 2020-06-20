@@ -12,7 +12,7 @@
 * If a file is in a directory, use `dir_name/file_name.ext`.
 * A resource for .gitignore file templates for different programming languages: https://github.com/github/gitignore
 
-===== Ignore files without modifying `.gitignore`
+==== Ignore files locally without modifying `.gitignore`
 
 * You can ignore a file/folder only for your local repository without modifying `.gitignore` by adding a pattern in `.git/info/exclude`.
 * The syntax is the same as for `.gitignore`.
