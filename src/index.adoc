@@ -1,14 +1,14 @@
 = git_basics
 By Harsh Kapadia
 v2
-:favicon:
+:favicon:   ./src/images/favicon.ico
 :toc:
 
 :author:    Harsh Kapadia
 :twitter:   https://twitter.com/harshgkapadia
 :e-mail:    harshgkapadia@gmail.com
 :repo:      https://github.com/HarshKapadia2/git_basics
-:imagesdir: src/images
+:imagesdir: ./src/images
 :docinfo1:
 
 = Abstract
@@ -36,28 +36,28 @@ NOTE: One might want to familiarize themselves with link:index.html#_terms[these
 
 = General #1
 
-include::src/general_1.adoc[]
+include::general_1.adoc[]
 
 = Commands
 
-include::src/commands.adoc[]
+include::commands.adoc[]
 
 = General #2
 
-include::src/general_2.adoc[]
+include::general_2.adoc[]
 
 = GitHub
 
-include::src/github_1.adoc[]
-include::src/making_a_repository_contributor_friendly.adoc[]
+include::github_1.adoc[]
+include::making_a_repository_contributor_friendly.adoc[]
 
 = Terms
 
-include::src/terms.adoc[]
+include::terms.adoc[]
 
 = Misc
 
-include::src/misc.adoc[]
+include::misc.adoc[]
 
 ---
 
