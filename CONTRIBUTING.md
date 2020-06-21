@@ -14,7 +14,7 @@
 - Tools to help you view the files locally
    - VS Code extension (AsciiDoc by João Pinto)
    - Browser entention for [Chrome or Edge - Asciidoctor.js Live Preview](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia)
-- Generate `index.html` from `index.adoc` in the root directory by running the command `asciidoctor index.adoc` in the root directory.
+- Generate `index.html` from `index.adoc` in the root directory by running the command `asciidoctor ./src/index.adoc -o ./index.html` in the root directory.
 - **Commit your code using the [correct commit message structure](https://harshkapadia2.github.io/git_basics/#_git_commit).** Eg: ':bug: fix: Correct typo in git.adoc (#0)' which is typed as `:bug: fix: Correct typo in git.adoc (#0)`.
 - Push the code to your forked repo.
 - Make a PR!
@@ -24,7 +24,7 @@
 eg:
 
 ```
- ./index.adoc
+ ./src/index.adoc
 
       |
 
