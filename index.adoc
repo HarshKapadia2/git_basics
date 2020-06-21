@@ -7,8 +7,6 @@ v2
 :author:    Harsh Kapadia
 :twitter:   https://twitter.com/harshgkapadia
 :e-mail:    harshgkapadia@gmail.com
-:date:      2020
-:version:   1.0.0
 :repo:      https://github.com/HarshKapadia2/git_basics
 :imagesdir: src/images
 :docinfo1:
