@@ -1,5 +1,6 @@
 = git_basics
 By Harsh Kapadia
+:favicon:
 :toc:
 
 :author:    Harsh Kapadia
