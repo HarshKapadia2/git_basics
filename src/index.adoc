@@ -9,7 +9,7 @@ v2
 :e-mail:    harshgkapadia@gmail.com
 :repo:      https://github.com/HarshKapadia2/git_basics
 :imagesdir: ./src/images
-:docinfo1:
+:docinfo:   shared
 
 = Abstract
 
