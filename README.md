@@ -20,6 +20,8 @@
 
 ---
 
+*`git_basics - A Git & GitHub Crash Course` by the author, Harsh Kapadia, can be found at https://www.youtube.com/watch?v=HF12-91iazM*
+
 ## ***Contributions***
 
 - All contributors are most welcome!
