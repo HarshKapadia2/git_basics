@@ -14,7 +14,7 @@ v2
 
 = Abstract
 
-This book contains some basic concepts, commands & conventions for Git & GitHub.
+This web site contains some basic concepts, commands & conventions for Git & GitHub.
 
 = Preface
 
