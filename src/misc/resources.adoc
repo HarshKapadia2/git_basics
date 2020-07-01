@@ -3,6 +3,7 @@
 
 ==== Getting started with Git & GitHub
 
+* https://www.youtube.com/watch?v=HF12-91iazM[git_basics - A crash course on Git & GitHub by the author, Harsh Kapadia!]
 * https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be[Crash course by Brad Traversy on YouTube]
 
 ==== Visualize Git
