@@ -6,6 +6,7 @@ v2
 
 :author:    Harsh Kapadia
 :twitter:   https://twitter.com/harshgkapadia
+:linkedIn:  https://www.linkedin.com/in/harsh-kapadia-426999175/
 :e-mail:    harshgkapadia@gmail.com
 :repo:      https://github.com/HarshKapadia2/git_basics
 :imagesdir: ./src/images
@@ -28,7 +29,7 @@ This guide is made from a lot of resources collected over time. They have been h
 
 We would love everyone's help to keep this guide updated and error free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is {repo}.
 
-For any further questions, please feel free to contact the author, {author}, at {twitter} or via e-mail at {e-mail}.
+For any further questions, please feel free to contact the author, Harsh Kapadia, via Twitter https://twitter.com/harshgkapadia[@harshgkapadia], https://www.linkedin.com/in/harsh-kapadia-426999175/[LinkedIn] or e-mail {e-mail}.
 
 IMPORTANT: Watch https://www.youtube.com/watch?v=HF12-91iazM[git_basics - a crash course on Git & GitHub] by the author, Harsh Kapadia, to get started!
 
