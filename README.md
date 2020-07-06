@@ -4,7 +4,7 @@
    <b>A web site for the basics of</b>
    <img src="./src/images/git_logo.png" alt="Git" width=80>
    <b>&</b>
-   <img src="./src/images/github_logo.png" alt="GitHub" width=50>
+   <img src="./src/images/github_logo.png" alt="GitHub" width=85>
    <b>!</b>
    <br>
    <br>
