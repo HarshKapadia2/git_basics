@@ -1,5 +1,5 @@
 <p align=center>
-   <img src="https://github.com/HarshKapadia2/git_basics/blob/master/git_basics_logo.png" alt="git_basics">
+   <img src="./src/images/git_basics_logo.png" alt="git_basics">
    <br>
    <b>A web site for the basics of</b>
    <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
