@@ -6,19 +6,32 @@
 * To get those new changes, the forked repo has to be synced with the original repo.
 
 * Steps to be followed
+
     ** Connect the link:index.html#_repositories_its_types/:~:text=local%20repo[local] forked repo with the original link:link:index.html#_repositories_its_types/:~:text=remote%20repo[remote] repo.
+
         *** Run link:index.html#_git_remote/:~:text=-v[`git remote -v`] to list all the remote repos connected to the local forked repo.
-        *** Add the original (remote) repo as a remote using link:index.html#_git_remote/:~:text=add%20<remote_repo_alias>%20<remote_repo_url>.git[`git remote add originalRepo <link_to_original_repo>.git`]. (The link:index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo[alias] for the original remote repo is assumed to be `originalRepo` here.)
+
+        *** Add the original (remote) repo as a remote to the local forked repo using link:index.html#_git_remote/:~:text=add%20<remote_repo_alias>%20<remote_repo_url>.git[`git remote add originalRepo <link_to_original_repo>.git`].
+        +        
+        (The link:index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo[alias] for the original remote repo is assumed to be `originalRepo` here.)
+
         *** Run link:index.html#_git_remote/:~:text=-v[`git remote -v`] again to check whether it has been added.
+
         *** The original repo is now connected to the loal forked repo.
+
     ** Get the latest changes in the original repo and push the to your forked (remote) repo.
+
         *** Run link:index.html#_git_pull[`git pull originalRepo <branch_name>`] to get the latest changes from the original repo.
+
             **** If there are link:index.html#_merge_conflicts[merge conflicts], they have to be handled.
-        *** Push the changes to the remote forked repo using link:index.html#_git_push[`git push -u origin <branch_name>`]. (The link:index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo[alias] for the remote forked repo is assumed to be `origin` here.)
+
+        *** Push the changes to the remote forked repo using link:index.html#_git_push[`git push -u origin <branch_name>`].
+        +
+        (The link:index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo[alias] for the remote forked repo is assumed to be `origin` here.)
 
 NOTE: The `git pull` step can be split into `git fetch` & `git merge` as well.
 
-* Summary
+* Summary of the important commands to sync a fork
 
 ```
 git remote add originalRepo <link_to_original_repo>.git

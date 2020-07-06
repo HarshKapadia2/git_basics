@@ -2889,7 +2889,9 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <p>Run <a href="index.html#_git_remote/:~:text=-v"><code>git remote -v</code></a> to list all the remote repos connected to the local forked repo.</p>
 </li>
 <li>
-<p>Add the original (remote) repo as a remote using <a href="index.html#_git_remote/:~:text=add%20&lt;remote_repo_alias&gt;%20&lt;remote_repo_url&gt;.git"><code>git remote add originalRepo &lt;link_to_original_repo&gt;.git</code></a>. (The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the original remote repo is assumed to be <code>originalRepo</code> here.)</p>
+<p>Add the original (remote) repo as a remote to the local forked repo using <a href="index.html#_git_remote/:~:text=add%20&lt;remote_repo_alias&gt;%20&lt;remote_repo_url&gt;.git"><code>git remote add originalRepo &lt;link_to_original_repo&gt;.git</code></a>.
++
+(The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the original remote repo is assumed to be <code>originalRepo</code> here.)</p>
 </li>
 <li>
 <p>Run <a href="index.html#_git_remote/:~:text=-v"><code>git remote -v</code></a> again to check whether it has been added.</p>
@@ -2915,7 +2917,9 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </div>
 </li>
 <li>
-<p>Push the changes to the remote forked repo using <a href="index.html#_git_push"><code>git push -u origin &lt;branch_name&gt;</code></a>. (The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the remote forked repo is assumed to be <code>origin</code> here.)</p>
+<p>Push the changes to the remote forked repo using <a href="index.html#_git_push"><code>git push -u origin &lt;branch_name&gt;</code></a>.
++
+(The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the remote forked repo is assumed to be <code>origin</code> here.)</p>
 </li>
 </ul>
 </div>
@@ -2940,7 +2944,7 @@ The <code>git pull</code> step can be split into <code>git fetch</code> &amp; <c
 <div class="ulist">
 <ul>
 <li>
-<p>Summary</p>
+<p>Summary of the important commands to sync a fork</p>
 </li>
 </ul>
 </div>
