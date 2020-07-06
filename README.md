@@ -2,9 +2,9 @@
    <img src="./src/images/git_basics_logo.png" alt="git_basics">
    <br>
    <b>A web site for the basics of</b>
-   <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" width=80>
+   <img src="./src/images/git_logo.png" alt="Git" width=80>
    <b>&</b>
-   <img src="http://pngimg.com/uploads/github/github_PNG20.png" alt="GitHub" width=50>
+   <img src="./src/images/github_logo.png" alt="GitHub" width=50>
    <b>!</b>
    <br>
    <br>
