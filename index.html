@@ -493,6 +493,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_merge_conflicts">Merge Conflicts</a></li>
 <li><a href="#_common_mistakes_how_to_correct_them">Common Mistakes &amp; How To Correct Them</a></li>
+<li><a href="#_sync_a_fork_with_its_original_repo">Sync a Fork with its Original Repo</a></li>
 <li><a href="#_internal_working_of_git">Internal Working of Git</a></li>
 </ul>
 </li>
@@ -2859,6 +2860,107 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <ul>
 <li>
 <p><a href="index.html#_git_commit">git commit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_sync_a_fork_with_its_original_repo">Sync a Fork with its Original Repo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Once a repository (repo) is [forked], the forked repo does not reveive the latest commits in the original repo.</p>
+</li>
+<li>
+<p>To get those new changes, the forked repo has to be synced with the original repo.</p>
+</li>
+<li>
+<p>Steps to be followed</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Connect the <a href="index.html#_repositories_its_types/:~:text=local%20repo">local</a> forked repo with the original <a href="link:index.html#_repositories_its_types/:~:text=remote%20repo">remote</a> repo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <a href="index.html#_git_remote/:~:text=-v"><code>git remote -v</code></a> to list all the remote repos connected to the local forked repo.</p>
+</li>
+<li>
+<p>Add the original (remote) repo as a remote using <a href="index.html#_git_remote/:~:text=add%20&lt;remote_repo_alias&gt;%20&lt;remote_repo_url&gt;.git"><code>git remote add originalRepo &lt;link_to_original_repo&gt;.git</code></a>. (The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the original remote repo is assumed to be <code>originalRepo</code> here.)</p>
+</li>
+<li>
+<p>Run <a href="index.html#_git_remote/:~:text=-v"><code>git remote -v</code></a> again to check whether it has been added.</p>
+</li>
+<li>
+<p>The original repo is now connected to the loal forked repo.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Get the latest changes in the original repo and push the to your forked (remote) repo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <a href="index.html#_git_pull"><code>git pull originalRepo &lt;branch_name&gt;</code></a> to get the latest changes from the original repo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there are <a href="index.html#_merge_conflicts">merge conflicts</a>, they have to be handled.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Push the changes to the remote forked repo using <a href="index.html#_git_push"><code>git push -u origin &lt;branch_name&gt;</code></a>. (The <a href="index.html#_aliases/:~:text=An%20alias%20can%20be%20given%20to%20the%20remote%20repo">alias</a> for the remote forked repo is assumed to be <code>origin</code> here.)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The <code>git pull</code> step can be split into <code>git fetch</code> &amp; <code>git merge</code> as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Summary</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>git remote add originalRepo &lt;link_to_original_repo&gt;.git
+git pull originalRepo &lt;branch_name&gt;
+git push -u origin &lt;branch_name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(where <code>originalRepo</code> = original remote repo alias &amp; <code>origin</code> = remote forked repo alias)</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://medium.com/@john_pels/sync-your-git-fork-to-the-original-repo-a57d5084e20e">Reference article</a></p>
 </li>
 </ul>
 </div>
