@@ -1301,10 +1301,25 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <li>
 <p><code>D (green)</code> implies the deletion of a staged file that has been staged again.</p>
 </li>
+<li>
+<p><code>R (green)</code> implies the renaming/moving/both of a file that has been staged again.</p>
+</li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured <code>D</code>) by Git and a new untracked file (red coloured <code>??</code>) is shown in its place when <code>git status -s</code> is run. Once the <a href="index.html#_git_add"><code>git add</code></a> command is run, Git realises that the file has been renamed/moved/both and displays a green coloured <code>R</code> when <code>git status -s</code> is run again.
+</td>
+</tr>
+</table>
 </div>
 <hr>
 </div>

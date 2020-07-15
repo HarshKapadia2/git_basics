@@ -34,5 +34,8 @@ The following terms are required to be understood:
     ** `M (green)` implies modifications in a staged file that has been staged again.
     ** `D (red)` implies the deletion of a staged file that has not been staged again.
     ** `D (green)` implies the deletion of a staged file that has been staged again.
+    ** `R (green)` implies the renaming/moving/both of a file that has been staged again.
+
+NOTE: Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured `D`) by Git and a new untracked file (red coloured `??`) is shown in its place when `git status -s` is run. Once the link:index.html#_git_add[`git add`] command is run, Git realises that the file has been renamed/moved/both and displays a green coloured `R` when `git status -s` is run again.
 
 '''
