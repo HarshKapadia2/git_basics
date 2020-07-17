@@ -32,6 +32,7 @@ The following terms are required to be understood:
     ** `A` implies newly staged files.
     ** `M (red)` implies modifications in a staged file that has not been staged again.
     ** `M (green)` implies modifications in a staged file that has been staged again.
+    ** `MM (green and red)` implies modifications in a file that has been staged with modifications, but not yet committed.
     ** `D (red)` implies the deletion of a staged file that has not been staged again.
     ** `D (green)` implies the deletion of a staged file that has been staged again.
     ** `R (green)` implies the renaming/moving/both of a file that has been staged again.
