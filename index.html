@@ -1961,12 +1961,41 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="sect3">
 <h4 id="_description_12">Description</h4>
 <div class="paragraph">
-<p>Clone/copy an entire remote repo into the current folder (to which the git CLI is pointing).</p>
+<p>Clone/copy an entire <a href="index.html#_repositories_its_types/:~:text=Remote%20repository%20is%20the%20repo%20on%20the%20server">remote repo</a> into the current folder (to which the git CLI is pointing).</p>
 </div>
 <div class="paragraph">
 <p>A new folder will be created with the name of the repo. <code>cd</code> (change directory) into that folder to start using it.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_10">Options/Flags</h4>
+<div class="sect4">
+<h5 id="_no_option_4">No option</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>The entire remote repo will be cloned locally into a new folder with the same name as the remote repo.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_b_branch_name_single_branch">-b &lt;branch_name&gt; --single-branch</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Clone only a specific branch of a remote repo.</p>
+</li>
+<li>
+<p>It is useful to fetch the required branch quickly to fix the issues in a big project. (<a href="https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch">Source</a>)</p>
+</li>
+<li>
+<p>Eg: <code>git clone -b master --single-branch <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+</li>
+</ul>
+</div>
 <hr>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2095,7 +2124,7 @@ Managing <strong>merge conflicts</strong> (using both CLIs and GUIs) is covered 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optionsflags_10">Options/Flags</h4>
+<h4 id="_optionsflags_11">Options/Flags</h4>
 <div class="sect4">
 <h5 id="_abort">--abort</h5>
 <div class="ulist">
@@ -2195,7 +2224,7 @@ This is useful for documenting all merges that occur in a repository, as a merge
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optionsflags_11">Options/Flags</h4>
+<h4 id="_optionsflags_12">Options/Flags</h4>
 <div class="sect4">
 <h5 id="_list_or_no_option">--list or &lt;no_option&gt;</h5>
 <div class="ulist">
@@ -2350,7 +2379,7 @@ If the currently checked out branch is to be deleted, <a href="index.html#_git_c
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optionsflags_12">Options/Flags</h4>
+<h4 id="_optionsflags_13">Options/Flags</h4>
 <div class="sect4">
 <h5 id="_new_branch_name">&lt;new_branch_name&gt;</h5>
 <div class="ulist">
@@ -2538,9 +2567,9 @@ This condition will land you in a <a href="index.html#_head">detached HEAD</a> s
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optionsflags_13">Options/Flags</h4>
+<h4 id="_optionsflags_14">Options/Flags</h4>
 <div class="sect4">
-<h5 id="_no_option_4">&lt;no_option&gt;</h5>
+<h5 id="_no_option_5">&lt;no_option&gt;</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2689,7 +2718,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optionsflags_14">Options/Flags</h4>
+<h4 id="_optionsflags_15">Options/Flags</h4>
 <div class="sect4">
 <h5 id="_commits_sha1">&lt;commit&#8217;s SHA1&gt;</h5>
 <div class="ulist">

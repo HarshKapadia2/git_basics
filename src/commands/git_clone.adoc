@@ -16,8 +16,20 @@ The following terms are required to be understood:
 
 ==== Description
 
-Clone/copy an entire remote repo into the current folder (to which the git CLI is pointing).
+Clone/copy an entire link:index.html#_repositories_its_types/:~:text=Remote%20repository%20is%20the%20repo%20on%20the%20server[remote repo] into the current folder (to which the git CLI is pointing).
 
 A new folder will be created with the name of the repo. `cd` (change directory) into that folder to start using it.
+
+==== Options/Flags
+
+===== No option
+
+* The entire remote repo will be cloned locally into a new folder with the same name as the remote repo.
+
+===== -b <branch_name> --single-branch
+
+* Clone only a specific branch of a remote repo.
+* It is useful to fetch the required branch quickly to fix the issues in a big project. (https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[Source])
+* Eg: `git clone -b master --single-branch https://github.com/HarshKapadia2/git_basics.git`
 
 '''
