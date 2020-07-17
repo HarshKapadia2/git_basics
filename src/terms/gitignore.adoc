@@ -10,6 +10,7 @@
 * Ignored file names to be written in the format `file_name.ext`. eg: `test.txt`
 * `*.ext` ignores all files with the extension `.ext`.
 * If a file is in a directory, use `dir_name/file_name.ext`.
+* If all the files in a directory need to be excluded, use `relative/path/to/dir`.
 * A resource for .gitignore file templates for different programming languages: https://github.com/github/gitignore
 
 ==== Ignore files locally without modifying `.gitignore`
