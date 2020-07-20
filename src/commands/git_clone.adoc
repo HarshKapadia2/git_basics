@@ -29,8 +29,13 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 ===== -b <branch_name> or --branch <branch_name>
 
 * Clone only a specific branch of a remote repo.
-* It is useful to fetch the required branch quickly to fix the issues in a big project. (https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[Source])
+* It is useful to fetch the required branch quickly to fix the issues in a big project.
 * Eg: `git clone -b master https://github.com/HarshKapadia2/git_basics.git` or `git clone -b master --single-branch https://github.com/HarshKapadia2/git_basics.git`
 * `--single-branch` is assumed.
+
+.Related
+****
+* https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[`-b` reference]
+****
 
 '''
