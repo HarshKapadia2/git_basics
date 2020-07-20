@@ -23,11 +23,11 @@ Further details https://www.atlassian.com/git/tutorials/using-branches[here].
 
 ===== --list or <no_option>
 
-* List all of the branches in the link:index.html#_repository[repository].
+* List all of the local branches in the local link:index.html#_repository[repository].
 
 ===== -a
 
-* Lists all remote branches.
+* Lists all, ie, local and fetched remote branches.
 
 ===== <branch_name>
 
