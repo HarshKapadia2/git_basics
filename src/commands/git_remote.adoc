@@ -18,7 +18,7 @@ Helps to make or break connections to the remote repo from the local repo.
 
 To add a remote repo to a local repo:
 
-    * On GitHub, create a repo without a [license], [README.md] or link:index.html#_gitignore_file[.gitignore].
+    * On GitHub, create a repo without a link:index.html#_license[license], link:index.html#_readme_md[README.md] or link:index.html#_gitignore_file[.gitignore].
     * In the bash, type `git remote add origin <link_to_repo>.git`
     * Do add a license, README.md and .gitignore (more on all 3 later).
 
