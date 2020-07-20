@@ -28,7 +28,7 @@ To add a remote repo to a local repo:
 
 * Lists the remote repos.
 
-===== -v
+===== -v or --verbose
 
 * It gives the link:index.html#_aliases[alias] and corresponding URL of the `remote` (aka the remote repo).
 
