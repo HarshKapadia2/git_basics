@@ -21,6 +21,10 @@ To see information about a specific commit or file. Use link:index.html#_git_log
 
 * To see more information about a specific commit than what `git log <commit's_SHA1>` shows.
 
+===== --name-only <commit's SHA1>
+
+* To view just the name of the files changed in a particular commit.
+
 ===== :<file_name.ext>
 
 * To view the contents of committed or staged files.
