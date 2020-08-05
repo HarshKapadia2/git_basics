@@ -45,4 +45,5 @@ eg:
 ---
 
 ### Further help
-If any further help is needed, do not hesitate to contact me via [Twitter (@harshgkapadia)](https://twitter.com/harshgkapadia), [LinkedIn (@harshgkapadia)](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com).
+
+If any further help is needed, do not hesitate to contact me via [Twitter (@harshgkapadia)](https://twitter.com/harshgkapadia), [LinkedIn (@harshgkapadia)](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com). You can raise an [issue](https://github.com/HarshKapadia2/git_basics/issues) as well.
