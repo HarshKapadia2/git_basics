@@ -16,7 +16,7 @@
 - **Please be particular of the format followed in all files and of your grammar.**
 - Tools to help you provide syntax highlighting and view the rendered files locally
    - VS Code extension - [AsciiDoc by asciidoctor](https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode)
-   - Browser extention for Chrome or Edge - [Asciidoctor.js Live Preview](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia)
+   - Browser extension for Chrome or Edge - [Asciidoctor.js Live Preview](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia)
 - Make contribution(s)!
 - Generate `index.html` from `index.adoc` in the root directory by running the command `asciidoctor ./src/index.adoc -o ./index.html` in the root directory.
 - **Commit your code using the [correct commit message structure](https://harshkapadia2.github.io/git_basics/#_git_commit).** Eg: ':bug: fix: Correct typo in git.adoc (#0)' which is typed as `:bug: fix: Correct typo in git.adoc (#0)`.
@@ -45,4 +45,4 @@ eg:
 ---
 
 ### Further help
-If any further help is needed, do contact me on [Twitter (@harshgkapadia)](https://twitter.com/harshgkapadia) or via e-mail `harshgkapadia@gmail.com`.
+If any further help is needed, do not hesitate to contact me via [Twitter (@harshgkapadia)](https://twitter.com/harshgkapadia), [LinkedIn (@harshgkapadia)](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com).
