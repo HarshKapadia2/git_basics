@@ -22,5 +22,5 @@ Please be mindful of the [Code of Conduct](https://github.com/HarshKapadia2/git_
 ---
 
 <p align="center">
-	The Git logo belongs to <a href="https://www.git-scm.com/">Git</a> and is used under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0 liscense</a>.
+	The Git logo belongs to <a href="https://www.git-scm.com/">Git</a> and is used under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0 license</a>.
 </p>
