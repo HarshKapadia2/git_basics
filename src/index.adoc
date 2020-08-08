@@ -37,28 +37,28 @@ NOTE: One might want to familiarize themselves with link:index.html#_terms[these
 
 = General #1
 
-include::general_1.adoc[]
+include::./refs/general_1.adoc[]
 
 = Commands
 
-include::commands.adoc[]
+include::./refs/commands.adoc[]
 
 = General #2
 
-include::general_2.adoc[]
+include::./refs/general_2.adoc[]
 
 = GitHub
 
-include::github_1.adoc[]
-include::making_a_repository_contributor_friendly.adoc[]
+include::./refs/github_1.adoc[]
+include::./refs/making_a_repository_contributor_friendly.adoc[]
 
 = Terms
 
-include::terms.adoc[]
+include::./refs/terms.adoc[]
 
 = Misc
 
-include::misc.adoc[]
+include::./refs/misc.adoc[]
 
 ---
 

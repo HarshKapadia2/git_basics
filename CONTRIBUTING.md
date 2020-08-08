@@ -33,13 +33,13 @@ eg:
 
       v
 
- ./src/commands.adoc
+ ./src/refs/commands.adoc
 
       |
 
       v
 
- ./src/commands/git_add.adoc
+ ./src/content/commands/git_add.adoc
  ```
 
 ---

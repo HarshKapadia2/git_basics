@@ -1,0 +1,4 @@
+include::../content/general_2/merge_conflicts.adoc[]
+include::../content/general_2/common_mistakes_&_corrections.adoc[]
+include::../content/general_2/fork_syncing.adoc[]
+include::../content/general_2/internal_working_of_git.adoc[]

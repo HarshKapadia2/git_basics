@@ -14,10 +14,10 @@ They are discussed below.
 
 TIP: A good place to get to know how a repository compares with the recommended community standards and add the missing files is the 'Community' tab in the 'Insights' section of a repository.
 
-include::github/readme.adoc[]
-include::github/contributing.adoc[]
-include::github/license.adoc[]
-include::github/code_of_conduct.adoc[]
-include::github/issues.adoc[]
+include::../content/github/readme.adoc[]
+include::../content/github/contributing.adoc[]
+include::../content/github/license.adoc[]
+include::../content/github/code_of_conduct.adoc[]
+include::../content/github/issues.adoc[]
 
 '''

@@ -1,5 +1,0 @@
-include::general_1/vcs.adoc[]
-include::general_1/vcs_types.adoc[]
-include::general_1/git_general.adoc[]
-include::general_1/git_bash.adoc[]
-include::general_1/repos_&_types.adoc[]

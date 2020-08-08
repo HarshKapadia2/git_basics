@@ -1,2 +1,0 @@
-include::github/what_is_github.adoc[]
-include::github/github_repositories.adoc[]
