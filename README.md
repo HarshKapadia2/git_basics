@@ -1,15 +1,11 @@
-<p align=center>
-   <img src="./src/images/git_basics_logo.png" alt="git_basics">
+<p align="center">
+   <img src="./src/images/git_basics_logo.svg" alt="git_basics" width="80%">
    <br>
    <b>A web site for the basics of Git and GitHub!</b>
    <br>
+   View the web site at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
    <br>
-   <a href="#"><img alt="Version 2" src="https://img.shields.io/badge/version-2-brightgreen?style=flat"></a>
-   <br>
-   <br>
-   <i>View the web site at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.</i>
-   <br>
-   <i>Watch the <a href="https://www.youtube.com/watch?v=HF12-91iazM">git_basics Crash Course</a> to get started with Git and GitHub.</i>
+   Watch the <a href="https://www.youtube.com/watch?v=HF12-91iazM">git_basics Crash Course</a> to get started with Git and GitHub.
 </p>
 
 ## Contributions
@@ -21,3 +17,9 @@
 ## Code of Conduct
 
 Please be mindful of the [Code of Conduct](https://github.com/HarshKapadia2/git_basics/blob/master/CODE_OF_CONDUCT.md) while contributing and interacting.
+
+---
+
+<p align="center">
+	The Git logo belongs to <a href="https://www.git-scm.com/">Git</a> and is used under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0 liscense</a>.
+</p>
