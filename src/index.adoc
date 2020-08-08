@@ -1,5 +1,5 @@
 = git_basics
-By Harsh Kapadia
+Harsh Kapadia
 v2
 :favicon:   ./src/images/favicon.ico
 :toc:       left
