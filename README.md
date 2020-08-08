@@ -7,9 +7,9 @@
    <a href="#"><img alt="Version 2" src="https://img.shields.io/badge/version-2-brightgreen?style=flat"></a>
    <br>
    <br>
-   <i>View the web site at <a href="https://harshkapadia2.github.io/git_basics/" target="_blank">harshkapadia2.github.io/git_basics</a>.</i>
+   <i>View the web site at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.</i>
    <br>
-   <i>Watch the <a href="https://www.youtube.com/watch?v=HF12-91iazM" terget="_blank">git_basics Crash Course</a> to get started with Git and GitHub.</i>
+   <i>Watch the <a href="https://www.youtube.com/watch?v=HF12-91iazM">git_basics Crash Course</a> to get started with Git and GitHub.</i>
 </p>
 
 ## Contributions
