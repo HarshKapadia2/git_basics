@@ -3,8 +3,8 @@
 
 ==== Getting started with Git & GitHub
 
-* https://www.youtube.com/watch?v=HF12-91iazM[git_basics - A crash course on Git & GitHub by the author, Harsh Kapadia!]
-* https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be[Crash course by Brad Traversy on YouTube]
+* https://www.youtube.com/watch?v=HF12-91iazM[Crash course by Harsh Kapadia], the author.
+* https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be[Crash course by Brad Traversy]
 
 ==== Visualize Git
 
@@ -12,7 +12,7 @@
 
 ==== Git Documentation
 
-* http://rogerdudler.github.io/git-guide/[Simple & visually pleasing getting-started guide to Git]
+* http://rogerdudler.github.io/git-guide/[Simple & visually pleasing guide to Git]
 * https://www.atlassian.com/git[Git Docs by Atlassian]
 * https://www.git-scm.com/docs[Official Git documentation]
 * https://www.git-scm.com/book/en/v2[Official (free) book - Pro Git (v2)]
@@ -29,11 +29,11 @@
 
 ==== Contribution help
 
-* http://makeapullrequest.com/[Making a Pull Request (PR)]
+* https://github.com/firstcontributions/first-contributions[Learn how to make a Pull Request (PR)]
 
 ===== First Timers Only
 
-* https://kentcdodds.com/blog/first-timers-only[First Timers Only blog post by Kent C. Dodds]
+* https://kentcdodds.com/blog/first-timers-only[First Timers Only blog post]
 * https://twitter.com/first_tmrs_only['first-timers-only' on Twitter]
 * https://github.com/search?utf8=%E2%9C%93&q=label%3Afirst-timers-only+is%3Aopen&type=Issues&ref=searchresults['first-timers-only' issues on GitHub]
 
@@ -41,6 +41,9 @@
 
 * https://github.com/MunGell/awesome-for-beginners/[A GitHub repo which is 'awesome-for-beginners'!]
 * https://eddiejaoude.github.io/book-open-source-tips/#_explore_open_source_projects[Links for easy contributions]
+* Search for *awesome-<name_of_tech/language>* on GitHub for a list of amazing repositories in that technology or language.
+	** Eg: https://github.com/sorrycc/awesome-javascript[`awesome-javascript`]
+	** List of all the `awesome` repos: https://github.com/sindresorhus/awesome
 
 ==== Good articles
 
@@ -50,7 +53,7 @@
 
 ==== Working of Git
 
-* https://www.youtube.com/watch?v=DjOk0jnqsLk[Internal Working of Git by Gaurav Sen on YouTube]
-* https://www.youtube.com/watch?v=yI0BtEzdGtw['Rules To Git By' (Nick Nisi - NebraskaJS) via YouTube]
+* https://www.youtube.com/watch?v=DjOk0jnqsLk[Internal Working of Git by Gaurav Sen]
+* https://www.youtube.com/watch?v=yI0BtEzdGtw['Rules To Git By' by Nick Nisi]
 
 '''
