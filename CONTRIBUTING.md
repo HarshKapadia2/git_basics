@@ -1,11 +1,11 @@
 # Welcome, contributors! :smiley:
 
-- - Please be mindful of the [Code of Conduct](https://github.com/HarshKapadia2/git_basics/blob/master/CODE_OF_CONDUCT.md) while interacting or contributing!
+- - Please be mindful of the [Code of Conduct](CODE_OF_CONDUCT.md) while interacting or contributing!
 - First time contributors can solve [`good first issues`](https://github.com/HarshKapadia2/git_basics/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 - Any contributor with some Git and GitHub knowledge can consider adding some of the requirememnts listed in the [issues](https://github.com/HarshKapadia2/git_basics/issues).
 > NOTE:
 > - If you want to tackle an issue or a part of it, please leave a comment on the issue (mentioning the part you want to tackle), so that I can assign you to that part of the issue and multiple people do not handle the same part of the issue.
-> - If you make a contribution, please do not forget to add your details to the [CONTRIBUTORS.md](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
+> - If you make a contribution, please do not forget to add your details to the [CONTRIBUTORS.md](CONTRIBUTORS.md) file!
 
 ## Local setup
 
