@@ -5,7 +5,7 @@
 - Any contributor with some Git and GitHub knowledge can consider adding some of the requirememnts listed in the [issues](https://github.com/HarshKapadia2/git_basics/issues).
 > NOTE:
 > - If you want to tackle an issue or a part of it, please leave a comment on the issue (mentioning the part you want to tackle), so that I can assign you to that part of the issue and multiple people do not handle the same part of the issue.
-> - If you make a contribution, please do not forget to add your details to the [CONTRIBUTORS.md](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
+> - If you make a contribution, please do not forget to add your details to the [CONTRIBUTORS.md](CONTRIBUTORS.md) file!
 
 ## Local setup
 
