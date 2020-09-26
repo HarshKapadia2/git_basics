@@ -12,12 +12,12 @@
 ## Contributions
 
 - All contributions are most welcome!
-- View the [`CONTRIBUTING.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTING.md) file for further instructions.
-- All the amazing contributors of this repo can be found in the [`CONTRIBUTORS.md`](https://github.com/HarshKapadia2/git_basics/blob/master/CONTRIBUTORS.md) file!
+- View the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for further instructions.
+- All the amazing contributors of this repo can be found in the [`CONTRIBUTORS.md`](CONTRIBUTORS.md) file!
 
 ## Code of Conduct
 
-Please be mindful of the [Code of Conduct](https://github.com/HarshKapadia2/git_basics/blob/master/CODE_OF_CONDUCT.md) while contributing and interacting.
+Please be mindful of the [Code of Conduct](CODE_OF_CONDUCT.md) while contributing and interacting.
 
 ---
 
