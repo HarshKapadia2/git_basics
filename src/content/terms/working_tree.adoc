@@ -1,11 +1,27 @@
 
 === Working Tree
 
-* It notes the untracked files in the working directory/copy - a copy of the most recent state of the files you're working on.
-* Any changes to files will be marked and seen in the Working Tree.
-* Here if you make changes and do not explicitly save them to git, you will lose the changes made to your files.
-* If you make changes to files in your working tree git will recognize that are modified, but until you tell git “Hey pay attention to these files,” it won’t save anything that goes on in them.
-* Further details https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[here].
+It notes the untracked files in the working directory/copy - a copy of the most recent state of the files, a person is working on.
+Any changes to files will be marked and seen in the Working Tree.
+Here if one makes changes and does not explicitly save them to git, he will lose the changes made to the files.
+If he makes changes to files in his working tree git will recognize that are modified, 
+but until he tells git “Hey pay attention to these files,” it won’t save anything that goes on in them.
+
+How can one see what is in his Working Tree? Run the command git status.
+This command will show him two things: The files in his Working 
+Tree and the files in his Staging Area. It will look like something in the 
+image below if he doesn’t have anything in his Staging Area.
+e.g: Let’s create two text files in a folder of any drive, and add some content 
+to it and try to execute the git status command.
+
+So, First, a person needs to run git init command, because it will create a new
+git repository and then after he can perform git status the command to 
+check to his in Working Tree. He can see that the untracked files are 
+shown in red color. If he don’t run the git init command he will get an 
+error, which looks like something in the image below
+
+So, It’s necessary to initialize our project with git. To run git commands.
+
 
 .Related
 ****
