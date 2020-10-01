@@ -1,4 +1,3 @@
-
 === Working Tree
 
 It notes the untracked files in the working directory/copy - a copy of the most recent state of the files, a person is working on.
@@ -18,9 +17,9 @@ So, First, a person needs to run git init command, because it will create a new
 git repository and then after he can perform git status the command to 
 check to his in Working Tree. He can see that the untracked files are 
 shown in red color. If he don’t run the git init command he will get an 
-error, which looks like something in the image below
+error, which looks like something in the image below.
 
-So, It’s necessary to initialize our project with git. To run git commands.
+So, It’s necessary to initialize the project with git. To run git commands.
 
 
 .Related
