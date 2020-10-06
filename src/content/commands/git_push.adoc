@@ -24,3 +24,5 @@ image::git-push.jpeg[caption="", role="thumb", title="What does git push do?", a
 image::fast-forward-merge.png[caption="", role="thumb", title="How a fast forward merge takes place with `git push`", alt="Fast forward merge", link="https://miro.medium.com/max/770/1*HJx_4MCxp0ghLWtTIjH9RQ.jpeg"]
 
 NOTE: From the two pictures above, it can be inferred that Git will allow pushing only if the push results in a fast-forward merge.
+
+'''
