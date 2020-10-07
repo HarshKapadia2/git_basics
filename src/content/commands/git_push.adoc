@@ -17,7 +17,7 @@ The following terms are required to be understood:
 
 This command is used to transfer files from the local repo to the remote repo.
 
-To set up a remote repo, refer to link:#_git_remote[`git remote`] and link:index.html#creating_a_repo[`creating a repo on GitHub`].
+To set up a remote repo, refer to link:#_git_remote[`git remote`] and link:#creating_a_repo[`creating a repo on GitHub`].
 
 image::git-push.jpeg[caption="", role="thumb", title="What does git push do?", alt="Git push illustration", link="https://miro.medium.com/max/689/1*XqgTOmW3uT2_YO-z8NnRhA.jpeg"]
 

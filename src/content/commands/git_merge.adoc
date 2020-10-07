@@ -18,7 +18,7 @@ The `git merge` command's primary responsibility is to combine separate branches
 
 Merging is Git's way of putting a forked history back together again.
 
-The `git merge` command lets you take the independent lines of development created by link:#_git_branch[`git branch`] or link:index.html#_git_checkout[`git checkout`] and integrate them into a single branch.
+The `git merge` command lets you take the independent lines of development created by link:#_git_branch[`git branch`] or link:#_git_checkout[`git checkout`] and integrate them into a single branch.
 
 Preparing to merge:
 

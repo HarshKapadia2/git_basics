@@ -7,7 +7,7 @@
 
 * Steps to be followed
 
-    ** Connect the link:#_repositories_its_types/:~:text=local%20repo[local] forked repo with the original link:link:index.html#_repositories_its_types/:~:text=remote%20repo[remote] repo.
+    ** Connect the link:#_repositories_its_types/:~:text=local%20repo[local] forked repo with the original link:link:#_repositories_its_types/:~:text=remote%20repo[remote] repo.
 
         *** Run link:#_git_remote/:~:text=-v[`git remote -v`] to list all the remote repos connected to the local forked repo.
 

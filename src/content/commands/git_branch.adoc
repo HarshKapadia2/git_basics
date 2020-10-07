@@ -15,7 +15,7 @@ The following term is required to be understood:
 
 The `git branch` command lets the user create, list, rename and delete branches.
 
-It doesn’t let the user switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the link:#_git_checkout[`git checkout`] and link:index.html#_git_merge[`git merge`] commands.
+It doesn’t let the user switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the link:#_git_checkout[`git checkout`] and link:#_git_merge[`git merge`] commands.
 
 Further details https://www.atlassian.com/git/tutorials/using-branches[here].
 
