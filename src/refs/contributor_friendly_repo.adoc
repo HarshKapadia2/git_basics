@@ -1,0 +1,6 @@
+include::../content/contributor_friendly_repo/making_repo_contributor_friendly.adoc[]
+include::../content/contributor_friendly_repo/readme.adoc[]
+include::../content/contributor_friendly_repo/contributing.adoc[]
+include::../content/contributor_friendly_repo/license.adoc[]
+include::../content/contributor_friendly_repo/code_of_conduct.adoc[]
+include::../content/contributor_friendly_repo/issues.adoc[]
