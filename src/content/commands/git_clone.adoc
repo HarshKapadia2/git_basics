@@ -38,7 +38,7 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 * Shallow clone only upto a certain number of latest commits and history either in a `--single-branch` (assumed) or in all branches (`--no-single-branch`).
 * Specify the branch name using `-b` or `--branch` for `--single-branch`. The `master` branch is assumed, if not specified.
 * Eg: `git clone -b v2 --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
-* With `--no-single-branch`, use link:#_git_branch[`git branch -a`] to view the fetched branches and link:index.html#_git_switch[`git switch <branch_name>`] to use it.
+* With `--no-single-branch`, use link:#_git_branch[`git branch -a`] to view the fetched branches and link:#_git_switch[`git switch <branch_name>`] to use it.
 * Eg: `git clone --no-single-branch --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
 
 .Related
