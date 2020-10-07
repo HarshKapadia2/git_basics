@@ -1,0 +1,60 @@
+name: GitHub Pages
+on:
+  push:
+    paths:
+      - "src/**"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: /documents
+
+jobs:
+  build-website:
+    runs-on: ubuntu-latest
+    container: docker://asciidoctor/docker-asciidoctor:latest
+    steps:
+      - name: Checkout code
+        run: |
+          # Set repository Url
+          REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          
+          # Clone repository
+          git clone --depth 2 -b master --no-single-branch "${REPOSITORY_URL}" .
+          
+          # Switch to gh-pages branch
+          if [ -z "$(git branch --list gh-pages)" ]; then
+            # If the branch doesn't exist, then create an orphan branch
+            echo "Could not find gh-pages branch, creating as orphan"
+            git switch --orphan gh-pages
+          else
+            # Else, switch to the branch
+            git switch gh-pages
+          fi
+          
+          # Remove current source
+          rm -rf src
+          # Get latest source
+          git restore src -s master
+        
+      - name: Build site using Asciidoctor
+        run: |
+          # Build page
+          asciidoctor src/index.adoc -o index.html
+      
+      - name: Deploy to GitHub Pages
+        run: |
+          # Add modified files
+          git add src/images
+          git add index.html
+          
+          #Set user
+          git config user.name  "Auto deploy GitHub Pages"
+          git config user.email "cd-deploy-gh-pages@bot"
+          
+          # Commit changes
+          git commit -m "Deploy to pages: $(date +'%Y-%m-%d %T')"
+          
+          # Remove 'https://' from beginning of REPOSITORY_URL
+          REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          git push "https://X-Access-Token:${{ secrets.GITHUB_TOKEN }}@${REPOSITORY_URL:8}" gh-pages
