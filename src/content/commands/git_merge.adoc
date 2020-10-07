@@ -9,8 +9,8 @@
 
 The following terms are required to be understood:
 
-* link:index.html#_head[HEAD]
-* link:index.html#_branches[Branches]
+* link:#_head[HEAD]
+* link:#_branches[Branches]
 
 ==== Description
 
@@ -18,11 +18,11 @@ The `git merge` command's primary responsibility is to combine separate branches
 
 Merging is Git's way of putting a forked history back together again.
 
-The `git merge` command lets you take the independent lines of development created by link:index.html#_git_branch[`git branch`] or link:index.html#_git_checkout[`git checkout`] and integrate them into a single branch.
+The `git merge` command lets you take the independent lines of development created by link:#_git_branch[`git branch`] or link:index.html#_git_checkout[`git checkout`] and integrate them into a single branch.
 
 Preparing to merge:
 
-    * Make sure to be in the branch (`link:index.html#_git_checkout[git checkout] <receiving_ranch>`) you want to merge another branch into (let this branch be called `receiving_branch`).
+    * Make sure to be in the branch (`link:#_git_checkout[git checkout] <receiving_ranch>`) you want to merge another branch into (let this branch be called `receiving_branch`).
     * Make sure the receiving branch and the merging branch are up-to-date with the latest remote changes.
     * Merge using `git merge <merging_branch>`
     * Eg: If you want to merge the 'feature' branch into the 'master' branch, run `git checkout master` (if you aren't already in the master branch, ie, if your HEAD points to another branch) and then run `git merge feature`.
@@ -38,11 +38,11 @@ Merges are of mainly two types:
 
 image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and three-way merges", alt="Types of merges", link="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1"]
 
-NOTE: link:index.html#_git_push[`git push`] is allowed only if you have a fast forward merge.
+NOTE: link:#_git_push[`git push`] is allowed only if you have a fast forward merge.
 
 Further details https://www.atlassian.com/git/tutorials/using-branches/git-merge[here].
 
-NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:index.html#_merge_conflicts[here].
+NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:#_merge_conflicts[here].
 
 ==== Options/Flags
 
@@ -59,12 +59,12 @@ NOTE: This is useful for documenting all merges that occur in a repository, as a
 
 .Related
 ****
-* link:index.html#_git_checkout[git checkout]
-* link:index.html#_git_branch[git branch]
-* link:index.html#_git_pull[git pull]
-* link:index.html#_git_fetch[git fetch]
-* link:index.html#_merge_conflicts[Merge Conflicts]
-* link:index.html#_git_branch[git branch]
+* link:#_git_checkout[git checkout]
+* link:#_git_branch[git branch]
+* link:#_git_pull[git pull]
+* link:#_git_fetch[git fetch]
+* link:#_merge_conflicts[Merge Conflicts]
+* link:#_git_branch[git branch]
 ****
 
 '''

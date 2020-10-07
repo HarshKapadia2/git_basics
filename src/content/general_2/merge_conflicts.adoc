@@ -7,7 +7,7 @@
 
 .Related
 ****
-* link:index.html#_git_merge[git merge]
+* link:#_git_merge[git merge]
 ****
 
 '''

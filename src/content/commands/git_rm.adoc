@@ -9,7 +9,7 @@
 
 The following term is required to be understood:
 
-* link:index.html#_staging_staging_areaindex[Staging (staging area/index)]
+* link:#_staging_staging_areaindex[Staging (staging area/index)]
 
 ==== Description
 
@@ -29,7 +29,7 @@ To remove files from the working tree and from the index.
 
 .Related
 ****
-* link:index.html#_git_add[Add files to staging area (`git add`)]
+* link:#_git_add[Add files to staging area (`git add`)]
 ****
 
 '''

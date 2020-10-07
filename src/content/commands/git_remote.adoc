@@ -9,8 +9,8 @@
 
 The following term is required to be understood:
 
-* link:index.html#_aliases[Aliases]
-* link:index.html#_repository[Repository (repo)]
+* link:#_aliases[Aliases]
+* link:#_repository[Repository (repo)]
 
 ==== Description
 
@@ -18,7 +18,7 @@ Helps to make or break connections to the remote repo from the local repo.
 
 To add a remote repo to a local repo:
 
-    * On GitHub, create a repo without a link:index.html#_license[license], link:index.html#_readme_md[README.md] or link:index.html#_gitignore_file[.gitignore].
+    * On GitHub, create a repo without a link:#_license[license], link:index.html#_readme_md[README.md] or link:index.html#_gitignore_file[.gitignore].
     * In the bash, type `git remote add origin <link_to_repo>.git`
     * Do add a license, README.md and .gitignore (more on all 3 later).
 
@@ -30,7 +30,7 @@ To add a remote repo to a local repo:
 
 ===== -v or --verbose
 
-* It gives the link:index.html#_aliases[alias] and corresponding URL of the `remote` (aka the remote repo).
+* It gives the link:#_aliases[alias] and corresponding URL of the `remote` (aka the remote repo).
 
 ===== add <remote_repo_alias> <remote_repo_url>.git
 

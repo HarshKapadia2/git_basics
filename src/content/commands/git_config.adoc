@@ -20,7 +20,7 @@ NOTE: The global name and e-mail need to be set just once, ie, before Git is use
 
 TIP: Enter the full name and the e-mail ID registered with your GitHub account.
 
-* link:index.html#_aliases[Aliases] can also be set using this flag.
+* link:#_aliases[Aliases] can also be set using this flag.
 
 ===== --list
 * Lists the configurations of Git.
@@ -28,7 +28,7 @@ TIP: Enter the full name and the e-mail ID registered with your GitHub account.
 
 .Related
 ****
-* link:index.html#_aliases[Set aliases]
+* link:#_aliases[Set aliases]
 ****
 
 '''

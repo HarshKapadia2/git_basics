@@ -3,7 +3,7 @@
 
 .Related
 ****
-* link:index.html#_git_commit[git commit]
+* link:#_git_commit[git commit]
 ****
 
 '''

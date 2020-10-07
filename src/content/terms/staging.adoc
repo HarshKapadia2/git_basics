@@ -3,15 +3,15 @@
 
 * It notes the added files in the working directory/copy - a copy of the most recent state of the files you're working on.
 * To stage a file is simply to prepare it finely for a commit. 
-* Refer to the link:index.html#_git_add[diagram].
+* Refer to the link:#_git_add[diagram].
 * Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
 * Further Details can be found https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[here].
 
 .Related
 ****
-* link:index.html#_git_add[git add]
-* link:index.html#_git_rm[git rm]
-* link:index.html#_git_commit[git commit]
+* link:#_git_add[git add]
+* link:#_git_rm[git rm]
+* link:#_git_commit[git commit]
 ****
 
 '''

@@ -7,7 +7,7 @@
 
 ==== Description
 
-To initialize a local git link:index.html#_repository[repository (repo)] in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialised.
+To initialize a local git link:#_repository[repository (repo)] in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialised.
 
 ==== Options/Flags
 

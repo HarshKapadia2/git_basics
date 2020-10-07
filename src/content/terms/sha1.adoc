@@ -10,9 +10,9 @@ image::working-of-commit.jpeg[]
 
 .Related
 ****
-* link:index.html#_git_commit[git commit]
-* link:index.html#_git_log[git log]
-* link:index.html#_git_show[git show]
+* link:#_git_commit[git commit]
+* link:#_git_log[git log]
+* link:#_git_show[git show]
 ****
 
 '''

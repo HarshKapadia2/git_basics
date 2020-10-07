@@ -9,7 +9,7 @@
 
 .Related
 ****
-* link:index.html#_git_add[git add]
+* link:#_git_add[git add]
 ****
 
 '''
