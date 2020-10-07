@@ -3,11 +3,11 @@ Open source is all about opening up projects for the community to use and contri
 
 To make contributions easier, the following files/tools are used in a repository
 
-    * link:index.html#_readme_md[`README.md`]
-    * link:index.html#_contributing_md[`CONTRIBUTING.md`]
-    * link:index.html#_license[`LICENSE`]
-    * link:index.html#_code_of_conduct[`CODE_OF_CONDUCT.md`]
-    * link:index.html#_issues[Issues]
+    * link:#_readme_md[`README.md`]
+    * link:#_contributing_md[`CONTRIBUTING.md`]
+    * link:#_license[`LICENSE`]
+    * link:#_code_of_conduct[`CODE_OF_CONDUCT.md`]
+    * link:#_issues[Issues]
 
 They are discussed below.
 

@@ -1,13 +1,13 @@
 
 === GitHub Repositories
 
-* link:index.html#_repository[What is a repository (repo)?]
+* link:#_repository[What is a repository (repo)?]
 
-* link:index.html#_collaborators[Who are collaborators?]
+* link:#_collaborators[Who are collaborators?]
 
-* link:index.html#_contributors[Who are contributors?]
+* link:#_contributors[Who are contributors?]
 
-* There are two types of repositories on GitHub (These are link:index.html#_repositories_its_types[remote repos])
+* There are two types of repositories on GitHub (These are link:#_repositories_its_types[remote repos])
     ** Public repo
     ** Private repo
 
@@ -27,8 +27,8 @@
 
 .Related
 ****
-* link:index.html#_repository[Repository (repo)]
-* link:index.html#_repositories_its_types[Repos & types]
+* link:#_repository[Repository (repo)]
+* link:#_repositories_its_types[Repos & types]
 ****
 
 '''

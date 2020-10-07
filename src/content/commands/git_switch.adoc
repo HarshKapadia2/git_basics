@@ -9,17 +9,17 @@
 
 The following term is required to be understood:
 
-* link:index.html#_branches[Branches]
+* link:#_branches[Branches]
 
 ==== Description
 
 Switch to/view/check out a branch.
 
-Similar to link:index.html#_git_checkout[`git checkout`].
+Similar to link:#_git_checkout[`git checkout`].
 
 .Related
 ****
-* link:index.html#_git_checkout[git checkout]
+* link:#_git_checkout[git checkout]
 ****
 
 '''

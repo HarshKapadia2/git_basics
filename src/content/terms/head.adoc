@@ -1,7 +1,7 @@
 
 === HEAD
 
-* HEAD is a reference to the latest commit in the current link:index.html#_branches[branch].
+* HEAD is a reference to the latest commit in the current link:#_branches[branch].
 * When a commit is made, Git automatically sets the HEAD to the lastest commit.
 
 NOTE: HEAD is contextual. It will point to the latest commit in the current branch.
@@ -23,14 +23,14 @@ image::working-of-commit.jpeg[]
  # output
  ref: refs/heads/test_branch
 
-* When the HEAD points to a commit that is not the lastest commit in a branch, that is a *detached HEAD*. A specific commit can be referred to, using link:index.html#_git_checkout[`git checkout`].
+* When the HEAD points to a commit that is not the lastest commit in a branch, that is a *detached HEAD*. A specific commit can be referred to, using link:#_git_checkout[`git checkout`].
 
 .Related
 ****
-* link:index.html#_git_checkout[git checkout]
-* link:index.html#_git_commit[git commit]
-* link:index.html#_git_log[git log]
-* link:index.html#_git_merge[git merge]
+* link:#_git_checkout[git checkout]
+* link:#_git_commit[git commit]
+* link:#_git_log[git log]
+* link:#_git_merge[git merge]
 ****
 
 '''

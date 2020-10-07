@@ -11,13 +11,13 @@
         *** Private repo
 
 +
-For more information on the types of repos, refer to link:index.html#_repositories_its_types[this] section.
+For more information on the types of repos, refer to link:#_repositories_its_types[this] section.
 
 .Related
 ****
-* link:index.html#_repositories_its_types[Repos & types]
-* link:index.html#_what_is_github[GitHub]
-* link:index.html#_github_repositories[GitHub repositories]
+* link:#_repositories_its_types[Repos & types]
+* link:#_what_is_github[GitHub]
+* link:#_github_repositories[GitHub repositories]
 ****
 
 '''

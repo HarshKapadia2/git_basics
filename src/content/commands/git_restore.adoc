@@ -9,13 +9,13 @@
 
 To replace a modified file in the working directory/copy with the added/committed state version of that file.
 
-If there are no staged changes, then the copy of the file in the local link:index.html#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
+If there are no staged changes, then the copy of the file in the local link:#_repository[repository] is used, otherwise the current file is overwritten by the staged copy of the file.
 
-Similar to link:index.html#_git_checkout[`git checkout`].
+Similar to link:#_git_checkout[`git checkout`].
 
 .Related
 ****
-* link:index.html#_git_checkout[git checkout]
+* link:#_git_checkout[git checkout]
 ****
 
 '''

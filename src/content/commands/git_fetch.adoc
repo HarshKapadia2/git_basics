@@ -9,22 +9,22 @@
 
 The following terms are required to be understood:
 
-* link:index.html#_aliases[Aliases]
-* link:index.html#_repository[Repository (repo)]
-* link:index.html#_branches[Branches]
+* link:#_aliases[Aliases]
+* link:#_repository[Repository (repo)]
+* link:#_branches[Branches]
 
 ==== Description
 
-On running `git fetch`, Git gathers any commits from the target branch that do not exist in the current local branch and stores them in the local repository. However, it does not merge them with the current branch (unlike link:index.html#_git_pull[`git pull`]). 
+On running `git fetch`, Git gathers any commits from the target branch that do not exist in the current local branch and stores them in the local repository. However, it does not merge them with the current branch (unlike link:#_git_pull[`git pull`]). 
 
 This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. 
 
-To integrate the commits into your master branch, you use link:index.html#_git_merge[`git merge`].
+To integrate the commits into your master branch, you use link:#_git_merge[`git merge`].
 
 .Related
 ****
-* link:index.html#_git_pull[git pull]
-* link:index.html#_git_merge[git merge]
+* link:#_git_pull[git pull]
+* link:#_git_merge[git merge]
 ****
 
 '''
