@@ -3,6 +3,7 @@ Harsh Kapadia
 v2
 :favicon:   ./src/images/favicon.ico
 :toc:       left
+:icons:     font
 
 :author:    Harsh Kapadia
 :twitter:   https://twitter.com/harshgkapadia
