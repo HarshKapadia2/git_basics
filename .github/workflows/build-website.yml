@@ -23,7 +23,7 @@ jobs:
           git clone --depth 2 -b master --no-single-branch "${REPOSITORY_URL}" .
           
           # Switch to gh-pages branch
-          if [ -z "$(git branch --list gh-pages)" ]; then
+          if ! git show-branch remotes/origin/gh-pages; then
             # If the branch doesn't exist, then create an orphan branch
             echo "Could not find gh-pages branch, creating as orphan"
             git switch --orphan gh-pages
