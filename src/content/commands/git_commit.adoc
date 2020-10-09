@@ -56,7 +56,7 @@ TIP: _Don't_ commit half-done or incomplete work.
        +----> Emoji:- :tada: :bookmark: :sparkles: :bug: :books: :wrench: :truck:
 ```
 
-IMPORTANT: Go through https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79[this] gist for more on types and emojis.
+IMPORTANT: More on https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79[types and emojis].
 
 * If extra information is needed to be given, add it to the *description* of the commit.
 

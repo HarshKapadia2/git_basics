@@ -271,7 +271,7 @@ image::verify-pack-1.jpg[800, 800]
 +
 Have a look at the hash `1f7af` (the blob of the modified picture). Its size is very large as compared to the others. Now look at the the hash `ca893` (the blob of the original picture). It is very small in size and it has the hash of the modified picture (`1f7af`) mentioned after it, indicating that its (ie, the original picture's) parent is the modified file. *Thus, Git stored the diff for one of the files rather than the entire file twice, making it space efficient!*
 
-NOTE: A similar example can be found https://gist.github.com/matthewmccullough/2695758[here].
+NOTE: https://gist.github.com/matthewmccullough/2695758[Similar example].
 
 NOTE: *The pack file has a graph in it, just like the commit, tree and blob files have one!*
 

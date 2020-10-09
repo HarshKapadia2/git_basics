@@ -3,7 +3,7 @@
 
 * The `README.md` file is where all the details of the project are written.
 * `md` stands for 'Markdown', which is a lightweight and very easy to learn markup language to create rich text using a plain text editor.
-    ** The syntax can be learnt link:https://www.youtube.com/watch?v=HUBNt18RFbo[here].
+    ** link:https://www.youtube.com/watch?v=HUBNt18RFbo[Video to learn the syntax].
     ** link:https://github.com/tchapi/markdown-cheatsheet[Markdown cheat sheet]
 * A `README.md` file usually includes a brief description of the project with its features, a link to the link:#_contributing_md[`CONTRIBUTING.md`] file, a link to the link:#_code_of_conduct[`CODE_OF_CONDUCT`] file, a link to the link:#_license[`LICENSE`] file and any other section that the repository owner wants to add.
 * Sample template
@@ -37,7 +37,7 @@ Welcome all contributions & add a link to the `CONTRIBUTING.md` file.
 Add a link to the `CODE_OF_CONDUCT.md` file.
 ```
 
-NOTE: The above template was taken from link:https://github.com/HarshKapadia2/attendance_management/blob/master/README.md[here].
+NOTE: link:https://github.com/HarshKapadia2/attendance_management/blob/master/README.md[Source of the above template].
 
 * Badges/shields can be found/made at https://shields.io/.
 * For a sample README.md template and more information in READMEs, refer to https://www.makeareadme.com/.

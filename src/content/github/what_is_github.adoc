@@ -8,10 +8,10 @@
 
 * https://github.com/[GitHub] is just one such service for Git. Other prominent services include GitLab, Bitbucket, Git Kraken, etc.
 
-* Official GitHub guides can be found link:https://guides.github.com/[here].
+* link:https://guides.github.com/[Official GitHub guides].
 
-* Official GitHub documentaion can be found link:https://help.github.com/en[here].
+* link:https://help.github.com/en[Official GitHub documentation].
 
-* A guide to open source by GitHub can be found link:https://opensource.guide/[here].
+* link:https://opensource.guide/[A guide to open source by GitHub].
 
 '''
