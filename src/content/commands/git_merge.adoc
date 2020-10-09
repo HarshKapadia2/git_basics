@@ -42,7 +42,7 @@ NOTE: link:#_git_push[`git push`] is allowed only if you have a fast forward mer
 
 https://www.atlassian.com/git/tutorials/using-branches/git-merge[Further details].
 
-NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:#_merge_conflicts[here].
+NOTE: link:#_merge_conflicts[Managing *merge conflicts* (using both CLIs and GUIs)].
 
 ==== Options/Flags
 
