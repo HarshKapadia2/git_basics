@@ -30,7 +30,7 @@ NOTE: A local repo does not need to have a remote repo.
         *** Remote repo
 
 +
-For more information on remote repos, refer to link:#_github_repositories[this] section.
+For more information on remote repos, refer to link:#_github_repositories[Repository (repo)] section.
 
 .Related
 ****

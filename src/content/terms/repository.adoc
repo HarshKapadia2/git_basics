@@ -11,7 +11,7 @@
         *** Private repo
 
 +
-For more information on the types of repos, refer to link:#_repositories_its_types[this] section.
+For more information on the types of repos, refer to the link:#_repositories_its_types[Repos & types] section.
 
 .Related
 ****

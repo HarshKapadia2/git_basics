@@ -18,7 +18,7 @@ The git checkout command operates upon three distinct entities: files, commits, 
 
 The git checkout command lets you navigate between the branches created by link:#_git_branch[`git branch`].
 
-Further details https://www.atlassian.com/git/tutorials/using-branches/git-checkout[here].
+https://www.atlassian.com/git/tutorials/using-branches/git-checkout[Further details].
 
 ==== Options/Flags
 
