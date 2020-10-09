@@ -1,5 +1,5 @@
 
-image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remote commands chart #2", alt="Git local & remote commands chart #2", link="https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c"]
+image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remote commands chart #2", alt="Git local & remote commands chart #2"]
 
 '''
 
