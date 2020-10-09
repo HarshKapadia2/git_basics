@@ -12,6 +12,6 @@
 
 * link:https://help.github.com/en[Official GitHub documentation].
 
-* link:https://opensource.guide/[[A guide to open source by GitHub].
+* link:https://opensource.guide/[A guide to open source by GitHub].
 
 '''
