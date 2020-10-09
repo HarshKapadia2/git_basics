@@ -6,12 +6,12 @@
     ** *GitHub is a hosting service for Git link:#_repository[repositories].*
     ** So they are not the same thing: Git is the tool, GitHub is the service for projects that use Git.
 
-* https://github.com/[GitHub] is just one such service for Git. Other prominent services include GitLab, Bitbucket, Git Kraken, etc.
+* https://github.com/[GitHub^] is just one such service for Git. Other prominent services include GitLab, Bitbucket, Git Kraken, etc.
 
-* link:https://guides.github.com/[Official GitHub guides].
+* link:https://guides.github.com/[Official GitHub guides^].
 
-* link:https://help.github.com/en[Official GitHub documentation].
+* link:https://help.github.com/en[Official GitHub documentation^].
 
-* link:https://opensource.guide/[A guide to open source by GitHub].
+* link:https://opensource.guide/[A guide to open source by GitHub^].
 
 '''

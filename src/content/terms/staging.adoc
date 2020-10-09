@@ -5,7 +5,7 @@
 * To stage a file is simply to prepare it finely for a commit. 
 * Refer to the link:#_git_add[diagram].
 * Git, with its index allows you to commit only certain parts of the changes you've done since the last commit.
-* https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[Further Details].
+* https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[Further Details^].
 
 .Related
 ****

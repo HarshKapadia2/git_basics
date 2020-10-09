@@ -3,6 +3,6 @@
 
 * It is a shell, ie, a CLI to use git.
 * Once Git is installed, it can be used with Command Prompt, Powershell, Terminal, Zsh, etc as well. It is not mandatory to use Git Bash.
-* The official website to download Git-Bash is https://git-scm.com/
+* https://git-scm.com/[Official website to download Git-Bash].
 
 '''

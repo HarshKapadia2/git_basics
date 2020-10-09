@@ -46,7 +46,7 @@ Now check its contents using the `cat` command.
 
 image::cat-1.jpg[600, 600]
 
-Oops! That's gibberish! So was what was said above a lie? No. Git actually compresses files with the https://www.zlib.net/[zlib] library and then hashes them. So to make sense of the hash, it needs to be de-compressed.
+Oops! That's gibberish! So was what was said above a lie? No. Git actually compresses files with the https://www.zlib.net/[zlib^] library and then hashes them. So to make sense of the hash, it needs to be de-compressed.
 
 image::de-compressed.jpg[600, 600]
 
@@ -271,7 +271,7 @@ image::verify-pack-1.jpg[800, 800]
 +
 Have a look at the hash `1f7af` (the blob of the modified picture). Its size is very large as compared to the others. Now look at the the hash `ca893` (the blob of the original picture). It is very small in size and it has the hash of the modified picture (`1f7af`) mentioned after it, indicating that its (ie, the original picture's) parent is the modified file. *Thus, Git stored the diff for one of the files rather than the entire file twice, making it space efficient!*
 
-NOTE: https://gist.github.com/matthewmccullough/2695758[Similar example].
+NOTE: https://gist.github.com/matthewmccullough/2695758[Similar example^].
 
 NOTE: *The pack file has a graph in it, just like the commit, tree and blob files have one!*
 
@@ -292,8 +292,8 @@ image::log-1.jpg[]
 
 .Related
 ****
-* https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More details on the pack file]
-* https://www.youtube.com/watch?v=DjOk0jnqsLk[Main source of this section on Git internals]
+* https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More details on the pack file^]
+* https://www.youtube.com/watch?v=DjOk0jnqsLk[Main source of this section on Git internals^]
 ****
 
 '''

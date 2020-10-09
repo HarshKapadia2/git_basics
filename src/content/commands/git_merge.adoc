@@ -40,7 +40,7 @@ image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and thr
 
 NOTE: link:#_git_push[`git push`] is allowed only if you have a fast forward merge.
 
-https://www.atlassian.com/git/tutorials/using-branches/git-merge[Further details].
+https://www.atlassian.com/git/tutorials/using-branches/git-merge[Further details^].
 
 NOTE: Managing *merge conflicts* (using both CLIs and GUIs) is covered link:#_merge_conflicts[here].
 

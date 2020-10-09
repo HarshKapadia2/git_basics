@@ -43,7 +43,7 @@ git push -u origin <branch_name>
 
 .Related
 ****
-* https://medium.com/@john_pels/sync-your-git-fork-to-the-original-repo-a57d5084e20e[Reference article]
+* https://medium.com/@john_pels/sync-your-git-fork-to-the-original-repo-a57d5084e20e[Reference article^]
 ****
 
 '''

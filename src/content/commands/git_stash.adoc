@@ -9,6 +9,6 @@
 
 Saving changes temporarily.
 
-https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing[Commands and explanation]
+https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing[Commands and explanation^]
 
 '''
