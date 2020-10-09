@@ -36,7 +36,7 @@ Merges are of mainly two types:
     * Fast forward merges (usually for small and short develop-duration features)
     * Three way merges (usually for long ranging tasks and features)
 
-image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and three-way merges", alt="Types of merges", link="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mattluedke.com%2Fwp-content%2Fuploads%2F2015%2F10%2Ffast-forward-merge.jpg&f=1&nofb=1"]
+image::types-of-merges.jpg[caption="", role="thumb", title="Fast forward and three-way merges", alt="Types of merges"]
 
 NOTE: link:#_git_push[`git push`] is allowed only if you have a fast forward merge.
 
