@@ -2,11 +2,11 @@
 === License
 
 * An open source license protects contributors and users. Businesses and savvy developers won’t touch a project without this protection.
-* link:https://opensource.guide/legal/#why-do-people-care-so-much-about-the-legal-side-of-open-source[The need for an open source license.]
+* link:https://opensource.guide/legal/#why-do-people-care-so-much-about-the-legal-side-of-open-source[The need for an open source license^].
 * The license under which a project is released can be changed at any time.
-* it’s hard to go wrong with the link:https://choosealicense.com/licenses/mit/[MIT license] as it’s short, very easy to understand and allows anyone to do anything so long as they keep a copy of the license, including the repository owner's copyright notice.
-* A good place to choose a license is https://choosealicense.com/.
-* A commonly used license can be added directly from the 'Community' tab in the 'Insights' section of a repository. If the license is not present in the license section, a file called `LICENSE` (without an extension) can be created and the content of the license can be pasted in it. (The contents can be found at https://choosealicense.com/.)
+* it’s hard to go wrong with the link:https://choosealicense.com/licenses/mit/[MIT license^] as it’s short, very easy to understand and allows anyone to do anything so long as they keep a copy of the license, including the repository owner's copyright notice.
+* A good place to choose a license is https://choosealicense.com/[role=external,window=_blank].
+* A commonly used license can be added directly from the 'Community' tab in the 'Insights' section of a repository. If the license is not present in the license section, a file called `LICENSE` (without an extension) can be created and the content of the license can be pasted in it. (The contents can be found at https://choosealicense.com/[role=external,window=_blank].)
 
 [WARNING]
 ====
@@ -19,6 +19,6 @@ The options are
 * Negotiate a private license with a lawyer.
 ====
 
-link:https://eddiejaoude.github.io/book-open-source-tips/#_licensing[Source of above warning]
+link:https://eddiejaoude.github.io/book-open-source-tips/#_licensing[Source of above warning^]
 
 '''

@@ -25,7 +25,7 @@ Pulls (brings) the latest code from the remote repo.
 
 To fetch and download content from a remote repository and immediately update the local repository to match the content.
 
-https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull[Difference between `git pull` and `git fetch`]
+https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull[Difference between `git pull` and `git fetch`^]
 
 * In simple terms, `git pull` does a `git fetch` followed by a `git merge`.
 * `git pull` automatically merges commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.

@@ -43,8 +43,8 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 
 .Related
 ****
-* https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[`-b` reference]
-* https://linuxhint.com/git-shallow-clone-and-clone-depth/[Shallow clone reference]
+* https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[`-b` reference^]
+* https://linuxhint.com/git-shallow-clone-and-clone-depth/[Shallow clone reference^]
 ****
 
 '''
