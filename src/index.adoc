@@ -13,6 +13,8 @@ v2
 :imagesdir: ./src/images
 :docinfo:   shared
 
+NOTE: GitHub is _gradually_ renaming the default branch of our own repositories from ``**master**`` to ``**main**``. The default branch name for new repositories is now ``**main**``. _Existing repositories_ are not impacted by this change. Later this year, we'll be able to rename the default branch for existing repositories. For more details, check the https://github.com/github/renaming[renaming @ *GitHub*].
+
 == Abstract
 
 This web site contains some basic concepts, commands & conventions for Git & GitHub.
