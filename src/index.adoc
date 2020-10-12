@@ -24,11 +24,11 @@ The open source community is amazing and very friendly. Contributing to it is al
 [quote, Robert Ingersoll]
 We rise by lifting others.
 
-Knowing the basics of Git & GitHub is the only prerequisite to start contributing to the FOSS (free & open source software) community and learning Git sometimes feels like a dauting task, because it is a little complicated. So to make this task easier, we have made this easy guide that will help anyone get started and keep helping them along their open source journey.
+Knowing the basics of Git & GitHub is the only prerequisite to start contributing to the FOSS (free & open source software) community and learning Git sometimes feels like a daunting task, because it is a little complicated. So to make this task easier, we have made this easy guide that will help anyone get started and keep helping them along their open source journey.
 
 This guide is made from a lot of resources collected over time. They have been hyperlinked wherever possible & if not, they have been included in the link:#_misc[misc] section at the end of the book.
 
-We would love everyone's help to keep this guide updated and error free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is {repo}.
+We would love everyone's help to keep this guide updated and error-free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is {repo}.
 
 For any further questions, please feel free to contact the author, Harsh Kapadia, via Twitter https://twitter.com/harshgkapadia[@harshgkapadia^], https://www.linkedin.com/in/harsh-kapadia-426999175/[LinkedIn^] or e-mail {e-mail}.
 
