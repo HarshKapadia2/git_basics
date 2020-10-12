@@ -1,9 +1,13 @@
 
 === Resources
 
-==== Getting started with Git & GitHub
+==== Sessions by the author
 
-* https://www.youtube.com/watch?v=HF12-91iazM[Crash course by Harsh Kapadia^], the author.
+* https://www.youtube.com/watch?v=HF12-91iazM[Git and GitHub crash course^]
+* https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
+
+==== Getting started with Git and GitHub
+
 * https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be[Crash course by Brad Traversy^]
 
 ==== Visualize Git
