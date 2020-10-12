@@ -13,7 +13,6 @@
 
 - All contributions are most welcome!
 - View the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for further instructions.
-- All the amazing contributors of this repo can be found in the [`CONTRIBUTORS.md`](CONTRIBUTORS.md) file!
 
 ## Code of Conduct
 
