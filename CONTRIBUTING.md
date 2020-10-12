@@ -21,8 +21,9 @@
 		- Browser extension for Chrome or Edge - [Asciidoctor.js Live Preview](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia)
 	- Generate `index.html` in the root directory by running the command `asciidoctor ./src/index.adoc -o ./index.html` from the root directory. (This `index.html`file is only for testing purposes. **Do not** commit it.)
 - Make your contribution(s)!
-- Make a Pull Request (PR).
-	- [Learn how to make a PR](https://github.com/firstcontributions/first-contributions).
+	- Write meaningful commit messages and include the number (`#`) of the issue you're resolving (if any) at the end of the commit message. Eg: `:bug: fix: Resolve 'isCorrect' function error (#0)`
+- Open a Pull Request (PR).
+	- [Learn how to open a PR](https://github.com/firstcontributions/first-contributions).
 	- Solve one issue per PR, **without any extra changes**.
 	- **Include extra changes in a separate PR.**
 
@@ -33,7 +34,7 @@ Asciidoctor parses files starting from `index.adoc` and follows `include::` to t
 **Example**:
 This is how the content of `git_add.adoc` is displayed:
 
-- In `index.adoc`:
+In `index.adoc`:
 
  ```
 == Commands
@@ -42,7 +43,7 @@ include::./refs/commands.adoc[]
 
 :point_down:
 
-- In `./refs/commands.adoc`:
+In `./refs/commands.adoc`:
 
  ```
 include::../content/commands/git_add.adoc[]
@@ -50,7 +51,7 @@ include::../content/commands/git_add.adoc[]
 
 :point_down:
 
-- In `../content/commands/git_add.adoc`:
+In `../content/commands/git_add.adoc`:
 
  ```
 === git add
@@ -59,8 +60,9 @@ include::../content/commands/git_add.adoc[]
 
 ## Language and syntax
 
-- Pronouns are either omitted (prefered) or third person pronouns are used.
- Examples:
+- Pronouns are either omitted (prefered) or third person pronouns (eg: 'they', 'their', 'one', etc.) are used.
+
+ **Example**:
 
 	- `Code should be committed frequently.` :heavy_check_mark: (preferable)
 	- `One should commit code frequently.` :heavy_check_mark:
