@@ -18,7 +18,7 @@ The open source community is inclusive and friendly. Contributing to it is alway
 
 Knowing the basics of Git and GitHub is the only prerequisite to start contributing and learning them sometimes feels like a daunting task. The aim of this guide is to help anyone get started with open source and keep helping them along their journey.
 
-*This project is open source* and the repository can be found at https://github.com/HarshKapadia2/git_basics. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!
+*This project is open source* and the repository can be found at https://github.com/HarshKapadia2/git_basics[role=external,window=_blank]. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!
 
 For further questions, please feel free to contact the author, Harsh Kapadia, via https://otc.zulipchat.com[OTC^], https://twitter.com/harshgkapadia[Twitter^], https://www.linkedin.com/in/harshgkapadia/[LinkedIn^] or e-mail (harshgkapadia@gmail.com).
 
