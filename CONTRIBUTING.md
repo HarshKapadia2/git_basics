@@ -34,7 +34,7 @@ Asciidoctor parses files starting from `index.adoc` and follows `include::` to t
 **Example**:
 This is how the content of `git_add.adoc` is displayed:
 
-In `index.adoc`:
+- In `index.adoc`:
 
  ```
 == Commands
@@ -43,7 +43,7 @@ include::./refs/commands.adoc[]
 
 :point_down:
 
-In `./refs/commands.adoc`:
+- In `./refs/commands.adoc`:
 
  ```
 include::../content/commands/git_add.adoc[]
@@ -51,7 +51,7 @@ include::../content/commands/git_add.adoc[]
 
 :point_down:
 
-In `../content/commands/git_add.adoc`:
+- In `../content/commands/git_add.adoc`:
 
  ```
 === git add
@@ -61,9 +61,8 @@ In `../content/commands/git_add.adoc`:
 ## Language and syntax
 
 - Pronouns are either omitted (prefered) or third person pronouns (eg: 'they', 'their', 'one', etc.) are used.
-
  **Example**:
-
+ 
 	- `Code should be committed frequently.` :heavy_check_mark: (preferable)
 	- `One should commit code frequently.` :heavy_check_mark:
 	- `You should commit code frequently.` :x:
