@@ -48,7 +48,7 @@ jobs:
           if [ "${GITHUB_REF}" = "refs/heads/master" ]; then
             echo "Skipping deployment since branch is not master"
             exit 0
-          else
+          fi
           
           # Add modified files
           git add src/images
