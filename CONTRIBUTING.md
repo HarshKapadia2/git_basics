@@ -77,11 +77,12 @@ include::../content/commands/git_add.adoc[]
  **Example**:
 	- `https://github.com[This is a link to another site^]` (Caret at the end for external links.)
 	- `link:#_issues[This is a link to the same site]` (No caret at the end for internal links.)
+- If external links are pasted as normal links, use `[role=external,window=_blank]` following the link to open it in a new tab. **Example**: `https://github.com/HarshKapadia2/git_basics[role=external,window=_blank]`
 - Links should have meaningful text.
  **Example**:
 
-	- `It can be found in the [official documentation]()` :heavy_check_mark:
-	- `It can be found [here]().` :x:
+	- `It can be found in the https://docs.github.com[official documentation].` :heavy_check_mark:
+	- `It can be found https://docs.github.com[here].` :x:
 
 ## Further help
 
