@@ -73,6 +73,15 @@ include::../content/commands/git_add.adoc[]
 - Bold, underline and italics should be used sparingly.
 - Surround single line commands or file names with a single 'back tick' (`).
 - Surround code snippets with three 'back ticks' (```).
+- External links should include a caret (`^`) at the end of the link text to open them in a new tab.
+ **Example**:
+	- `https://github.com[This is a link to another site^]` (Caret at the end for external links.)
+	- `link:#_issues[This is a link to the same site]` (No caret at the end for internal links.)
+- Links should have meaningful text.
+ **Example**:
+
+	- `It can be found in the [official documentation]()` :heavy_check_mark:
+	- `It can be found [here]().` :x:
 
 ## Further help
 
