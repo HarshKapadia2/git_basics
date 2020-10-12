@@ -5,9 +5,12 @@
    <b>A web site for the basics of Git and GitHub!</b>
    <br>
    View the web site at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
-   <br>
-   Watch the <a href="https://www.youtube.com/watch?v=HF12-91iazM">git_basics Crash Course</a> to get started with Git and GitHub.
 </p>
+
+## Author's sessions
+
+- [Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM)
+- [Hacktoberfest, Open Source and Pull Requests session](https://www.youtube.com/watch?v=uJdFNksgKJA)
 
 ## Contributions
 
