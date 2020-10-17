@@ -87,3 +87,11 @@ include::../content/commands/git_add.adoc[]
 ## Further help
 
 If any further help is needed, do not hesitate to contact the owner (Harsh Kapadia) via [OTC](https://otc.zulipchat.com), [Twitter](https://twitter.com/harshgkapadia), [LinkedIn](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com). You can [raise an issue](https://github.com/HarshKapadia2/git_basics/issues) as well.
+
+## The Contributors
+
+<a href="https://github.com/HarshKapadia2/git_basics/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=HarshKapadia2/git_basics" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
