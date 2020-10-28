@@ -48,7 +48,7 @@ NOTE: This is a safe operation as Git prevents the deletion of the branch if it 
 
 TIP: If the currently checked out branch is to be deleted, link:#_git_checkout[switch to a different branch] and then run the above command.
 
-===== -m <new_branch_name>
+===== '-m <new_branch_name>' or '-M <new_branch_name>'
 
 * Rename the current branch to `new_branch_name`.
 
