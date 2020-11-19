@@ -28,15 +28,21 @@ The following terms are required to be understood:
 
 * Gives a summary of untracked and staged (added) files.
 * Meanings of different symbols
-    ** `??` implies untracked files.
-    ** `A` implies newly staged files.
-    ** `M (red)` implies modifications in a staged file that has not been staged again.
-    ** `M (green)` implies modifications in a staged file that has been staged again.
-    ** `MM (green and red)` implies modifications in a file that has been staged with modifications, but not yet committed.
-    ** `D (red)` implies the deletion of a staged file that has not been staged again.
-    ** `D (green)` implies the deletion of a staged file that has been staged again.
-    ** `R (green)` implies the renaming/moving/both of a file that has been staged again.
+    ** `??` implies an untracked file, ie, a file that has never been staged.
+    ** `A` implies a newly staged (added) file, ie, a file that is now staged, but has never been staged before.
+    ** `M (red)` implies unstaged modifications in a committed file.
+    ** `M (green)` implies staged modifications in a committed file (but the new modifications have not been committed yet).
+	** `AM (green and red respectively)` implies new modifications in a newly staged uncommitted file.
+    ** `MM (green and red respectively)` implies new modifications in a committed file that has been staged with modifications, without committing the previous changes.
+    ** `D (red)` implies the renaming/moving/both (renaming and moving)/deletion of a staged file that has not been staged again.
+    ** `D (green)` implies the deletion of a staged file.
+    ** `R (green)` implies the renaming/moving/both of a staged file.
+	** `AD (green and red respectively)` implies the renaming/moving/both (renaming and moving)/deletion of a newly staged uncommitted file that has not been staged again.
 
-NOTE: Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured `D`) by Git and a new untracked file (red coloured `??`) is shown in its place when `git status -s` is run. Once the link:#_git_add[`git add`] command is run, Git realises that the file has been renamed/moved/both and displays a green coloured `R` when `git status -s` is run again.
+[NOTE]
+====
+* Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured `D`) by Git and a new untracked file (red coloured `??`) is shown in its place when `git status -s` is run. Once the link:#_git_add[`git add`] command is run once again, Git realises that the file has been renamed/moved/both and displays a green coloured `R` when `git status -s` is run again.
+* If `AD` is displayed, the newly staged file can have been renamed, moved, both (renamed and moved) or deleted. In the case of renaming, moving or both, the original file gets forgotten in the next staging and the new file is added. In the case of deletion, the file is simply forgotten in the next staging.
+====
 
 '''
