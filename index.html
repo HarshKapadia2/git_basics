@@ -1309,28 +1309,34 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <div class="ulist">
 <ul>
 <li>
-<p><code>??</code> implies untracked files.</p>
+<p><code>??</code> implies an untracked file, ie, a file that has never been staged.</p>
 </li>
 <li>
-<p><code>A</code> implies newly staged files.</p>
+<p><code>A</code> implies a newly staged (added) file, ie, a file that is now staged, but has never been staged before.</p>
 </li>
 <li>
-<p><code>M (red)</code> implies modifications in a staged file that has not been staged again.</p>
+<p><code>M (red)</code> implies unstaged modifications in a committed file.</p>
 </li>
 <li>
-<p><code>M (green)</code> implies modifications in a staged file that has been staged again.</p>
+<p><code>M (green)</code> implies staged modifications in a committed file (but the new modifications have not been committed yet).</p>
 </li>
 <li>
-<p><code>MM (green and red)</code> implies modifications in a file that has been staged with modifications, but not yet committed.</p>
+<p><code>AM (green and red respectively)</code> implies new modifications in a newly staged uncommitted file.</p>
 </li>
 <li>
-<p><code>D (red)</code> implies the deletion of a staged file that has not been staged again.</p>
+<p><code>MM (green and red respectively)</code> implies new modifications in a committed file that has been staged with modifications, without committing the previous changes.</p>
 </li>
 <li>
-<p><code>D (green)</code> implies the deletion of a staged file that has been staged again.</p>
+<p><code>D (red)</code> implies the renaming/moving/both (renaming and moving)/deletion of a staged file that has not been staged again.</p>
 </li>
 <li>
-<p><code>R (green)</code> implies the renaming/moving/both of a file that has been staged again.</p>
+<p><code>D (green)</code> implies the deletion of a staged file.</p>
+</li>
+<li>
+<p><code>R (green)</code> implies the renaming/moving/both of a staged file.</p>
+</li>
+<li>
+<p><code>AD (green and red respectively)</code> implies the renaming/moving/both (renaming and moving)/deletion of a newly staged uncommitted file that has not been staged again.</p>
 </li>
 </ul>
 </div>
@@ -1344,7 +1350,16 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured <code>D</code>) by Git and a new untracked file (red coloured <code>??</code>) is shown in its place when <code>git status -s</code> is run. Once the <a href="#_git_add"><code>git add</code></a> command is run, Git realises that the file has been renamed/moved/both and displays a green coloured <code>R</code> when <code>git status -s</code> is run again.
+<div class="ulist">
+<ul>
+<li>
+<p>Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured <code>D</code>) by Git and a new untracked file (red coloured <code>??</code>) is shown in its place when <code>git status -s</code> is run. Once the <a href="#_git_add"><code>git add</code></a> command is run once again, Git realises that the file has been renamed/moved/both and displays a green coloured <code>R</code> when <code>git status -s</code> is run again.</p>
+</li>
+<li>
+<p>If <code>AD</code> is displayed, the newly staged file can have been renamed, moved, both (renamed and moved) or deleted. In the case of renaming, moving or both, the original file gets forgotten in the next staging and the new file is added. In the case of deletion, the file is simply forgotten in the next staging.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -5061,7 +5076,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2020-10-28 07:12:16 UTC
+Last updated 2020-11-19 22:40:46 UTC
 </div>
 </div>
 </body>
