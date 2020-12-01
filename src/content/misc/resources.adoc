@@ -32,7 +32,7 @@
 * https://dashdash.io/[Dashdash.io^]
 * https://explainshell.com/[Explainshel.com^]
 
-==== Browser extensions for Github
+==== Browser extensions for GitHub
 
 * https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf[Refined Github^]
 * https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn[GitZip for Github^]
