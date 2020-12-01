@@ -20,6 +20,7 @@
 * https://www.atlassian.com/git[Git Docs by Atlassian^]
 * https://www.git-scm.com/docs[Official Git documentation^]
 * https://www.git-scm.com/book/en/v2[Official (free) book - Pro Git (v2)^]
+* https://try.github.io[Resources to learn Git^]
 
 ==== Cheat sheets for Git
 
