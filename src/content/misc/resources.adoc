@@ -31,6 +31,11 @@
 * https://dashdash.io/[Dashdash.io^]
 * https://explainshell.com/[Explainshel.com^]
 
+==== Browser extensions for Github
+
+* https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf[Refined Github^]
+* https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn[GitZip for Github^]
+
 ==== Contribution help
 
 * https://github.com/firstcontributions/first-contributions[Learn how to make a Pull Request (PR)^]
