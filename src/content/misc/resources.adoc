@@ -20,7 +20,7 @@
 * https://www.atlassian.com/git[Git Docs by Atlassian^]
 * https://www.git-scm.com/docs[Official Git documentation^]
 * https://www.git-scm.com/book/en/v2[Official (free) book - Pro Git (v2)^]
-* https://try.github.io[Resources to learn Git^]
+* https://try.github.io[GitHub's resources for Git^]
 
 ==== Cheat sheets for Git
 
@@ -34,8 +34,8 @@
 
 ==== Browser extensions for GitHub
 
-* https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf[Refined Github^]
-* https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn[GitZip for Github^]
+* https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf[Refined GitHub^] - Simplifies the GitHub interface and adds useful features (available for Chrome, Edge, Firefox and Opera)
+* https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn[GitZip for GitHub^] - Only download required sub-folders/files from GitHub repos (available for Chrome, Edge and Firefox)
 
 ==== Contribution help
 
