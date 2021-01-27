@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="./src/images/git_basics_logo.svg" alt="git_basics" width="80%">
+   <img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
    <br>
    <br>
    <b>A web site for the basics of Git and GitHub!</b>
