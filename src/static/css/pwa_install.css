@@ -1,0 +1,81 @@
+.pwa-install-div
+{
+	position: fixed;
+	bottom: 2.5vh;
+	left: 2vw;
+	display: flex;
+	align-items: center;
+	background-color: white;
+	padding: 0.5em;
+	box-shadow: 0 2px 5px #bdbdbd;
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+#pwa-install-btn
+{
+	color: white;
+	background-color: black;
+	padding: 0.3em 0.6em;
+	margin-right: 0.5em;
+	font-size: 15px;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 0px 2px 3px #bdbdbd;
+	cursor: pointer;
+}
+
+#pwa-install-btn
+{
+	margin: 0 0.8em 0 0.5em;
+}
+
+#pwa-install-dismiss
+{
+	background-color: transparent;
+	border: none;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.pwa-install-div-summon
+{
+	animation: 3s ease summon-div;
+}
+
+@keyframes summon-div
+{
+	from
+	{
+		transform: translateX(-100vw);
+	}
+
+	to
+	{
+		transform: translateX(0);
+	}
+}
+
+.pwa-install-div-dismiss
+{
+	animation: 2s ease dismiss-div;
+}
+
+@keyframes dismiss-div
+{
+	from
+	{
+		transform: translateX(0);
+	}
+
+	to
+	{
+		transform: translateX(-100vw);
+	}
+}
+
+.hidden
+{
+	display: none;
+}

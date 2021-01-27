@@ -1,10 +1,10 @@
 = git_basics
 Harsh Kapadia
 v2
-:favicon:   ./src/images/favicon.ico
+:favicon:   ./src/static/img/favicon.ico
 :toc:       left
 :icons:     font
-:imagesdir: ./src/images
+:imagesdir: ./src/static/img
 :docinfo:   shared
 :author:    Harsh Kapadia
 
@@ -71,3 +71,13 @@ We rise by lifting others.
 [quote, Helen Keller]
 Alone, we can do so little;
 Together we can do so much.
+
+++++
+	<div class="pwa-install-div hidden">
+		<div id="pwa-install-text">Ready for offline use!</div>
+		<button id="pwa-install-btn">Install</button>
+		<button id="pwa-install-dismiss">
+			<img src="src/static/img/clear_cross.svg" alt="X">
+		</button>
+	</div>
+++++

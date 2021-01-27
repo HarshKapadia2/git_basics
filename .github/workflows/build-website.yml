@@ -51,8 +51,10 @@ jobs:
           fi
           
           # Add modified files
-          git add src/images
+          git add src/static
           git add index.html
+          git add src/manifest.json
+          git add service_worker.js
           
           # Set user
           git config user.name  "Auto deploy GitHub Pages"
