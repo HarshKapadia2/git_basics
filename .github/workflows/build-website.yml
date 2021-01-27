@@ -32,10 +32,13 @@ jobs:
             git switch gh-pages
           fi
           
-          # Remove current source
+          # Remove current source and service worker
           rm -rf src
-          # Get latest source
+          rm -rf service_worker.js
+          
+          # Get latest source and service worker
           git restore src -s master
+          git restore service_worker.js -s master
         
       - name: Build site using Asciidoctor
         run: |
