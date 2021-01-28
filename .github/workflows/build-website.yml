@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - "src/**"
+      - "build.sh"
+      - ".github/workflows"
   workflow_dispatch:
 
 defaults:
