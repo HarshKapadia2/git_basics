@@ -32,18 +32,14 @@ jobs:
             git switch gh-pages
           fi
           
-          # Remove current source and service worker
-          rm -rf src
-          rm -rf service_worker.js
-          
-          # Get latest source and service worker
-          git restore src -s master
-          git restore service_worker.js -s master
+          # Get latest source and buildscript
+          git restore -s master src
+          git restore -s master build.sh
         
       - name: Build site using Asciidoctor
         run: |
           # Build page
-          asciidoctor src/index.adoc -o index.html
+          ./build.sh .
       
       - name: Deploy to GitHub Pages
         run: |
@@ -53,11 +49,11 @@ jobs:
             exit 0
           fi
           
+          # Remove source
+          rm -rf src
+          
           # Add modified files
-          git add src/static
-          git add index.html
-          git add src/manifest.json
-          git add service_worker.js
+          git add .
           
           # Set user
           git config user.name  "Auto deploy GitHub Pages"
