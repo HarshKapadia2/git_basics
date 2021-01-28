@@ -49,8 +49,9 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           # Skip deploy if not on master
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           if [ "${BRANCH_NAME}" != "master" ]; then
-            echo "Skipping deployment since branch is not master"
+            echo "Skipping deployment since branch is '${BRANCH_NAME}', not master"
             exit 0
           fi
           
