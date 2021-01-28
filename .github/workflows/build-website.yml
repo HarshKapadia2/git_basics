@@ -18,23 +18,26 @@ jobs:
         run: |
           # Set repository Url
           REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           
           # Clone repository
-          git clone --depth 2 -b master --no-single-branch "${REPOSITORY_URL}" .
+          git clone --depth 2 -b "${BRANCH_NAME}" --no-single-branch "${REPOSITORY_URL}" .
           
-          # Switch to gh-pages branch
-          if ! git show-branch remotes/origin/gh-pages; then
-            # If the branch doesn't exist, then create an orphan branch
-            echo "Could not find gh-pages branch, creating as orphan"
-            git switch --orphan gh-pages
-          else
-            # Else, switch to the branch
-            git switch gh-pages
+          # Don't switch to gh-pages if not on master
+          if [ "${BRANCH_NAME}" == "master" ]; then
+              # Switch to gh-pages branch
+              if ! git show-branch remotes/origin/gh-pages; then
+                # If the branch doesn't exist, then create an orphan branch
+                echo "Could not find gh-pages branch, creating as orphan"
+                git switch --orphan gh-pages
+              else
+                # Else, switch to the branch
+                git switch gh-pages
+              fi
+              
+              # Get latest source and buildscript
+              git restore -s "${BRANCH_NAME}" src build.sh
           fi
-          
-          # Get latest source and buildscript
-          git restore -s master src
-          git restore -s master build.sh
         
       - name: Build site using Asciidoctor
         run: |
@@ -44,14 +47,13 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           # Skip deploy if not on master
-          if [ "${GITHUB_REF}" != "refs/heads/master" ]; then
+          if [ "${BRANCH_NAME}" != "master" ]; then
             echo "Skipping deployment since branch is not master"
             exit 0
           fi
           
           # Remove source and buildscript
-          rm -rf src
-          rm -rf build.sh
+          rm -rf src build.sh
           
           # Add modified files
           git add .
