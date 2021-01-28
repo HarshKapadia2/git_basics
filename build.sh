@@ -9,7 +9,6 @@ mkdir -p "${output}";
 
 for path in \
 	"static"            \
-	"images"            \
 	"manifest.json"     \
 	"service_worker.js" \
 ; do

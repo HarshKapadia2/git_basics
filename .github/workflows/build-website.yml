@@ -49,8 +49,9 @@ jobs:
             exit 0
           fi
           
-          # Remove source
+          # Remove source and buildscript
           rm -rf src
+          rm -rf build.sh
           
           # Add modified files
           git add .
