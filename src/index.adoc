@@ -1,10 +1,10 @@
 = git_basics
 Harsh Kapadia
 v2
-:favicon:   ./src/static/img/favicon.ico
+:favicon:   ./static/img/favicon.ico
 :toc:       left
 :icons:     font
-:imagesdir: ./src/static/img
+:imagesdir: ./static/img
 :docinfo:   shared
 :author:    Harsh Kapadia
 
@@ -77,7 +77,7 @@ Together we can do so much.
 		<div id="pwa-install-text">Ready for offline use!</div>
 		<button id="pwa-install-btn">Install</button>
 		<button id="pwa-install-dismiss">
-			<img src="src/static/img/clear_cross.svg" alt="X">
+			<img src="static/img/clear_cross.svg" alt="X">
 		</button>
 	</div>
 ++++
