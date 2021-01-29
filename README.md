@@ -2,9 +2,9 @@
    <img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
    <br>
    <br>
-   <b>A web site for the basics of Git and GitHub-like services!</b>
+   <b>A web site for the basics of Git and GitHub-like services.</b>
    <br>
-   View the web site at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
+   View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
 </p>
 
 ## Author's sessions
