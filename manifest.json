@@ -6,7 +6,7 @@
 	"scope": "/git_basics/",
 	"start_url": "/git_basics/",
 	"theme_color": "#f05133",
-	"background_color": "#ffffff",
+	"background_color": "#fff",
 	"icons": [
 		{
 			"src": "./static/img/icon-192x192.png",
