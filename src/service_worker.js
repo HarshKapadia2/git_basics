@@ -1,8 +1,8 @@
-const cacheName = "v2";
+const cacheName = "v3";
 const cacheAssets = [
 	"./",
 	"./index.html",
-	"./static/css/pwa_install.css",
+	"./static/css/style.css",
 	"./static/js/main.js",
 	"./static/img/add-1.jpg",
 	"./static/img/add-2.jpg",
