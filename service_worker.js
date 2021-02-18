@@ -1,8 +1,8 @@
-const cacheName = "v2";
+const cacheName = "v4";
 const cacheAssets = [
 	"./",
 	"./index.html",
-	"./static/css/pwa_install.css",
+	"./static/css/style.css",
 	"./static/js/main.js",
 	"./static/img/add-1.jpg",
 	"./static/img/add-2.jpg",
@@ -54,6 +54,7 @@ const cacheAssets = [
 	"./static/img/touch-master_file_2.jpg",
 	"./static/img/tree-1.png",
 	"./static/img/types-of-merges.jpg",
+	"./static/img/up-arrow.svg",
 	"./static/img/verify-pack-1.jpg",
 	"./static/img/working-of-commit.jpeg"
 ];
