@@ -1,4 +1,4 @@
-const cacheName = "v3";
+const cacheName = "v4";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -54,6 +54,7 @@ const cacheAssets = [
 	"./static/img/touch-master_file_2.jpg",
 	"./static/img/tree-1.png",
 	"./static/img/types-of-merges.jpg",
+	"./static/img/up-arrow.svg",
 	"./static/img/verify-pack-1.jpg",
 	"./static/img/working-of-commit.jpeg"
 ];

@@ -75,6 +75,27 @@
 	}
 }
 
+.back-to-top-btn
+{
+	display: grid;
+	place-items: center;
+	position: fixed;
+	bottom: 2.5vh;
+	right: 2vw;
+	background-color: white;
+	padding: 1em;
+	border-radius: 30px;
+	border: 1px solid #eeeeee;
+	box-shadow: 0 2px 5px #bdbdbd;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.back-to-top-btn img
+{
+	height: 15px;
+}
+
 .hidden
 {
 	display: none;
