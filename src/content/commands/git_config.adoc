@@ -13,14 +13,22 @@ Get and set repository or global options.
 
 ===== --global
 
-* `git config --global user.name '<name>'`
-* `git config --global user.email '<e-mail_id>'`
+* Set user's name: `git config --global user.name '<name>'`
+* Set user's e-mail: `git config --global user.email '<e-mail_id>'`
 
-NOTE: The global name and e-mail need to be set just once, ie, before Git is used for the first time (but it can be modified later if need be).
-
-TIP: Enter the full name and the e-mail ID registered with your GitHub account.
+[NOTE]
+====
+* It is mandatory to fill in these two details.
+* Please enter the e-mail ID registered with the concerned GitHub/GitLab/BitBucket account and the full name.
+* This is the name and e-mail ID that will be associated with each commit.
+* The global name and e-mail need to be set just once, ie, when Git is used for the first time ever on a computer (but can be modified if need be).
+====
 
 * link:#_aliases[Aliases] can also be set using this flag.
+
+* Change default link:#_branches[branch] name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch '<branch_name>'`
+
+TIP: New **GitHub** repositories have their default branch name as `main` instead of the usual `master`, while Git still uses `master` as the default branch name for new repositories. This creates a mismatch, due to which link:#_git_push[pushes] fail. To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to `main` using the above command.
 
 ===== --list
 * Lists the configurations of Git.
