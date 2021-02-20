@@ -1010,10 +1010,10 @@ git - the stupid content tracker
 <div class="ulist">
 <ul>
 <li>
-<p><code>git config --global user.name '&lt;name&gt;'</code></p>
+<p>Set user&#8217;s name: <code>git config --global user.name '&lt;name&gt;'</code></p>
 </li>
 <li>
-<p><code>git config --global user.email '&lt;e-mail_id&gt;'</code></p>
+<p>Set user&#8217;s e-mail: <code>git config --global user.email '&lt;e-mail_id&gt;'</code></p>
 </li>
 </ul>
 </div>
@@ -1024,19 +1024,22 @@ git - the stupid content tracker
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The global name and e-mail need to be set just once, ie, before Git is used for the first time (but it can be modified later if need be).
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>It is mandatory to fill in these two details.</p>
+</li>
+<li>
+<p>Please enter the e-mail ID registered with the concerned GitHub/GitLab/BitBucket account and the full name.</p>
+</li>
+<li>
+<p>This is the name and e-mail ID that will be associated with each commit.</p>
+</li>
+<li>
+<p>The global name and e-mail need to be set just once, ie, when Git is used for the first time ever on a computer (but can be modified if need be).</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Enter the full name and the e-mail ID registered with your GitHub account.
 </td>
 </tr>
 </table>
@@ -1046,7 +1049,22 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <li>
 <p><a href="#_aliases">Aliases</a> can also be set using this flag.</p>
 </li>
+<li>
+<p>Change default <a href="#_branches">branch</a> name created on running <a href="#_git_init"><code>git init</code></a> command: <code>git config --global init.defaultBranch '&lt;branch_name&gt;'</code></p>
+</li>
 </ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+New <strong>GitHub</strong> repositories have their default branch name as <code>main</code> instead of the usual <code>master</code>, while Git still uses <code>master</code> as the default branch name for new repositories. This creates a mismatch, due to which <a href="#_git_push">pushes</a> fail. To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to <code>main</code> using the above command.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
@@ -5121,7 +5139,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-02-18 09:14:35 UTC
+Last updated 2021-02-20 21:54:52 UTC
 </div>
 </div>
 </body>
