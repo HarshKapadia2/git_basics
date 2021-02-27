@@ -5,14 +5,14 @@
 
 * Local version control system maintains track of files within the local system. This approach is very common and simple. This type is also error prone which means the chances of accidentally writing to the wrong file is higher.
 
-image::lvcs.jpg[500, 500]
+image::lvcs.jpg[LVCS, 500, 500]
       
 ==== Centralized VCS (CVCS)
 
 * In this approach, all the changes in the files are tracked under the centralized server. The centralized server includes all the information of versioned files, and list of clients that check out files from that central place.
 * Eg: Tortoise SVN
 
-image::cvcs.png[450, 450]
+image::cvcs.png[CVCS, 450, 450]
       
 ==== Distributed VCS (DVCS)
 
@@ -20,6 +20,6 @@ image::cvcs.png[450, 450]
 * Clients completely clone the repository including its full history. If any server dies, any of the client repositories can be copied on to the server which help restore the server. Every clone is considered as a full backup of all the data.
 * Eg: Git
 
-image::dvcs.png[500, 500]
+image::dvcs.png[DVCS, 500, 500]
 
 '''
