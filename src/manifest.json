@@ -5,8 +5,8 @@
 	"orientation": "portrait",
 	"scope": "/git_basics/",
 	"start_url": "/git_basics/",
-	"theme_color": "#f05133",
-	"background_color": "#fff",
+	"theme_color": "#000000",
+	"background_color": "#000000",
 	"icons": [
 		{
 			"src": "./static/img/icon-192x192.png",
