@@ -81,5 +81,5 @@ Together we can do so much.
 		</button>
 	</div>
 
-	<button class="back-to-top-btn hidden"><img src="static/img/up-arrow.svg" alt="Top"></button>
+	<button class="btn hidden back-to-top-btn"><img src="static/img/up-arrow.svg" alt="Top"></button>
 ++++

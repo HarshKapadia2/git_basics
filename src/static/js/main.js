@@ -1,10 +1,16 @@
 const pwaInstallDiv = document.querySelector(".pwa-install-div");
 const pwaInstallBtn = document.querySelector("#pwa-install-btn");
 const pwaInstallDismiss = document.querySelector("#pwa-install-dismiss");
-const header = document.querySelector("#header");
 const back_to_top_btn = document.querySelector(".back-to-top-btn");
+const header = document.querySelector("#header");
+const body = document.querySelector("body");
+
+const db_name = "git_basics";
+const db_version = 1;
+const obj_store_name = "theme";
 
 let pwaInstallEvent;
+let theme;
 
 
 if(navigator.serviceWorker)
@@ -44,6 +50,20 @@ if(navigator.serviceWorker)
 	pwaInstallDismiss.addEventListener("click", () => dismissPWAInstallPrompt());
 }
 
+window.addEventListener
+(
+	"load",
+	async () =>
+	{
+		await loadDatabase();
+		console.log(theme);
+		applyTheme();
+		console.log("th: " + theme);
+
+		createThemeSwitcher();
+	}
+);
+
 const observer = new IntersectionObserver(scrollToTop);
 observer.observe(header);
 
@@ -72,6 +92,126 @@ function scrollToTop(entries, observer)
 				back_to_top_btn.classList.add("hidden");
 			else
 				back_to_top_btn.classList.remove("hidden");
+		}
+	);
+}
+
+function createThemeSwitcher()
+{
+	const theme_btn = document.createElement("button");
+
+	theme_btn.classList.add("btn", "theme-switcher");
+	theme_btn.addEventListener("click", switchTheme);
+	console.log("hi");
+	body.appendChild(theme_btn);
+}
+
+async function switchTheme()
+{
+	if(theme === "light")
+	{
+		body.classList.add("dark");
+		theme = "dark";
+		await saveDatabase();
+	}
+	else
+	{
+		body.classList.remove("dark");
+		theme = "light";
+		await saveDatabase();
+	}
+	console.log(theme);
+}
+
+async function applyTheme()
+{
+	if(theme === "light")
+	{
+		body.classList.remove("dark");
+		await saveDatabase();
+	}
+	else
+	{
+		body.classList.add("dark");
+		await saveDatabase();
+	}
+	console.log(theme);
+}
+
+async function loadDatabase()
+{
+	return new Promise
+	(
+		(resolve, reject) =>
+		{
+			let request = indexedDB.open(db_name, db_version);
+
+			request.addEventListener("error", reject);
+
+			request.addEventListener
+			(
+				"upgradeneeded",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					if(!db.objectStoreNames.contains(obj_store_name))
+						db.createObjectStore(obj_store_name);
+				}
+			);
+
+			request.addEventListener
+			(
+				"success",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					let transaction = db.transaction(obj_store_name, "readonly");
+					let store = transaction.objectStore(obj_store_name);
+
+					let getTheme = store.get("theme");
+					getTheme.addEventListener("error", reject);
+					getTheme.addEventListener
+					(
+						"success",
+						(e) =>
+						{
+							theme = e.target.result || "light";
+							console.log("theme: " + theme);
+							resolve();
+						}
+					);
+				}
+			);
+		}
+	);
+}
+
+async function saveDatabase()
+{
+	return new Promise
+	(
+		(resolve, reject) =>
+		{	
+			let request	= indexedDB.open(db_name, db_version);
+
+			request.addEventListener("error", reject);
+
+			request.addEventListener
+			(
+				"success",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					let transaction = db.transaction(obj_store_name, "readwrite");
+					let store = transaction.objectStore(obj_store_name);
+
+					store.put(theme, "theme");
+					resolve();
+				}
+			);
 		}
 	);
 }

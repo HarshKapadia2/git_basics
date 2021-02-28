@@ -7,7 +7,7 @@
 	align-items: center;
 	background-color: white;
 	padding: 0.5em;
-	box-shadow: 0 2px 5px #bdbdbd;
+	box-shadow: 0 0 3px #bdbdbd;
 	border-radius: 5px;
 	z-index: 1000;
 }
@@ -21,7 +21,7 @@
 	font-size: 15px;
 	border-radius: 5px;
 	border: 1px solid black;
-	box-shadow: 0px 2px 3px #bdbdbd;
+	box-shadow: 0 0 3px #bdbdbd;
 	cursor: pointer;
 }
 
@@ -75,28 +75,145 @@
 	}
 }
 
-.back-to-top-btn
+.btn
 {
 	display: grid;
 	place-items: center;
+	background-color: white;
+	border-radius: 2em;
+	border: 1px solid white;
+	box-shadow: 0 0 5px #bdbdbd;
+	cursor: pointer;
+	z-index: 1000;
+	outline: none;
+}
+
+.btn:focus
+{
+	box-shadow: 0 0 5px #757575;
+}
+
+.btn img
+{
+	height: 1em;
+}
+
+.back-to-top-btn
+{
+	padding: 1em;
 	position: fixed;
 	bottom: 2.5vh;
 	right: 2vw;
-	background-color: white;
-	padding: 1em;
-	border-radius: 30px;
-	border: 1px solid #eeeeee;
-	box-shadow: 0 2px 5px #bdbdbd;
-	cursor: pointer;
-	z-index: 1000;
 }
 
-.back-to-top-btn img
+.theme-switcher
 {
-	height: 15px;
+	padding: 1.5em;
+	position: absolute;
+	top: 2.5vh;
+	right: 2vw;
+	background: url("../img/moon.svg") no-repeat center;
 }
 
 .hidden
 {
 	display: none;
+}
+
+/* ======================================================= DARK MODE =========================================================== */
+
+body.dark, body.dark .btn
+{
+	background-color: black;
+	color: #e0e0e0;
+}
+
+body.dark .btn
+{
+	box-shadow: 0 0 5px #616161;
+	border: 1px solid black;
+}
+
+body.dark .btn:focus
+{
+	box-shadow: 0 0 5px #9e9e9e;
+}
+
+body.dark .theme-switcher
+{
+	background: url("../img/sun.svg") no-repeat center;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6, body.dark #toctitle, body.dark .sidebarblock .title
+{
+	color: #ff8a80 !important;
+}
+
+body.dark blockquote::before
+{
+	color: #d32f2f !important;
+}
+
+body.dark a
+{
+	color: #90caf9;
+}
+
+body.dark a:hover
+{
+	color: #42a5f5;
+}
+
+body.dark code, body.dark pre
+{
+	background-color: #424242 !important;
+	color: #e0e0e0;
+}
+
+body.dark #toc, body.dark .pwa-install-div
+{
+	background-color: black !important;
+}
+
+body.dark .pwa-install-div
+{
+	box-shadow: 0 0 3px #424242;
+}
+
+body.dark #pwa-install-btn
+{
+	box-shadow: 0 0 5px #424242;
+	background-color: #e0e0e0;
+	border: 1px solid #e0e0e0;
+	color: black;
+}
+
+body.dark li, body.dark .details, body.dark td, body.dark blockquote, body.dark .attribution cite
+{
+	color: #e0e0e0 !important;
+}
+
+body.dark .sidebarblock
+{
+	background-color: #212121 !important;
+}
+
+body.dark .icon-note::before
+{
+	color: #2196f3 !important;
+}
+
+body.dark .icon-important::before, body.dark .icon-caution::before
+{
+	color: #f44336 !important;
+}
+
+body.dark .icon-tip::before
+{
+	color: #eeeeee !important;
+}
+
+body.dark .icon-warning::before
+{
+	color: #ff9800 !important;
 }

@@ -1,4 +1,4 @@
-const cacheName = "v4";
+const cacheName = "v5";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -49,7 +49,9 @@ const cacheAssets = [
 	"./static/img/ls-a-1.jpg",
 	"./static/img/lvcs.jpg",
 	"./static/img/mkdir_1.jpg",
+	"./static/img/moon.svg",
 	"./static/img/mv-1.jpg",
+	"./static/img/sun.svg",
 	"./static/img/touch-master_file_1.jpg",
 	"./static/img/touch-master_file_2.jpg",
 	"./static/img/tree-1.png",
