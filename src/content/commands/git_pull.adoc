@@ -1,5 +1,5 @@
 
-image::git-local-remote-2.png[caption="", role="thumb", title="Git local & remote commands chart #2", alt="Git local & remote commands chart #2"]
+image::git-local-remote-2.png[alt="Git local & remote commands chart #2"]
 
 '''
 
