@@ -56,9 +56,7 @@ window.addEventListener
 	async () =>
 	{
 		await loadDatabase();
-		console.log(theme);
 		applyTheme();
-		console.log("th: " + theme);
 
 		createThemeSwitcher();
 	}
@@ -102,7 +100,6 @@ function createThemeSwitcher()
 
 	theme_btn.classList.add("btn", "theme-switcher");
 	theme_btn.addEventListener("click", switchTheme);
-	console.log("hi");
 	body.appendChild(theme_btn);
 }
 
@@ -120,7 +117,6 @@ async function switchTheme()
 		theme = "light";
 		await saveDatabase();
 	}
-	console.log(theme);
 }
 
 async function applyTheme()
@@ -135,7 +131,6 @@ async function applyTheme()
 		body.classList.add("dark");
 		await saveDatabase();
 	}
-	console.log(theme);
 }
 
 async function loadDatabase()
@@ -178,7 +173,6 @@ async function loadDatabase()
 						(e) =>
 						{
 							theme = e.target.result || "light";
-							console.log("theme: " + theme);
 							resolve();
 						}
 					);
