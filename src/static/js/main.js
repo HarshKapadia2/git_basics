@@ -12,6 +12,7 @@ const obj_store_name = "theme";
 
 let pwaInstallEvent;
 let theme;
+let theme_btn;
 
 
 if(navigator.serviceWorker)
@@ -57,12 +58,11 @@ window.addEventListener
 	async () =>
 	{
 		await loadDatabase();
+		createThemeSwitcher();
 		applyTheme();
 
-		createThemeSwitcher();
-
 		addBirthdayMsg();
-		confetti.start(1200, 50, 150); // From script loaded before this one
+		confetti.start(1200, 100, 150); // From script loaded before this one
 	}
 );
 
@@ -100,7 +100,7 @@ function scrollToTop(entries, observer)
 
 function createThemeSwitcher()
 {
-	const theme_btn = document.createElement("button");
+	theme_btn = document.createElement("button");
 
 	theme_btn.classList.add("btn", "theme-switcher");
 	theme_btn.addEventListener("click", switchTheme);
@@ -111,12 +111,14 @@ async function switchTheme()
 {
 	if(theme === "light")
 	{
+		theme_btn.setAttribute("aria-label", "Light mode");
 		body.classList.add("dark");
 		theme = "dark";
 		await saveDatabase();
 	}
 	else
 	{
+		theme_btn.setAttribute("aria-label", "Dark mode");
 		body.classList.remove("dark");
 		theme = "light";
 		await saveDatabase();
@@ -127,11 +129,13 @@ async function applyTheme()
 {
 	if(theme === "light")
 	{
+		theme_btn.setAttribute("aria-label", "Dark mode");
 		body.classList.remove("dark");
 		await saveDatabase();
 	}
 	else
 	{
+		theme_btn.setAttribute("aria-label", "Light mode");
 		body.classList.add("dark");
 		await saveDatabase();
 	}
