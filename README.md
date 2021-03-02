@@ -1,11 +1,13 @@
 <p align="center">
-   <img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
-   <br>
-   <br>
-   <b>A web site for the basics of Git and GitHub-like services.</b>
-   <br>
-   View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
+	<img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
+	<br>
+	<br>
+	<b>A web site for the basics of Git and GitHub-like services.</b>
+	<br>
+	View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
 </p>
+
+### It's birthday week! 🎂 git_basics is one year old! 🥳
 
 ## Author's sessions
 
