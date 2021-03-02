@@ -1,3 +1,13 @@
+a
+{
+	word-break: break-all;
+}
+
+td.content
+{
+	word-break: break-all;
+}
+
 .bday-msg
 {
 	font-weight: bold;
@@ -95,7 +105,6 @@
 	cursor: pointer;
 	z-index: 1000;
 	outline: none;
-	user-select: none;
 }
 
 .btn:focus
