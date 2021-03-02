@@ -86,6 +86,7 @@
 	cursor: pointer;
 	z-index: 1000;
 	outline: none;
+	user-select: none;
 }
 
 .btn:focus
@@ -177,7 +178,7 @@ body.dark #toc, body.dark .pwa-install-div
 
 body.dark .pwa-install-div
 {
-	box-shadow: 0 0 3px #424242;
+	box-shadow: 0 0 5px #424242;
 }
 
 body.dark #pwa-install-btn
