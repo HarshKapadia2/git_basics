@@ -1,8 +1,9 @@
-const cacheName = "v6";
+const cacheName = "v7";
 const cacheAssets = [
 	"./",
 	"./index.html",
 	"./robots.txt",
+	"./google66b7e1d4dbf56798.html",
 	"./static/css/style.css",
 	"./static/js/main.js",
 	"./static/img/add-1.jpg",
