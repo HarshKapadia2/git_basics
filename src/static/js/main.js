@@ -62,7 +62,13 @@ window.addEventListener
 		applyTheme();
 
 		addBirthdayMsg();
-		confetti.start(1200, 100, 150); // From script loaded before this one
+
+		if(innerWidth < 500)
+			confetti.start(1200, 500, 1000); // From script loaded before this one
+		else
+			confetti.start(1200, 100, 150); // From script loaded before this one
+		
+		document.querySelector("#confetti-canvas").style.left = "0";
 	}
 );
 
