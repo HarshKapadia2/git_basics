@@ -1,10 +1,17 @@
 const pwaInstallDiv = document.querySelector(".pwa-install-div");
 const pwaInstallBtn = document.querySelector("#pwa-install-btn");
 const pwaInstallDismiss = document.querySelector("#pwa-install-dismiss");
-const header = document.querySelector("#header");
 const back_to_top_btn = document.querySelector(".back-to-top-btn");
+const header = document.querySelector("#header");
+const body = document.querySelector("body");
+const toc = document.querySelector("#toc");
+
+const db_name = "git_basics";
+const db_version = 1;
+const obj_store_name = "theme";
 
 let pwaInstallEvent;
+let theme;
 
 
 if(navigator.serviceWorker)
@@ -44,6 +51,21 @@ if(navigator.serviceWorker)
 	pwaInstallDismiss.addEventListener("click", () => dismissPWAInstallPrompt());
 }
 
+window.addEventListener
+(
+	"load",
+	async () =>
+	{
+		await loadDatabase();
+		applyTheme();
+
+		createThemeSwitcher();
+
+		addBirthdayMsg();
+		confetti.start(1200, 50, 150); // From script loaded before this one
+	}
+);
+
 const observer = new IntersectionObserver(scrollToTop);
 observer.observe(header);
 
@@ -74,4 +96,135 @@ function scrollToTop(entries, observer)
 				back_to_top_btn.classList.remove("hidden");
 		}
 	);
+}
+
+function createThemeSwitcher()
+{
+	const theme_btn = document.createElement("button");
+
+	theme_btn.classList.add("btn", "theme-switcher");
+	theme_btn.addEventListener("click", switchTheme);
+	body.appendChild(theme_btn);
+}
+
+async function switchTheme()
+{
+	if(theme === "light")
+	{
+		body.classList.add("dark");
+		theme = "dark";
+		await saveDatabase();
+	}
+	else
+	{
+		body.classList.remove("dark");
+		theme = "light";
+		await saveDatabase();
+	}
+}
+
+async function applyTheme()
+{
+	if(theme === "light")
+	{
+		body.classList.remove("dark");
+		await saveDatabase();
+	}
+	else
+	{
+		body.classList.add("dark");
+		await saveDatabase();
+	}
+}
+
+async function loadDatabase()
+{
+	return new Promise
+	(
+		(resolve, reject) =>
+		{
+			let request = indexedDB.open(db_name, db_version);
+
+			request.addEventListener("error", reject);
+
+			request.addEventListener
+			(
+				"upgradeneeded",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					if(!db.objectStoreNames.contains(obj_store_name))
+						db.createObjectStore(obj_store_name);
+				}
+			);
+
+			request.addEventListener
+			(
+				"success",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					let transaction = db.transaction(obj_store_name, "readonly");
+					let store = transaction.objectStore(obj_store_name);
+
+					let getTheme = store.get("theme");
+					getTheme.addEventListener("error", reject);
+					getTheme.addEventListener
+					(
+						"success",
+						(e) =>
+						{
+							theme = e.target.result || "light";
+							resolve();
+						}
+					);
+				}
+			);
+		}
+	);
+}
+
+async function saveDatabase()
+{
+	return new Promise
+	(
+		(resolve, reject) =>
+		{	
+			let request	= indexedDB.open(db_name, db_version);
+
+			request.addEventListener("error", reject);
+
+			request.addEventListener
+			(
+				"success",
+				(e) =>
+				{
+					let db = e.target.result;
+
+					let transaction = db.transaction(obj_store_name, "readwrite");
+					let store = transaction.objectStore(obj_store_name);
+
+					store.put(theme, "theme");
+					resolve();
+				}
+			);
+		}
+	);
+}
+
+function addBirthdayMsg()
+{
+	const bday_div_parent = document.createElement("div");
+	const bday_div_child_1 = document.createElement("div");
+	const bday_div_child_2 = document.createElement("div");
+
+	bday_div_parent.classList.add("bday-msg");
+	bday_div_child_1.innerText = "It's birthday week! 🎂";
+	bday_div_child_2.innerText = "git_basics is one year old! 🥳";
+
+	bday_div_parent.appendChild(bday_div_child_1);
+	bday_div_parent.appendChild(bday_div_child_2);
+	header.insertBefore(bday_div_parent, toc);
 }
