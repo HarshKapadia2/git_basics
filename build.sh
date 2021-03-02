@@ -11,6 +11,7 @@ for path in \
 	"static"            \
 	"manifest.json"     \
 	"service_worker.js" \
+	"robots.txt"        \
 ; do
 	cp -r "src/${path}" "${output}/";
 done
