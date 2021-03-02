@@ -64,7 +64,7 @@ window.addEventListener
 		addBirthdayMsg();
 
 		if(innerWidth < 500)
-			confetti.start(1200, 500, 1000); // From script loaded before this one
+			confetti.start(1200, 150, 200); // From script loaded before this one
 		else
 			confetti.start(1200, 100, 150); // From script loaded before this one
 		
