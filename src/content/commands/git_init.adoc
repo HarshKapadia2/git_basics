@@ -5,9 +5,17 @@
 
 `git init`
 
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:#_repository[Repository (repo)]
+
 ==== Description
 
-To initialize a local git link:#_repository[repository (repo)] in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialised.
+To initialize a local git repository in the location to which the bash is pointing. A hidden folder `.git` is created in the directory. None of the commands below will work if there is no local git repo initialized.
+
+CAUTION: If the remote repository is/is going to be located on GitHub, please be aware of the link:#_main_vs_master_2[`main` vs `master` default branch issue] which might cause link:#_git_push[`git push`] to fail.
 
 ==== Options/Flags
 

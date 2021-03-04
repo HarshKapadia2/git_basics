@@ -5,6 +5,14 @@
 
 `git config <flags>`
 
+==== Prerequisites
+
+The following terms are required to be understood:
+
+* link:#_branches[Branches]
+* link:#_aliases[Aliases]
+* link:#_repository[Repository (repo)]
+
 ==== Description
 
 Get and set repository or global options.
@@ -24,19 +32,25 @@ Get and set repository or global options.
 * The global name and e-mail need to be set just once, ie, when Git is used for the first time ever on a computer (but can be modified if need be).
 ====
 
-* link:#_aliases[Aliases] can also be set using this flag.
+* link:#_aliases[Aliases can also be set] using this flag.
 
-* Change default link:#_branches[branch] name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch '<branch_name>'`
+* Change default branch name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch '<branch_name>'`
 
-TIP: New **GitHub** repositories have their default branch name as `main` instead of the usual `master`, while Git still uses `master` as the default branch name for new repositories. This creates a mismatch, due to which link:#_git_push[pushes] fail. To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to `main` using the above command.
+[TIP#_main_vs_master_2]
+====
+`main` vs `master` #2:
+
+* link:#_main_vs_master_1[`main` vs `master` #1]
+* This only applies to GitHub repositories.
+* New GitHub repositories have their default branch name as `main` instead of `master`, while the local Git client still uses `master` as the default branch name when link:#_git_init[initializing repositories].
+* This default branch name mismatch causes link:#_git_push[pushes] to new remote repositories to fail.
+* To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to `main` using the command `git config --global init.defaultBranch "main"` as mentioned in the point above this tip.
+* NOTE: Cloned repositories will not be impacted unless the remote repository's default branch is changed on GitHub (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).
+====
 
 ===== --list
+
 * Lists the configurations of Git.
 * Eg: `git config --list`
-
-.Related
-****
-* link:#_aliases[Set aliases]
-****
 
 '''
