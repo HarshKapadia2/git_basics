@@ -3,8 +3,9 @@ Harsh Kapadia
 v2
 :favicon:   ./static/img/favicon.ico
 :toc:       left
-:icons:     font
 :imagesdir: ./static/img
+:icons:     image
+:iconsdir:	./static/img/admonition_icons
 :docinfo:   shared
 :author:    Harsh Kapadia
 

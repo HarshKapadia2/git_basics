@@ -8,6 +8,12 @@ td.content
 	word-break: break-all;
 }
 
+.icon img
+{
+	width: 40px;
+	height: 40px;
+}
+
 .bday-msg
 {
 	font-weight: bold;
@@ -215,24 +221,4 @@ body.dark li, body.dark .details, body.dark td, body.dark blockquote, body.dark 
 body.dark .sidebarblock
 {
 	background-color: #212121 !important;
-}
-
-body.dark .icon-note::before
-{
-	color: #2196f3 !important;
-}
-
-body.dark .icon-important::before, body.dark .icon-caution::before
-{
-	color: #f44336 !important;
-}
-
-body.dark .icon-tip::before
-{
-	color: #eeeeee !important;
-}
-
-body.dark .icon-warning::before
-{
-	color: #ff9800 !important;
 }
