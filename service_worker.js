@@ -1,4 +1,4 @@
-const cacheName = "v7";
+const cacheName = "v8";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -6,6 +6,11 @@ const cacheAssets = [
 	"./google66b7e1d4dbf56798.html",
 	"./static/css/style.css",
 	"./static/js/main.js",
+	"./static/img/admonition_icons/tip.png",
+	"./static/img/admonition_icons/warning.png",
+	"./static/img/admonition_icons/note.png",
+	"./static/img/admonition_icons/caution.png",
+	"./static/img/admonition_icons/important.png",
 	"./static/img/add-1.jpg",
 	"./static/img/add-2.jpg",
 	"./static/img/add-3.jpg",
