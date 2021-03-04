@@ -14,6 +14,11 @@ td.content
 	height: 40px;
 }
 
+code
+{
+	background-color: #eeeeee !important;
+}
+
 .bday-msg
 {
 	font-weight: bold;
@@ -179,7 +184,13 @@ body.dark blockquote::before
 	color: #d32f2f !important;
 }
 
-body.dark a
+body.dark code, body.dark pre
+{
+	background-color: #424242 !important;
+	color: #e0e0e0;
+}
+
+body.dark a, body.dark a code
 {
 	color: #90caf9;
 }
@@ -187,12 +198,6 @@ body.dark a
 body.dark a:hover
 {
 	color: #42a5f5;
-}
-
-body.dark code, body.dark pre
-{
-	background-color: #424242 !important;
-	color: #e0e0e0;
 }
 
 body.dark #toc, body.dark .pwa-install-div
