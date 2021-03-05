@@ -63,12 +63,7 @@ window.addEventListener
 
 		addBirthdayMsg();
 
-		if(innerWidth < 500)
-			confetti.start(1200, 150, 200); // From script loaded before this one
-		else
-			confetti.start(1200, 100, 150); // From script loaded before this one
-		
-		document.querySelector("#confetti-canvas").style.left = "0";
+		setTimeout(loadConfetti, 2000);
 	}
 );
 
@@ -237,4 +232,14 @@ function addBirthdayMsg()
 	bday_div_parent.appendChild(bday_div_child_1);
 	bday_div_parent.appendChild(bday_div_child_2);
 	header.insertBefore(bday_div_parent, toc);
+}
+
+function loadConfetti()
+{
+	if(innerWidth < 500)
+		confetti.start(1200, 150, 200); // From script loaded before this one
+	else
+		confetti.start(1200, 100, 150); // From script loaded before this one
+
+	document.querySelector("#confetti-canvas").style.left = "0";
 }
