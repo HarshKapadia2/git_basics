@@ -7,8 +7,6 @@
 	View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
 </p>
 
-### It's birthday week! 🎂 git_basics is one year old! 🥳
-
 ## Author's sessions
 
 - [Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM)

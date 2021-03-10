@@ -19,15 +19,6 @@ code
 	background-color: #eeeeee !important;
 }
 
-.bday-msg
-{
-	font-weight: bold;
-	font-size: 1.5em;
-	line-height: 1.5em;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-}
-
 .pwa-install-div
 {
 	position: fixed;
