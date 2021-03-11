@@ -4,7 +4,6 @@ const pwaInstallDismiss = document.querySelector("#pwa-install-dismiss");
 const back_to_top_btn = document.querySelector(".back-to-top-btn");
 const header = document.querySelector("#header");
 const body = document.querySelector("body");
-const toc = document.querySelector("#toc");
 
 const db_name = "git_basics";
 const db_version = 1;
@@ -60,10 +59,6 @@ window.addEventListener
 		await loadDatabase();
 		createThemeSwitcher();
 		applyTheme();
-
-		addBirthdayMsg();
-
-		setTimeout(loadConfetti, 2000);
 	}
 );
 
@@ -217,29 +212,4 @@ async function saveDatabase()
 			);
 		}
 	);
-}
-
-function addBirthdayMsg()
-{
-	const bday_div_parent = document.createElement("div");
-	const bday_div_child_1 = document.createElement("div");
-	const bday_div_child_2 = document.createElement("div");
-
-	bday_div_parent.classList.add("bday-msg");
-	bday_div_child_1.innerText = "It's birthday week! 🎂";
-	bday_div_child_2.innerText = "git_basics is one year old! 🥳";
-
-	bday_div_parent.appendChild(bday_div_child_1);
-	bday_div_parent.appendChild(bday_div_child_2);
-	header.insertBefore(bday_div_parent, toc);
-}
-
-function loadConfetti()
-{
-	if(innerWidth < 500)
-		confetti.start(1200, 150, 200); // From script loaded before this one
-	else
-		confetti.start(1200, 100, 150); // From script loaded before this one
-
-	document.querySelector("#confetti-canvas").style.left = "0";
 }
