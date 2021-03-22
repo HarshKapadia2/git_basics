@@ -17,6 +17,6 @@ for path in \
 	cp -r "src/${path}" "${output}/";
 done
 
-asciidoctor "src/index.adoc" -o "${output}/index.html";
+asciidoctor "src/index.adoc" -a webfonts! -o "${output}/index.html";
 
 echo "Build complete";
