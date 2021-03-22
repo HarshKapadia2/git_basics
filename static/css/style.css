@@ -141,6 +141,29 @@ code
 	display: none;
 }
 
+/* ================================================= SCROLLBAR (LIGHT MODE) =================================================== */
+
+body::-webkit-scrollbar
+{
+	width: 0.7em;
+}
+
+#toc::-webkit-scrollbar
+{
+	width: 0.5em;
+}
+
+body::-webkit-scrollbar-track, #toc::-webkit-scrollbar-track
+{
+	background-color: #eeeeee;
+}
+
+body::-webkit-scrollbar-thumb, #toc::-webkit-scrollbar-thumb
+{
+	background-color: #bdbdbd;
+	border-radius: 2px;
+}
+
 /* ======================================================= DARK MODE =========================================================== */
 
 body.dark, body.dark .btn
@@ -196,6 +219,11 @@ body.dark #toc, body.dark .pwa-install-div
 	background-color: black !important;
 }
 
+body.dark #toc
+{
+	border-color: black;
+}
+
 body.dark .pwa-install-div
 {
 	box-shadow: 0 0 5px #424242;
@@ -217,4 +245,14 @@ body.dark li, body.dark .details, body.dark td, body.dark blockquote, body.dark 
 body.dark .sidebarblock
 {
 	background-color: #212121 !important;
+}
+
+body.dark::-webkit-scrollbar-track, body.dark #toc::-webkit-scrollbar-track
+{
+	background-color: #212121;
+}
+
+body.dark::-webkit-scrollbar-thumb, body.dark #toc::-webkit-scrollbar-thumb
+{
+	background-color: #616161;
 }
