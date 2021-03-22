@@ -6,7 +6,7 @@
 * Every commit has a unique SHA1 associated with it.
 * All 40 characters are NOT needed for commands. The first 7 to 8 characters of the SHA1 will do.
 
-image::working-of-commit.jpeg[alt="Working of commit"]
+image::working-of-commit.jpeg[alt="Working of commit", 600, 600]
 
 .Related
 ****

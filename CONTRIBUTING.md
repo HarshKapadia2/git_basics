@@ -63,7 +63,8 @@ include::../content/commands/git_add.adoc[]
 
 - CSS, JS and images are located in the `./src/static` directory. Add the appropriate static files to the appropriate static directory.
 
-IMPORTANT:
+#### Caching
+
 - If any static file is added, please make sure to
 	- Include it in the `cacheAssets` array in `./src/service_worker.js` as a relative path.
 	- Increment the value of the `cacheName` variable. (Eg: From `v2` to `v3`.)
@@ -79,6 +80,20 @@ IMPORTANT:
 	- Increment the value of the `cacheName` variable. (Eg: From `v2` to `v3`.)
 	- Rename it in `./src/docinfo.html` if present.
 - **The `cacheName` should be updated just once per commit.**
+
+#### Images
+
+Images should have
+
+- A solid colour background. (No transparent images.)
+- A width and height of 600px.
+- An `alt` attribute describing the image in a few words.
+
+Eg:
+
+```
+image::file_name.ext[alt="image description", 600, 600, ...]
+```
 
 ## Language and syntax
 

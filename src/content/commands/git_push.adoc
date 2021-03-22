@@ -21,9 +21,9 @@ To set up a remote repo, refer to link:#_git_remote[`git remote`] and [`creating
 
 WARNING: If the push is to a newly created empty repository on GitHub, the link:#_main_vs_master_2[`main` vs `master` default branch issue] might cause it to fail.
 
-image::git-push.jpeg[alt="Git push illustration"]
+image::git-push.jpeg[alt="Git push illustration", 600, 600]
 
-image::fast-forward-merge.png[alt="Fast forward merge"]
+image::fast-forward-merge.png[alt="Fast forward merge", 600, 600]
 
 NOTE: From the two pictures above, it can be inferred that Git will allow pushing only if the push results in a fast-forward merge.
 

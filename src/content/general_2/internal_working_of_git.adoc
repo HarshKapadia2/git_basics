@@ -248,7 +248,7 @@ Note the size of `./.git/objects/pack` in the above picture (0 kb).
 
 Aggressive garbage collection will be used to carry out Delta compression and then `du -c` to view the changes.
 
-image:du-c-4.jpg[alt="Du -c", 600, 600]
+image::du-c-4.jpg[alt="Du -c", 600, 600]
 
 NOTE: The total size of the `.git` directory went down from 4220kb (seen in the first `du -c` picture in this sub-section) to 2838kb (as seen in the above picture). This is a 32.75% reduction in the size of the local repository!
 
@@ -259,13 +259,13 @@ All of this will be looked into, one by one.
 * Look at the contents of `./.git/objects/pack`.
 
 +
-image::dir-2.jpg[alt="Content of directory", 800, 800]
+image::dir-2.jpg[alt="Content of directory", 600, 600]
 +
 As mentioned above, two files (a pack file `.pack` and an index file `.idx`) are created.
 +
 Have a look at the contents of both the files using the plumbing command `git verify-pack -v path/to/pack/file/<file_name>.pack` (-v = verbose). (Works with `.idx` as well.)
 +
-image::verify-pack-1.jpg[alt="Contents of files", 800, 800]
+image::verify-pack-1.jpg[alt="Contents of files", 600, 600]
 +
 *The pack file is a single file containing the contents of all the objects that were removed from the file system.*
 +
@@ -288,7 +288,7 @@ NOTE: On pushing and/or pulling, these files are not deleted, just a pack file a
 
 Finally, take a look at the log of the repository.
 
-image::log-1.jpg[alt="Log of repository"]
+image::log-1.jpg[alt="Log of repository", 600, 600]
 
 .Related
 ****

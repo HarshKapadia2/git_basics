@@ -1,7 +1,7 @@
 
 === Branches
 
-image::branches.png[alt="Branches"]
+image::branches.png[alt="Branches", 600, 600]
 
 * In Git, branches are a part of everyday development process.
 * Git branches are effectively a pointer to a snapshot of changes.
