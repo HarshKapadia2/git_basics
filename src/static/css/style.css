@@ -8,6 +8,12 @@ td.content
 	word-break: break-all;
 }
 
+.imageblock .content
+{
+	display: flex;
+	justify-content: center;
+}
+
 .icon img
 {
 	width: 40px;
