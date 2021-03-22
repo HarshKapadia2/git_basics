@@ -8,7 +8,6 @@
 <meta name="author" content="Harsh Kapadia">
 <link rel="icon" type="image/x-icon" href="./static/img/favicon.ico">
 <title>git_basics</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
@@ -441,7 +440,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <meta name="keywords" content="git, github, git_basics, git bash, basics of git, basics of github">
 <meta name="description" content="The basics of Git and GitHub!">
-<meta name="theme-color" content="#f05133">
+<meta name="theme-color" content="#000000">
 <meta property="og:site_name" content="git_basics">
 <meta property="og:title" content="git_basics">
 <meta property="og:type" content="website">
@@ -451,6 +450,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <meta property="twitter:image" content="https://user-images.githubusercontent.com/50140864/109861960-e63a3100-7c85-11eb-908b-0607048b93e3.png">
 
 <script defer src="static/js/main.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700&display=swap">
 
 <link rel="stylesheet" href="static/css/style.css">
 
@@ -694,7 +697,7 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/lvcs.jpg" alt="LVCS" width="500" height="500">
+<img src="./static/img/lvcs.jpg" alt="LVCS" width="600" height="600">
 </div>
 </div>
 </div>
@@ -712,7 +715,7 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/cvcs.png" alt="CVCS" width="450" height="450">
+<img src="./static/img/cvcs.png" alt="CVCS" width="600" height="600">
 </div>
 </div>
 </div>
@@ -733,7 +736,7 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/dvcs.png" alt="DVCS" width="500" height="500">
+<img src="./static/img/dvcs.png" alt="DVCS" width="600" height="600">
 </div>
 </div>
 <hr>
@@ -1227,7 +1230,7 @@ If the remote repository is/is going to be located on GitHub, please be aware of
 <hr>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/git-local-remote.png" alt="Git local &amp; remote commands chart #1">
+<img src="./static/img/git-local-remote.png" alt="Git local &amp; remote commands chart #1" width="600" height="600">
 </div>
 </div>
 <hr>
@@ -1494,7 +1497,7 @@ If the remote repository is/is going to be located on GitHub, please be aware of
 <h3 id="_git_commit">git commit</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/working-of-commit.jpeg" alt="Working of Commit">
+<img src="./static/img/working-of-commit.jpeg" alt="Working of Commit" width="600" height="600">
 </div>
 </div>
 <div class="sect3">
@@ -1960,7 +1963,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <hr>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/git-local-remote-2.png" alt="Git local &amp; remote commands chart #2">
+<img src="./static/img/git-local-remote-2.png" alt="Git local &amp; remote commands chart #2" width="600" height="600">
 </div>
 </div>
 <hr>
@@ -2292,7 +2295,7 @@ The branch can be safely deleted.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/types-of-merges.jpg" alt="Types of merges">
+<img src="./static/img/types-of-merges.jpg" alt="Types of merges" width="600" height="600">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -2878,12 +2881,12 @@ If the push is to a newly created empty repository on GitHub, the <a href="#_mai
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/git-push.jpeg" alt="Git push illustration">
+<img src="./static/img/git-push.jpeg" alt="Git push illustration" width="600" height="600">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/fast-forward-merge.png" alt="Fast forward merge">
+<img src="./static/img/fast-forward-merge.png" alt="Fast forward merge" width="600" height="600">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -3793,8 +3796,10 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 <div class="paragraph">
 <p>Aggressive garbage collection will be used to carry out Delta compression and then <code>du -c</code> to view the changes.</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="./static/img/du-c-4.jpg" alt="Du -c" width="600" height="600"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="./static/img/du-c-4.jpg" alt="Du -c" width="600" height="600">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3820,7 +3825,7 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 <p>Look at the contents of <code>./.git/objects/pack</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/dir-2.jpg" alt="Content of directory" width="800" height="800">
+<img src="./static/img/dir-2.jpg" alt="Content of directory" width="600" height="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3831,7 +3836,7 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/verify-pack-1.jpg" alt="Contents of files" width="800" height="800">
+<img src="./static/img/verify-pack-1.jpg" alt="Contents of files" width="600" height="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3913,7 +3918,7 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/log-1.jpg" alt="Log of repository">
+<img src="./static/img/log-1.jpg" alt="Log of repository" width="600" height="600">
 </div>
 </div>
 <div class="sidebarblock">
@@ -4657,7 +4662,7 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/working-of-commit.jpeg" alt="Working of commit">
+<img src="./static/img/working-of-commit.jpeg" alt="Working of commit" width="600" height="600">
 </div>
 </div>
 <div class="sidebarblock">
@@ -4777,7 +4782,7 @@ HEAD is contextual. It will point to the latest commit in the current branch.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/working-of-commit.jpeg" alt="Working of Commit">
+<img src="./static/img/working-of-commit.jpeg" alt="Working of Commit" width="600" height="600">
 </div>
 </div>
 <div class="ulist">
@@ -4841,7 +4846,7 @@ ref: refs/heads/test_branch</pre>
 <h3 id="_branches">Branches</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./static/img/branches.png" alt="Branches">
+<img src="./static/img/branches.png" alt="Branches" width="600" height="600">
 </div>
 </div>
 <div class="ulist">
@@ -5231,7 +5236,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-03-22 06:05:44 UTC
+Last updated 2021-03-22 20:08:22 UTC
 </div>
 </div>
 </body>
