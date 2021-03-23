@@ -19,4 +19,7 @@ done
 
 asciidoctor "src/index.adoc" -a webfonts! -o "${output}/index.html";
 
+# Lazy load images
+sed -i 's/<img/<img loading="lazy"/g' ${output}/index.html;
+
 echo "Build complete";
