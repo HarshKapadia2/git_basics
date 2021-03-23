@@ -1,10 +1,10 @@
 [
 	{
-		"relation": ["delegate_permission/common.handle_all_urls"],
-		"target" : {
+      	"relation": ["delegate_permission/common.handle_all_urls"],
+      	"target": {
 			"namespace": "android_app",
 			"package_name": "com.harsh_kapadia.git_basics",
-			"sha256_cert_fingerprints": ["C6:A5:00:18:2F:4A:E8:8A:D3:FA:C4:6F:7A:88:FF:64:3F:0A:45:86:F4:6D:32:AD:E2:9C:DA:58:50:93:DD:26"]
+			"sha256_cert_fingerprints": ["F9:58:E0:4C:AE:85:8E:B3:A7:D4:9D:5A:8D:20:C8:1A:EE:78:20:01:EC:22:B4:F2:61:55:8F:3E:82:24:CD:EF"]
 		}
 	}
 ]
