@@ -14,6 +14,7 @@ for path in \
 	"robots.txt"                   \
 	"google66b7e1d4dbf56798.html"  \
 	".well-known"                  \
+	"privacy_policy.html"          \
 ; do
 	cp -r "src/${path}" "${output}/";
 done
