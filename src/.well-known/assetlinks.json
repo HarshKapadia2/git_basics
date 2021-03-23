@@ -4,7 +4,7 @@
       	"target": {
 			"namespace": "android_app",
 			"package_name": "com.harsh_kapadia.git_basics",
-			"sha256_cert_fingerprints": ["F9:58:E0:4C:AE:85:8E:B3:A7:D4:9D:5A:8D:20:C8:1A:EE:78:20:01:EC:22:B4:F2:61:55:8F:3E:82:24:CD:EF"]
+			"sha256_cert_fingerprints": ["AB:E9:A6:6A:FB:81:73:45:BA:9D:C6:CA:1C:FF:69:0F:AD:B9:95:8B:C4:05:A7:3C:DF:BA:6A:21:4F:C7:FD:2E"]
 		}
-	}
+    }
 ]
