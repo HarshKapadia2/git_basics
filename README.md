@@ -1,10 +1,15 @@
 <p align="center">
 	<img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
 	<br>
-	<br>
 	<b>A web site for the basics of Git and GitHub-like services.</b>
 	<br>
-	View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>.
+	View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>
+	<br>
+	or
+	<br>
+	<a href="https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics">
+		<img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="20%">
+	</a>
 </p>
 
 ## Author's sessions
