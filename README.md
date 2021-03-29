@@ -1,8 +1,11 @@
 <p align="center">
 	<img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%">
-	<br>
-	<b>A web site for the basics of Git and GitHub-like services.</b>
-	<br>
+</p>
+
+<h3 align="center">A web site for the basics of Git and GitHub-like services.</h3>
+<br>
+
+<p align="center">
 	View the PWA at <a href="https://harshkapadia2.github.io/git_basics/">harshkapadia2.github.io/git_basics</a>
 	<br>
 	or
