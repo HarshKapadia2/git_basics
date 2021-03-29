@@ -6,8 +6,8 @@
 - If any contributor wants to tackle an issue or a part of it, please leave a comment on the issue (mentioning the part they want to tackle), so that they can be assigned to that part of the issue and multiple people do not handle the same part of the issue.
 
 NOTE:
-- This project uses a static site generator called [Asciidoctor](https://asciidoctor.org/).
-- This project is a PWA.
+- This project uses a Static Site Generator called [Asciidoctor](https://asciidoctor.org/).
+- This project is a [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) and a [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/overview/).
 - CI/CD: GitHub Actions has been set up on this repo, so a built web site does not have to be committed.
 
 ## Local setup
