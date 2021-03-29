@@ -87,6 +87,8 @@ Alone, we can do so little;
 Together we can do so much.
 
 ++++
+	<a href="/static/html/privacy_policy.html">Privacy policy</a>
+
 	<div class="pwa-install-div hidden">
 		<div id="pwa-install-text">Ready for offline use!</div>
 		<button id="pwa-install-btn">Install</button>
