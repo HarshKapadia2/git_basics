@@ -5,7 +5,7 @@ const cacheAssets = [
 	"./robots.txt",
 	"./google66b7e1d4dbf56798.html",
 	"./well-known/assetlinks.json",
-	"./privacy_policy.html",
+	"./static/html/privacy_policy.html",
 	"./static/css/style.css",
 	"./static/js/main.js",
 	"./static/img/admonition_icons/tip.png",
