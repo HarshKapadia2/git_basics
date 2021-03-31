@@ -13,8 +13,6 @@ for path in \
 	"service_worker.js"            \
 	"robots.txt"                   \
 	"google66b7e1d4dbf56798.html"  \
-	".nojekyll"                    \
-	".well-known"                  \
 ; do
 	cp -r "src/${path}" "${output}/";
 done

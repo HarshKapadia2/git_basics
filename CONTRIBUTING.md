@@ -7,7 +7,7 @@
 
 NOTE:
 - This project uses a Static Site Generator called [Asciidoctor](https://asciidoctor.org/).
-- This project is a [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) and a [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/overview/).
+- This project is a [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) and a [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/overview/). ([Asset links file](https://github.com/HarshKapadia2/harshkapadia2.github.io/blob/main/.well-known/assetlinks.json))
 - CI/CD: GitHub Actions has been set up on this repo, so a built web site does not have to be committed.
 
 ## Local setup
