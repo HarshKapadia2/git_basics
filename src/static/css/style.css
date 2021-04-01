@@ -25,6 +25,20 @@ code
 	background-color: #eeeeee !important;
 }
 
+.announcement
+{
+	font-weight: bold;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.announcement img
+{
+	width: 30%;
+}
+
 .pwa-install-div
 {
 	position: fixed;
@@ -145,6 +159,14 @@ code
 .hidden
 {
 	display: none;
+}
+
+@media screen and (max-width: 600px)
+{
+	.announcement img
+	{
+		width: 50%;
+	}
 }
 
 /* ================================================= SCROLLBAR (LIGHT MODE) =================================================== */
