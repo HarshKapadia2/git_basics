@@ -4,6 +4,7 @@ const pwaInstallDismiss = document.querySelector("#pwa-install-dismiss");
 const back_to_top_btn = document.querySelector(".back-to-top-btn");
 const header = document.querySelector("#header");
 const body = document.querySelector("body");
+const toc = document.querySelector("#toc");
 
 const db_name = "git_basics";
 const db_version = 1;
@@ -59,6 +60,8 @@ window.addEventListener
 		await loadDatabase();
 		createThemeSwitcher();
 		applyTheme();
+
+		addAnnouncement();
 	}
 );
 
@@ -212,4 +215,24 @@ async function saveDatabase()
 			);
 		}
 	);
+}
+
+function addAnnouncement()
+{
+	const announcement_div_parent = document.createElement("div");
+	const announcement_text = document.createElement("div");
+	const announcement_link = document.createElement("a");
+	const announcement_img = document.createElement("img");
+
+	announcement_div_parent.classList.add("announcement");
+	announcement_text.innerText = "git_basics is available on the Play Store! 🎉";
+	announcement_link.href = "https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics";
+	announcement_img.src = "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
+	announcement_img.alt = "Get it on Google Play";
+
+	announcement_link.appendChild(announcement_img);
+
+	announcement_div_parent.appendChild(announcement_text);
+	announcement_div_parent.appendChild(announcement_link);
+	header.insertBefore(announcement_div_parent, toc);
 }
