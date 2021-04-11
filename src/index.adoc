@@ -42,7 +42,7 @@ NOTE: One might want to familiarize themselves with some link:#_terms[terms] bef
 * The default branch name for new repositories on GitHub is now `main`.
 * Existing repositories on GitHub are not impacted by this change, but they can now rename their branches if they wish to.
 * For more details, please check the https://github.com/github/renaming[renaming repo^] by GitHub.
-* link:#_global/:~:text=Change%20default%20branch%20name[Changing the default branch of the local Git client] is also possible.
+* link:#_change_default_branch_name[Changing the default branch of the local Git client] is also possible.
 * link:#_main_vs_master_2[`main` vs `master` #2]
 ====
 

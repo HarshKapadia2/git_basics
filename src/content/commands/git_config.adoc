@@ -34,7 +34,7 @@ Get and set repository or global options.
 
 * link:#_aliases[Aliases can also be set] using this flag.
 
-* Change default branch name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch '<branch_name>'`
+* [[_change_default_branch_name]] Change default branch name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch '<branch_name>'`
 
 [TIP#_main_vs_master_2]
 ====
