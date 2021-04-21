@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -euo pipefail;
+shopt -s extglob;
 
 output="${1-./build}";
 echo "Building to: '${output}'";
@@ -8,7 +9,9 @@ echo "Building to: '${output}'";
 mkdir -p "${output}";
 
 # Remove any extra files
-rm -r ${output}/* || true;
+cd ${output};
+rm -rf * !("src"|"build.sh") || true;
+cd ..;
 
 for path in \
 	"static"                       \
