@@ -7,6 +7,9 @@ echo "Building to: '${output}'";
 
 mkdir -p "${output}";
 
+# Remove any extra files
+rm -r ${output}/* || true;
+
 for path in \
 	"static"                       \
 	"manifest.webmanifest"         \
