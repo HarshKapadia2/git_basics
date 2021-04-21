@@ -47,7 +47,7 @@ jobs:
       - name: Build site using Asciidoctor
         run: |
           # Build page
-          sh ./build.sh .
+          ./build.sh .
       
       - name: Deploy to GitHub Pages
         run: |
