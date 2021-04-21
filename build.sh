@@ -1,17 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
 set -euo pipefail;
-shopt -s extglob;
 
 output="${1-./build}";
 echo "Building to: '${output}'";
 
-mkdir -p "${output}";
+# Remove output dir if it already exists
+rm -rf "${output}";
 
-# Remove any extra files
-cd ${output};
-rm -rf * !("src"|"build.sh") || true;
-cd ..;
+mkdir -p "${output}";
 
 for path in \
 	"static"                       \
