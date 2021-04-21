@@ -36,7 +36,7 @@ code
 
 .announcement img
 {
-	width: 30%;
+	width: 9em;
 }
 
 .pwa-install-div
@@ -78,6 +78,12 @@ code
 	display: grid;
 	place-items: center;
 	cursor: pointer;
+}
+
+#pwa-install-dismiss img
+{
+	height: 1.5em;
+	width: 1.5em;
 }
 
 .pwa-install-div-summon
@@ -137,6 +143,7 @@ code
 .btn img
 {
 	height: 1em;
+	width: 1em;
 }
 
 .back-to-top-btn
@@ -165,7 +172,7 @@ code
 {
 	.announcement img
 	{
-		width: 50%;
+		width: 7em;
 	}
 }
 
