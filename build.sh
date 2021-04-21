@@ -9,7 +9,7 @@ mkdir -p "${output}";
 
 for path in \
 	"static"                       \
-	"manifest.json"                \
+	"manifest.webmanifest"         \
 	"service_worker.js"            \
 	"robots.txt"                   \
 	"google66b7e1d4dbf56798.html"  \
