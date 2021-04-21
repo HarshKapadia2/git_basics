@@ -40,6 +40,9 @@ jobs:
                 git switch gh-pages
               fi
               
+              # Delete all old files
+              rm -rf *
+
               # Get latest source and buildscript
               git restore -s "${BRANCH_NAME}" src build.sh
           fi

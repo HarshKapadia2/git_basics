@@ -5,9 +5,6 @@ set -euo pipefail;
 output="${1-./build}";
 echo "Building to: '${output}'";
 
-# Remove output dir if it already exists
-rm -rf "${output}";
-
 mkdir -p "${output}";
 
 for path in \
