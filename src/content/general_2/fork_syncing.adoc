@@ -1,9 +1,20 @@
 
 === Sync a Fork with its Original Repo
 
-* Once a repository (repo) is [forked], the forked repo does not reveive the latest commits in the original repo.
+* Once a repository (repo) is [forked], the forked repo does not receive the latest commits in the original repo.
 
 * To get those new changes, the forked repo has to be synced with the original repo.
+
+[NOTE]
+====
+* GitHub has now made syncing a [forked repo] with its original repo very easy.
+
+* The GUI has buttons to directly do it (as shown in the image below, Fetch upstream -> Fetch and merge). The changes in the synced forked repo only have to be link:#_git_pull[pulled] to reflect locally.
+
+image::fork-syncing.png[alt="GitHub repo: Fetch upstream -> Fetch and merge", 600, 600]
+
+* The steps below will still work, but are unnecessary for repositories on GitHub.
+====
 
 * Steps to be followed
 
@@ -17,7 +28,7 @@
 
         *** Run link:#_git_remote/:~:text=-v[`git remote -v`] again to check whether it has been added.
 
-        *** The original repo is now connected to the loal forked repo.
+        *** The original repo is now connected to the local forked repo.
 
     ** Get the latest changes in the original repo and push the to your forked (remote) repo.
 

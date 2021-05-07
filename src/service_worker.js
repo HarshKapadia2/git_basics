@@ -1,4 +1,4 @@
-const cacheName = "v12";
+const cacheName = "v13";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -45,6 +45,7 @@ const cacheAssets = [
 	"./static/img/edit-master_file_1-1.jpg",
 	"./static/img/fast-forward-merge.png",
 	"./static/img/favicon.ico",
+	"./static/img/fork-syncing.png",
 	"./static/img/git-init.jpg",
 	"./static/img/git-local-remote-2.png",
 	"./static/img/git-local-remote.png",
