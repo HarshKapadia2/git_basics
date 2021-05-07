@@ -5,7 +5,7 @@
 
 `git log <options_&_flags>`
 
-==== Prequisite
+==== Prerequisite
 
 The following terms are required to be understood:
 

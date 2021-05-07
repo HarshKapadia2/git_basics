@@ -3,7 +3,7 @@
 
 * Newly created files are untracked files.
 * They are files that have never been added to the local link:#_repository[repository].
-* In short: Untracked files are those fileswhich are not in the link:#_gitignore_file[.gitignore file] and that have never been added to the repo.
+* In short: Untracked files are those files which are not in the link:#_gitignore_file[.gitignore file] and that have never been added to the repo.
 
 .Related
 ****

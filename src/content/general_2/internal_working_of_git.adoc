@@ -84,7 +84,7 @@ Commit `master_file_1.txt` using [`git commit`] and then run `du -c` again.
 
 image::commit-master_file_1-1.jpg[alt="Commit master file", 600, 600]
 
-From the above picture it can be noticed that two new directories `./.git/objects/1b` and `./.git/objects/d5` were created. Also, after commiting the file, Git gives the first 7 characters of the SHA1 for that commit.
+From the above picture it can be noticed that two new directories `./.git/objects/1b` and `./.git/objects/d5` were created. Also, after committing the file, Git gives the first 7 characters of the SHA1 for that commit.
 
 Check the file type using the plumbing commands.
 
@@ -167,7 +167,7 @@ The commit file has the same format as before.
 
 Now have a look at the contents of the tree file (with SHA1 hash `f6a65` as seen in the above picture).
 
-image::cat-file-p-5.jpg[alt="Contets of tree", 600, 600]
+image::cat-file-p-5.jpg[alt="Contents of tree", 600, 600]
 
 It is surprising to note that the tree `f6a65` points to another tree `abecf`! The name of the new tree is `dir_1`.
 

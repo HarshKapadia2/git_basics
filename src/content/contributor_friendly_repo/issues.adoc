@@ -11,7 +11,7 @@
     ** Labels for new/beginner contributors:
         *** good-first-issue
         *** link:#_resources/:~:text=first%20timers%20only[first-timers-only]
-* Issues and pull requests (PRs) can be referred to using `#`. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So `#69` or `#420` are examples of how issues/PRs can be referred to, in commit messsages, PRs or issues.
+* Issues and pull requests (PRs) can be referred to using `#`. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So `#69` or `#420` are examples of how issues/PRs can be referred to, in commit messages, PRs or issues.
 * Refer to link:https://guides.github.com/features/issues/[GitHub’s guide^] for more on issues.
 
 '''

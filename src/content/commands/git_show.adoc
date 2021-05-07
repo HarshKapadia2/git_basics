@@ -5,7 +5,7 @@
 
 `git show <options>`
 
-==== Prequisite
+==== Prerequisite
 
 The following term is required to be understood:
 
