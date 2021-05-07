@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="generator" content="Asciidoctor 2.0.15">
 <meta name="author" content="Harsh Kapadia">
 <link rel="icon" type="image/x-icon" href="./static/img/favicon.ico">
 <title>git_basics</title>
@@ -95,9 +95,6 @@ dl dd{margin-bottom:1.25em}
 abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
 abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
-blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
-blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
@@ -262,7 +259,7 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
 .quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
 p.tableblock:last-child{margin-bottom:0}
 td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
@@ -1511,7 +1508,7 @@ If the remote repository is/is going to be located on GitHub, please be aware of
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prequisites">Prequisites</h4>
+<h4 id="_prerequisites_5">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -1605,7 +1602,7 @@ Commit changes frequently. This makes it easier to revert back to older versions
 <p>Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>. Eg: <code>git commit -m "Update README.md"</code></p>
 </li>
 <li>
-<p>General commit messge structure below</p>
+<p>General commit message structure below</p>
 </li>
 </ul>
 </div>
@@ -1704,7 +1701,7 @@ More on <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1a
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-This command will change the commit message of the lastest commit only. Refer to <a href="#_git_rebase"><code>git rebase</code></a> for changing older commit messages.
+This command will change the commit message of the latest commit only. Refer to <a href="#_git_rebase"><code>git rebase</code></a> for changing older commit messages.
 </td>
 </tr>
 </table>
@@ -1716,7 +1713,7 @@ This command will change the commit message of the lastest commit only. Refer to
 <img loading="lazy" src="./static/img/admonition_icons/caution.png" alt="Caution">
 </td>
 <td class="content">
-This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this for unpushed commits only.
+This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this only for commits that are not <a href="#_git_push">pushed</a>.
 </td>
 </tr>
 </table>
@@ -1740,7 +1737,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="ulist">
 <ul>
 <li>
-<p>Partially commiting staged changes</p>
+<p>Partially committing staged changes</p>
 </li>
 </ul>
 </div>
@@ -1766,7 +1763,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <p><a href="#_git_show">git show</a></p>
 </li>
 <li>
-<p><a href="#_common_mistakes_how_to_correct_them">Ammending a commit</a></p>
+<p><a href="#_common_mistakes_how_to_correct_them">Amending a commit</a></p>
 </li>
 </ul>
 </div>
@@ -1785,7 +1782,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prequisite">Prequisite</h4>
+<h4 id="_prerequisite">Prerequisite</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -1907,7 +1904,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisite">Prerequisite</h4>
+<h4 id="_prerequisite_2">Prerequisite</h4>
 <div class="paragraph">
 <p>The following term is required to be understood:</p>
 </div>
@@ -1986,7 +1983,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_5">Prerequisites</h4>
+<h4 id="_prerequisites_6">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2052,7 +2049,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_6">Prerequisites</h4>
+<h4 id="_prerequisites_7">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2111,7 +2108,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_7">Prerequisites</h4>
+<h4 id="_prerequisites_8">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2215,7 +2212,7 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_8">Prerequisites</h4>
+<h4 id="_prerequisites_9">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2406,7 +2403,7 @@ This is useful for documenting all merges that occur in a repository, as a merge
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_9">Prerequisites</h4>
+<h4 id="_prerequisites_10">Prerequisites</h4>
 <div class="paragraph">
 <p>The following term is required to be understood:</p>
 </div>
@@ -2558,7 +2555,7 @@ If the currently checked out branch is to be deleted, <a href="#_git_checkout">s
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_10">Prerequisites</h4>
+<h4 id="_prerequisites_11">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2736,7 +2733,7 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_11">Prerequisites</h4>
+<h4 id="_prerequisites_12">Prerequisites</h4>
 <div class="paragraph">
 <p>The following term is required to be understood:</p>
 </div>
@@ -2845,7 +2842,7 @@ This command only removes the connection between the local and remote repo. It d
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_12">Prerequisites</h4>
+<h4 id="_prerequisites_13">Prerequisites</h4>
 <div class="paragraph">
 <p>The following terms are required to be understood:</p>
 </div>
@@ -2917,7 +2914,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prequisite_2">Prequisite</h4>
+<h4 id="_prerequisite_3">Prerequisite</h4>
 <div class="paragraph">
 <p>The following term is required to be understood:</p>
 </div>
@@ -3033,7 +3030,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_13">Prerequisites</h4>
+<h4 id="_prerequisites_14">Prerequisites</h4>
 <div class="paragraph">
 <p>The following term is required to be understood:</p>
 </div>
@@ -3151,11 +3148,48 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <div class="ulist">
 <ul>
 <li>
-<p>Once a repository (repo) is [forked], the forked repo does not reveive the latest commits in the original repo.</p>
+<p>Once a repository (repo) is [forked], the forked repo does not receive the latest commits in the original repo.</p>
 </li>
 <li>
 <p>To get those new changes, the forked repo has to be synced with the original repo.</p>
 </li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>GitHub has now made syncing a [forked repo] with its original repo very easy.</p>
+</li>
+<li>
+<p>The GUI has buttons to directly do it (as shown in the image below, Fetch upstream &#8594; Fetch and merge). The changes in the synced forked repo only have to be <a href="#_git_pull">pulled</a> to reflect locally.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/fork-syncing.png" alt="GitHub repo: Fetch upstream &#8594; Fetch and merge" width="600" height="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The steps below will still work, but are unnecessary for repositories on GitHub.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Steps to be followed</p>
 <div class="ulist">
@@ -3181,7 +3215,7 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <p>Run <a href="#_git_remote/:~:text=-v"><code>git remote -v</code></a> again to check whether it has been added.</p>
 </li>
 <li>
-<p>The original repo is now connected to the loal forked repo.</p>
+<p>The original repo is now connected to the local forked repo.</p>
 </li>
 </ul>
 </div>
@@ -3447,7 +3481,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 </div>
 <div class="paragraph">
-<p>From the above picture it can be noticed that two new directories <code>./.git/objects/1b</code> and <code>./.git/objects/d5</code> were created. Also, after commiting the file, Git gives the first 7 characters of the SHA1 for that commit.</p>
+<p>From the above picture it can be noticed that two new directories <code>./.git/objects/1b</code> and <code>./.git/objects/d5</code> were created. Also, after committing the file, Git gives the first 7 characters of the SHA1 for that commit.</p>
 </div>
 <div class="paragraph">
 <p>Check the file type using the plumbing commands.</p>
@@ -3640,7 +3674,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img loading="lazy" src="./static/img/cat-file-p-5.jpg" alt="Contets of tree" width="600" height="600">
+<img loading="lazy" src="./static/img/cat-file-p-5.jpg" alt="Contents of tree" width="600" height="600">
 </div>
 </div>
 <div class="paragraph">
@@ -4350,7 +4384,7 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 </div>
 </li>
 <li>
-<p>Issues and pull requests (PRs) can be referred to using <code>#</code>. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So <code>#69</code> or <code>#420</code> are examples of how issues/PRs can be referred to, in commit messsages, PRs or issues.</p>
+<p>Issues and pull requests (PRs) can be referred to using <code>#</code>. Every issue and pull request has a number associated with it (usually mentioned at the top of the issue/PR, beside the title.) So <code>#69</code> or <code>#420</code> are examples of how issues/PRs can be referred to, in commit messages, PRs or issues.</p>
 </li>
 <li>
 <p>Refer to <a href="https://guides.github.com/features/issues/" target="_blank" rel="noopener">GitHub’s guide</a> for more on issues.</p>
@@ -4433,7 +4467,7 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 <p>They are files that have never been added to the local <a href="#_repository">repository</a>.</p>
 </li>
 <li>
-<p>In short: Untracked files are those fileswhich are not in the <a href="#_gitignore_file">.gitignore file</a> and that have never been added to the repo.</p>
+<p>In short: Untracked files are those files which are not in the <a href="#_gitignore_file">.gitignore file</a> and that have never been added to the repo.</p>
 </li>
 </ul>
 </div>
@@ -4768,7 +4802,7 @@ git config --global alias.st status</pre>
 <p>HEAD is a reference to the latest commit in the current <a href="#_branches">branch</a>.</p>
 </li>
 <li>
-<p>When a commit is made, Git automatically sets the HEAD to the lastest commit.</p>
+<p>When a commit is made, Git automatically sets the HEAD to the latest commit.</p>
 </li>
 </ul>
 </div>
@@ -4819,7 +4853,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </li>
 <li>
-<p>When the HEAD points to a commit that is not the lastest commit in a branch, that is a <strong>detached HEAD</strong>. A specific commit can be referred to, using <a href="#_git_checkout"><code>git checkout</code></a>.</p>
+<p>When the HEAD points to a commit that is not the latest commit in a branch, that is a <strong>detached HEAD</strong>. A specific commit can be referred to, using <a href="#_git_checkout"><code>git checkout</code></a>.</p>
 </li>
 </ul>
 </div>
@@ -5242,7 +5276,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-04-21 19:13:01 UTC
+Last updated 2021-05-07 06:20:57 UTC
 </div>
 </div>
 </body>
