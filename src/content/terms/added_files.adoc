@@ -1,12 +1,14 @@
 
 === Added Files
 
-* All files not in .gitignore and that have been added to the staging area of the link:#_repository[repository].
+* All files not in link:#_gitignore_file[`.gitignore`] and that have been added to the staging area of the link:#_repository[repository].
 * The files are in their latest version (ie, they have not been modified since they were last added).
+* They are also called 'staged files'.
 
 .Related
 ****
-* link:#_git_add[git add]
+* link:#_git_add[`git add`]
+* link:#_staging_staging_areaindex[Staging]
 ****
 
 '''
