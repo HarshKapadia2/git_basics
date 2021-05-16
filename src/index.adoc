@@ -58,6 +58,10 @@ include::./refs/commands.adoc[]
 
 include::./refs/general_2.adoc[]
 
+== Correcting Common Mistakes
+
+include::./refs/correcting_common_mistakes.adoc[]
+
 == GitHub
 
 include::./refs/github_1.adoc[]

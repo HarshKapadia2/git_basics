@@ -1,0 +1,2 @@
+include::../content/correcting_common_mistakes/common_mistakes.adoc[]
+include::../content/correcting_common_mistakes/unstage_added_files.adoc[]

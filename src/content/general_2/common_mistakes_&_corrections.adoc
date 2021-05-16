@@ -1,9 +1,0 @@
-
-=== Common Mistakes & How To Correct Them
-
-.Related
-****
-* link:#_git_commit[git commit]
-****
-
-'''

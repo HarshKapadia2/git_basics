@@ -1,0 +1,8 @@
+
+There are some unwanted things everyone ends up doing while using Git and then one looks up the mistake to find a way to undo it.
+
+The following points are solutions to some mistakes that everyone makes
+
+* link:#_unstage_files_stagedadded_by_mistake[Unstage Files Staged/Added by Mistake]
+
+'''
