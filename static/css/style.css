@@ -1,6 +1,8 @@
 a
 {
 	word-break: break-all;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
 }
 
 td.content
@@ -176,6 +178,29 @@ code
 	}
 }
 
+/* ================================================== TOC (LIGHT MODE) ============================================== */
+
+.sectlevel1 li a
+{
+	color: #ba3925;
+}
+
+.sectlevel1 li a:hover
+{
+	text-decoration: underline !important;
+}
+
+.sectlevel2 li a
+{
+	color: #2156a5;
+}
+
+.sectlevel2 li a:hover
+{
+	color: #1d4b8f;
+	text-decoration: underline !important;
+}
+
 /* ================================================= SCROLLBAR (LIGHT MODE) =================================================== */
 
 body::-webkit-scrollbar
@@ -239,12 +264,17 @@ body.dark code, body.dark pre
 	color: #e0e0e0;
 }
 
-body.dark a, body.dark a code
+body.dark .sectlevel1 li a
+{
+	color: #ff8a80;
+}
+
+body.dark a, body.dark a code, body.dark .sectlevel2 li a
 {
 	color: #90caf9;
 }
 
-body.dark a:hover
+body.dark a:hover, body.dark .sectlevel2 li a:hover
 {
 	color: #42a5f5;
 }

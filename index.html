@@ -512,9 +512,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_general_2">General #2</a>
 <ul class="sectlevel2">
 <li><a href="#_merge_conflicts">Merge Conflicts</a></li>
-<li><a href="#_common_mistakes_how_to_correct_them">Common Mistakes &amp; How To Correct Them</a></li>
 <li><a href="#_sync_a_fork_with_its_original_repo">Sync a Fork with its Original Repo</a></li>
 <li><a href="#_internal_working_of_git">Internal Working of Git</a></li>
+</ul>
+</li>
+<li><a href="#_correcting_common_mistakes">Correcting Common Mistakes</a>
+<ul class="sectlevel2">
+<li><a href="#_unstage_files_stagedadded_by_mistake">Unstage Files Staged/Added by Mistake</a></li>
 </ul>
 </li>
 <li><a href="#_github">GitHub</a>
@@ -523,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_github_repositories">GitHub Repositories</a></li>
 </ul>
 </li>
-<li><a href="#_making_a_repository_contributor_friendly">Making a Repository Contributor Friendly</a>
+<li><a href="#_contributor_friendly_repository">Contributor Friendly Repository</a>
 <ul class="sectlevel2">
 <li><a href="#_readme_md">README.md</a></li>
 <li><a href="#_contributing_md">CONTRIBUTING.md</a></li>
@@ -3128,22 +3132,6 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 </div>
 </div>
 <div class="sect2">
-<h3 id="_common_mistakes_how_to_correct_them">Common Mistakes &amp; How To Correct Them</h3>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Related</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_git_commit">git commit</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<hr>
-</div>
-<div class="sect2">
 <h3 id="_sync_a_fork_with_its_original_repo">Sync a Fork with its Original Repo</h3>
 <div class="ulist">
 <ul>
@@ -3980,6 +3968,87 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 </div>
 <div class="sect1">
+<h2 id="_correcting_common_mistakes">Correcting Common Mistakes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are some unwanted things everyone ends up doing while using Git and then one looks up the mistake to find a way to undo it.</p>
+</div>
+<div class="paragraph">
+<p>The following points are solutions to some mistakes that everyone makes</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_unstage_files_stagedadded_by_mistake">Unstage Files Staged/Added by Mistake</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="_unstage_files_stagedadded_by_mistake">Unstage Files Staged/Added by Mistake</h3>
+<div class="paragraph">
+<p>A lot of times files are added/staged by mistake, no matter whether they are new or modified. The solution below will unstage all the files that were staged by mistake.</p>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites_15">Prerequisites</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_added_files">Added/staged files</a></p>
+</li>
+<li>
+<p><a href="#_staging_staging_areaindex">Staging</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_solution">Solution</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>General syntax <code>git reset HEAD -- "&lt;files/folders/patterns&gt;"</code>.</p>
+</li>
+<li>
+<p>To unstage all added/staged files, use <code>git reset HEAD</code> or <code>git reset HEAD -- *</code>.</p>
+</li>
+<li>
+<p>For files</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To unstage added/staged files, use <code>git reset HEAD -- "&lt;file_name.ext&gt;"</code>.</p>
+</li>
+<li>
+<p>To unstage multiple added/staged files, use <code>git reset HEAD -- "&lt;file_1.ext&gt;" "&lt;file_2.ext&gt;"&#8230;&#8203;</code>.</p>
+</li>
+<li>
+<p>To unstage all added/staged files with the same extension, use <code>git reset HEAD -- "&lt;*.ext&gt;"</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>For directories/folders</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To unstage a/an staged/added directory, use <code>git reset HEAD -- "&lt;path/to/dir&gt;"</code>.</p>
+</li>
+<li>
+<p>To unstage multiple staged/added directories, use <code>git reset HEAD -- "&lt;path/to/dir_1&gt;" "&lt;path/to/dir_2&gt;"&#8230;&#8203;</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_github">GitHub</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -4110,7 +4179,7 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_making_a_repository_contributor_friendly">Making a Repository Contributor Friendly</h2>
+<h2 id="_contributor_friendly_repository">Contributor Friendly Repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Open source is all about opening up projects for the community to use and contribute to! Contributions are a very important aspect of open source. Contributions help the community in improving software/projects that they use, for themselves and others.</p>
@@ -4490,10 +4559,13 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>All files not in .gitignore and that have been added to the staging area of the <a href="#_repository">repository</a>.</p>
+<p>All files not in <a href="#_gitignore_file"><code>.gitignore</code></a> and that have been added to the staging area of the <a href="#_repository">repository</a>.</p>
 </li>
 <li>
 <p>The files are in their latest version (ie, they have not been modified since they were last added).</p>
+</li>
+<li>
+<p>They are also called '<strong>staged files</strong>'.</p>
 </li>
 </ul>
 </div>
@@ -4503,7 +4575,10 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_git_add">git add</a></p>
+<p><a href="#_git_add"><code>git add</code></a></p>
+</li>
+<li>
+<p><a href="#_staging_staging_areaindex">Staging</a></p>
 </li>
 </ul>
 </div>
@@ -4609,7 +4684,7 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>It notes the added files in the working directory/copy - a copy of the most recent state of the files you&#8217;re working on.</p>
+<p>It notes the <a href="#_added_files">added files</a> in the working directory/copy - a copy of the most recent state of the files you&#8217;re working on.</p>
 </li>
 <li>
 <p>To stage a file is simply to prepare it finely for a commit.</p>
@@ -4631,13 +4706,16 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_git_add">git add</a></p>
+<p><a href="#_added_files">Added files</a></p>
 </li>
 <li>
-<p><a href="#_git_rm">git rm</a></p>
+<p><a href="#_git_add"><code>git add</code></a></p>
 </li>
 <li>
-<p><a href="#_git_commit">git commit</a></p>
+<p><a href="#_git_rm"><code>git rm</code></a></p>
+</li>
+<li>
+<p><a href="#_git_commit"><code>git commit</code></a></p>
 </li>
 </ul>
 </div>
@@ -5142,10 +5220,43 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/sindresorhus/refined-github#install" target="_blank" rel="noopener">Refined GitHub</a> - Simplifies the GitHub interface and adds useful features (available for Chrome, Edge, Firefox and Opera)</p>
+<p><a href="https://github.com/sindresorhus/refined-github#install" target="_blank" rel="noopener">Refined GitHub</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Simplifies the GitHub interface and adds useful features.</p>
 </li>
 <li>
-<p><a href="https://gitzip.org/#extension" target="_blank" rel="noopener">GitZip for GitHub</a> - Only download required sub-folders/files from GitHub repos (available for Chrome, Edge and Firefox)</p>
+<p>Available for Chrome, Edge, Firefox and Opera.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://gitzip.org/#extension" target="_blank" rel="noopener">GitZip for GitHub</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Only download required sub-folders/files from GitHub repos.</p>
+</li>
+<li>
+<p>Available for Chrome, Edge and Firefox.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.octotree.io/download" target="_blank" rel="noopener">Octotree</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a navigation pane to the left of any GitHub repo to navigate it easily.</p>
+</li>
+<li>
+<p>Available for Chrome, Edge, Firefox, Opera and Safari.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -5276,7 +5387,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-05-07 06:20:57 UTC
+Last updated 2021-05-16 20:37:16 UTC
 </div>
 </div>
 </body>
