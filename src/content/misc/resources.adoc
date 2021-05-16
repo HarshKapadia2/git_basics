@@ -34,8 +34,15 @@
 
 ==== Browser extensions for GitHub
 
-* https://github.com/sindresorhus/refined-github#install[Refined GitHub^] - Simplifies the GitHub interface and adds useful features (available for Chrome, Edge, Firefox and Opera)
-* https://gitzip.org/#extension[GitZip for GitHub^] - Only download required sub-folders/files from GitHub repos (available for Chrome, Edge and Firefox)
+* https://github.com/sindresorhus/refined-github#install[Refined GitHub^]
+	** Simplifies the GitHub interface and adds useful features.
+	** Available for Chrome, Edge, Firefox and Opera.
+* https://gitzip.org/#extension[GitZip for GitHub^]
+	** Only download required sub-folders/files from GitHub repos.
+	** Available for Chrome, Edge and Firefox.
+* https://www.octotree.io/download[Octotree^]
+	** Add a navigation pane to the left of any GitHub repo to navigate it easily.
+	** Available for Chrome, Edge, Firefox, Opera and Safari.
 
 ==== Contribution help
 
