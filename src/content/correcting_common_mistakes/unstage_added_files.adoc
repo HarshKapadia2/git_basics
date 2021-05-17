@@ -10,22 +10,24 @@ A lot of times files are added/staged by mistake, no matter whether they are new
 
 ==== Solution
 
-* General syntax `git reset HEAD \-- "<files/folders/patterns>"`.
+NOTE: The commands below will simply unstage added files and will NOT result in data loss.
 
-* To unstage all added/staged files, use `git reset HEAD` or `git reset HEAD \-- *`.
+* General syntax: `git reset HEAD \-- "<files/folders/patterns>"`
 
-* For files
+* Files
 
-	** To unstage added/staged files, use `git reset HEAD \-- "<file_name.ext>"`.
+	** For a single file, use `git reset HEAD \-- "<file_name.ext>"`.
 
-	** To unstage multiple added/staged files, use `git reset HEAD \-- "<file_1.ext>" "<file_2.ext>"...`.
+	** For multiple files, use `git reset HEAD \-- "<file_1.ext>" "<file_2.ext>"...`.
 
-	** To unstage all added/staged files with the same extension, use `git reset HEAD \-- "<*.ext>"`.
+	** For files with the same extension, use `git reset HEAD \-- "<*.ext>"`.
 
-* For directories/folders
+* Directories/folders
 
-	** To unstage a/an staged/added directory, use `git reset HEAD \-- "<path/to/dir>"`.
+	** For a single directory, use `git reset HEAD \-- "<path/to/dir>"`.
 
-	** To unstage multiple staged/added directories, use `git reset HEAD \-- "<path/to/dir_1>" "<path/to/dir_2>"...`.
+	** For multiple directories, use `git reset HEAD \-- "<path/to/dir_1>" "<path/to/dir_2>"...`.
+
+* To unstage everything in the staging area, use `git reset HEAD` or `git reset HEAD \-- *`.
 
 '''
