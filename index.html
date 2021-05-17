@@ -4004,42 +4004,54 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 <div class="sect3">
 <h4 id="_solution">Solution</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+The commands below will simply unstage added files and will NOT result in data loss.
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>General syntax <code>git reset HEAD -- "&lt;files/folders/patterns&gt;"</code>.</p>
+<p>General syntax: <code>git reset HEAD -- "&lt;files/folders/patterns&gt;"</code></p>
 </li>
 <li>
-<p>To unstage all added/staged files, use <code>git reset HEAD</code> or <code>git reset HEAD -- *</code>.</p>
-</li>
-<li>
-<p>For files</p>
+<p>Files</p>
 <div class="ulist">
 <ul>
 <li>
-<p>To unstage added/staged files, use <code>git reset HEAD -- "&lt;file_name.ext&gt;"</code>.</p>
+<p>For a single file, use <code>git reset HEAD -- "&lt;file_name.ext&gt;"</code>.</p>
 </li>
 <li>
-<p>To unstage multiple added/staged files, use <code>git reset HEAD -- "&lt;file_1.ext&gt;" "&lt;file_2.ext&gt;"&#8230;&#8203;</code>.</p>
+<p>For multiple files, use <code>git reset HEAD -- "&lt;file_1.ext&gt;" "&lt;file_2.ext&gt;"&#8230;&#8203;</code>.</p>
 </li>
 <li>
-<p>To unstage all added/staged files with the same extension, use <code>git reset HEAD -- "&lt;*.ext&gt;"</code>.</p>
+<p>For files with the same extension, use <code>git reset HEAD -- "&lt;*.ext&gt;"</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>For directories/folders</p>
+<p>Directories/folders</p>
 <div class="ulist">
 <ul>
 <li>
-<p>To unstage a/an staged/added directory, use <code>git reset HEAD -- "&lt;path/to/dir&gt;"</code>.</p>
+<p>For a single directory, use <code>git reset HEAD -- "&lt;path/to/dir&gt;"</code>.</p>
 </li>
 <li>
-<p>To unstage multiple staged/added directories, use <code>git reset HEAD -- "&lt;path/to/dir_1&gt;" "&lt;path/to/dir_2&gt;"&#8230;&#8203;</code>.</p>
+<p>For multiple directories, use <code>git reset HEAD -- "&lt;path/to/dir_1&gt;" "&lt;path/to/dir_2&gt;"&#8230;&#8203;</code>.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>To unstage everything in the staging area, use <code>git reset HEAD</code> or <code>git reset HEAD -- *</code>.</p>
 </li>
 </ul>
 </div>
@@ -5387,7 +5399,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-05-16 20:37:16 UTC
+Last updated 2021-05-17 11:49:45 UTC
 </div>
 </div>
 </body>
