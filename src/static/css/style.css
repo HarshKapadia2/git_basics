@@ -1,13 +1,7 @@
 a
 {
-	word-break: break-all;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 4px;
-}
-
-td.content
-{
-	word-break: break-all;
 }
 
 .imageblock .content
