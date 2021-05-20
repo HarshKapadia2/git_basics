@@ -1,7 +1,18 @@
 a
 {
+	color: #2156a5;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 4px;
+}
+
+a code
+{
+	color: #2156a5;
+}
+
+a:hover, a:hover code, a code:hover
+{
+	color: #1d4b8f !important;
 }
 
 .imageblock .content
@@ -16,7 +27,7 @@ a
 	height: 40px;
 }
 
-code
+pre, code
 {
 	background-color: #eeeeee !important;
 }
@@ -172,7 +183,7 @@ code
 	}
 }
 
-/* ================================================== EDGE MOBILE ==================================================== */
+/* ================================================== MOBILE EDGE CASES ==================================================== */
 
 body.mobile-edge-case .word-break-all
 {
@@ -275,9 +286,9 @@ body.dark a, body.dark a code, body.dark .sectlevel2 li a
 	color: #90caf9;
 }
 
-body.dark a:hover, body.dark .sectlevel2 li a:hover
+body.dark a:hover, body.dark a:hover code, body.dark a code:hover, body.dark .sectlevel2 li a:hover
 {
-	color: #42a5f5;
+	color: #42a5f5 !important;
 }
 
 body.dark #toc, body.dark .pwa-install-div
