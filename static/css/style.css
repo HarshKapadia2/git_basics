@@ -194,22 +194,23 @@ body.mobile-edge-case .word-break-all
 
 .sectlevel1 li a
 {
-	color: #ba3925;
+	color: #ba3925 !important;
 }
 
 .sectlevel1 li a:hover
 {
+	color: #ba3925 !important;
 	text-decoration: underline !important;
 }
 
 .sectlevel2 li a
 {
-	color: #2156a5;
+	color: #2156a5 !important;
 }
 
 .sectlevel2 li a:hover
 {
-	color: #1d4b8f;
+	color: #1d4b8f !important;
 	text-decoration: underline !important;
 }
 
@@ -278,12 +279,12 @@ body.dark code, body.dark pre
 
 body.dark .sectlevel1 li a
 {
-	color: #ff8a80;
+	color: #ff8a80 !important;
 }
 
 body.dark a, body.dark a code, body.dark .sectlevel2 li a
 {
-	color: #90caf9;
+	color: #90caf9 !important;
 }
 
 body.dark a:hover, body.dark a:hover code, body.dark a code:hover, body.dark .sectlevel2 li a:hover
