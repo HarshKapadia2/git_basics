@@ -35,6 +35,7 @@ To add a remote repo to a local repo:
 ===== add <remote_repo_alias> <remote_repo_url>.git
 
 * To add a remote repo to a local repo.
+[.word-break-all]
 * Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
 
 ===== rm <remote_repo_alias>

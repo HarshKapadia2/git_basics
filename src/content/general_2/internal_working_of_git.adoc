@@ -33,6 +33,7 @@ Use the `dir` (or `ls`) command to find out which file is present in the dir `./
 
 image::dir-1.jpg[alt="Create new directory", 600, 600]
 
+[.word-break-all]
 The file name `9de29bb2d1d6434b8b29ae775ad8c2e48c5391` has 38 characters. On combining it with the folder name (`e6`) at the start, it becomes a 40 character string `e69de29bb2d1d6434b8b29ae775ad8c2e48c5391`. This is a [SHA1] (Secure Hashing Algorithm 1) hash. Git encodes the content of the file (and more - more on that soon) in this hash. Every add and commit produces its own unique SHA1 hash(es). The first two characters of the hash are used for bucketing the hashes into folders by Git. The case of two hashes colliding is very rare. *Git uses 4 to 8 characters to refer to a commit in short.*
 
 Now as mentioned in the previous paragraph, Git stores the contents of the file and other details in the hash. To check that out, some content needs to be added to the file. The file will then have to be added again (this will produce another hash).
@@ -40,6 +41,7 @@ Now as mentioned in the previous paragraph, Git stores the contents of the file 
 image::add-to-master_file_1-1.jpg[alt="Add to Master file", 600, 600]
 image::edit-master_file_1-1.jpg[alt="Edit master file", 600, 600]
 
+[.word-break-all]
 From the last command in the above picture, it can be inferred that a new hash `1a3851c172420a2198cf8ca6f2b776589d955cc5` was generated.
 
 Now check its contents using the `cat` command.
@@ -68,7 +70,10 @@ More on `commit` and `tree` objects soon.
 * `16` is the file size (length). `Git is amazing!` consists of 15 characters, but Git adds a null character (`\0`) before the data, making the length 16.
 * `Git is amazing!` is the file data that was originally entered.
 
-NOTE: If `blob 16\0Git is amazing!` is hashed using SHA1, the same hash (`1a3851c172420a2198cf8ca6f2b776589d955cc5`) will be generated!
+[NOTE.word-break-all]
+====
+If `blob 16\0Git is amazing!` is hashed using SHA1, the same hash (`1a3851c172420a2198cf8ca6f2b776589d955cc5`) will be generated!
+====
 
 The process of finding the contents of the file using `cat` is pretty cumbersome. It is a better idea to use the [plumbing commands] provided by Git.
 
@@ -98,6 +103,7 @@ image::cat-file-p-1.jpg[alt="Commit", 600, 600]
 
 Breaking down the output:
 
+[.word-break-all]
 * `tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc` is the other SHA1 hash that was generated (remember that two files were generated in `./.git/objects` on committing the file), of the type `tree`. The tree is the [snapshot] of the current state of the local repository. The contents of the tree file will be looked into soon.
 * Parent commit's SHA1 hash (not present here - will be looked into in the `Adding another file (parent commit)` section below.)
 * The next line has the details of the author (the one who wrote the code):
@@ -124,6 +130,8 @@ Have a look at `100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file
 
 * `100644` is the mode, which is some sort of unix-style file permission and file type checking system.
 * `blob` is the file type. (It can be a `tree` object as well - covered in the `Creating a directory` section below.)
+
+[.word-break-all]
 * `1a3851c172420a2198cf8ca6f2b776589d955cc5` is the latest SHA1 hash of the added file. It is the same as the hash generated while adding the file to the staging area. This hash can be of a blob (like in this case) or a tree file (looked into in the `Creating a directory` section below).
 * Name of the file.
 
