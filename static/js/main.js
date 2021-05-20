@@ -239,8 +239,8 @@ function addAnnouncement()
 
 function mobileEdgeCaseStyling()
 {
-	let user_agent = navigator.userAgent;
-	console.log(user_agent);
+	const user_agent = navigator.userAgent;
+
 	if((user_agent.indexOf("Edg") > -1 && user_agent.indexOf("Mobile") > -1) || user_agent.indexOf("iPhone") > -1) 
 		body.classList.add("mobile-edge-case");
 }
