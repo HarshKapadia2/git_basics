@@ -60,7 +60,7 @@ window.addEventListener
 		await loadDatabase();
 		createThemeSwitcher();
 		applyTheme();
-
+		mobileEdgeCaseStyling();
 		addAnnouncement();
 	}
 );
@@ -235,4 +235,12 @@ function addAnnouncement()
 	announcement_div_parent.appendChild(announcement_text);
 	announcement_div_parent.appendChild(announcement_link);
 	header.insertBefore(announcement_div_parent, toc);
+}
+
+function mobileEdgeCaseStyling()
+{
+	let user_agent = navigator.userAgent;
+	console.log(user_agent);
+	if((user_agent.indexOf("Edg") > -1 && user_agent.indexOf("Mobile") > -1) || user_agent.indexOf("iPhone") > -1) 
+		body.classList.add("mobile-edge-case");
 }

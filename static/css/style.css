@@ -170,11 +170,13 @@ code
 	{
 		width: 7em;
 	}
+}
 
-	#_internal_working_of_git code
-	{
-		word-break: break-all;
-	}
+/* ================================================== EDGE MOBILE ==================================================== */
+
+body.mobile-edge-case .word-break-all
+{
+	word-break: break-all;
 }
 
 /* ================================================== TOC (LIGHT MODE) ============================================== */

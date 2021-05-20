@@ -2107,7 +2107,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="paragraph">
 <p><code>git clone &lt;remote_repo_url&gt;.git</code></p>
 </div>
-<div class="paragraph">
+<div class="paragraph word-break-all">
 <p>Eg: <code>git clone <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
 </div>
 </div>
@@ -3353,7 +3353,7 @@ It is recommended to go through this section only if the reader has some experie
 <img loading="lazy" src="./static/img/dir-1.jpg" alt="Create new directory" width="600" height="600">
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph word-break-all">
 <p>The file name <code>9de29bb2d1d6434b8b29ae775ad8c2e48c5391</code> has 38 characters. On combining it with the folder name (<code>e6</code>) at the start, it becomes a 40 character string <code>e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</code>. This is a [SHA1] (Secure Hashing Algorithm 1) hash. Git encodes the content of the file (and more - more on that soon) in this hash. Every add and commit produces its own unique SHA1 hash(es). The first two characters of the hash are used for bucketing the hashes into folders by Git. The case of two hashes colliding is very rare. <strong>Git uses 4 to 8 characters to refer to a commit in short.</strong></p>
 </div>
 <div class="paragraph">
@@ -3369,7 +3369,7 @@ It is recommended to go through this section only if the reader has some experie
 <img loading="lazy" src="./static/img/edit-master_file_1-1.jpg" alt="Edit master file" width="600" height="600">
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph word-break-all">
 <p>From the last command in the above picture, it can be inferred that a new hash <code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> was generated.</p>
 </div>
 <div class="paragraph">
@@ -3426,14 +3426,16 @@ It is recommended to go through this section only if the reader has some experie
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock note word-break-all">
 <table>
 <tr>
 <td class="icon">
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code>) will be generated!
+<div class="paragraph">
+<p>If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code>) will be generated!</p>
+</div>
 </td>
 </tr>
 </table>
@@ -3493,7 +3495,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <div class="paragraph">
 <p>Breaking down the output:</p>
 </div>
-<div class="ulist">
+<div class="ulist word-break-all">
 <ul>
 <li>
 <p><code>tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc</code> is the other SHA1 hash that was generated (remember that two files were generated in <code>./.git/objects</code> on committing the file), of the type <code>tree</code>. The tree is the [snapshot] of the current state of the local repository. The contents of the tree file will be looked into soon.</p>
@@ -3569,6 +3571,10 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 <li>
 <p><code>blob</code> is the file type. (It can be a <code>tree</code> object as well - covered in the <code>Creating a directory</code> section below.)</p>
 </li>
+</ul>
+</div>
+<div class="ulist word-break-all">
+<ul>
 <li>
 <p><code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> is the latest SHA1 hash of the added file. It is the same as the hash generated while adding the file to the staging area. This hash can be of a blob (like in this case) or a tree file (looked into in the <code>Creating a directory</code> section below).</p>
 </li>
@@ -5399,7 +5405,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-05-20 05:22:43 UTC
+Last updated 2021-05-20 14:54:21 UTC
 </div>
 </div>
 </body>
