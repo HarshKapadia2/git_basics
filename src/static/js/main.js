@@ -13,7 +13,10 @@ const obj_store_name = "theme";
 let pwaInstallEvent;
 let theme;
 let theme_btn;
+let system_dark_theme = window.matchMedia("(prefers-color-scheme: dark)");
 
+
+// Service worker and PWA
 
 if(navigator.serviceWorker)
 {
@@ -52,12 +55,15 @@ if(navigator.serviceWorker)
 	pwaInstallDismiss.addEventListener("click", () => dismissPWAInstallPrompt());
 }
 
+
+// Window load listener
+
 window.addEventListener
 (
 	"load",
 	async () =>
 	{
-		await loadDatabase();
+		await loadDatabase(); // Initially sets 'theme' variable.
 		createThemeSwitcher();
 		applyTheme();
 		mobileEdgeCaseStyling();
@@ -65,11 +71,33 @@ window.addEventListener
 	}
 );
 
+
+// System/browser theme change listener
+
+system_dark_theme.addEventListener
+(
+	"change",
+	async (e) =>
+	{
+		if(e.matches)
+			theme = "dark";
+		else
+			theme = "light";
+
+		applyTheme();
+	}
+);
+
+
+// Back to top button
+
 const observer = new IntersectionObserver(scrollToTop);
 observer.observe(header);
 
 back_to_top_btn.addEventListener("click", () => header.scrollIntoView(true));
 
+
+// Functions
 
 function showPWAInstallPrompt()
 {
@@ -179,7 +207,18 @@ async function loadDatabase()
 						"success",
 						(e) =>
 						{
-							theme = e.target.result || "light";
+							let idb_theme = e.target.result;
+
+							if(idb_theme)
+								theme = idb_theme;
+							else
+							{
+								if(system_dark_theme.matches)
+									theme = "dark";
+								else
+									theme = "light";
+							}
+
 							resolve();
 						}
 					);
