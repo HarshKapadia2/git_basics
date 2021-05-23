@@ -33,12 +33,10 @@ image::branch-4.png[alt="Local and fetched remote branches", 600, 600]
 
 * Fetch the branch using `git fetch <remote_repo_alias> <branch_to_be_fetched>`.
 
-.'br_1' (in red) has been been fetched
 image::fetch-1.png[alt="Fetched remote branch", 600, 600]
 
 * Run `git branch -a` to check whether it appears as a fetched branch in red.
 
-.'br_1' (in red) has been fetched
 image::branch-2.png[alt="Local and fetched remote branches", 600, 600]
 
 * Run `git checkout <fetched_branch_name>` or `git switch <fetched_branch_name>` to switch to the fetched remote branch.
