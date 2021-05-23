@@ -629,7 +629,7 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>main</code> vs <code>master</code> #1:</p>
+<p>'main' vs 'master' #1:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -637,10 +637,10 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 <p>This only applies to GitHub <a href="#_repositories">repositories</a>.</p>
 </li>
 <li>
-<p>GitHub is gradually renaming the default <a href="#_branches">branch</a> of repositories from <code>master</code> to <code>main</code>.</p>
+<p>GitHub is gradually renaming the <a href="#_default_branch">default branch</a> of repositories from 'master' to 'main'.</p>
 </li>
 <li>
-<p>The default branch name for new repositories on GitHub is now <code>main</code>.</p>
+<p>The name of the default branch for new repositories on GitHub is now 'main'.</p>
 </li>
 <li>
 <p>Existing repositories on GitHub are not impacted by this change, but they can now rename their branches if they wish to.</p>
@@ -652,7 +652,7 @@ One might want to familiarize themselves with some <a href="#_terms">terms</a> b
 <p><a href="#_change_default_branch_name">Changing the default branch of the local Git client</a> is also possible.</p>
 </li>
 <li>
-<p><a href="#_main_vs_master_2"><code>main</code> vs <code>master</code> #2</a></p>
+<p><a href="#_main_vs_master_2">'main' vs 'master' #2</a></p>
 </li>
 </ul>
 </div>
@@ -1118,27 +1118,27 @@ git - the stupid content tracker
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>main</code> vs <code>master</code> #2:</p>
+<p>'main' vs 'master' #2:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_main_vs_master_1"><code>main</code> vs <code>master</code> #1</a></p>
+<p><a href="#_main_vs_master_1">'main' vs 'master' #1</a></p>
 </li>
 <li>
 <p>This only applies to GitHub repositories.</p>
 </li>
 <li>
-<p>New GitHub repositories have their default branch name as <code>main</code> instead of <code>master</code>, while the local Git client still uses <code>master</code> as the default branch name when <a href="#_git_init">initializing repositories</a>.</p>
+<p>New GitHub repositories have the name of their <a href="#_default_branch">default branch</a> as 'main' instead of 'master', while the local Git client still uses 'master' as the name of the default branch when <a href="#_git_init">initializing repositories</a>.</p>
 </li>
 <li>
-<p>This default branch name mismatch causes <a href="#_git_push">pushes</a> to new remote repositories to fail.</p>
+<p>This mismatch in the names of the default branches causes <a href="#_git_push">pushes</a> to new remote repositories to fail.</p>
 </li>
 <li>
-<p>To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to <code>main</code> using the command <code>git config --global init.defaultBranch "main"</code> as mentioned in the point above this tip.</p>
+<p>To combat this change on GitHub, it would be advisable to change the name of the default branch of the local Git client to 'main' using the command <code>git config --global init.defaultBranch "main"</code>.</p>
 </li>
 <li>
-<p>NOTE: Cloned repositories will not be impacted unless the remote repository&#8217;s default branch is changed on GitHub (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).</p>
+<p>NOTE: Cloned repositories will not be impacted unless the remote repository&#8217;s default branch is changed on GitHub after cloning (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).</p>
 </li>
 </ul>
 </div>
@@ -2143,7 +2143,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="ulist">
 <ul>
 <li>
-<p>The entire remote repo will be cloned locally into a new folder with the same name as the remote repo.</p>
+<p>The <a href="#_default_branch">default branch</a> of the remote repo will be cloned locally into a new folder with the same name as the remote repo.</p>
 </li>
 </ul>
 </div>
@@ -4997,8 +4997,39 @@ ref: refs/heads/test_branch</pre>
 <li>
 <p>This makes it harder for unstable code to get merged into the main code base, and it gives the chance to clean up the future history before merging it into the main branch.</p>
 </li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_default_branch">Default Branch</h4>
+<div class="ulist">
+<ul>
 <li>
-<p>The default branch can be <a href="#_main_vs_master_1"><code>main</code> or <code>master</code></a>.</p>
+<p>The default branch is considered as the base branch.</p>
+</li>
+<li>
+<p>It is usually the most up to date/stable code version.</p>
+</li>
+<li>
+<p>Importance</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This is the branch that is cloned on running <a href="#_git_clone"><code>git clone</code></a>.</p>
+</li>
+<li>
+<p>All pull requests are opened against this base branch unless any other branch is explicitly specified.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Any branch can be made the default branch, but by default it is the 'master' (<a href="#_main_vs_master_1">or 'main'</a>) branch.</p>
+</li>
+<li>
+<p>The default branch can be changed at any time on GitHub from the <a href="#_repository">repository&#8217;s</a> settings and GitHub will point all open pull requests to the new default branch.</p>
+</li>
+<li>
+<p><a href="#_change_default_branch_name">Changing the default branch of the local Git client (using <code>git config</code>)</a> is also possible. If this is done, whenever a new repository is <a href="#_git_init">initialized</a> locally, the default branch will be the new branch name entered in the <code>git config</code> command.</p>
 </li>
 </ul>
 </div>
@@ -5027,6 +5058,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <hr>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_collaborators">Collaborators</h3>
@@ -5405,7 +5437,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-05-22 06:52:42 UTC
+Last updated 2021-05-23 10:21:25 UTC
 </div>
 </div>
 </body>
