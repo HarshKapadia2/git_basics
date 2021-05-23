@@ -513,6 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_merge_conflicts">Merge Conflicts</a></li>
 <li><a href="#_sync_a_fork_with_its_original_repo">Sync a Fork with its Original Repo</a></li>
+<li><a href="#_checkout_a_remote_branch">Checkout a Remote Branch</a></li>
 <li><a href="#_internal_working_of_git">Internal Working of Git</a></li>
 </ul>
 </li>
@@ -3284,6 +3285,118 @@ git push -u origin &lt;branch_name&gt;</code></pre>
 <hr>
 </div>
 <div class="sect2">
+<h3 id="_checkout_a_remote_branch"><a class="anchor" href="#_checkout_a_remote_branch"></a>Checkout a Remote Branch</h3>
+<div class="paragraph">
+<p>There can be a situation in which a branch exists on the remote repo, but not in the local repo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/gh-branch-list-1.png" alt="Branches on GitHub" width="400" height="400">
+</div>
+<div class="title">Two branches in the remote repository</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-1.png" alt="Local branches" width="600" height="600">
+</div>
+<div class="title">Only one branch in the local repository</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In such a situation, the remote branch needs to be <a href="#_description_11">fetched</a> locally and then <a href="#_git_checkout">checked out</a> to be used locally.</p>
+</li>
+<li>
+<p>There are two possibilities</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The remote branch has already been fetched locally, but not checked out.</p>
+</li>
+<li>
+<p>The remote branch has not been fetched.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To check whether the remote branch has been fetched locally or not, run <a href="#_a"><code>git branch -a</code></a>. <strong>If the branch is listed in red, then it has been fetched locally.</strong></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_if_the_branch_has_been_fetched_locally"><a class="anchor" href="#_if_the_branch_has_been_fetched_locally"></a>If the Branch has been Fetched Locally</h4>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-2.png" alt="Local and fetched remote branches" width="600" height="600">
+</div>
+<div class="title">'br_1' (in red) has already been fetched</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>git checkout &lt;fetched_branch_name&gt;</code> or <code>git switch &lt;fetched_branch_name&gt;</code> to switch to the fetched remote branch.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-3.png" alt="Local and fetched remote branches" width="600" height="600">
+</div>
+<div class="title">Successfully switched to 'br_1'!</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_if_the_branch_has_not_been_fetched_locally"><a class="anchor" href="#_if_the_branch_has_not_been_fetched_locally"></a>If the Branch has not been Fetched Locally</h4>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-4.png" alt="Local and fetched remote branches" width="600" height="600">
+</div>
+<div class="title">'br_1' has been not been fetched (not in list)</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fetch the branch using <code>git fetch &lt;remote_repo_alias&gt; &lt;branch_to_be_fetched&gt;</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/fetch-1.png" alt="Fetched remote branch" width="600" height="600">
+</div>
+<div class="title">'br_1' (in red) has been been fetched</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>git branch -a</code> to check whether it appears as a fetched branch in red.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-2.png" alt="Local and fetched remote branches" width="600" height="600">
+</div>
+<div class="title">'br_1' (in red) has been fetched</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>git checkout &lt;fetched_branch_name&gt;</code> or <code>git switch &lt;fetched_branch_name&gt;</code> to switch to the fetched remote branch.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/branch-3.png" alt="Local and fetched remote branches" width="600" height="600">
+</div>
+<div class="title">Successfully switched to 'br_1'!</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_internal_working_of_git"><a class="anchor" href="#_internal_working_of_git"></a>Internal Working of Git</h3>
 <div class="admonitionblock tip">
 <table>
@@ -5437,7 +5550,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-05-23 10:33:10 UTC
+Last updated 2021-05-23 18:52:08 UTC
 </div>
 </div>
 </body>

@@ -1,4 +1,4 @@
-const cacheName = "v16";
+const cacheName = "v17";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -16,6 +16,10 @@ const cacheAssets = [
 	"./static/img/add-2.jpg",
 	"./static/img/add-3.jpg",
 	"./static/img/add-to-master_file_1-1.jpg",
+	"./static/img/branch-1.png",
+	"./static/img/branch-2.png",
+	"./static/img/branch-3.png",
+	"./static/img/branch-4.png",
 	"./static/img/branches.png",
 	"./static/img/cat-1.jpg",
 	"./static/img/cat-file-p-1.jpg",
@@ -45,7 +49,9 @@ const cacheAssets = [
 	"./static/img/edit-master_file_1-1.jpg",
 	"./static/img/fast-forward-merge.png",
 	"./static/img/favicon.ico",
+	"./static/img/fetch-1.png",
 	"./static/img/fork-syncing.png",
+	"./static/img/gh-branch-list-1.png",
 	"./static/img/git-init.jpg",
 	"./static/img/git-local-remote-2.png",
 	"./static/img/git-local-remote.png",
