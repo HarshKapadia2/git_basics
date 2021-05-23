@@ -9,6 +9,7 @@ v2
 :docinfo:   shared
 :author:    Harsh Kapadia
 :sectanchors:
+:figure-caption!:
 
 == Abstract
 

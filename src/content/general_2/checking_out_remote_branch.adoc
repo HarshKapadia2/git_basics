@@ -1,0 +1,49 @@
+
+=== Checkout a Remote Branch
+
+There can be a situation in which a branch exists on the remote repo, but not in the local repo.
+
+.Two branches in the remote repository
+image::gh-branch-list-1.png[alt="Branches on GitHub", 400, 400]
+.Only one branch in the local repository
+image::branch-1.png[alt="Local branches", 600, 600]
+
+* In such a situation, the remote branch needs to be link:#_description_11[fetched] locally and then link:#_git_checkout[checked out] to be used locally.
+
+* There are two possibilities
+	** The remote branch has already been fetched locally, but not checked out.
+	** The remote branch has not been fetched.
+
+* To check whether the remote branch has been fetched locally or not, run link:#_a[`git branch -a`]. *If the branch is listed in red, then it has been fetched locally.*
+
+==== If the Branch has been Fetched Locally
+
+.'br_1' (in red) has already been fetched
+image::branch-2.png[alt="Local and fetched remote branches", 600, 600]
+
+* Run `git checkout <fetched_branch_name>` or `git switch <fetched_branch_name>` to switch to the fetched remote branch.
+
+.Successfully switched to 'br_1'!
+image::branch-3.png[alt="Local and fetched remote branches", 600, 600]
+
+==== If the Branch has not been Fetched Locally
+
+.'br_1' has been not been fetched (not in list)
+image::branch-4.png[alt="Local and fetched remote branches", 600, 600]
+
+* Fetch the branch using `git fetch <remote_repo_alias> <branch_to_be_fetched>`.
+
+.'br_1' (in red) has been been fetched
+image::fetch-1.png[alt="Fetched remote branch", 600, 600]
+
+* Run `git branch -a` to check whether it appears as a fetched branch in red.
+
+.'br_1' (in red) has been fetched
+image::branch-2.png[alt="Local and fetched remote branches", 600, 600]
+
+* Run `git checkout <fetched_branch_name>` or `git switch <fetched_branch_name>` to switch to the fetched remote branch.
+
+.Successfully switched to 'br_1'!
+image::branch-3.png[alt="Local and fetched remote branches", 600, 600]
+
+'''

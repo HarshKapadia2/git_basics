@@ -15,10 +15,11 @@ a:hover, a:hover code, a code:hover
 	color: #1d4b8f !important;
 }
 
-.imageblock .content
+.imageblock
 {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .icon img
@@ -261,7 +262,7 @@ body.dark .theme-switcher
 	background: url("../img/sun.svg") no-repeat center;
 }
 
-body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6, body.dark #toctitle, body.dark .sidebarblock .title
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6, body.dark #toctitle, body.dark .sidebarblock .title, body.dark .imageblock .title
 {
 	color: #ff8a80 !important;
 }
