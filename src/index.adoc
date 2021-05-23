@@ -8,6 +8,7 @@ v2
 :iconsdir:	./static/img/admonition_icons
 :docinfo:   shared
 :author:    Harsh Kapadia
+:sectanchors:
 
 == Abstract
 
