@@ -25,7 +25,7 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 
 ===== No option
 
-* The entire remote repo will be cloned locally into a new folder with the same name as the remote repo.
+* The link:#_default_branch[default branch] of the remote repo will be cloned locally into a new folder with the same name as the remote repo.
 
 ===== -b <branch_name> or --branch <branch_name>
 

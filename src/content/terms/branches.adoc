@@ -7,7 +7,17 @@ image::branches.png[alt="Branches", 600, 600]
 * Git branches are effectively a pointer to a snapshot of changes.
 * When a new feature is to be added or a bug — no matter how big or how small has to be fixed, a new branch is created to encapsulate the changes.
 * This makes it harder for unstable code to get merged into the main code base, and it gives the chance to clean up the future history before merging it into the main branch.
-* The default branch can be link:#_main_vs_master_1[`main` or `master`].
+
+==== Default Branch
+
+* The default branch is considered as the base branch.
+* It is usually the most up to date/stable code version.
+* Importance
+	** This is the branch that is cloned on running link:#_git_clone[`git clone`].
+	** All pull requests are opened against this base branch unless any other branch is explicitly specified.
+* Any branch can be made the default branch, but by default it is the 'master' (link:#_main_vs_master_1[or 'main']) branch.
+* The default branch can be changed at any time on GitHub from the link:#_repository[repository's] settings and GitHub will point all open pull requests to the new default branch.
+* link:#_change_default_branch_name[Changing the default branch of the local Git client (using `git config`)] is also possible. If this is done, whenever a new repository is link:#_git_init[initialized] locally, the default branch will be the new branch name entered in the `git config` command.
 
 .Related
 ****

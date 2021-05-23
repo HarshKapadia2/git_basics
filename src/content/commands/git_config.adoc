@@ -39,14 +39,14 @@ Get and set repository or global options.
 
 [TIP#_main_vs_master_2]
 ====
-`main` vs `master` #2:
+'main' vs 'master' #2:
 
-* link:#_main_vs_master_1[`main` vs `master` #1]
+* link:#_main_vs_master_1['main' vs 'master' #1]
 * This only applies to GitHub repositories.
-* New GitHub repositories have their default branch name as `main` instead of `master`, while the local Git client still uses `master` as the default branch name when link:#_git_init[initializing repositories].
-* This default branch name mismatch causes link:#_git_push[pushes] to new remote repositories to fail.
-* To combat this change on GitHub, it would be recommended to change the default branch name of Git locally to `main` using the command `git config --global init.defaultBranch "main"` as mentioned in the point above this tip.
-* NOTE: Cloned repositories will not be impacted unless the remote repository's default branch is changed on GitHub (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).
+* New GitHub repositories have the name of their link:#_default_branch[default branch] as 'main' instead of 'master', while the local Git client still uses 'master' as the name of the default branch when link:#_git_init[initializing repositories].
+* This mismatch in the names of the default branches causes link:#_git_push[pushes] to new remote repositories to fail.
+* To combat this change on GitHub, it would be advisable to change the name of the default branch of the local Git client to 'main' using the command `git config --global init.defaultBranch "main"`.
+* NOTE: Cloned repositories will not be impacted unless the remote repository's default branch is changed on GitHub after cloning (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).
 ====
 
 ===== --list

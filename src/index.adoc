@@ -35,15 +35,15 @@ NOTE: One might want to familiarize themselves with some link:#_terms[terms] bef
 
 [NOTE#_main_vs_master_1]
 ====
-`main` vs `master` #1:
+'main' vs 'master' #1:
 
 * This only applies to GitHub link:#_repositories[repositories].
-* GitHub is gradually renaming the default link:#_branches[branch] of repositories from `master` to `main`.
-* The default branch name for new repositories on GitHub is now `main`.
+* GitHub is gradually renaming the link:#_default_branch[default branch] of repositories from 'master' to 'main'.
+* The name of the default branch for new repositories on GitHub is now 'main'.
 * Existing repositories on GitHub are not impacted by this change, but they can now rename their branches if they wish to.
 * For more details, please check the https://github.com/github/renaming[renaming repo^] by GitHub.
 * link:#_change_default_branch_name[Changing the default branch of the local Git client] is also possible.
-* link:#_main_vs_master_2[`main` vs `master` #2]
+* link:#_main_vs_master_2['main' vs 'master' #2]
 ====
 
 == General #1
