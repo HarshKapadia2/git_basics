@@ -31,6 +31,7 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 
 * Clone only a specific branch of a remote repo.
 * It is useful to fetch the required branch quickly to fix the issues in a big project.
+
 [.word-break-all]
 * Eg: `git clone -b master https://github.com/HarshKapadia2/git_basics.git` or `git clone -b master --single-branch https://github.com/HarshKapadia2/git_basics.git`
 * `--single-branch` is assumed.
@@ -39,10 +40,10 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 
 * Shallow clone only upto a certain number of latest commits and history either in a `--single-branch` (assumed) or in all branches (`--no-single-branch`).
 * Specify the branch name using `-b` or `--branch` for `--single-branch`. The `master` branch is assumed, if not specified.
+
 [.word-break-all]
 * Eg: `git clone -b v2 --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
 * With `--no-single-branch`, use link:#_git_branch[`git branch -a`] to view the fetched branches and link:#_git_switch[`git switch <branch_name>`] to use it.
-[.word-break-all]
 * Eg: `git clone --no-single-branch --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
 
 .Related
