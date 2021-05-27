@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euo pipefail;
+set -eu;
 
 output="${1-./build}";
 echo "Building to: '${output}'";
@@ -20,6 +20,6 @@ done
 asciidoctor "src/index.adoc" -a webfonts! -o "${output}/index.html";
 
 # Lazy load images
-sed -i 's/<img/<img loading="lazy"/g' ${output}/index.html;
+sed -i -e 's/<img/<img loading="lazy"/g' "${output}/index.html";
 
 echo "Build complete";
