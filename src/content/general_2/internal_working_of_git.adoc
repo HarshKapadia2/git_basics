@@ -126,6 +126,7 @@ image::cat-file-p-2.jpg[alt="Check contents", 600, 600]
 
 The format of each line is the same.
 
+[.word-break-all]
 Have a look at `100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file_1.txt`:
 
 * `100644` is the mode, which is some sort of unix-style file permission and file type checking system.
@@ -151,6 +152,7 @@ Just like what was done before, check the contents of the commit file (using par
 
 image::cat-file-p-3.jpg[alt="Create another master file", 600, 600]
 
+[.word-break-all]
 A new line `parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65` is seen. Remember, this is the hash of the previous commit. *So Git is creating a graph.* (A picture is provided below.) Also, the [`HEAD`] will now automatically point to this (latest - `82826`) commit rather than the parent (previous - `d5b8f`) commit as it was doing before. To verify, have a look at where the `HEAD` is pointing.
 
 image::head-1.jpg[alt="HEAD", 600, 600]
