@@ -74,6 +74,10 @@ window.addEventListener
 
 // System/browser theme change listener
 
+if (!system_dark_theme.addEventListener)
+	system_dark_theme.addEventListener =
+		(event, listener) => system_dark_theme.addListener(listener);
+
 system_dark_theme.addEventListener
 (
 	"change",
