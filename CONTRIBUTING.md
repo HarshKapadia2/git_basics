@@ -15,6 +15,7 @@ NOTE:
 - Fork this repo. (Top right corner.)
 - Clone your forked repo using the [`git clone`](https://harshkapadia2.github.io/git_basics/#_git_clone) command.
 - [Install Asciidoctor](https://asciidoctor.org/#installation).
+- For syntax highlighting for `.adoc` files in VS Code, the [AsciiDoc](https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode) extension can be used.
 - **Please adhere to the [file structure](#file-structure) and [language and syntax rules](#language-and-syntax) followed in this project.**
 - Testing
 	- Generate the web site in a directory called 'build' in the root directory by running the command `sh build.sh` from the root directory.
