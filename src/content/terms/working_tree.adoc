@@ -1,4 +1,3 @@
-
 === Working Tree
 
 * It notes the untracked files in the working directory/copy - a copy of the most recent state of the files you're working on.

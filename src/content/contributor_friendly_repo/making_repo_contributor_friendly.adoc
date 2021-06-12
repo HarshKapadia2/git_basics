@@ -1,4 +1,3 @@
-
 Open source is all about opening up projects for the community to use and contribute to! Contributions are a very important aspect of open source. Contributions help the community in improving software/projects that they use, for themselves and others.
 
 To make contributions easier, the following files/tools are used in a repository

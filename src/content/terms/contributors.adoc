@@ -1,4 +1,3 @@
-
 === Contributors
 
 * Contributors are people who contribute to link:#_repository[repositories] to make them better.

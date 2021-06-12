@@ -1,4 +1,3 @@
-
 image::git-local-remote.png[alt="Git local & remote commands chart #1", 600, 600]
 
 '''

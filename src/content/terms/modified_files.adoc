@@ -1,4 +1,3 @@
-
 === Modified Files
 
 * All files not in the .gitignore, that have been added to the link:#_repository[repository (repo)] and have been modified since.

@@ -1,4 +1,3 @@
-
 === CONTRIBUTING.md
 
 * The `CONTRIBUTING.md` file explains how a contributor should do things like format code, test fixes, and submit patches. It can also include instructions for contributors to set up a local environment.

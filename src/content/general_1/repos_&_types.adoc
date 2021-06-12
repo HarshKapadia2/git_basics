@@ -1,4 +1,3 @@
-
 === Repositories & its types
 
 * link:#_repository[What is a repository (repo)?]

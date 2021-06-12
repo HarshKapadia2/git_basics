@@ -1,4 +1,3 @@
-
 === Branches
 
 image::branches.png[alt="Branches", 600, 600]

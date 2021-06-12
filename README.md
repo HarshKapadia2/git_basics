@@ -16,13 +16,13 @@
 
 ## Author's sessions
 
-- [Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM)
-- [Hacktoberfest, Open Source and Pull Requests session](https://www.youtube.com/watch?v=uJdFNksgKJA)
+-   [Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM)
+-   [Hacktoberfest, Open Source and Pull Requests session](https://www.youtube.com/watch?v=uJdFNksgKJA)
 
 ## Contributions
 
-- All contributions are most welcome!
-- View the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for further instructions.
+-   All contributions are most welcome!
+-   View the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for further instructions.
 
 ## Code of Conduct
 

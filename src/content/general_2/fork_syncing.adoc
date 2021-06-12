@@ -1,4 +1,3 @@
-
 === Sync a Fork with its Original Repo
 
 * Once a repository (repo) is [forked], the forked repo does not receive the latest commits in the original repo.

@@ -1,79 +1,79 @@
 name: GitHub Pages
 on:
-  push:
-    paths:
-      - "src/**"
-      - "build.sh"
-      - ".github/workflows/**"
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        paths:
+            - "src/**"
+            - "build.sh"
+            - ".github/workflows/**"
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
 
 defaults:
-  run:
-    working-directory: /documents
+    run:
+        working-directory: /documents
 
 jobs:
-  build-website:
-    runs-on: ubuntu-latest
-    container: docker://asciidoctor/docker-asciidoctor:latest
-    steps:
-      - name: Checkout code
-        run: |
-          # Set repository Url
-          REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
-          
-          # Clone repository
-          git clone --depth 2 -b "${BRANCH_NAME}" --no-single-branch "${REPOSITORY_URL}" .
-          
-          # Don't switch to gh-pages if not on master
-          if [ "${BRANCH_NAME}" == "master" ]; then
-              # Switch to gh-pages branch
-              if ! git show-branch remotes/origin/gh-pages; then
-                # If the branch doesn't exist, then create an orphan branch
-                echo "Could not find gh-pages branch, creating as orphan"
-                git switch --orphan gh-pages
-              else
-                # Else, switch to the branch
-                git switch gh-pages
-              fi
-              
-              # Delete all old files
-              rm -rf *
+    build-website:
+        runs-on: ubuntu-latest
+        container: docker://asciidoctor/docker-asciidoctor:latest
+        steps:
+            - name: Checkout code
+              run: |
+                  # Set repository URL
+                  REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+                  BRANCH_NAME="${GITHUB_REF#refs/heads/}"
 
-              # Get latest source and buildscript
-              git restore -s "${BRANCH_NAME}" src build.sh
-          fi
-        
-      - name: Build site using Asciidoctor
-        run: |
-          # Build page
-          ./build.sh .
-      
-      - name: Deploy to GitHub Pages
-        run: |
-          # Skip deploy if not on master
-          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
-          if [ "${BRANCH_NAME}" != "master" ]; then
-            echo "Skipping deployment since branch is '${BRANCH_NAME}', not master"
-            exit 0
-          fi
-          
-          # Remove source and buildscript
-          rm -rf src build.sh
-          
-          # Add modified files
-          git add .
-          
-          # Set user
-          git config user.name  "Auto deploy GitHub Pages"
-          git config user.email "cd-deploy-gh-pages@bot"
-          
-          # Commit changes
-          git commit -m "Deploy to pages: $(date +'%Y-%m-%d %T')"
-          
-          # Remove 'https://' from beginning of REPOSITORY_URL
-          REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-          git push "https://X-Access-Token:${{ secrets.GITHUB_TOKEN }}@${REPOSITORY_URL:8}" gh-pages
+                  # Clone repository
+                  git clone --depth 2 -b "${BRANCH_NAME}" --no-single-branch "${REPOSITORY_URL}" .
+
+                  # Don't switch to gh-pages if not on main
+                  if [ "${BRANCH_NAME}" == "main" ]; then
+                      # Switch to gh-pages branch
+                      if ! git show-branch remotes/origin/gh-pages; then
+                        # If the branch doesn't exist, then create an orphan branch
+                        echo "Could not find gh-pages branch, creating as orphan"
+                        git switch --orphan gh-pages
+                      else
+                        # Else, switch to the branch
+                        git switch gh-pages
+                      fi
+                      
+                      # Delete all old files
+                      rm -rf *
+
+                      # Get latest source and buildscript
+                      git restore -s "${BRANCH_NAME}" src build.sh
+                  fi
+
+            - name: Build site using Asciidoctor
+              run: |
+                  # Build page
+                  ./build.sh .
+
+            - name: Deploy to GitHub Pages
+              run: |
+                  # Skip deploy if not on main
+                  BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+                  if [ "${BRANCH_NAME}" != "main" ]; then
+                    echo "Skipping deployment since branch is '${BRANCH_NAME}', not main"
+                    exit 0
+                  fi
+
+                  # Remove source and buildscript
+                  rm -rf src build.sh
+
+                  # Add modified files
+                  git add .
+
+                  # Set user
+                  git config user.name  "Auto deploy GitHub Pages"
+                  git config user.email "cd-deploy-gh-pages@bot"
+
+                  # Commit changes
+                  git commit -m "Deploy to pages: $(date +'%Y-%m-%d %T')"
+
+                  # Remove 'https://' from beginning of REPOSITORY_URL
+                  REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+                  git push "https://X-Access-Token:${{ secrets.GITHUB_TOKEN }}@${REPOSITORY_URL:8}" gh-pages

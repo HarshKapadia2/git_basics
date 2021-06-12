@@ -1,4 +1,3 @@
-
 === What is GitHub?
 
 * *GitHub != Git*, ie, GitHub is not Git.

@@ -1,4 +1,3 @@
-
 === Added Files
 
 * All files not in link:#_gitignore_file[`.gitignore`] and that have been added to the staging area of the link:#_repository[repository].

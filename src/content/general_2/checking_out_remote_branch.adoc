@@ -1,4 +1,3 @@
-
 === Checkout a Remote Branch
 
 There can be a situation in which a branch exists on the remote repo, but not in the local repo.

@@ -1,4 +1,3 @@
-
 === git commit
 
 image::working-of-commit.jpeg[alt="Working of Commit", 600, 600]

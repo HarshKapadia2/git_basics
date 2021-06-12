@@ -1,4 +1,3 @@
-
 === Types of Version Control Systems (VCS)
 
 ==== Local VCS (LVCS)

@@ -1,4 +1,3 @@
-
 === Untracked Files
 
 * Newly created files are untracked files.

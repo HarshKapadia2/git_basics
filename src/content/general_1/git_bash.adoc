@@ -1,4 +1,3 @@
-
 === Git-Bash
 
 * It is a shell, ie, a CLI to use git.

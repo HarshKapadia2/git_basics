@@ -1,4 +1,3 @@
-
 === Unstage Files Staged/Added by Mistake
 
 A lot of times files are added/staged by mistake, no matter whether they are new or modified. The solution below will unstage all the files that were staged by mistake.

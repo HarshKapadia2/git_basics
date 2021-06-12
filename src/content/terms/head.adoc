@@ -1,4 +1,3 @@
-
 === HEAD
 
 * HEAD is a reference to the latest commit in the current link:#_branches[branch].

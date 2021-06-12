@@ -1,4 +1,3 @@
-
 === Collaborators
 
 * Collaborators are the link:#_repository[repository (repo)] owner's team members/partners.

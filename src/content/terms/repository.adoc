@@ -1,4 +1,3 @@
-
 === Repository
 
 * Git stores information in a data structure called a repository (repo).

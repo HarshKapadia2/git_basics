@@ -1,4 +1,3 @@
-
 === Issues
 
 * Most software projects have a bug tracker of some kind. link:#_what_is_github[GitHub’s] tracker is called 'Issues', and has its own section in every repository.

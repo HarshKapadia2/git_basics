@@ -1,4 +1,3 @@
-
 === Internal Working of Git
 
 TIP: It is recommended to go through this section only if the reader has some experience with Git. Absolute beginners do not need to know this.

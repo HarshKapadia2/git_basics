@@ -1,4 +1,3 @@
-
 === .gitignore file
 
 * .gitignore is a file which tells git which files (or patterns) in the directory it should ignore. 

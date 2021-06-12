@@ -1,4 +1,3 @@
-
 === Code of Conduct
 
 * A Code of Conduct (CoC) facilitates healthy and constructive community behavior by establishing expectations for behavior for a project’s participants.
