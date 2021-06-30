@@ -188,6 +188,8 @@ function addAnnouncement() {
 		"git_basics is available on the Play Store! 🎉";
 	announcement_link.href =
 		"https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics";
+	announcement_link.target = "_blank";
+	announcement_link.rel = "noreferrer";
 	announcement_img.src =
 		"https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
 	announcement_img.alt = "Get it on Google Play";
