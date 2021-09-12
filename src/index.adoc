@@ -64,6 +64,10 @@ include::./refs/general_2.adoc[]
 
 include::./refs/correcting_common_mistakes.adoc[]
 
+== Git Internals
+
+include::./refs/git_internals.adoc[]
+
 == GitHub
 
 include::./refs/github_1.adoc[]

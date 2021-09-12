@@ -1,0 +1,1 @@
+include::../content/git_internals/internal_working_of_git.adoc[]

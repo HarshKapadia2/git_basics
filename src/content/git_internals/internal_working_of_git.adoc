@@ -12,7 +12,7 @@ The command `du -c` is used to list the sub-directories of the root directory `i
 
 image::du-c-1.jpg[alt="Du -c", 600, 600]
 
-==== Blob object
+==== Blob Object
 
 Create a new file in the root folder.
 
@@ -82,7 +82,7 @@ Some of the plumbing commands that are needed:
 * `git cat-file -t <hash>` (-t = type) to display file type (blob, commit or tree).
 * `git cat-file -s <hash>` (-s = size) to display the file size (length).
 
-==== Commit and tree objects
+==== Commit and Tree Objects
 
 Commit `master_file_1.txt` using [`git commit`] and then run `du -c` again.
 
@@ -141,7 +141,7 @@ image::connection-graph-1.png[alt="Connection graph", 600, 600]
 
 NOTE: The blob `e69de` has been modified to blob `1a385` and so is not connected to the tree `1b219`. Only the latest blob of every added file is connected to the new tree object when a commit is made.
 
-==== Adding another file (parent commit)
+==== Adding Another File (Parent Commit)
 
 Create another file (`master_file_2.txt`), add it to Git and commit it.
 
@@ -166,7 +166,7 @@ Take a look at the new graph of the repository.
 
 image::connection-graph-2.png[alt="Connection graph", 600, 600]
 
-==== Creating a directory
+==== Creating a Directory
 
 Create a new file (`master_dir_1_file_3.txt`) inside a a directory (`dir_1`), add it, commit it and look at the contents of the commit file.
 
@@ -194,7 +194,7 @@ Also have a look at the new graph of the entire repository.
 
 image::connection-graph-3.png[alt="Connection Graph", 600, 600]
 
-==== Renaming a file
+==== Renaming a File
 
 Rename `master_file_1.txt` to `the_master_file.txt` to see how Git handles it internally.
 
@@ -214,7 +214,7 @@ Take a look at the structure of the repo.
 
 image::connection-graph-4.png[alt="Connection Graph", 600, 600]
 
-==== Making changes to huge files
+==== Making Changes to Huge Files
 
 Add and commit a picture to Git. The size of the picture is 1.374 Mb (or 1374 kb), so it is a relatively huge file as compared to the other files (~ 1 kb).
 
@@ -238,7 +238,7 @@ NOTE: The directory content size (1376 kb) is greater than the picture size (137
 
 So is Git inefficient at handling huge files? No. The content of the file has changed and this produces a different SHA1 hash (`1f7af`) than the original SHA1 hash (`ca893`) and so Git is not able to handle the change like it did when a file was simply renamed. Having multiple copies of such a huge file is not a problem in the local storage, but it will take up a lot of bandwidth while [pushing] and [pulling] from a platform like [GitHub]. So to avoid this, Git uses *Delta compression*. It uses the difference (`diff.` in short) of one of the files and indicates the other as the parent. This is looked into in the `Pack file` section below.
 
-==== Pack file
+==== Pack File
 
 *Delta compression* is carried out when the user pushes/pulls code to/from GitHub and when an aggressive garbage collection (`git gc --aggressive`) is carried out.
 
