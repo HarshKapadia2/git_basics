@@ -30,6 +30,11 @@ code {
 	background-color: #eeeeee !important;
 }
 
+h1,
+.title {
+	color: #ba3925 !important;
+}
+
 .announcement {
 	font-weight: bold;
 	font-size: 1.5em;
@@ -166,6 +171,7 @@ body.mobile-edge-case .word-break-all {
 
 /* ================================================== TOC (LIGHT MODE) ============================================== */
 
+#toctitle,
 .sectlevel1 li a {
 	color: #ba3925 !important;
 }
