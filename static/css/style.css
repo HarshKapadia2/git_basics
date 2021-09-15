@@ -41,6 +41,7 @@ h1,
 	line-height: 1.5em;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
+	min-height: 5em;
 }
 
 .announcement img {
@@ -158,6 +159,10 @@ h1,
 }
 
 @media screen and (max-width: 600px) {
+	.announcement {
+		min-height: 6em;
+	}
+
 	.announcement img {
 		width: 7em;
 	}
