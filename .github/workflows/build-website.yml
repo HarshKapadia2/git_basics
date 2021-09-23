@@ -1,23 +1,29 @@
-name: GitHub Pages
+name: Publish to GitHub Pages
 on:
     push:
+        branches:
+            - main
         paths:
             - "src/**"
-            - "build.sh"
+            - build.sh
             - ".github/workflows/**"
     pull_request:
         branches:
             - main
+        paths:
+            - "src/**"
+            - build.sh
+            - ".github/workflows/**"
     workflow_dispatch:
 
 defaults:
     run:
-        working-directory: /documents
+        working-directory: "/documents"
 
 jobs:
     build-website:
         runs-on: ubuntu-latest
-        container: docker://asciidoctor/docker-asciidoctor:latest
+        container: "docker://asciidoctor/docker-asciidoctor:latest"
         steps:
             - name: Checkout code
               run: |
