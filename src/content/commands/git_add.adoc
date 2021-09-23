@@ -41,6 +41,27 @@ To add files to the staging area (refer to picture above).
 * Eg: `git add .`
 * Recursive command to send all untracked and modified files to the staging area (except for the file names in the .gitignore file).
 
+===== -p or --patch
+
+* Enables choosing the staging of specific hunks (group of lines/chunks) of files instead of entire files.
+* It presents the diff between the index (staging area) and the working tree file and asks what one wants to do with the change of each hunk.
+* Using this flag makes Git display hunks one by one and bring up command options for every hunk to
+	** `y` (yes): Stage the hunk.
+	** `n` (no): Not stage the hunk.
+	** `q` (quit): Quit the process and not stage the current hunk or the **remaining** ones. (Hunks in order can be left undecided temporarily as seen in the options below.)
+	** `a` (all): Stage the current hunk all the ones that follow.
+	** `d` (delete): Not stage the current hunk all the ones that **follow**.
+	** `g` (goto): Go to a particular hunk. (It will display a list with a hunk number to go to a particular hunk if there are more than 1 hunks.)
+	** `/`: Search for a hunk matching the given regex.
+	** `j`: Leave the current hunk undecided and see the next undecided hunk.
+	** `J`: Leave the current hunk undecided and see the next hunk.
+	** `k`: Leave the current hunk undecided and see the previous undecided hunk.
+	** `K`: Leave the current hunk undecided and see the previous hunk.
+	** `s` (split): Split the current hunk into smaller hunks.
+	** `e` (edit): Manually edit the current hunk in an editor.
+	** `?`: Print help.
+* Eg: `git add -p` or `git add -p <file_name.ext>`
+
 ===== -n .
 
 * Eg: `git add -n .`
@@ -54,6 +75,7 @@ To add files to the staging area (refer to picture above).
 .Related
 ****
 * link:#_git_rm[Remove staged (added) files (`git rm`)]
+* link:#_unstage_files_stagedadded_by_mistake[Unstage Files Staged/Added by Mistake]
 ****
 
 '''
