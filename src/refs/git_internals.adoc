@@ -1,1 +1,2 @@
+include::../content/git_internals/the_git_folder.adoc[]
 include::../content/git_internals/internal_working_of_git.adoc[]
