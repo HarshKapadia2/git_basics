@@ -1351,6 +1351,71 @@ If the remote repository is/is going to be located on GitHub, please be aware of
 </div>
 </div>
 <div class="sect4">
+<h5 id="_p_or_patch"><a class="anchor" href="#_p_or_patch"></a>-p or --patch</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Enables choosing the staging of specific hunks (group of lines/chunks) of files instead of entire files.</p>
+</li>
+<li>
+<p>It presents the diff between the index (staging area) and the working tree file and asks what one wants to do with the change of each hunk.</p>
+</li>
+<li>
+<p>Using this flag makes Git display hunks one by one and bring up command options for every hunk to</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>y</code> (yes): Stage the hunk.</p>
+</li>
+<li>
+<p><code>n</code> (no): Not stage the hunk.</p>
+</li>
+<li>
+<p><code>q</code> (quit): Quit the process and not stage the current hunk or the <strong>remaining</strong> ones. (Hunks in order can be left undecided temporarily as seen in the options below.)</p>
+</li>
+<li>
+<p><code>a</code> (all): Stage the current hunk all the ones that follow.</p>
+</li>
+<li>
+<p><code>d</code> (delete): Not stage the current hunk all the ones that <strong>follow</strong>.</p>
+</li>
+<li>
+<p><code>g</code> (goto): Go to a particular hunk. (It will display a list with a hunk number to go to a particular hunk if there are more than 1 hunks.)</p>
+</li>
+<li>
+<p><code>/</code>: Search for a hunk matching the given regex.</p>
+</li>
+<li>
+<p><code>j</code>: Leave the current hunk undecided and see the next undecided hunk.</p>
+</li>
+<li>
+<p><code>J</code>: Leave the current hunk undecided and see the next hunk.</p>
+</li>
+<li>
+<p><code>k</code>: Leave the current hunk undecided and see the previous undecided hunk.</p>
+</li>
+<li>
+<p><code>K</code>: Leave the current hunk undecided and see the previous hunk.</p>
+</li>
+<li>
+<p><code>s</code> (split): Split the current hunk into smaller hunks.</p>
+</li>
+<li>
+<p><code>e</code> (edit): Manually edit the current hunk in an editor.</p>
+</li>
+<li>
+<p><code>?</code>: Print help.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Eg: <code>git add -p</code> or <code>git add -p &lt;file_name.ext&gt;</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
 <h5 id="_n"><a class="anchor" href="#_n"></a>-n .</h5>
 <div class="ulist">
 <ul>
@@ -1382,6 +1447,9 @@ If the remote repository is/is going to be located on GitHub, please be aware of
 <ul>
 <li>
 <p><a href="#_git_rm">Remove staged (added) files (<code>git rm</code>)</a></p>
+</li>
+<li>
+<p><a href="#_unstage_files_stagedadded_by_mistake">Unstage Files Staged/Added by Mistake</a></p>
 </li>
 </ul>
 </div>
@@ -5071,25 +5139,19 @@ HEAD is contextual. It will point to the latest commit in the current branch.
 <div class="ulist">
 <ul>
 <li>
-<p>To check where the current HEAD is pointing, use <code>cat .git/HEAD</code>.</p>
+<p>To check where the current HEAD is pointing, run <code>cat .git/HEAD</code> in the root directory.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Eg:</p>
 <div class="literalblock">
 <div class="content">
-<pre># in the master branch
+<pre># in the 'main' branch
 $ cat .git/HEAD
-# output
-ref: refs/heads/master</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>git checkout test_branch
-# switched to test branch
+ref: refs/heads/main
+$ git switch test_branch
+Switched to branch 'test_branch'
 $ git .git/HEAD
-# output
 ref: refs/heads/test_branch</pre>
 </div>
 </div>
@@ -5097,6 +5159,10 @@ ref: refs/heads/test_branch</pre>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div id="_detached_head" class="ulist">
+<ul>
 <li>
 <p>When the HEAD points to a commit that is not the latest commit in a branch, that is a <strong>detached HEAD</strong>. A specific commit can be referred to, using <a href="#_git_checkout"><code>git checkout</code></a>.</p>
 </li>
@@ -5586,7 +5652,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-09-15 11:06:49 UTC
+Last updated 2021-09-23 07:49:30 UTC
 </div>
 </div>
 </body>

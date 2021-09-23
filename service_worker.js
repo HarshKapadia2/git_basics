@@ -1,4 +1,4 @@
-const cacheName = "v20";
+const cacheName = "v22";
 const cacheAssets = [
 	"./",
 	"./index.html",
