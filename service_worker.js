@@ -1,4 +1,4 @@
-const cacheName = "v23";
+const cacheName = "v24";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -22,6 +22,8 @@ const cacheAssets = [
 	"./static/img/branch-4.png",
 	"./static/img/branches.png",
 	"./static/img/cat-1.jpg",
+	"./static/img/cat-FETCH_HEAD-1.png",
+	"./static/img/cat-FETCH_HEAD-2.png",
 	"./static/img/cat-file-p-1.jpg",
 	"./static/img/cat-file-p-2.jpg",
 	"./static/img/cat-file-p-3.jpg",
@@ -31,6 +33,8 @@ const cacheAssets = [
 	"./static/img/cat-file-p-7.jpg",
 	"./static/img/cat-file-p-8.jpg",
 	"./static/img/cat-file-t-1.jpg",
+	"./static/img/cat-logs.png",
+	"./static/img/cat-packed-refs.png",
 	"./static/img/clear_cross.svg",
 	"./static/img/commit-master_file_1-1.jpg",
 	"./static/img/connection-graph-1.png",
@@ -55,11 +59,13 @@ const cacheAssets = [
 	"./static/img/git-init.jpg",
 	"./static/img/git-local-remote-2.png",
 	"./static/img/git-local-remote.png",
+	"./static/img/git-ls-files.png",
 	"./static/img/git-push.jpeg",
 	"./static/img/git_basics_logo.svg",
 	"./static/img/head-1.jpg",
 	"./static/img/icon-192x192.png",
 	"./static/img/icon-512x512.png",
+	"./static/img/index-explained.png",
 	"./static/img/log-1.jpg",
 	"./static/img/ls-a-1.jpg",
 	"./static/img/lvcs.jpg",
