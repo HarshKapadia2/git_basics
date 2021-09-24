@@ -39,7 +39,7 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 │   │   └───locks
 │   │       └───refs
 │   │           └───heads
-│   │               └───<branch_name(s)>
+│   │               └───<branch_names>
 │   │                   └───verifiable
 │   ├───objects
 │   │   └───<first_2_SHA-256_characters>
@@ -50,10 +50,10 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 │   ├───HEAD
 │   └───refs
 │       ├───heads
-│       │   └───<branch_name(s)>
+│       │   └───<branch_names>
 │       ├───remotes
-│       │   └───<remote_alias(es)>
-│       │       └───<branch_name(s)>
+│       │   └───<remote_aliases>
+│       │       └───<branch_names>
 │       └───stash
 ├───MERGE_HEAD
 ├───MERGE_MODE
@@ -77,13 +77,13 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 │   └───orig-head
 └───refs
     ├───heads
-    │   └───<branch_name(s)>
+    │   └───<branch_names>
     ├───remotes
-    │   └───<remote_alias(es)>
-    │       └───<branch_name(s)>
+    │   └───<remote_aliases>
+    │       └───<branch_names>
     ├───stash
     └───tags
-        └───<tag_name(s)>
+        └───<tag_names>
 
 ```
 
@@ -115,7 +115,7 @@ NOTE: The words 'index', 'stage' and 'cache' are the same in Git and are used in
 ==== The `HEAD` File
 
 * It is used to refer to the latest commit in the current branch.
-* Usually it does not contain a commit link:#_sha1[SHA-1], but contains the path to a file (of the name of the current branch) in the link:#_refs_directory[refs directory] which stores the last commit's SHA-1 hash in that branch.
+* Usually it does not contain a commit link:#_sha1[SHA-1], but contains the path to a file (of the name of the current branch) in the link:#_the_refs_directory[refs directory] which stores the last commit's SHA-1 hash in that branch.
 * It contains a commit's SHA-1 hash when link:#_commits_sha[a specific commit or tag is checked out]. (link:#_detached_head[Detached HEAD] state.)
 * link:#_head[More on the `HEAD` file.]
 * Eg:
@@ -146,11 +146,11 @@ NOTE: The words 'index', 'stage' and 'cache' are the same in Git and are used in
 
 * This directory holds the reference to the latest commit in every local branch and fetched remote branch in the form of the SHA-1 hash of the commit.
 * It also stores the SHA-1 hash of the commit which has been [tagged].
-* The link:#_head_file[`HEAD` file] references a file (of the name of link:#_new_branch_name[the branch that is currently checked out]) from the `heads` directory in this (`refs`) directory.
+* The link:#_the_head_file[`HEAD` file] references a file (of the name of link:#_new_branch_name[the branch that is currently checked out]) from the `heads` directory in this (`refs`) directory.
 
 ==== The `packed-refs` File
 
-* One file is created per branch and tag in the link:#_refs_directory[`refs` directory].
+* One file is created per branch and tag in the link:#_the_refs_directory[`refs` directory].
 * In a repository with a lot of branches and tags, there is a huge number of refs and a lot of the refs and tags are not actively used/changed.
 * These refs occupy a lot of storage space and cause performance issues.
 * The `git pack-refs` command is used to solve this problem. It stores all the refs in a single file called `packed-refs`.
