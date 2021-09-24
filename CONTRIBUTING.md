@@ -122,25 +122,25 @@ image::file_name.ext[alt="image description", 600, 600, ...]
 -   Writing in bullet points is preferable.
 -   Bold, underline and italics should be used sparingly.
 -   Surround single line commands or file names with a single 'back tick' (`).
--   Surround code snippets with three 'back ticks' (```).
+-   Surround code snippets with three 'back ticks' (`\``).
 -   External links should include a caret (`^`) at the end of the link text to open them in a new tab.
 
     **Example**:
 
-    -   `https://github.com[This is a link to another site^]` (Caret at the end for external links.)
+    -   `link:https://github.com[This is a link to another site^]` (Caret at the end for external links.)
     -   `link:#_issues[This is a link to the same site]` (No caret at the end for internal links.)
 
 -   If external links are pasted as normal links, use `[role=external,window=_blank]` following the link to open it in a new tab
 
-    **Example**: `https://github.com/HarshKapadia2/git_basics[role=external, window=_blank]`
+    **Example**: `link:https://github.com/HarshKapadia2/git_basics[role=external, window=_blank]`
 
 -   Links should have meaningful text.
 
     **Example**:
 
-    -   `It can be found in the https://docs.github.com[official documentation].` ✔️ (Accepted)
-    -   `It can be found https://docs.github.com[here].` ❌ (Not accepted)
+    -   `It can be found in the link:https://docs.github.com[official documentation].` ✔️ (Accepted)
+    -   `It can be found link:https://docs.github.com[here].` ❌ (Not accepted)
 
 ## Further Help
 
-If any further help is needed, do not hesitate to contact the owner (Harsh Kapadia) via [OTC](https://otc.zulipchat.com), [Twitter](https://twitter.com/harshgkapadia), [LinkedIn](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com). An [issue](https://github.com/HarshKapadia2/git_basics/issues) can be raised as well.
+If any further help is needed, do not hesitate to contact the owner (Harsh Kapadia) via [OTC](https://ourtech.community), [Twitter](https://twitter.com/harshgkapadia), [LinkedIn](https://www.linkedin.com/in/harshgkapadia/) or e-mail (harshgkapadia@gmail.com). An [issue](https://github.com/HarshKapadia2/git_basics/issues) can be raised as well.
