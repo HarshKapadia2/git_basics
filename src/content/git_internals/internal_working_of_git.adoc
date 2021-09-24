@@ -1,10 +1,8 @@
 === Internal Working of Git
 
-TIP: It is recommended to go through this section only if the reader has some experience with Git. Absolute beginners do not need to know this.
-
 Some part of the internal working of Git will be explored through an example in this section. A Windows operating system with Git Bash is being used for this example. (Certain Unix commands work with Git Bash.)
 
-Run `git init` to initialize an empty Git [repo] in the `inside_git` directory (root directory). An empty hidden directory `.git` is created in the root folder.
+Run `git init` to initialize an empty Git [repo] in the `inside_git` directory (root directory). A hidden directory `.git` is created in the root folder.
 
 image::git-init.jpg[alt="Git Init", 600, 600]
 
@@ -128,7 +126,19 @@ The format of each line is the same.
 [.word-break-all]
 Have a look at `100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file_1.txt`:
 
-* `100644` is the mode, which is some sort of unix-style file permission and file type checking system.
+* `100644` is the mode of the file. It is an octal number.
+
+	Octal: 100644
+	Binary: 1000 000 110100100
+
+	** The first four binary bits indicate the object type.
+		*** `1000` indicates a regular file. (As seen in this case.)
+		*** `1010` indicates a link:https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git[symlink (symbolic link)^].
+		*** `1110` indicates a gitlink.
+	** The next three binary bits (`000`) are unused.
+	** The last nine binary bits (`110100100`) indicate link:https://harshkapadia2.github.io/cli/terminal.html#changing-permissions[Unix file permissions^].
+		*** `644` and `755` are valid for regular files.
+		*** Symlinks and gitlinks have the value `0` in this field.
 * `blob` is the file type. (It can be a `tree` object as well - covered in the `Creating a directory` section below.)
 
 [.word-break-all]

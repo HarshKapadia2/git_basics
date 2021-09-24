@@ -99,7 +99,19 @@ image::index-explained.png[alt="Index file explained", 400, 400]
 image::git-ls-files.png[alt="'git ls-files --stage' command", 600, 600]
 
 * From the image above
-	** `100644` is the mode of the file. (Indicates a normal non-executable file in this case.)
+	** `100644` is the mode of the file. It is an octal number.
+
+		Octal: 100644
+		Binary: 1000 000 110100100
+
+		*** The first four binary bits indicate the object type.
+			**** `1000` indicates a regular file. (As seen in this case.)
+			**** `1010` indicates a link:https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git[symlink (symbolic link)^].
+			**** `1110` indicates a gitlink.
+		*** The next three binary bits (`000`) are unused.
+		*** The last nine binary bits (`110100100`) indicate link:https://harshkapadia2.github.io/cli/terminal.html#changing-permissions[Unix file permissions^].
+			**** `644` and `755` are valid for regular files.
+			**** Symlinks and gitlinks have the value `0` in this field.
 	** The next 40 character hexadecimal string is the link:#_sha1[SHA-1 hash] of the file.
 	** The next number is a stage number/slot, which is useful during merge conflict handling.
 		*** `0` indicates a normal un-conflicted file.
