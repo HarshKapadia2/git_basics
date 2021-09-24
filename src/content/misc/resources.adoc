@@ -1,75 +1,52 @@
 === Resources
 
-==== Sessions by the author
+==== Sessions by the Author
 
-* https://www.youtube.com/watch?v=HF12-91iazM[Git and GitHub crash course^]
-* https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
+* link:https://www.youtube.com/watch?v=HF12-91iazM[Git and GitHub crash course^]
+* link:https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
 
-==== Getting started with Git and GitHub
+==== Getting Started with Git and GitHub
 
-* https://www.youtube.com/watch?v=SWYqp7iY_Tc&feature=youtu.be[Crash course by Brad Traversy^]
+* link:https://www.youtube.com/watch?v=SWYqp7iY_Tc[Crash course by Brad Traversy^]
 
-==== Visualize Git
+==== Contribution Help
 
-* http://git-school.github.io/visualizing-git/[See the commit graph as commands are entered!^]
+* link:https://github.com/firstcontributions/first-contributions[Learn how to make a Pull Request (PR)^]
 
-==== Git Documentation
+===== GitHub Issues
 
-* http://rogerdudler.github.io/git-guide/[Simple & visually pleasing guide to Git^]
-* https://www.atlassian.com/git[Git Docs by Atlassian^]
-* https://www.git-scm.com/docs[Official Git documentation^]
-* https://www.git-scm.com/book/en/v2[Official (free) book - Pro Git (v2)^]
-* https://try.github.io[GitHub's resources for Git^]
+* Search for `good-first-issue` and `first-timers-only` issues on GitHub in the language/library/framework of choice.
+* link:https://github.com/search?q=label%3Afirst-timers-only+is%3Aopen&type=Issues['first-timers-only' issues on GitHub^]
+* link:https://github.com/search?q=label%3Agood-first-issue+is%3Aopen&type=Issues['good-first-issue' issues on GitHub^]
 
-==== Cheat sheets for Git
+==== Visualization
 
-* http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf[Downloadable PDF^]
-* https://ndpsoftware.com/git-cheatsheet.html[More extensive & through visualization^]
+* link:http://git-school.github.io/visualizing-git[Visualize a commit graph^]
 
-==== Command line help
+==== Documentation
 
-* https://dashdash.io/[Dashdash.io^]
-* https://explainshell.com/[Explainshel.com^]
+* link:https://www.atlassian.com/git[Git Docs by Atlassian^]
+* link:https://www.git-scm.com/docs[Official Git documentation^]
+* link:https://www.git-scm.com/book/en/v2[Pro Git (v2)^]
 
-==== Browser extensions for GitHub
+==== Browser Extensions for GitHub
 
-* https://github.com/sindresorhus/refined-github#install[Refined GitHub^]
+* link:https://github.com/sindresorhus/refined-github#install[Refined GitHub^]
 	** Simplifies the GitHub interface and adds useful features.
-	** Available for Chrome, Edge, Firefox and Opera.
-* https://gitzip.org/#extension[GitZip for GitHub^]
-	** Only download required sub-folders/files from GitHub repos.
-	** Available for Chrome, Edge and Firefox.
-* https://www.octotree.io/download[Octotree^]
-	** Add a navigation pane to the left of any GitHub repo to navigate it easily.
-	** Available for Chrome, Edge, Firefox, Opera and Safari.
+* link:https://gitzip.org/#extension[GitZip for GitHub^]
+	** Only download required directories/files from GitHub repos.
+* link:https://www.octotree.io/download[Octotree^]
+	** Add a navigation pane to the left of a GitHub repo to navigate it easily.
 
-==== Contribution help
+==== Articles
 
-* https://github.com/firstcontributions/first-contributions[Learn how to make a Pull Request (PR)^]
+* link:https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1[CS Visualized: Useful Git Commands^]
 
-===== First Timers Only
+==== Git Deep
 
-* https://kentcdodds.com/blog/first-timers-only[First Timers Only blog post^]
-* https://twitter.com/first_tmrs_only['first-timers-only' on Twitter^]
-* https://github.com/search?utf8=%E2%9C%93&q=label%3Afirst-timers-only+is%3Aopen&type=Issues&ref=searchresults['first-timers-only' issues on GitHub^]
-
-===== More help
-
-* https://github.com/MunGell/awesome-for-beginners/[A GitHub repo which is 'awesome-for-beginners'!^]
-* https://eddiejaoude.github.io/book-open-source-tips/#_explore_open_source_projects[Links for easy contributions^]
-* Search for *awesome-<name_of_tech/language>* on GitHub for a list of amazing repositories in that technology or language.
-	** Eg: https://github.com/sorrycc/awesome-javascript[`awesome-javascript`^]
-	** https://github.com/sindresorhus/awesome[List of all the `awesome` repos^] 
-
-==== Good articles
-
-* https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[What is git commit, push, pull, log, aliases, fetch, config & clone^]
-* https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018[Git Gud: The Working Tree, Staging Area, and Local Repo^]
-* https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1[🌳🚀 CS Visualized: Useful Git Commands (good visual diagrams)^]
-
-==== Working of Git
-
-* https://www.youtube.com/watch?v=DjOk0jnqsLk[Internal Working of Git by Gaurav Sen^]
-* https://www.youtube.com/watch?v=yI0BtEzdGtw['Rules To Git By' by Nick Nisi^]
+* link:https://git.wiki.kernel.org/index.php/Git[Git Design Overview^]
+* link:https://www.youtube.com/watch?v=DjOk0jnqsLk[Internal Working of Git by Gaurav Sen^]
+* link:https://www.youtube.com/watch?v=yI0BtEzdGtw['Rules To Git By' by Nick Nisi^]
+* link:https://tom.preston-werner.com/2009/05/19/the-git-parable.html[The Git Parable^]
 
 '''
