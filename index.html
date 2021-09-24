@@ -3669,7 +3669,7 @@ The commands below will simply unstage added files and will NOT result in data l
 │   │   └───locks
 │   │       └───refs
 │   │           └───heads
-│   │               └───&lt;branch_name(s)&gt;
+│   │               └───&lt;branch_names&gt;
 │   │                   └───verifiable
 │   ├───objects
 │   │   └───&lt;first_2_SHA-256_characters&gt;
@@ -3680,10 +3680,10 @@ The commands below will simply unstage added files and will NOT result in data l
 │   ├───HEAD
 │   └───refs
 │       ├───heads
-│       │   └───&lt;branch_name(s)&gt;
+│       │   └───&lt;branch_names&gt;
 │       ├───remotes
-│       │   └───&lt;remote_alias(es)&gt;
-│       │       └───&lt;branch_name(s)&gt;
+│       │   └───&lt;remote_aliases&gt;
+│       │       └───&lt;branch_names&gt;
 │       └───stash
 ├───MERGE_HEAD
 ├───MERGE_MODE
@@ -3707,13 +3707,13 @@ The commands below will simply unstage added files and will NOT result in data l
 │   └───orig-head
 └───refs
     ├───heads
-    │   └───&lt;branch_name(s)&gt;
+    │   └───&lt;branch_names&gt;
     ├───remotes
-    │   └───&lt;remote_alias(es)&gt;
-    │       └───&lt;branch_name(s)&gt;
+    │   └───&lt;remote_aliases&gt;
+    │       └───&lt;branch_names&gt;
     ├───stash
     └───tags
-        └───&lt;tag_name(s)&gt;</code></pre>
+        └───&lt;tag_names&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3753,7 +3753,49 @@ The commands below will simply unstage added files and will NOT result in data l
 <div class="ulist">
 <ul>
 <li>
-<p><code>100644</code> is the mode of the file. (Indicates a normal non-executable file in this case.)</p>
+<p><code>100644</code> is the mode of the file. It is an octal number.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Octal: 100644
+Binary: 1000 000 110100100</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first four binary bits indicate the object type.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>1000</code> indicates a regular file. (As seen in this case.)</p>
+</li>
+<li>
+<p><code>1010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
+</li>
+<li>
+<p><code>1110</code> indicates a gitlink.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The next three binary bits (<code>000</code>) are unused.</p>
+</li>
+<li>
+<p>The last nine binary bits (<code>110100100</code>) indicate <a href="https://harshkapadia2.github.io/cli/terminal.html#changing-permissions" target="_blank" rel="noopener">Unix file permissions</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>644</code> and <code>755</code> are valid for regular files.</p>
+</li>
+<li>
+<p>Symlinks and gitlinks have the value <code>0</code> in this field.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>The next 40 character hexadecimal string is the <a href="#_sha1">SHA-1 hash</a> of the file.</p>
@@ -3812,7 +3854,7 @@ The words 'index', 'stage' and 'cache' are the same in Git and are used intercha
 <p>It is used to refer to the latest commit in the current branch.</p>
 </li>
 <li>
-<p>Usually it does not contain a commit <a href="#_sha1">SHA-1</a>, but contains the path to a file (of the name of the current branch) in the <a href="#_refs_directory">refs directory</a> which stores the last commit&#8217;s SHA-1 hash in that branch.</p>
+<p>Usually it does not contain a commit <a href="#_sha1">SHA-1</a>, but contains the path to a file (of the name of the current branch) in the <a href="#_the_refs_directory">refs directory</a> which stores the last commit&#8217;s SHA-1 hash in that branch.</p>
 </li>
 <li>
 <p>It contains a commit&#8217;s SHA-1 hash when <a href="#_commits_sha">a specific commit or tag is checked out</a>. (<a href="#_detached_head">Detached HEAD</a> state.)</p>
@@ -3863,7 +3905,7 @@ ref: refs/heads/test_branch</pre>
 <p>It also stores the SHA-1 hash of the commit which has been [tagged].</p>
 </li>
 <li>
-<p>The <a href="#_head_file"><code>HEAD</code> file</a> references a file (of the name of <a href="#_new_branch_name">the branch that is currently checked out</a>) from the <code>heads</code> directory in this (<code>refs</code>) directory.</p>
+<p>The <a href="#_the_head_file"><code>HEAD</code> file</a> references a file (of the name of <a href="#_new_branch_name">the branch that is currently checked out</a>) from the <code>heads</code> directory in this (<code>refs</code>) directory.</p>
 </li>
 </ul>
 </div>
@@ -3873,7 +3915,7 @@ ref: refs/heads/test_branch</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>One file is created per branch and tag in the <a href="#_refs_directory"><code>refs</code> directory</a>.</p>
+<p>One file is created per branch and tag in the <a href="#_the_refs_directory"><code>refs</code> directory</a>.</p>
 </li>
 <li>
 <p>In a repository with a lot of branches and tags, there is a huge number of refs and a lot of the refs and tags are not actively used/changed.</p>
@@ -4129,23 +4171,11 @@ ref: refs/heads/test_branch</pre>
 </div>
 <div class="sect2">
 <h3 id="_internal_working_of_git"><a class="anchor" href="#_internal_working_of_git"></a>Internal Working of Git</h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img loading="lazy" src="./static/img/admonition_icons/tip.png" alt="Tip">
-</td>
-<td class="content">
-It is recommended to go through this section only if the reader has some experience with Git. Absolute beginners do not need to know this.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>Some part of the internal working of Git will be explored through an example in this section. A Windows operating system with Git Bash is being used for this example. (Certain Unix commands work with Git Bash.)</p>
 </div>
 <div class="paragraph">
-<p>Run <code>git init</code> to initialize an empty Git [repo] in the <code>inside_git</code> directory (root directory). An empty hidden directory <code>.git</code> is created in the root folder.</p>
+<p>Run <code>git init</code> to initialize an empty Git [repo] in the <code>inside_git</code> directory (root directory). A hidden directory <code>.git</code> is created in the root folder.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4410,7 +4440,49 @@ It is recommended to go through this section only if the reader has some experie
 <div class="ulist">
 <ul>
 <li>
-<p><code>100644</code> is the mode, which is some sort of unix-style file permission and file type checking system.</p>
+<p><code>100644</code> is the mode of the file. It is an octal number.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Octal: 100644
+Binary: 1000 000 110100100</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first four binary bits indicate the object type.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>1000</code> indicates a regular file. (As seen in this case.)</p>
+</li>
+<li>
+<p><code>1010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
+</li>
+<li>
+<p><code>1110</code> indicates a gitlink.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The next three binary bits (<code>000</code>) are unused.</p>
+</li>
+<li>
+<p>The last nine binary bits (<code>110100100</code>) indicate <a href="https://harshkapadia2.github.io/cli/terminal.html#changing-permissions" target="_blank" rel="noopener">Unix file permissions</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>644</code> and <code>755</code> are valid for regular files.</p>
+</li>
+<li>
+<p>Symlinks and gitlinks have the value <code>0</code> in this field.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><code>blob</code> is the file type. (It can be a <code>tree</code> object as well - covered in the <code>Creating a directory</code> section below.)</p>
@@ -6186,7 +6258,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-09-23 23:58:10 UTC
+Last updated 2021-09-24 08:31:29 UTC
 </div>
 </div>
 </body>
