@@ -541,7 +541,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_git_internals">Git Internals</a>
 <ul class="sectlevel2">
 <li><a href="#_the_git_directory">The <code>.git</code> Directory</a></li>
-<li><a href="#_internal_working_of_git">Internal Working of Git</a></li>
+<li><a href="#_git_objects">Git Objects</a></li>
 </ul>
 </li>
 <li><a href="#_github">GitHub</a>
@@ -3724,6 +3724,22 @@ The commands below will simply unstage added files and will NOT result in data l
 <li>
 <p>This file contains the details of <a href="#_added_files">staged (added) files</a> and is the staging area of the repository.</p>
 </li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>It is created when files are added for the first time and is updated every time the <a href="#_git_add"><code>git add</code> command</a> is executed.</p>
 </li>
@@ -3832,18 +3848,6 @@ Binary: 1000 000 110100100</pre>
 <p><a href="https://jwiegley.github.io/git-from-the-bottom-up/2-The-Index/1-meet-the-middle-man.html" target="_blank" rel="noopener">More on the <code>index</code> file usage.</a></p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
-</td>
-<td class="content">
-The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect3">
@@ -4083,7 +4087,7 @@ ref: refs/heads/test_branch</pre>
 <p>To decrease access time, objects are placed in buckets (directories), with the first two characters of their SHA-1 hash as the name of the bucket. The remaining 38 characters are used to name the object&#8217;s file.</p>
 </li>
 <li>
-<p><a href="#_pack_file">More on the <code>pack</code> directory.</a></p>
+<p><a href="#_the_pack_directory">More on the <code>pack</code> directory.</a></p>
 </li>
 </ul>
 </div>
@@ -4170,28 +4174,99 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_internal_working_of_git"><a class="anchor" href="#_internal_working_of_git"></a>Internal Working of Git</h3>
-<div class="paragraph">
-<p>Some part of the internal working of Git will be explored through an example in this section. A Windows operating system with Git Bash is being used for this example. (Certain Unix commands work with Git Bash.)</p>
-</div>
-<div class="paragraph">
-<p>Run <code>git init</code> to initialize an empty Git [repo] in the <code>inside_git</code> directory (root directory). A hidden directory <code>.git</code> is created in the root folder.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img loading="lazy" src="./static/img/git-init.jpg" alt="Git Init" width="600" height="600">
-</div>
-</div>
-<div class="paragraph">
-<p>The command <code>du -c</code> is used to list the sub-directories of the root directory <code>inside_git</code> and the size (in kbs) of each sub-directory.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img loading="lazy" src="./static/img/du-c-1.jpg" alt="Du -c" width="600" height="600">
+<h3 id="_git_objects"><a class="anchor" href="#_git_objects"></a>Git Objects</h3>
+<div class="sect3">
+<h4 id="_table_of_contents_2"><a class="anchor" href="#_table_of_contents_2"></a>Table of Contents</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_introduction">Introduction</a></p>
+</li>
+<li>
+<p><a href="#_the_blob_object">The <code>blob</code> Object</a></p>
+</li>
+<li>
+<p><a href="#_the_commit_object">The <code>commit</code> Object</a></p>
+</li>
+<li>
+<p><a href="#_the_tree_object">The <code>tree</code> Object</a></p>
+</li>
+<li>
+<p><a href="#_parent_commits">Parent Commits</a></p>
+</li>
+<li>
+<p><a href="#_creating_directories">Creating Directories</a></p>
+</li>
+<li>
+<p><a href="#_renaming_files">Renaming Files</a></p>
+</li>
+<li>
+<p><a href="#_modifying_large_files">Modifying Large Files</a></p>
+</li>
+<li>
+<p><a href="#_the_pack_directory">The <code>pack</code> Directory</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_blob_object"><a class="anchor" href="#_blob_object"></a>Blob Object</h4>
+<h4 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h4>
+<div class="paragraph">
+<p>Git has two data structures, a mutable <a href="#_the_index_file">index</a> that caches information about the working directory and the next revision to be committed, and an immutable, append-only object database (<a href="#_repository">repository</a>) containing four types of objects</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Blob Object</p>
+</li>
+<li>
+<p>Commit Object</p>
+</li>
+<li>
+<p>Tree Object</p>
+</li>
+<li>
+<p>Tag Object</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Git carries out its version control using these objects to store data and the internal working of Git can be understood by understanding these objects.</p>
+</div>
+<div class="paragraph">
+<p>Some part of the internal working of Git will be explored through an example in this section.</p>
+</div>
+<div class="paragraph">
+<p>Run <code>git init</code> to initialize an empty <a href="#_repository">repository</a> in the <code>inside_git</code> directory (root directory). A hidden directory <code>.git</code> is created in this root folder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/git-init.jpg" alt="git init" width="600" height="600">
+</div>
+</div>
+<div class="paragraph">
+<p>The command <code>du -c</code> is used to list the sub-directories of <code>inside_git</code> and their sizes on disk (in kbs).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/du-c-1.jpg" alt="du -c" width="600" height="600">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_blob_object"><a class="anchor" href="#_the_blob_object"></a>The <code>blob</code> Object</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+A Blob Object stores the contents of a file.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Create a new file in the root folder.</p>
 </div>
@@ -4201,7 +4276,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Now the root directory contains the <code>.git</code> directory and the new file <code>master_file_1.txt</code>.</p>
+<p>Now the working tree (root directory) contains the <code>.git</code> directory and the new file <code>master_file_1.txt</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4209,7 +4284,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Add the file to the [staging area] using [<code>git add .</code>] and run <code>du -c</code> once again.</p>
+<p>Add the file to the <a href="#_staging_staging_areaindex">staging area</a> using <a href="#_period"><code>git add .</code></a> and run <code>du -c</code> once again.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4217,10 +4292,10 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that a new directory <code>e6</code> has been added to <code>./.git/objects</code>.</p>
+<p>Note that a new directory <code>e6</code> has been added to <code>.git/objects</code>.</p>
 </div>
 <div class="paragraph">
-<p>Use the <code>dir</code> (or <code>ls</code>) command to find out which file is present in the dir <code>./.git/objects/e6</code>.</p>
+<p>Use the <code>dir</code> (or <code>ls</code>) command to find out which file is present in the directory <code>.git/objects/e6</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4228,10 +4303,10 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph word-break-all">
-<p>The file name <code>9de29bb2d1d6434b8b29ae775ad8c2e48c5391</code> has 38 characters. On combining it with the folder name (<code>e6</code>) at the start, it becomes a 40 character string <code>e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</code>. This is a [SHA1] (Secure Hashing Algorithm 1) hash. Git encodes the content of the file (and more - more on that soon) in this hash. Every add and commit produces its own unique SHA1 hash(es). The first two characters of the hash are used for bucketing the hashes into folders by Git. The case of two hashes colliding is very rare. <strong>Git uses 4 to 8 characters to refer to a commit in short.</strong></p>
+<p>The file name <code>9de29bb2d1d6434b8b29ae775ad8c2e48c5391</code> is 38 characters long. On appending it to the folder name (<code>e6</code>), it becomes a 40 character string <code>e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</code>. This is a <a href="#_SHA-1">SHA-1 hash</a>. Git hashes the content of the file (and some more data) using the SHA-1 algorithm to produce a 40 character hexadecimal string. Every <a href="#_git_add">stage</a>, [commit] and [tag] produces its own unique SHA-1 hash(es). (Being a 40 character string, hash collisions are VERY rare.) The first two characters of the hash are used for bucketing the hashes into folders, to decrease access time. To make things easy, <strong>Git sometimes uses just 4 to 8 characters of an object&#8217;s hash to refer to it.</strong></p>
 </div>
 <div class="paragraph">
-<p>Now as mentioned in the previous paragraph, Git stores the contents of the file and other details in the hash. To check that out, some content needs to be added to the file. The file will then have to be added again (this will produce another hash).</p>
+<p>As mentioned in the previous paragraph, Git hashes the contents of the file and other details to create a 40 character SHA-1 hash. To verify that, some content needs to be added to the file. The file will then have to be added again. (This will produce another hash.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4244,10 +4319,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph word-break-all">
-<p>From the last command in the above picture, it can be inferred that a new hash <code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> was generated.</p>
-</div>
-<div class="paragraph">
-<p>Now check its contents using the <code>cat</code> command.</p>
+<p>From the last command in the image above, it can be inferred that a new hash <code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> was generated. Check its contents using the <code>cat</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4255,48 +4327,32 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Oops! That&#8217;s gibberish! So was what was said above a lie? No. Git actually compresses files with the <a href="https://www.zlib.net/" target="_blank" rel="noopener">zlib</a> library and then hashes them. So to make sense of the hash, it needs to be de-compressed.</p>
+<p>The output is gibberish because Git compresses file contents (and some additional data) with the <a href="https://www.zlib.net/" target="_blank" rel="noopener">zlib</a> library and then stores it in the file. So to make sense of the gibberish, the content of the file needs to be de-compressed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img loading="lazy" src="./static/img/de-compressed.jpg" alt="Decompress" width="600" height="600">
+<img loading="lazy" src="./static/img/decompress-file.png" alt="Decompress" width="600" height="600">
 </div>
 </div>
 <div class="paragraph">
-<p><code>blob 16Git is amazing!</code> is the content of the hashed file in Git.</p>
+<p><code>blob 16\0Git is amazing!\n</code> is the content of the hashed file. (<code>\0</code> and <code>\n</code> are not seen. Explained in the points below.)</p>
 </div>
 <div class="paragraph">
-<p>Breaking it down:</p>
+<p>Breaking it down</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>blob</code></strong> is the file type. It is an abbreviation for 'binary large object'.</p>
-<div class="paragraph">
-<p>Files can be of three types in Git:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Blob object</p>
+<p><strong><code>blob</code></strong> is the object type of the file. It is an abbreviation for 'Binary Large OBject'. These objects (files) store the content of the files.</p>
 </li>
 <li>
-<p>Commit object</p>
+<p><code>16</code> is the file size (length). <code>Git is amazing!</code> consists of 15 characters, but the <a href="https://harshkapadia2.github.io/cli/terminal.html#:~:text=It%20can%20be%20used%20to%20add%20text%20to%20a%20file%20using%20the%20output%20redirection%20operator"><code>echo</code> command</a> adds a new line (line feed) character (<code>\n</code>) at the end of the text, making the length 16.</p>
 </li>
 <li>
-<p>Tree object</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>More on <code>commit</code> and <code>tree</code> objects soon.</p>
-</div>
+<p>Just like the <code>\n</code> character which cannot be seen in the output, there is a NULL character (<code>\0</code>) between the length and file content.</p>
 </li>
 <li>
-<p><code>16</code> is the file size (length). <code>Git is amazing!</code> consists of 15 characters, but Git adds a null character (<code>\0</code>) before the data, making the length 16.</p>
-</li>
-<li>
-<p><code>Git is amazing!</code> is the file data that was originally entered.</p>
+<p><code>Git is amazing!\n</code> is the file content. (The <code>\n</code> is not visible.)</p>
 </li>
 </ul>
 </div>
@@ -4308,17 +4364,32 @@ ref: refs/heads/test_branch</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code>) will be generated!</p>
+<p>If <code>blob 16\0Git is amazing!\n</code> is hashed using SHA-1, the same hash (<code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code>) will be generated!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/sha1sum.png" alt="Generating hash for the string" width="600" height="600">
+</div>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The process of finding the contents of the file using <code>cat</code> is pretty cumbersome. It is a better idea to use the [plumbing commands] provided by Git.</p>
+<p><strong>So, Git generates the hash of the file using the string <code>&lt;object_type&gt; &lt;content_length&gt;\0&lt;file_content&gt;</code> and stores that string in the file after compressing it.</strong> (The name of the file is the last 38 characters of the 40 character hash that was generated. The first two characters are used for bucketing.)</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The process of finding the contents of the file using <code>cat</code> is pretty cumbersome. It is a better idea to use the <code>git cat-file</code> [plumbing command] provided by Git.</p>
 </div>
 <div class="paragraph">
-<p>Some of the plumbing commands that are needed:</p>
+<p>Variations of the <code>git cat-file</code> command that will be used</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4326,18 +4397,34 @@ ref: refs/heads/test_branch</pre>
 <p><code>git cat-file -p &lt;hash&gt;</code> (-p = pretty print) to display file data.</p>
 </li>
 <li>
-<p><code>git cat-file -t &lt;hash&gt;</code> (-t = type) to display file type (blob, commit or tree).</p>
+<p><code>git cat-file -t &lt;hash&gt;</code> (-t = type) to display file type (blob, commit, tree or tag).</p>
 </li>
 <li>
 <p><code>git cat-file -s &lt;hash&gt;</code> (-s = size) to display the file size (length).</p>
 </li>
 </ul>
 </div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_commit_and_tree_objects"><a class="anchor" href="#_commit_and_tree_objects"></a>Commit and Tree Objects</h4>
+<h4 id="_the_commit_object"><a class="anchor" href="#_the_commit_object"></a>The <code>commit</code> Object</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+A commit object links tree objects together into a history. It contains the name of a tree object (of the top-level source directory), a timestamp, a log message, and the names of zero or more parent commit objects.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Commit <code>master_file_1.txt</code> using [<code>git commit</code>] and then run <code>du -c</code> again.</p>
+<p>Commit <code>master_file_1.txt</code> and then run <code>du -c</code> again.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4345,10 +4432,10 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>From the above picture it can be noticed that two new directories <code>./.git/objects/1b</code> and <code>./.git/objects/d5</code> were created. Also, after committing the file, Git gives the first 7 characters of the SHA1 for that commit.</p>
+<p>From the above image it can be noticed that two new directories <code>.git/objects/1b</code> and <code>.git/objects/d5</code> were created. Also, after committing the file, Git printed the first seven characters of the SHA-1 hash for that commit in the output.</p>
 </div>
 <div class="paragraph">
-<p>Check the file type using the plumbing commands.</p>
+<p>Using the seven characters of the commit hash in the output, check the file type using the <code>git cat-file -t</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4359,7 +4446,7 @@ ref: refs/heads/test_branch</pre>
 <p>So the file type is <code>commit</code>, inferring that it is a file generated through a commit.</p>
 </div>
 <div class="paragraph">
-<p>Now check the content of the <strong>commit file</strong>.</p>
+<p>Print the contents of the commit object (file) using the <code>git cat-file -p</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4367,15 +4454,15 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Breaking down the output:</p>
+<p>Commit object content</p>
 </div>
 <div class="ulist word-break-all">
 <ul>
 <li>
-<p><code>tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc</code> is the other SHA1 hash that was generated (remember that two files were generated in <code>./.git/objects</code> on committing the file), of the type <code>tree</code>. The tree is the [snapshot] of the current state of the local repository. The contents of the tree file will be looked into soon.</p>
+<p><code>tree 1b2190cdc2801ec3df6505dc351dee878ac7f2fc</code> is the other SHA-1 hash that was generated (remember that two directories were generated in <code>.git/objects</code> on committing the file), of the type <code>tree</code>. The tree is the [snapshot] of the current state of the repository.</p>
 </li>
 <li>
-<p>Parent commit&#8217;s SHA1 hash (not present here - will be looked into in the <code>Adding another file (parent commit)</code> section below.)</p>
+<p><a href="#_parent_commits">Parent commit&#8217;s SHA-1 hash</a> (Not present here. Explained below.)</p>
 </li>
 <li>
 <p>The next line has the details of the author (the one who wrote the code):</p>
@@ -4394,7 +4481,7 @@ ref: refs/heads/test_branch</pre>
 </div>
 </li>
 <li>
-<p>The next line has the details of the committer (the one who pushed the code):</p>
+<p>The next line has the details of the committer (the one who committed the code):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -4410,18 +4497,30 @@ ref: refs/heads/test_branch</pre>
 </div>
 </li>
 <li>
-<p>A blank line</p>
-</li>
-<li>
 <p>Commit message</p>
 </li>
 <li>
-<p>Commit description (if provided) (not present here)</p>
+<p>Commit description (If provided. Not present here.)</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_the_tree_object"><a class="anchor" href="#_the_tree_object"></a>The <code>tree</code> Object</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+A tree object is the equivalent of a (sub)directory: it contains a list of filenames, each with some type bits and the name of a blob or tree object that is that file, symbolic link, or directory&#8217;s contents. This object describes a snapshot of the source tree.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Now check the contents of the <strong>tree file</strong>. (Take the hash from the commit file contents.)</p>
+<p>Check the contents of the tree file listed in the commit object (file).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4429,13 +4528,10 @@ ref: refs/heads/test_branch</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>The tree file has entries of the files &amp; directories in the snapshot (current state) of the local repository.</strong></p>
+<p><strong>The tree file has entries of the files &amp; directories in the snapshot (current state) of the local repository.</strong> The format of each line is the same.</p>
 </div>
 <div class="paragraph">
-<p>The format of each line is the same.</p>
-</div>
-<div class="paragraph word-break-all">
-<p>Have a look at <code>100644 blob 1a3851c172420a2198cf8ca6f2b776589d955cc5 master_file_1.txt</code>:</p>
+<p>Tree object content format</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4485,14 +4581,14 @@ Binary: 1000 000 110100100</pre>
 </div>
 </li>
 <li>
-<p><code>blob</code> is the file type. (It can be a <code>tree</code> object as well - covered in the <code>Creating a directory</code> section below.)</p>
+<p><code>blob</code> is the object type. (<a href="#_creating_directories">It can be a <code>tree</code> object as well.</a> Explained below.)</p>
 </li>
 </ul>
 </div>
 <div class="ulist word-break-all">
 <ul>
 <li>
-<p><code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> is the latest SHA1 hash of the added file. It is the same as the hash generated while adding the file to the staging area. This hash can be of a blob (like in this case) or a tree file (looked into in the <code>Creating a directory</code> section below).</p>
+<p><code>1a3851c172420a2198cf8ca6f2b776589d955cc5</code> is the SHA-1 hash of the file.</p>
 </li>
 <li>
 <p>Name of the file.</p>
@@ -4500,7 +4596,10 @@ Binary: 1000 000 110100100</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Take a look at the connections between the commit, tree and blob files.</p>
+<p><strong>So, the commit object points to the tree object, which in turn points to blobs and/or trees.</strong></p>
+</div>
+<div class="paragraph">
+<p>The connections between the commit, tree and blob files till now. (<a href="#_the_head_file"><code>HEAD</code></a> is just a pointer to the latest commit.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4521,9 +4620,9 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_adding_another_file_parent_commit"><a class="anchor" href="#_adding_another_file_parent_commit"></a>Adding Another File (Parent Commit)</h4>
+<h4 id="_parent_commits"><a class="anchor" href="#_parent_commits"></a>Parent Commits</h4>
 <div class="paragraph">
-<p>Create another file (<code>master_file_2.txt</code>), add it to Git and commit it.</p>
+<p>Create another file (<code>master_file_2.txt</code>), add it and commit it.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4531,7 +4630,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>Just like what was done before, check the contents of the commit file (using part of the hash <code>8282663</code> as seen in the above picture).</p>
+<p>Check the contents of the commit file (using part of the hash <code>8282663</code> as seen in the above image).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4539,7 +4638,10 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph word-break-all">
-<p>A new line <code>parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65</code> is seen. Remember, this is the hash of the previous commit. <strong>So Git is creating a graph.</strong> (A picture is provided below.) Also, the [<code>HEAD</code>] will now automatically point to this (latest - <code>82826</code>) commit rather than the parent (previous - <code>d5b8f</code>) commit as it was doing before. To verify, have a look at where the <code>HEAD</code> is pointing.</p>
+<p>A new line <code>parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65</code> is seen. Remember, this is the hash of the previous commit. <strong>Git is thus creating a graph.</strong> (Check image below.)</p>
+</div>
+<div class="paragraph">
+<p>Also, the <a href="#_the_head_file"><code>HEAD</code></a> will now automatically point to this (latest - <code>82826</code>) commit rather than the parent (previous - <code>d5b8f</code>) commit as it was doing before. To verify, check where the <code>HEAD</code> is pointing.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4558,7 +4660,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>Take a look at the new graph of the repository.</p>
+<p>From the commit object, tree object and HEAD position, the connection graph looks as follows</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4567,9 +4669,9 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_creating_a_directory"><a class="anchor" href="#_creating_a_directory"></a>Creating a Directory</h4>
+<h4 id="_creating_directories"><a class="anchor" href="#_creating_directories"></a>Creating Directories</h4>
 <div class="paragraph">
-<p>Create a new file (<code>master_dir_1_file_3.txt</code>) inside a a directory (<code>dir_1</code>), add it, commit it and look at the contents of the commit file.</p>
+<p>Create a new file (<code>master_dir_1_file_3.txt</code>) inside a directory (<code>dir_1</code>), add it, commit it and look at the contents of the commit file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4577,10 +4679,10 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>The commit file has the same format as before.</p>
+<p>The commit file has the <a href="#_the_commit_object:~:text=Commit%20object%20content">same format as before</a>.</p>
 </div>
 <div class="paragraph">
-<p>Now have a look at the contents of the tree file (with SHA1 hash <code>f6a65</code> as seen in the above picture).</p>
+<p>Check the contents of the tree file (with the hash <code>f6a65</code> as seen in the above image).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4591,7 +4693,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <p>It is surprising to note that the tree <code>f6a65</code> points to another tree <code>abecf</code>! The name of the new tree is <code>dir_1</code>.</p>
 </div>
 <div class="paragraph">
-<p>Now have a look at the contents of the <code>dir_1</code> tree.</p>
+<p>Check the contents of the <code>dir_1</code> tree.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4602,7 +4704,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <p>So it points to the file (<code>master_dir_1_file_3.txt</code>) inside the directory <code>dir_1</code>.</p>
 </div>
 <div class="paragraph">
-<p>Have a look at how the tree connected itself to the blobs.</p>
+<p>Have a look at how the tree <code>f6a65</code> connected itself to the tree and blobs.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4610,7 +4712,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>Also have a look at the new graph of the entire repository.</p>
+<p>The graph of the repository as it stands now</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4619,7 +4721,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_renaming_a_file"><a class="anchor" href="#_renaming_a_file"></a>Renaming a File</h4>
+<h4 id="_renaming_files"><a class="anchor" href="#_renaming_files"></a>Renaming Files</h4>
 <div class="paragraph">
 <p>Rename <code>master_file_1.txt</code> to <code>the_master_file.txt</code> to see how Git handles it internally.</p>
 </div>
@@ -4634,10 +4736,10 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>When the file is committed, Git is smart enough to recognize that a file was renamed and is not a new file, as can be seen in the last line of the above picture. It can recognize this because the SHA1 hash of the file has not changed (as the content of the file has not changed).</p>
+<p>When the file is committed, Git is smart enough to recognize that a file was renamed and is not a new file, as can be seen in the last line of the above image. It can recognize this because the SHA-1 hash of the file has not changed (as the content of the file has not changed).</p>
 </div>
 <div class="paragraph">
-<p>Now check the contents of the commit and tree files.</p>
+<p>Check the contents of the commit and tree files.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4645,10 +4747,10 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>Take a look at the last line. The hash <code>1a385</code> is same as the hash of the original file name (<code>master_file_1.txt</code>) (scroll up and check) and <strong>just the name of the file has been changed in the tree object by Git instead of creating a new blob file. This is efficient space management by Git!</strong></p>
+<p>From the last line, the hash <code>1a385</code> is same as the hash of the original file name (<code>master_file_1.txt</code>) and <strong>just the name of the file has been changed in the tree object instead of creating a new blob file.</strong> This is efficient space management by Git!</p>
 </div>
 <div class="paragraph">
-<p>Take a look at the structure of the repo.</p>
+<p>The structure of the repo.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4657,9 +4759,9 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_making_changes_to_huge_files"><a class="anchor" href="#_making_changes_to_huge_files"></a>Making Changes to Huge Files</h4>
+<h4 id="_modifying_large_files"><a class="anchor" href="#_modifying_large_files"></a>Modifying Large Files</h4>
 <div class="paragraph">
-<p>Add and commit a picture to Git. The size of the picture is 1.374 Mb (or 1374 kb), so it is a relatively huge file as compared to the other files (~ 1 kb).</p>
+<p>Add and commit a image to Git. The size of the image is 1.374 Mb (or 1374 kb), so it is a relatively huge file as compared to the other files (~ 1 kb/file).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4672,7 +4774,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>Now make a small change to the png file contents (append a <code>.</code> to the file contents) and then add and commit it again.</p>
+<p>Make a small change to the image file contents and then add and commit it again.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4680,7 +4782,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>On comparing the SHA1 hashes of <code>master_picture_1.png</code> in the latest (<code>6d2d2</code>) and previous (<code>27666</code>) tree, we can make out that they are <strong>different</strong>. So Git has created two different blobs (<code>ca893</code> and <code>1f7af</code>) for the same file, even when they only have a very small difference.</p>
+<p>The SHA-1 hashes of <code>master_image_1.png</code> in the latest (<code>6d2d2</code>) and previous (<code>27666</code>) tree are different, so Git has created two different blobs (<code>ca893</code> and <code>1f7af</code>) for the same file, even when they only have a very small difference.</p>
 </div>
 <div class="paragraph">
 <p>Run <code>du -c</code> now.</p>
@@ -4691,7 +4793,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 </div>
 <div class="paragraph">
-<p>As it can be seen, there are two directories (<code>./.git/objects/1f</code> and <code>./.git/objects/ca</code>) with the same size (1376 kb).</p>
+<p>From the image above, there are two directories (<code>.git/objects/1f</code> and <code>.git/objects/ca</code>) with the same size (1376 kb).</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4700,22 +4802,33 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-The directory content size (1376 kb) is greater than the picture size (1374 kb) as Git adds the file type and size (length) to the blob file and then hashes it.
+The directory content size (1376 kb) is greater than the image size (1374 kb) as Git adds the file type and size (length) to the blob file and then hashes it.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>So is Git inefficient at handling huge files? No. The content of the file has changed and this produces a different SHA1 hash (<code>1f7af</code>) than the original SHA1 hash (<code>ca893</code>) and so Git is not able to handle the change like it did when a file was simply renamed. Having multiple copies of such a huge file is not a problem in the local storage, but it will take up a lot of bandwidth while [pushing] and [pulling] from a platform like [GitHub]. So to avoid this, Git uses <strong>Delta compression</strong>. It uses the difference (<code>diff.</code> in short) of one of the files and indicates the other as the parent. This is looked into in the <code>Pack file</code> section below.</p>
+<p>So is Git inefficient at handling huge files? No. The content of the file has changed and this produces a different SHA-1 hash (<code>1f7af</code>) than the original SHA-1 hash (<code>ca893</code>), so Git is not able to handle the change like it did when a file was simply renamed. Having multiple copies of such a huge file is not a problem in the local repository, but it will take up a lot of bandwidth while <a href="#_git_push">pushing</a> and <a href="#_git_pull">pulling</a> from a platform like <a href="#_github">GitHub</a>. To avoid this, Git uses <strong>Delta Compression</strong>. It stores the difference (diff) of the older file from the new one and indicates the new one as the parent. This is looked into in the sub-section below.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pack_file"><a class="anchor" href="#_pack_file"></a>Pack File</h4>
-<div class="paragraph">
-<p><strong>Delta compression</strong> is carried out when the user pushes/pulls code to/from GitHub and when an aggressive garbage collection (<code>git gc --aggressive</code>) is carried out.</p>
+<h4 id="_the_pack_directory"><a class="anchor" href="#_the_pack_directory"></a>The <code>pack</code> Directory</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>.git
+├───...
+└───objects
+    ├───...
+    └───pack
+        ├───&lt;*.idx&gt;
+        └───&lt;*.pack&gt;</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Delta compression creates two files in <code>./.git/objects/pack</code>:</p>
+<p><strong>Delta compression</strong> is carried out when code is pushed/pulled to/from GitHub or when aggressive garbage collection (<code>git gc --aggressive</code>) is carried out.</p>
+</div>
+<div class="paragraph">
+<p>Delta compression creates two files in <code>.git/objects/pack</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -4728,10 +4841,7 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 </ul>
 </div>
 <div class="paragraph">
-<p>They will be talked about soon.</p>
-</div>
-<div class="paragraph">
-<p>Take a view of the current state of the repo.</p>
+<p>The current state of the repo</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4739,10 +4849,10 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 </div>
 </div>
 <div class="paragraph">
-<p>Note the size of <code>./.git/objects/pack</code> in the above picture (0 kb).</p>
+<p>The size of <code>.git/objects/pack</code> in the above image is 0 kb.</p>
 </div>
 <div class="paragraph">
-<p>Aggressive garbage collection will be used to carry out Delta compression and then <code>du -c</code> to view the changes.</p>
+<p>Aggressive garbage collection will be used to carry out Delta Compression and then <code>du -c</code> to view the changes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4756,21 +4866,17 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-The total size of the <code>.git</code> directory went down from 4220kb (seen in the first <code>du -c</code> picture in this sub-section) to 2838kb (as seen in the above picture). This is a 32.75% reduction in the size of the local repository!
+The total size of the <code>.git</code> directory went down from 4220kb (seen in the first <code>du -c</code> image in this sub-section) to 2838kb (as seen in the above image). This is a 32.75% reduction in the size of the local repository!
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Notice in the above picture that the size of <code>./.git/objects/pack</code> is 1380 kb and a lot of the files in <code>./.git/objects</code> have disappeared, except for <code>./.git/objects/e6</code>.</p>
+<p>Notice in the above image that the size of <code>.git/objects/pack</code> is 1380 kb and a lot of the files in <code>.git/objects</code> have disappeared, except for <code>.git/objects/e6</code>.</p>
 </div>
 <div class="paragraph">
-<p>All of this will be looked into, one by one.</p>
+<p>The contents of <code>.git/objects/pack</code></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Look at the contents of <code>./.git/objects/pack</code>.</p>
 <div class="imageblock">
 <div class="content">
 <img loading="lazy" src="./static/img/dir-2.jpg" alt="Content of directory" width="600" height="600">
@@ -4780,7 +4886,7 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 <p>As mentioned above, two files (a pack file <code>.pack</code> and an index file <code>.idx</code>) are created.</p>
 </div>
 <div class="paragraph">
-<p>Have a look at the contents of both the files using the plumbing command <code>git verify-pack -v path/to/pack/file/&lt;file_name&gt;.pack</code> (-v = verbose). (Works with <code>.idx</code> as well.)</p>
+<p>Check the contents of both the files using the plumbing command <code>git verify-pack -v path/to/pack/file/&lt;file_name&gt;.pack</code> (-v = verbose). (Works with the <code>.idx</code> file as well.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4791,34 +4897,10 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 <p><strong>The pack file is a single file containing the contents of all the objects that were removed from the file system.</strong></p>
 </div>
 <div class="paragraph">
-<p>Have a look at the hash <code>1f7af</code> (the blob of the modified picture). Its size is very large as compared to the others. Now look at the the hash <code>ca893</code> (the blob of the original picture). It is very small in size and it has the hash of the modified picture (<code>1f7af</code>) mentioned after it, indicating that its (ie, the original picture&#8217;s) parent is the modified file. <strong>Thus, Git stored the diff for one of the files rather than the entire file twice, making it space efficient!</strong></p>
+<p>The size of the newly modified image (hash <code>1f7af</code>) is very large. The blob of the original image (hash <code>ca893</code>) is very small in size in comparison and it has the hash of the modified image (<code>1f7af</code>) mentioned after it, indicating that its parent is the newly modified file. <strong>Thus, Git stored the entire new file and only a diff for the older file with a pointer to the newer file rather than storing the entire file twice, making it space efficient.</strong></p>
 </div>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
-</td>
-<td class="content">
-<a href="https://gist.github.com/matthewmccullough/2695758" target="_blank" rel="noopener">Similar example</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
-</td>
-<td class="content">
-<strong>The pack file has a graph in it, just like the commit, tree and blob files have one!</strong>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>The pack file has a graph in it, just like the commit, tree and blob files have one.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4832,34 +4914,17 @@ The <code>.idx</code> (index) file stores the same content as the <code>.pack</c
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Now look into the <code>./.git/objects</code> directory.</p>
 <div class="paragraph">
-<p>On running the aggressive garbage collection, Git got rid of all the files <strong>that were related to commits</strong> and added them to the pack file.</p>
+<p>On running the aggressive garbage collection, Git got rid of all the files in <code>.git/objects</code> <strong>that were connected with commits</strong> and added them to the pack file.</p>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>The <code>.git/objects/e6</code> directory did not get removed as it was not related (connected) to any tree object.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
-</td>
-<td class="content">
-On pushing and/or pulling, these files are not deleted, just a pack file and an index file are generated.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><a href="https://gist.github.com/matthewmccullough/2695758" target="_blank" rel="noopener">An example similar to the one discussed in this sub-section.</a></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>./.git/objects/e6</code> directory did not get removed as it was not related (connected) to any tree object.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><a href="https://git-scm.com/book/en/v2/Git-Internals-Packfiles" target="_blank" rel="noopener">More on Packfiles.</a></p>
 </div>
 <div class="paragraph">
 <p>Finally, take a look at the log of the repository.</p>
@@ -4867,21 +4932,6 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 <div class="imageblock">
 <div class="content">
 <img loading="lazy" src="./static/img/log-1.jpg" alt="Log of repository" width="600" height="600">
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Related</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://git-scm.com/book/en/v2/Git-Internals-Packfiles" target="_blank" rel="noopener">More details on the pack file</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=DjOk0jnqsLk" target="_blank" rel="noopener">Main source of this section on Git internals</a></p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 <hr>
@@ -6132,16 +6182,19 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 <div class="ulist">
 <ul>
 <li>
+<p><a href="https://tom.preston-werner.com/2009/05/19/the-git-parable.html" target="_blank" rel="noopener">The Git Parable</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=DjOk0jnqsLk" target="_blank" rel="noopener">Git for software engineers</a></p>
+</li>
+<li>
 <p><a href="https://git.wiki.kernel.org/index.php/Git" target="_blank" rel="noopener">Git Design Overview</a></p>
 </li>
 <li>
-<p><a href="https://www.youtube.com/watch?v=DjOk0jnqsLk" target="_blank" rel="noopener">Internal Working of Git by Gaurav Sen</a></p>
+<p><a href="https://www.youtube.com/watch?v=yI0BtEzdGtw" target="_blank" rel="noopener">Rules To Git By</a></p>
 </li>
 <li>
-<p><a href="https://www.youtube.com/watch?v=yI0BtEzdGtw" target="_blank" rel="noopener">'Rules To Git By' by Nick Nisi</a></p>
-</li>
-<li>
-<p><a href="https://tom.preston-werner.com/2009/05/19/the-git-parable.html" target="_blank" rel="noopener">The Git Parable</a></p>
+<p><a href="https://matthew-brett.github.io/curious-git" target="_blank" rel="noopener">Curious git</a></p>
 </li>
 </ul>
 </div>
@@ -6191,7 +6244,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-09-24 09:54:33 UTC
+Last updated 2021-09-26 19:03:02 UTC
 </div>
 </div>
 </body>
