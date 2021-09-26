@@ -90,6 +90,9 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 ==== The `index` File
 
 * This file contains the details of link:#_added_files[staged (added) files] and is the staging area of the repository.
+
+NOTE: The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
+
 * It is created when files are added for the first time and is updated every time the link:#_git_add[`git add` command] is executed.
 
 image::index-explained.png[alt="Index file explained", 400, 400]
@@ -121,8 +124,6 @@ image::git-ls-files.png[alt="'git ls-files --stage' command", 600, 600]
 	** The last string is the name of the file being referred to.
 * link:https://mincong.io/2018/04/28/git-index[More on the `index` file contents.^]
 * link:https://jwiegley.github.io/git-from-the-bottom-up/2-The-Index/1-meet-the-middle-man.html[More on the `index` file usage.^]
-
-NOTE: The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
 
 ==== The `HEAD` File
 
@@ -241,7 +242,7 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
 * The most important directory in the `.git` directory.
 * It houses the data (SHA-1 hashes) of all the link:#_internal_working_of_git[commit, tree and blob objects] in the repository.
 * To decrease access time, objects are placed in buckets (directories), with the first two characters of their SHA-1 hash as the name of the bucket. The remaining 38 characters are used to name the object's file.
-* link:#_pack_file[More on the `pack` directory.]
+* link:#_the_pack_directory[More on the `pack` directory.]
 
 ==== The `info` Directory
 

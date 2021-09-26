@@ -1,4 +1,4 @@
-const cacheName = "v26";
+const cacheName = "v27";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -42,7 +42,7 @@ const cacheAssets = [
 	"./static/img/connection-graph-3.png",
 	"./static/img/connection-graph-4.png",
 	"./static/img/cvcs.png",
-	"./static/img/de-compressed.jpg",
+	"./static/img/decompress-file.png",
 	"./static/img/dir-1.jpg",
 	"./static/img/dir-2.jpg",
 	"./static/img/du-c-1.jpg",
@@ -72,6 +72,7 @@ const cacheAssets = [
 	"./static/img/mkdir_1.jpg",
 	"./static/img/moon.svg",
 	"./static/img/mv-1.jpg",
+	"./static/img/sha1sum.png",
 	"./static/img/sun.svg",
 	"./static/img/touch-master_file_1.jpg",
 	"./static/img/touch-master_file_2.jpg",
