@@ -3773,23 +3773,23 @@ The words 'index', 'stage' and 'cache' are the same in Git and are used intercha
 <div class="literalblock">
 <div class="content">
 <pre>Octal: 100644
-Binary: 1000 000 110100100</pre>
+Binary: 001000 000 110100100</pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The first four binary bits indicate the object type.</p>
+<p>The first six binary bits indicate the object type.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>1000</code> indicates a regular file. (As seen in this case.)</p>
+<p><code>001000</code> indicates a regular file. (As seen in this case.)</p>
 </li>
 <li>
-<p><code>1010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
+<p><code>001010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
 </li>
 <li>
-<p><code>1110</code> indicates a gitlink.</p>
+<p><code>001110</code> indicates a <a href="https://www.oreilly.com/library/view/version-control-with/9780596158187/ch15s04.html#:~:text=gitlink" target="_blank" rel="noopener">gitlink</a>.</p>
 </li>
 </ul>
 </div>
@@ -4540,23 +4540,23 @@ A tree object is the equivalent of a (sub)directory: it contains a list of filen
 <div class="literalblock">
 <div class="content">
 <pre>Octal: 100644
-Binary: 1000 000 110100100</pre>
+Binary: 001000 000 110100100</pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The first four binary bits indicate the object type.</p>
+<p>The first six binary bits indicate the object type.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>1000</code> indicates a regular file. (As seen in this case.)</p>
+<p><code>001000</code> indicates a regular file. (As seen in this case.)</p>
 </li>
 <li>
-<p><code>1010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
+<p><code>001010</code> indicates a <a href="https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git" target="_blank" rel="noopener">symlink (symbolic link)</a>.</p>
 </li>
 <li>
-<p><code>1110</code> indicates a gitlink.</p>
+<p><code>001110</code> indicates a <a href="https://www.oreilly.com/library/view/version-control-with/9780596158187/ch15s04.html#:~:text=gitlink" target="_blank" rel="noopener">gitlink</a>.</p>
 </li>
 </ul>
 </div>
@@ -4596,7 +4596,7 @@ Binary: 1000 000 110100100</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>So, the commit object points to the tree object, which in turn points to blobs and/or trees.</strong></p>
+<p><strong>So, each commit object points to a tree object and each tree object points to a set of blobs and/or trees, which correspond respectively to files and subdirectories.</strong></p>
 </div>
 <div class="paragraph">
 <p>The connections between the commit, tree and blob files till now. (<a href="#_the_head_file"><code>HEAD</code></a> is just a pointer to the latest commit.)</p>
@@ -6244,7 +6244,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2021-09-26 19:07:15 UTC
+Last updated 2021-09-27 08:02:26 UTC
 </div>
 </div>
 </body>
