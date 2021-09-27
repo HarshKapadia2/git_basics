@@ -152,12 +152,12 @@ Tree object content format
 * `100644` is the mode of the file. It is an octal number.
 
 	Octal: 100644
-	Binary: 1000 000 110100100
+	Binary: 001000 000 110100100
 
-	** The first four binary bits indicate the object type.
-		*** `1000` indicates a regular file. (As seen in this case.)
-		*** `1010` indicates a link:https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git[symlink (symbolic link)^].
-		*** `1110` indicates a gitlink.
+	** The first six binary bits indicate the object type.
+		*** `001000` indicates a regular file. (As seen in this case.)
+		*** `001010` indicates a link:https://tdongsi.github.io/blog/2016/02/20/symlinks-in-git[symlink (symbolic link)^].
+		*** `001110` indicates a link:https://www.oreilly.com/library/view/version-control-with/9780596158187/ch15s04.html#:~:text=gitlink[gitlink^].
 	** The next three binary bits (`000`) are unused.
 	** The last nine binary bits (`110100100`) indicate link:https://harshkapadia2.github.io/cli/terminal.html#changing-permissions[Unix file permissions^].
 		*** `644` and `755` are valid for regular files.
@@ -168,7 +168,7 @@ Tree object content format
 * `1a3851c172420a2198cf8ca6f2b776589d955cc5` is the SHA-1 hash of the file.
 * Name of the file.
 
-**So, the commit object points to the tree object, which in turn points to blobs and/or trees.**
+**So, each commit object points to a tree object and each tree object points to a set of blobs and/or trees, which correspond respectively to files and subdirectories.**
 
 The connections between the commit, tree and blob files till now. (link:#_the_head_file[`HEAD`] is just a pointer to the latest commit.)
 
