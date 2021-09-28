@@ -249,7 +249,7 @@ From the last line, the hash `1a385` is same as the hash of the original file na
 
 The structure of the repo.
 
-image::connection-graph-4.png[alt="Connection Graph", 600, 600]
+image::connection-graph-4.png[alt="Connection Graph", 800, 800]
 
 ==== Modifying Large Files
 
