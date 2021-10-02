@@ -1,4 +1,3 @@
 include::../content/general_2/merge_conflicts.adoc[]
 include::../content/general_2/fork_syncing.adoc[]
 include::../content/general_2/checking_out_remote_branch.adoc[]
-include::../content/general_2/internal_working_of_git.adoc[]

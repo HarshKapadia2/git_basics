@@ -1,0 +1,163 @@
+=== Open Source Programs
+
+==== Table of Contents
+
+* link:#_google_summer_of_code[Google Summer of Code]
+* link:#_google_season_of_docs[Google Season of Docs]
+* link:#_outreachy[Outreachy]
+* link:#_major_league_hacking_fellowship[Major League Hacking Fellowship]
+* link:#_linux_foundation_mentorship_program[Linux Foundation Mentorship Program]
+* link:#_summary[Summary]
+
+==== Google Summer of Code
+
+image::GSOC.png[alt="GSoC Logo", 600, 300]
+ 
+Google Summer of Code (GSoC) is a global open source program where students can contribute to projects of organisations participating in Google Summer of Code for 10 weeks to gain exposure in the Software Development field and the participant will be paired with a mentor and get to learn various things in the domain of their interest. GSoC also provides a stipend to the participants.
+
+To participate in GSoC, it is recommended to contribute to an organisation of interest 2 to 3 months before the GSoC applications start.
+
+link:https://summerofcode.withgoogle.com[GSoC^]
+
+link:https://www.gsocorganizations.dev[GSoC Organisations^]
+
+==== Google Season of Docs
+
+image::GSOD.png[alt="GSoD Logo", 600, 300]
+
+Google Season of Docs (GSoD) provides support for open source projects to improve their documentation and gives professional technical writers an opportunity to gain experience in open source.
+
+link:https://developers.google.com/season-of-docs/docs/get-started[GSoD^]
+
+link:https://opensource.googleblog.com/2019/03/introducing-season-of-docs.html[Beginners Guide to GSoD^]
+
+==== Outreachy
+
+image::outreachy-logo.png[alt="Outreachy Logo", 600, 264]
+
+Outreachy is a three month long paid and remote internship for people who are underrepresented in specific fields. It is conducted twice a year.
+
+[IMPORTANT]
+====
+* Students who have participated in link:#_google_summer_of_code[Google Summer of Code] are not eligible for Outreachy.
+* Students whose university lies in the Northern Hemisphere are eligible to apply only for the first application round and those whose university lies in the Southern Hemisphere are eligible only for the second round. Those whose university lies near the Equator are eligible to apply in both the application rounds.
+====
+
+The application process of Outreachy
+
+* Initial Application Period
+	** For the initial application one needs to write five essays on the questions asked in the application. These essays are basically to understand whether one belongs to an underrepresented group or not.
+	** One is selected for the next step on the basis of these essays.
+* Contribution Period
+	** Now the list of projects will be released and participants need to contribute to their chosen projects and contact mentors.
+	** They also have to fill the final application.
+* Intern Selection Period
+	** Mentor will tell Outreachy organizers which intern they want and a final announcement for selected interns will be made.
+
+link:https://www.outreachy.org/apply[Outreachy^]
+
+link:https://hagerdakroury.github.io/post/outreachy-1[Beginners Guide to Outreachy^]
+
+==== Major League Hacking Fellowship
+
+image::MLH-logo.png[alt="MLH-logo", 600, 300]
+
+Major League Hacking (MLH) Fellowship is a 12 week internship program designed to level up Tech Skills. The Program is divided into three tracks
+
+* Open Source
+	** This track is about contributing to some great open source projects that are used by thousands of companies around the world.
+* Software Engineering
+	** This track is about working on real-world Software Engineering problems by collaborating on projects by real companies and Government partners. +
+* Prep Program
+	** THis track is about building out one's portfolio and experimenting with new technologies by collaborating in a short hackathon sprint.
+
+link:https://fellowship.mlh.io/programs/software-engineering[MLH Fellowship^]
+
+link:https://dev.to/pawankolhe/applying-to-the-mlh-fellowship-tips-tricks-1jc1[Beginners Guide to MLH Fellowship^]
+
+==== Linux Foundation Mentorship Program
+
+image::the-linux-foundation-logo.png[alt="Linux-foundation-logo", 600, 300]
+
+The Linux Foundation Mentorship Program gives one an opportunity to learn from open source contributors and contribute to open source projects.
+
+Current mentorship programs include
+
+* Linux Kernel
+* LF Networking
+* Hyperledger
+* CNCF
+* OpenHPC
+* Open Mainframe Project
+* GraphQL
+
+link:https://www.linuxfoundation.org/about/diversity-inclusivity/mentorship[Linux Foundation^]
+
+link:https://docs.linuxfoundation.org/lfx/mentorship[Beginners Guide to the Linux Foundation Mentorship Program^]
+
+==== Summary
+
+[cols= "1, 2, 2, 3"]
+|===
+| Name | Timeline | Links | Eligibility
+
+| Google Summer of Code (GSoC)
+| Oct-Aug
+| link:https://summerofcode.withgoogle.com[GSoC^]
+
+  link:https://www.gsocorganizations.dev[GSoC Organisations^]
+| For Students:
+
+  Age should be at least 18 years.
+
+  Should be enrolled in a Post-Academic Program.
+
+  Student must be eligible to work in the residing country for the duration of the program.
+
+  Should should not be an Organisation Administrator or Mentor in the program.
+
+| Google Season Of Docs (GSoD)
+| Feb-Nov
+| link:https://developers.google.com/season-of-docs/docs/get-started[GSoD^]
+
+  link:https://opensource.googleblog.com/2019/03/introducing-season-of-docs.html[Beginners Guide to GSoD^]
+|
+
+| Outreachy
+| May-Aug
+
+  Dec-March
+| link:https://www.outreachy.org/apply[Outreachy^]
+
+  link:https://hagerdakroury.github.io/post/outreachy-1[Beginners Guide to Outreachy^]
+| Students who have participated in link:#_google_summer_of_code[GSoC] are not eligible for Outreachy.
+
+  Students whose university lies in the Northern Hemisphere are eligible to apply only for the first application round and those whose university lies in the Southern Hemisphere are eligible only for the second round. Those whose university lies near the Equator are eligible to apply in both the application rounds.
+
+| MLH Fellowship
+| Spring batch: Jan-April
+
+  Summer batch: May-Aug
+
+  Fall batch: Sept-Dec
+| link:https://fellowship.mlh.io/programs/software-engineering[MLH Fellowship^]
+
+  link:https://dev.to/pawankolhe/applying-to-the-mlh-fellowship-tips-tricks-1jc1[Beginners guide to MLH Fellowship^]
+| Age should be above 18 yrs.
+
+  Student should be able to spend the hours required by the program.
+
+| Linux Foundation Mentorship Program
+| Spring term: March-May
+
+  Summer term: June-Aug
+
+  Fall term: Sept-Nov
+| link:https://www.linuxfoundation.org/about/diversity-inclusivity/mentorship[Linux Foundation^]
+
+  link:https://docs.linuxfoundation.org/lfx/mentorship[Beginners Guide to the Linux Foundation Mentorship Program^]
+|
+
+|===
+
+'''

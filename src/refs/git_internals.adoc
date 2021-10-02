@@ -1,0 +1,2 @@
+include::../content/git_internals/the_git_directory.adoc[]
+include::../content/git_internals/git_objects.adoc[]

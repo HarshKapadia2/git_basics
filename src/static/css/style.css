@@ -30,12 +30,18 @@ code {
 	background-color: #eeeeee !important;
 }
 
+h1,
+.title {
+	color: #ba3925 !important;
+}
+
 .announcement {
 	font-weight: bold;
 	font-size: 1.5em;
 	line-height: 1.5em;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
+	min-height: 5em;
 }
 
 .announcement img {
@@ -153,6 +159,10 @@ code {
 }
 
 @media screen and (max-width: 600px) {
+	.announcement {
+		min-height: 6em;
+	}
+
 	.announcement img {
 		width: 7em;
 	}
@@ -166,6 +176,7 @@ body.mobile-edge-case .word-break-all {
 
 /* ================================================== TOC (LIGHT MODE) ============================================== */
 
+#toctitle,
 .sectlevel1 li a {
 	color: #ba3925 !important;
 }
@@ -208,7 +219,8 @@ body::-webkit-scrollbar-thumb,
 /* ======================================================= DARK MODE =========================================================== */
 
 body.dark,
-body.dark .btn {
+body.dark .btn,
+body.dark table {
 	background-color: black;
 	color: #e0e0e0;
 }
@@ -305,4 +317,47 @@ body.dark #toc::-webkit-scrollbar-track {
 body.dark::-webkit-scrollbar-thumb,
 body.dark #toc::-webkit-scrollbar-thumb {
 	background-color: #616161;
+}
+
+/* ================================================ FONTS ================================================== */
+
+body,
+.admonitionblock td.content > .title,
+.audioblock > .title,
+.exampleblock > .title,
+.imageblock > .title,
+.listingblock > .title,
+.literalblock > .title,
+.stemblock > .title,
+.openblock > .title,
+.paragraph > .title,
+.quoteblock > .title,
+table.tableblock > .title,
+.verseblock > .title,
+.videoblock > .title,
+.dlist > .title,
+.olist > .title,
+.ulist > .title,
+.qlist > .title,
+.hdlist > .title,
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6,
+#toc ul,
+.admonitionblock > table td.icon .title,
+.verseblock pre,
+.conum[data-value] {
+	font-family: "Montserrat", sans-serif;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: "PT Mono", monospace;
 }

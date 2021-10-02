@@ -7,21 +7,18 @@ NOTE: HEAD is contextual. It will point to the latest commit in the current bran
 
 image::working-of-commit.jpeg[alt="Working of Commit", 600, 600]
 
-* To check where the current HEAD is pointing, use `cat .git/HEAD`.
+* To check where the current HEAD is pointing, run `cat .git/HEAD` in the root directory.
+	** Eg:
 
-** Eg:
+		# in the 'main' branch
+		$ cat .git/HEAD
+		ref: refs/heads/main
+		$ git switch test_branch
+		Switched to branch 'test_branch'
+		$ cat .git/HEAD
+		ref: refs/heads/test_branch
 
- # in the master branch
- $ cat .git/HEAD
- # output
- ref: refs/heads/master
-
- git checkout test_branch
- # switched to test branch
- $ git .git/HEAD
- # output
- ref: refs/heads/test_branch
-
+[#_detached_head]
 * When the HEAD points to a commit that is not the latest commit in a branch, that is a *detached HEAD*. A specific commit can be referred to, using link:#_git_checkout[`git checkout`].
 
 .Related
