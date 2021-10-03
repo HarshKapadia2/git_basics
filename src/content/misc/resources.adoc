@@ -46,8 +46,10 @@
 
 * link:https://tom.preston-werner.com/2009/05/19/the-git-parable.html[The Git Parable^]
 * link:https://www.youtube.com/watch?v=DjOk0jnqsLk[Git for software engineers^]
+* link:https://www.youtube.com/watch?v=P6jD966jzlk[Fear Not The SHA!^]
 * link:https://git.wiki.kernel.org/index.php/Git[Git Design Overview^]
 * link:https://www.youtube.com/watch?v=yI0BtEzdGtw[Rules To Git By^]
 * link:https://matthew-brett.github.io/curious-git[Curious git^]
+* link:https://github.com/pluralsight/git-internals-pdf[Git Internals PDF^]
 
 '''
