@@ -27,30 +27,40 @@ jobs:
         steps:
             - name: Checkout code
               run: |
-                  # Set repository URL
-                  REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-                  BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+                  # Setup repository
+                  git init .
+                  git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
 
-                  # Clone repository
-                  git clone --depth 2 -b "${BRANCH_NAME}" --no-single-branch "${REPOSITORY_URL}" .
+                  # Fetch and checkout code
+                  BRANCH_NAME="branch";
+                  case "$GITHUB_REF" in
+                      refs/heads/*)
+                          BRANCH_NAME="${GITHUB_REF#refs/heads/}";;
+                      pull/*/head)
+                          BRANCH_NAME="${GITHUB_REF#pull/}";
+                          BRANCH_NAME="${GITHUB_REF%/head}";
+                          BRANCH_NAME="pull-request-${BRANCH_NAME}";;
+                  esac
+                  git fetch origin "${GITHUB_REF}:${BRANCH_NAME}" --depth 1;
+                  git switch "$BRANCH_NAME";
 
-                  # Don't switch to gh-pages if not on main
-                  if [ "${BRANCH_NAME}" == "main" ]; then
-                      # Switch to gh-pages branch
-                      if ! git show-branch remotes/origin/gh-pages; then
-                        # If the branch doesn't exist, then create an orphan branch
-                        echo "Could not find gh-pages branch, creating as orphan"
-                        git switch --orphan gh-pages
+                  # Switch to gh-pages if on main
+                  if [ "$BRANCH_NAME" = "main" ]; then
+                      # Try to fetch gh-pages branch
+                      if ! git fetch origin gh-pages; then
+                          # If the branch doesn't exist, then create an orphan branch
+                          echo "Could not find gh-pages branch, creating as orphan"
+                          git switch --orphan gh-pages
                       else
-                        # Else, switch to the branch
-                        git switch gh-pages
+                          # Else, switch to the branch
+                          echo "Switching to gh-pages branch"
+                          git switch gh-pages
                       fi
                       
                       # Delete all old files
-                      rm -rf *
-
+                      rm -rf ./*
                       # Get latest source and buildscript
-                      git restore -s "${BRANCH_NAME}" src build.sh
+                      git restore -s "$BRANCH_NAME" public src .env.production package-lock.json package.json
                   fi
 
             - name: Build site using Asciidoctor
@@ -78,7 +88,7 @@ jobs:
                   git config user.email "cd-deploy-gh-pages@bot"
 
                   # Commit changes
-                  git commit -m "Deploy to pages: $(date +'%Y-%m-%d %T')"
+                  git commit -m "Deploy to pages: $(date +'%Y-%m-%d %T') UTC"
 
                   # Remove 'https://' from beginning of REPOSITORY_URL
                   REPOSITORY_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
