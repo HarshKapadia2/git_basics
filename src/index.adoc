@@ -23,14 +23,16 @@ Knowing the basics of Git and GitHub is the only prerequisite to start contribut
 
 *This project is open source* and the repository can be found at https://github.com/HarshKapadia2/git_basics[role=external,window=_blank]. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!
 
-For further questions, please feel free to contact the author, Harsh Kapadia, via https://otc.zulipchat.com[OTC^], https://twitter.com/harshgkapadia[Twitter^], https://www.linkedin.com/in/harshgkapadia/[LinkedIn^] or e-mail (harshgkapadia@gmail.com).
+For further questions, please feel free to contact the author, Harsh Kapadia, via link:https://ourtech.community[OTC^], link:https://twitter.com/harshgkapadia[Twitter^], link:https://www.linkedin.com/in/harshgkapadia[LinkedIn^] or e-mail (link:mailto:harshgkapadia@gmail.com[harshgkapadia@gmail.com^]).
 
 [IMPORTANT]
 ====
-Get started with Git and GitHub:
+Git and GitHub sessions by the author:
 
-* https://www.youtube.com/watch?v=HF12-91iazM[Git and GitHub crash course^]
-* https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
+* link:https://www.youtube.com/watch?v=HF12-91iazM[Git Basics - The basics of Git and GitHub!^]
+* link:https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
+* link:https://www.youtube.com/watch?v=cwnj8N8t46s[Git Internals - How Does Git Work!?^]
+
 ====
 
 NOTE: One might want to familiarize themselves with some link:#_terms[terms] before starting, although they will be linked at places where they are required as well.
