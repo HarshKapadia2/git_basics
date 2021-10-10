@@ -59,8 +59,9 @@ jobs:
                       
                       # Delete all old files
                       rm -rf ./*
+
                       # Get latest source and buildscript
-                      git restore -s "$BRANCH_NAME" public src .env.production package-lock.json package.json
+                      git restore -s "$BRANCH_NAME" src build.sh
                   fi
 
             - name: Build site using Asciidoctor
