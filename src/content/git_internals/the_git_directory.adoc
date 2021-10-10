@@ -240,7 +240,7 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
 ```
 
 * The most important directory in the `.git` directory.
-* It houses the data (SHA-1 hashes) of all the link:#_internal_working_of_git[commit, tree and blob objects] in the repository.
+* It houses the data (SHA-1 hashes) of all the link:#_git_objects[commit, tree and blob objects] in the repository.
 * To decrease access time, objects are placed in buckets (directories), with the first two characters of their SHA-1 hash as the name of the bucket. The remaining 38 characters are used to name the object's file.
 * link:#_the_pack_directory[More on the `pack` directory.]
 
