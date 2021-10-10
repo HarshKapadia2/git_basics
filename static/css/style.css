@@ -219,7 +219,8 @@ body::-webkit-scrollbar-thumb,
 /* ======================================================= DARK MODE =========================================================== */
 
 body.dark,
-body.dark .btn {
+body.dark .btn,
+body.dark table {
 	background-color: black;
 	color: #e0e0e0;
 }
