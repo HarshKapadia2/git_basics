@@ -1,9 +1,9 @@
 === Working Tree
 
-* It notes the untracked files in the working directory/copy - a copy of the most recent state of the files you're working on.
+* It notes the untracked files in the working directory/copy - a copy of the most recent state of the files one is working on.
 * Any changes to files will be marked and seen in the Working Tree.
-* Here if you make changes and do not explicitly save them to git, you will lose the changes made to your files.
-* If you make changes to files in your working tree git will recognize that are modified, but until you tell git “Hey pay attention to these files,” it won’t save anything that goes on in them.
+* Here if one makes changes and do not explicitly save them to git, they will lose the changes made to their files.
+* If one makes changes to files in their working tree, git will recognize that are modified, but until they tell git “Hey pay attention to these files,” it won’t save anything that goes on in them.
 * https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c[Further details^].
 
 .Related
