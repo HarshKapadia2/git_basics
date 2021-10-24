@@ -220,7 +220,8 @@ body::-webkit-scrollbar-thumb,
 
 body.dark,
 body.dark .btn,
-body.dark table {
+body.dark table,
+body.dark th {
 	background-color: black;
 	color: #e0e0e0;
 }
