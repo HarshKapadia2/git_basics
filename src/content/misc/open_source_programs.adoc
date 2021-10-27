@@ -11,7 +11,7 @@
 
 ==== Google Summer of Code
 
-image::GSOC.png[alt="GSoC Logo", 600, 300]
+image::gsoc.png[alt="GSoC Logo", 600, 300]
  
 Google Summer of Code (GSoC) is a global open source program where students can contribute to projects of organisations participating in Google Summer of Code for 10 weeks to gain exposure in the Software Development field and the participant will be paired with a mentor and get to learn various things in the domain of their interest. GSoC also provides a stipend to the participants.
 
@@ -23,7 +23,7 @@ link:https://www.gsocorganizations.dev[GSoC Organisations^]
 
 ==== Google Season of Docs
 
-image::GSOD.png[alt="GSoD Logo", 600, 300]
+image::gsod.png[alt="GSoD Logo", 600, 300]
 
 Google Season of Docs (GSoD) provides support for open source projects to improve their documentation and gives professional technical writers an opportunity to gain experience in open source.
 
@@ -33,7 +33,7 @@ link:https://opensource.googleblog.com/2019/03/introducing-season-of-docs.html[B
 
 ==== Outreachy
 
-image::outreachy-logo.png[alt="Outreachy Logo", 600, 264]
+image::outreachy.png[alt="Outreachy Logo", 600, 264]
 
 Outreachy is a three month long paid and remote internship for people who are underrepresented in specific fields. It is conducted twice a year.
 
@@ -60,7 +60,7 @@ link:https://hagerdakroury.github.io/post/outreachy-1[Beginners Guide to Outreac
 
 ==== Major League Hacking Fellowship
 
-image::MLH-logo.png[alt="MLH-logo", 600, 300]
+image::mlh.png[alt="MLH-logo", 600, 300]
 
 Major League Hacking (MLH) Fellowship is a 12 week internship program designed to level up Tech Skills. The Program is divided into three tracks
 
@@ -77,7 +77,7 @@ link:https://dev.to/pawankolhe/applying-to-the-mlh-fellowship-tips-tricks-1jc1[B
 
 ==== Linux Foundation Mentorship Program
 
-image::the-linux-foundation-logo.png[alt="Linux-foundation-logo", 600, 300]
+image::the-linux-foundation.png[alt="Linux-foundation-logo", 600, 300]
 
 The Linux Foundation Mentorship Program gives one an opportunity to learn from open source contributors and contribute to open source projects.
 
