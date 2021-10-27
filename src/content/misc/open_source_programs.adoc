@@ -95,6 +95,7 @@ link:https://www.linuxfoundation.org/about/diversity-inclusivity/mentorship[Linu
 
 link:https://docs.linuxfoundation.org/lfx/mentorship[Beginners Guide to the Linux Foundation Mentorship Program^]
 
+[.x-overflow]
 ==== Summary
 
 [cols= "1, 2, 2, 3"]
