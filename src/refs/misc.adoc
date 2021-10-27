@@ -1,1 +1,2 @@
+include::../content/misc/open_source_programs.adoc[]
 include::../content/misc/resources.adoc[]
