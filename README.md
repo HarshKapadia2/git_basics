@@ -18,7 +18,7 @@
 
 -   [Git Basics - The basics of Git and GitHub!](https://www.youtube.com/watch?v=HF12-91iazM)
 -   [Hacktoberfest, Open Source and Pull Requests](https://www.youtube.com/watch?v=uJdFNksgKJA)
--   [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=cwnj8N8t46s)
+-   [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=TZRS9llBBYU)
 
 ### Contributions
 

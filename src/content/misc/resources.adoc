@@ -4,7 +4,7 @@
 
 * link:https://www.youtube.com/watch?v=HF12-91iazM[Git Basics - The basics of Git and GitHub!^]
 * link:https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
-* link:https://www.youtube.com/watch?v=cwnj8N8t46s[Git Internals - How Does Git Work!?^]
+* link:https://www.youtube.com/watch?v=TZRS9llBBYU[Git Internals - How Does Git Work!?^]
 
 ==== Getting Started with Git and GitHub
 
