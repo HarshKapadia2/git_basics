@@ -31,7 +31,7 @@ https://www.atlassian.com/git/tutorials/using-branches[Further details^].
 ===== <branch_name>
 
 * Creates a new branch, but this does not check out the new branch.
-* Use link:#_git_checkout[`git checkout`] to check out (view/switch to) the new branch.
+* Use link:#_git_switch[`git switch`] or link:#_git_checkout[`git checkout`] to check out (view/switch to) the new branch.
 
 ===== -d <branch_name>
 
@@ -50,6 +50,11 @@ TIP: If the currently checked out branch is to be deleted, link:#_git_checkout[s
 ===== '-m <new_branch_name>' or '-M <new_branch_name>'
 
 * Rename the current branch to `new_branch_name`.
+
+===== --show-current
+
+* Print the current name of the branch.
+* Does not print anything in the link:#_detached_head[detached HEAD] state.
 
 .Related
 ****
