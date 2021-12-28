@@ -1,26 +1,26 @@
 const pwaInstallDiv = document.querySelector(".pwa-install-div");
 const pwaInstallBtn = document.querySelector("#pwa-install-btn");
 const pwaInstallDismiss = document.querySelector("#pwa-install-dismiss");
-const back_to_top_btn = document.querySelector(".back-to-top-btn");
+const backToTopBtn = document.querySelector(".back-to-top-btn");
 const header = document.querySelector("#header");
 const body = document.querySelector("body");
 const toc = document.querySelector("#toc");
 
-const db_name = "git_basics";
-const db_version = 1;
-const obj_store_name = "theme";
+const dbName = "git_basics";
+const dbVersion = 1;
+const objStoreName = "theme";
 
 let pwaInstallEvent;
 let theme;
-let theme_btn;
-let system_dark_theme = window.matchMedia("(prefers-color-scheme: dark)");
+let themeBtn;
+let systemDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 // Service worker and PWA
 
 if (navigator.serviceWorker) {
 	window.addEventListener("load", () => {
 		navigator.serviceWorker
-			.register("service_worker.js")
+			.register("service-worker.js")
 			.catch((err) => console.error(`Service Worker error: ${err}`));
 	});
 
@@ -52,11 +52,11 @@ window.addEventListener("load", async () => {
 
 // System/browser theme change listener
 
-if (!system_dark_theme.addEventListener)
-	system_dark_theme.addEventListener = (event, listener) =>
-		system_dark_theme.addListener(listener);
+if (!systemDarkTheme.addEventListener)
+	systemDarkTheme.addEventListener = (event, listener) =>
+		systemDarkTheme.addListener(listener);
 
-system_dark_theme.addEventListener("change", async (e) => {
+systemDarkTheme.addEventListener("change", async (e) => {
 	if (e.matches) theme = "dark";
 	else theme = "light";
 
@@ -68,7 +68,7 @@ system_dark_theme.addEventListener("change", async (e) => {
 const observer = new IntersectionObserver(scrollToTop);
 observer.observe(header);
 
-back_to_top_btn.addEventListener("click", () => header.scrollIntoView(true));
+backToTopBtn.addEventListener("click", () => header.scrollIntoView(true));
 
 // Functions
 
@@ -84,27 +84,27 @@ function dismissPWAInstallPrompt() {
 
 function scrollToTop(entries, observer) {
 	entries.forEach((entry) => {
-		if (entry.isIntersecting) back_to_top_btn.classList.add("hidden");
-		else back_to_top_btn.classList.remove("hidden");
+		if (entry.isIntersecting) backToTopBtn.classList.add("hidden");
+		else backToTopBtn.classList.remove("hidden");
 	});
 }
 
 function createThemeSwitcher() {
-	theme_btn = document.createElement("button");
+	themeBtn = document.createElement("button");
 
-	theme_btn.classList.add("btn", "theme-switcher");
-	theme_btn.addEventListener("click", switchTheme);
-	body.appendChild(theme_btn);
+	themeBtn.classList.add("btn", "theme-switcher");
+	themeBtn.addEventListener("click", switchTheme);
+	body.appendChild(themeBtn);
 }
 
 async function switchTheme() {
 	if (theme === "light") {
-		theme_btn.setAttribute("aria-label", "Light mode");
+		themeBtn.setAttribute("aria-label", "Light mode");
 		body.classList.add("dark");
 		theme = "dark";
 		await saveDatabase();
 	} else {
-		theme_btn.setAttribute("aria-label", "Dark mode");
+		themeBtn.setAttribute("aria-label", "Dark mode");
 		body.classList.remove("dark");
 		theme = "light";
 		await saveDatabase();
@@ -113,11 +113,11 @@ async function switchTheme() {
 
 async function applyTheme() {
 	if (theme === "light") {
-		theme_btn.setAttribute("aria-label", "Dark mode");
+		themeBtn.setAttribute("aria-label", "Dark mode");
 		body.classList.remove("dark");
 		await saveDatabase();
 	} else {
-		theme_btn.setAttribute("aria-label", "Light mode");
+		themeBtn.setAttribute("aria-label", "Light mode");
 		body.classList.add("dark");
 		await saveDatabase();
 	}
@@ -125,31 +125,31 @@ async function applyTheme() {
 
 async function loadDatabase() {
 	return new Promise((resolve, reject) => {
-		let request = indexedDB.open(db_name, db_version);
+		let request = indexedDB.open(dbName, dbVersion);
 
 		request.addEventListener("error", reject);
 
 		request.addEventListener("upgradeneeded", (e) => {
 			let db = e.target.result;
 
-			if (!db.objectStoreNames.contains(obj_store_name))
-				db.createObjectStore(obj_store_name);
+			if (!db.objectStoreNames.contains(objStoreName))
+				db.createObjectStore(objStoreName);
 		});
 
 		request.addEventListener("success", (e) => {
 			let db = e.target.result;
 
-			let transaction = db.transaction(obj_store_name, "readonly");
-			let store = transaction.objectStore(obj_store_name);
+			let transaction = db.transaction(objStoreName, "readonly");
+			let store = transaction.objectStore(objStoreName);
 
 			let getTheme = store.get("theme");
 			getTheme.addEventListener("error", reject);
 			getTheme.addEventListener("success", (e) => {
-				let idb_theme = e.target.result;
+				let idbTheme = e.target.result;
 
-				if (idb_theme) theme = idb_theme;
+				if (idbTheme) theme = idbTheme;
 				else {
-					if (system_dark_theme.matches) theme = "dark";
+					if (systemDarkTheme.matches) theme = "dark";
 					else theme = "light";
 				}
 
@@ -161,15 +161,15 @@ async function loadDatabase() {
 
 async function saveDatabase() {
 	return new Promise((resolve, reject) => {
-		let request = indexedDB.open(db_name, db_version);
+		let request = indexedDB.open(dbName, dbVersion);
 
 		request.addEventListener("error", reject);
 
 		request.addEventListener("success", (e) => {
 			let db = e.target.result;
 
-			let transaction = db.transaction(obj_store_name, "readwrite");
-			let store = transaction.objectStore(obj_store_name);
+			let transaction = db.transaction(objStoreName, "readwrite");
+			let store = transaction.objectStore(objStoreName);
 
 			store.put(theme, "theme");
 			resolve();
@@ -178,35 +178,45 @@ async function saveDatabase() {
 }
 
 function addAnnouncement() {
-	const announcement_div_parent = document.createElement("div");
-	const announcement_text = document.createElement("div");
-	const announcement_link = document.createElement("a");
-	const announcement_img = document.createElement("img");
+	const announcementWrapper = document.createElement("div");
+	const announcementText1 = document.createElement("span");
+	const announcementText2 = document.createElement("span");
+	const announcementText3 = document.createElement("span");
+	const googlePlayLink = document.createElement("a");
+	const asciidoctorJetLink = document.createElement("a");
 
-	announcement_div_parent.classList.add("announcement");
-	announcement_text.innerText =
-		"git_basics is available on the Play Store! 🎉";
-	announcement_link.href =
+	announcementWrapper.classList.add("announcement");
+
+	announcementText1.innerText = "git_basics is available on the ";
+	announcementText2.innerText = " and uses the ";
+	announcementText3.innerText = " template! 🎉";
+
+	googlePlayLink.href =
 		"https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics";
-	announcement_link.target = "_blank";
-	announcement_link.rel = "noreferrer";
-	announcement_img.src =
-		"https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
-	announcement_img.alt = "Get it on Google Play";
+	googlePlayLink.target = "_blank";
+	googlePlayLink.rel = "noreferrer";
+	googlePlayLink.innerText = "Google Play Store";
 
-	announcement_link.appendChild(announcement_img);
+	asciidoctorJetLink.href = "https://harshkapadia2.github.io/asciidoctor-jet";
+	asciidoctorJetLink.target = "_blank";
+	asciidoctorJetLink.rel = "noreferrer";
+	asciidoctorJetLink.innerText = "Asciidoctor Jet";
+	asciidoctorJetLink.style.fontStyle = "italic";
 
-	announcement_div_parent.appendChild(announcement_text);
-	announcement_div_parent.appendChild(announcement_link);
-	header.insertBefore(announcement_div_parent, toc);
+	announcementWrapper.appendChild(announcementText1);
+	announcementWrapper.appendChild(googlePlayLink);
+	announcementWrapper.appendChild(announcementText2);
+	announcementWrapper.appendChild(asciidoctorJetLink);
+	announcementWrapper.appendChild(announcementText3);
+	header.insertBefore(announcementWrapper, toc);
 }
 
 function mobileEdgeCaseStyling() {
-	const user_agent = navigator.userAgent;
+	const userAgent = navigator.userAgent;
 
 	if (
-		(user_agent.indexOf("Edg") > -1 && user_agent.indexOf("Mobile") > -1) ||
-		user_agent.indexOf("iPhone") > -1
+		(userAgent.indexOf("Edg") > -1 && userAgent.indexOf("Mobile") > -1) ||
+		userAgent.indexOf("iPhone") > -1
 	)
 		body.classList.add("mobile-edge-case");
 }

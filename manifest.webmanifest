@@ -5,6 +5,7 @@
 	"orientation": "portrait",
 	"scope": "/git_basics/",
 	"start_url": "/git_basics/",
+	"id": "/git_basics/",
 	"theme_color": "#000000",
 	"background_color": "#000000",
 	"icons": [

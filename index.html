@@ -437,27 +437,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 <meta
 	name="keywords"
-	content="git, github, git_basics, git bash, basics of git, basics of github"
+	content="git, github, git_basics, basics of git, basics of github"
 />
-<meta name="description" content="The basics of Git and GitHub!" />
+<meta
+	name="description"
+	content="The basics of Git and GitHub-like services."
+/>
 <meta name="theme-color" content="#000000" />
 <meta property="og:site_name" content="git_basics" />
 <meta property="og:title" content="git_basics" />
 <meta property="og:type" content="website" />
 <meta
 	property="og:description"
-	content="The basics of Git and GitHub-like services!"
+	content="The basics of Git and GitHub-like services."
 />
 <meta property="og:url" content="https://harshkapadia2.github.io/git_basics" />
 <meta
 	property="og:image"
-	content="https://user-images.githubusercontent.com/50140864/109862372-5f398880-7c86-11eb-89fb-71572e9b1db4.png"
+	content="https://harshkapadia2.github.io/git_basics/static/img/og-image.png"
 />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="twitter:card" content="summary_large_image" />
 <meta
 	property="twitter:image"
-	content="https://user-images.githubusercontent.com/50140864/109861960-e63a3100-7c85-11eb-908b-0607048b93e3.png"
+	content="https://harshkapadia2.github.io/git_basics/static/img/og-image.png"
 />
 
 <script defer src="static/js/main.js"></script>
@@ -480,7 +487,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>git_basics</h1>
 <div class="details">
 <span id="author" class="author">Harsh Kapadia</span><br>
-<span id="revnumber">version 2</span>
+<span id="revnumber">version 3</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -591,7 +598,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_abstract"><a class="anchor" href="#_abstract"></a>Abstract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A web site for the basics of Git and GitHub-like services.</p>
+<p>A website for the basics of Git and GitHub-like services.</p>
 </div>
 </div>
 </div>
@@ -605,10 +612,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Knowing the basics of Git and GitHub is the only prerequisite to start contributing and learning them sometimes feels like a daunting task. The aim of this guide is to help anyone get started with open source and keep helping them along their journey.</p>
 </div>
 <div class="paragraph">
-<p><strong>This project is open source</strong> and the repository can be found at <a href="https://github.com/HarshKapadia2/git_basics" class="bare external" target="_blank" rel="noopener">https://github.com/HarshKapadia2/git_basics</a>. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!</p>
+<p><strong>This project is open source</strong> and the repository can be found at <a href="https://github.com/HarshKapadia2/git_basics" target="_blank" rel="noopener">github.com/HarshKapadia2/git_basics</a>. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!</p>
 </div>
 <div class="paragraph">
-<p>For further questions, please feel free to contact the author, Harsh Kapadia, via <a href="https://ourtech.community" target="_blank" rel="noopener">OTC</a>, <a href="https://twitter.com/harshgkapadia" target="_blank" rel="noopener">Twitter</a>, <a href="https://www.linkedin.com/in/harshgkapadia" target="_blank" rel="noopener">LinkedIn</a> or e-mail (<a href="mailto:harshgkapadia@gmail.com" target="_blank" rel="noopener">harshgkapadia@gmail.com</a>).</p>
+<p>For further questions, please feel free to contact the author, <a href="https://harshkapadia.me" target="_blank" rel="noopener">Harsh Kapadia</a>, via <a href="https://ourtech.community" target="_blank" rel="noopener">OTC</a>, <a href="https://twitter.com/harshgkapadia" target="_blank" rel="noopener">Twitter</a>, <a href="https://www.linkedin.com/in/harshgkapadia" target="_blank" rel="noopener">LinkedIn</a> or e-mail (<a href="mailto:contact@harshkapadia.me" target="_blank" rel="noopener">contact@harshkapadia.me</a>).</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1708,7 +1715,7 @@ Commit changes frequently. This makes it easier to revert back to older versions
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>  :sparkles: feat: add hat wobble (#26)
+<pre class="highlightjs highlight"><code class="language-none hljs">  :sparkles: feat: add hat wobble (#26)
   ^--------^ ^---^ ^------------^ ^---^
        |       |         |          |
        |       |         |          +----&gt; PR or issue resolved (if any).
@@ -2565,7 +2572,7 @@ This is useful for documenting all merges that occur in a repository, as a merge
 <p>Creates a new branch, but this does not check out the new branch.</p>
 </li>
 <li>
-<p>Use <a href="#_git_checkout"><code>git checkout</code></a> to check out (view/switch to) the new branch.</p>
+<p>Use <a href="#_git_switch"><code>git switch</code></a> or <a href="#_git_checkout"><code>git checkout</code></a> to check out (view/switch to) the new branch.</p>
 </li>
 </ul>
 </div>
@@ -2632,6 +2639,19 @@ If the currently checked out branch is to be deleted, <a href="#_git_checkout">s
 <ul>
 <li>
 <p>Rename the current branch to <code>new_branch_name</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_show_current"><a class="anchor" href="#_show_current"></a>--show-current</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Print the current name of the branch.</p>
+</li>
+<li>
+<p>Does not print anything in the <a href="#_detached_head">detached HEAD</a> state.</p>
 </li>
 </ul>
 </div>
@@ -3369,7 +3389,7 @@ The <code>git pull</code> step can be split into <code>git fetch</code> &amp; <c
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>git remote add originalRepo &lt;link_to_original_repo&gt;.git
+<pre class="highlightjs highlight"><code class="language-none hljs">git remote add originalRepo &lt;link_to_original_repo&gt;.git
 git pull originalRepo &lt;branch_name&gt;
 git push -u origin &lt;branch_name&gt;</code></pre>
 </div>
@@ -3682,7 +3702,7 @@ The two articles have been covered as a talk as well. (<a href="https://www.yout
 <h4 id="_the_git_directory_contents"><a class="anchor" href="#_the_git_directory_contents"></a>The <code>.git</code> Directory Contents</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───addp-hunk-edit.diff
 ├───COMMIT_EDITMSG
 ├───config
@@ -3917,7 +3937,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_refs_directory"><a class="anchor" href="#_the_refs_directory"></a>The <code>refs</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───...
 └───refs
     ├───heads
@@ -3982,7 +4002,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_logs_directory"><a class="anchor" href="#_the_logs_directory"></a>The <code>logs</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───...
 └───logs
     ├───HEAD
@@ -4094,7 +4114,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_objects_directory"><a class="anchor" href="#_the_objects_directory"></a>The <code>objects</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───...
 └───objects
     ├───&lt;first_2_SHA-1_characters&gt;
@@ -4126,7 +4146,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_info_directory"><a class="anchor" href="#_the_info_directory"></a>The <code>info</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───...
 └───info
     └───exclude</code></pre>
@@ -4845,7 +4865,7 @@ The directory content size (1376 kb) is greater than the image size (1374 kb) as
 <h4 id="_the_pack_directory"><a class="anchor" href="#_the_pack_directory"></a>The <code>pack</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>.git
+<pre class="highlightjs highlight"><code class="language-none hljs">.git
 ├───...
 └───objects
     ├───...
@@ -5173,7 +5193,7 @@ A good place to get to know how a repository compares with the recommended commu
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code># repo name (or logo/picture)
+<pre class="highlightjs highlight"><code class="language-none hljs"># repo name (or logo/picture)
 &lt;Add badges (shields) here&gt;
 &lt;Hosting URL of project (if any)&gt;
 &lt;Tag line&gt;
@@ -6567,15 +6587,13 @@ We rise by lifting others.
 </div>
 <div class="quoteblock">
 <blockquote>
-Alone, we can do so little;
-Together we can do so much.
+Alone we can do so little; Together we can do so much.
 </blockquote>
 <div class="attribution">
 &#8212; Helen Keller
 </div>
 </div>
-	<a href="./static/html/privacy_policy.html">Privacy policy</a>
-
+<hr>
 	<div class="pwa-install-div hidden">
 		<div id="pwa-install-text">Ready for offline use!</div>
 		<button id="pwa-install-btn">Install</button>
@@ -6590,11 +6608,26 @@ Together we can do so much.
 </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/shell.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 <div id="footer">
-<div id="footer-text">
-Version 2<br>
-Last updated 2021-11-19 14:36:54 UTC
-</div>
+	<a href="/static/html/privacy_policy.html">Privacy policy</a>
+	<br />
+	<br />
+
+	Created using
+	<a
+		href="https://harshkapadia2.github.io/asciidoctor-jet"
+		target="_blank"
+		rel="noreferrer"
+		><i>Asciidoctor Jet</i></a
+	>.
 </div>
 </body>
 </html>

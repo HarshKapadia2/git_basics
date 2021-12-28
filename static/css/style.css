@@ -14,6 +14,14 @@ a code:hover {
 	color: #1d4b8f !important;
 }
 
+#footer a {
+	color: #90caf9 !important;
+}
+
+#footer a:hover {
+	color: #42a5f5 !important;
+}
+
 .imageblock {
 	display: flex;
 	flex-direction: column;
@@ -158,6 +166,11 @@ h1,
 	display: none;
 }
 
+#footer {
+	background-color: black;
+	color: #e0e0e0;
+}
+
 @media screen and (max-width: 600px) {
 	.announcement {
 		min-height: 6em;
@@ -288,7 +301,8 @@ body.dark .pwa-install-div {
 }
 
 body.dark #toc {
-	border-color: black;
+	border-left-color: #212121;
+	border-right-color: #212121;
 }
 
 body.dark .pwa-install-div {
@@ -303,6 +317,7 @@ body.dark #pwa-install-btn {
 }
 
 body.dark li,
+body.dark p,
 body.dark .details,
 body.dark td,
 body.dark blockquote,

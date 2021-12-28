@@ -1,4 +1,4 @@
-const cacheName = "v37";
+const cacheName = "v39";
 const cacheAssets = [
 	"./",
 	"./index.html",
@@ -75,6 +75,7 @@ const cacheAssets = [
 	"./static/img/mlh.png",
 	"./static/img/moon.svg",
 	"./static/img/mv-1.jpg",
+	"./static/img/og-image.png",
 	"./static/img/outreachy.png",
 	"./static/img/sha1sum.png",
 	"./static/img/sun.svg",
