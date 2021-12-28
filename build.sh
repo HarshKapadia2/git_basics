@@ -2,24 +2,29 @@
 
 set -eu;
 
-output="${1-./build}";
-echo "Building to: '${output}'";
+script_dir=$(dirname "${0}");
 
-mkdir -p "${output}";
+# Create the 'build' directory if it doesn't exist
+mkdir -p "${script_dir}/build";
 
-for path in \
-	"static"                       \
-	"manifest.webmanifest"         \
-	"service_worker.js"            \
-	"robots.txt"                   \
-	"google66b7e1d4dbf56798.html"  \
+# Remove all files from the 'build' directory to prevent residual files
+rm -rf "${script_dir}/build/"*;
+
+# Copy files to the 'build' directory
+for path in							\
+	"static"						\
+	"manifest.webmanifest"			\
+	"robots.txt"					\
+	"service-worker.js"				\
+	"google66b7e1d4dbf56798.html"	\
 ; do
-	cp -r "src/${path}" "${output}/";
-done
+	cp -r "${script_dir}/src/${path}" "${script_dir}/build";
+done;
 
-asciidoctor "src/index.adoc" -a webfonts! -o "${output}/index.html";
+# Build site
+asciidoctor "${script_dir}/src/index.adoc" -a webfonts! -o "${script_dir}/build/index.html";
 
 # Lazy load images
-sed -i -e 's/<img/<img loading="lazy"/g' "${output}/index.html";
+sed -i -e 's/<img/<img loading="lazy"/g' "${script_dir}/build/index.html";
 
-echo "Build complete";
+echo "Asciidoctor Jet static site build complete.";

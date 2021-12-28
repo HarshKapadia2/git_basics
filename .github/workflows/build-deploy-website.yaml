@@ -1,0 +1,63 @@
+name: Build and deploy website
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - ".github/workflows/**"
+            - "src/**"
+            - build.sh
+    pull_request:
+        branches:
+            - main
+        paths:
+            - ".github/workflows/**"
+            - "src/**"
+            - build.sh
+    workflow_dispatch: # Allows manual execution of workflow
+
+jobs:
+    build-website:
+        if: startsWith(github.ref, 'refs/pull/')
+        runs-on: ubuntu-latest
+        container: "docker://asciidoctor/docker-asciidoctor:latest"
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Build site using Asciidoctor
+              run: |
+                  # Give execution permission to buildscript
+                  chmod +x build.sh
+
+                  # Run buildscript
+                  ./build.sh
+
+    build-deploy-website:
+        if: startsWith(github.ref, 'refs/heads/')
+        runs-on: ubuntu-latest
+        container: "docker://asciidoctor/docker-asciidoctor:latest"
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Build site using Asciidoctor
+              run: |
+                  # Give execution permission to buildscript
+                  chmod +x build.sh
+
+                  # Run buildscript
+                  ./build.sh
+
+            - name: Install package for Deploy Action
+              run: |
+                  apk update
+                  apk add rsync
+
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@4.1.8
+              with:
+                  branch: gh-pages
+                  folder: build
+                  clean: true

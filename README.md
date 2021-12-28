@@ -2,10 +2,10 @@
 	<img src="./src/static/img/git_basics_logo.svg" alt="git_basics" width="80%" />
 	<br />
 	<br />
-	<b>A web site for the basics of Git and GitHub-like services.</b>
+	<b>A website for the basics of Git and GitHub-like services.</b>
 	<br />
 	<br />
-	View the PWA at <a href="https://harshkapadia2.github.io/git_basics">harshkapadia2.github.io/git_basics</a>
+	View the PWA at <a href="https://harshkapadia2.github.io/git_basics">HarshKapadia2.github.io/git_basics</a>
 	<br />
 	or
 	<br />
@@ -32,5 +32,7 @@ Please be mindful of the [Code of Conduct](CODE_OF_CONDUCT.md) while contributin
 <br />
 
 <sub>
+	Created using <a href="https://harshkapadia2.github.io/asciidoctor-jet"><i>Asciidoctor Jet</i></a>.
+	<br />
 	The Git logo belongs to <a href="https://www.git-scm.com">Git</a> and is used under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0 license</a>.
 </sub>

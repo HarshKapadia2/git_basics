@@ -1,19 +1,22 @@
 = git_basics
 Harsh Kapadia
-v2
-:favicon:   ./static/img/favicon.ico
+v3
+:author:    Harsh Kapadia
 :toc:       left
+:favicon:   ./static/img/favicon.ico
 :imagesdir: ./static/img
 :icons:     image
 :iconsdir:	./static/img/admonition_icons
 :docinfo:   shared
-:author:    Harsh Kapadia
 :sectanchors:
 :figure-caption!:
+:source-highlighter: highlight.js
+:highlightjs-languages: shell
+:nofooter:
 
 == Abstract
 
-A web site for the basics of Git and GitHub-like services.
+A website for the basics of Git and GitHub-like services.
 
 == Preface
 
@@ -21,9 +24,9 @@ The open source community is inclusive and friendly. Contributing to it is alway
 
 Knowing the basics of Git and GitHub is the only prerequisite to start contributing and learning them sometimes feels like a daunting task. The aim of this guide is to help anyone get started with open source and keep helping them along their journey.
 
-*This project is open source* and the repository can be found at https://github.com/HarshKapadia2/git_basics[role=external,window=_blank]. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!
+*This project is open source* and the repository can be found at link:https://github.com/HarshKapadia2/git_basics[github.com/HarshKapadia2/git_basics^]. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!
 
-For further questions, please feel free to contact the author, Harsh Kapadia, via link:https://ourtech.community[OTC^], link:https://twitter.com/harshgkapadia[Twitter^], link:https://www.linkedin.com/in/harshgkapadia[LinkedIn^] or e-mail (link:mailto:harshgkapadia@gmail.com[harshgkapadia@gmail.com^]).
+For further questions, please feel free to contact the author, link:https://harshkapadia.me[Harsh Kapadia^], via link:https://ourtech.community[OTC^], link:https://twitter.com/harshgkapadia[Twitter^], link:https://www.linkedin.com/in/harshgkapadia[LinkedIn^] or e-mail (link:mailto:contact@harshkapadia.me[contact@harshkapadia.me^]).
 
 [IMPORTANT]
 ====
@@ -102,12 +105,11 @@ Kindness always wins.
 We rise by lifting others.
 
 [quote, Helen Keller]
-Alone, we can do so little;
-Together we can do so much.
+Alone we can do so little; Together we can do so much.
+
+'''
 
 ++++
-	<a href="./static/html/privacy_policy.html">Privacy policy</a>
-
 	<div class="pwa-install-div hidden">
 		<div id="pwa-install-text">Ready for offline use!</div>
 		<button id="pwa-install-btn">Install</button>
