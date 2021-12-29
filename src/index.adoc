@@ -11,7 +11,8 @@ v3
 :sectanchors:
 :figure-caption!:
 :source-highlighter: highlight.js
-:highlightjs-languages: shell
+:highlightjsdir: ./static/highlight
+:highlightjs-theme: github-light-dark
 :nofooter:
 
 == Abstract
