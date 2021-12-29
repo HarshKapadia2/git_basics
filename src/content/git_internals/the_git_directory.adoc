@@ -21,7 +21,8 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 
 ==== The `.git` Directory Contents
 
-```
+[source, shell]
+----
 .git
 ├───addp-hunk-edit.diff
 ├───COMMIT_EDITMSG
@@ -84,8 +85,7 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
     ├───stash
     └───tags
         └───<tag_names>
-
-```
+----
 
 ==== The `index` File
 
@@ -103,9 +103,12 @@ image::git-ls-files.png[alt="'git ls-files --stage' command", 600, 600]
 
 * From the image above
 	** `100644` is the mode of the file. It is an octal number.
-
-		Octal: 100644
-		Binary: 001000 000 110100100
++
+[source, plaintext]
+----
+Octal: 100644
+Binary: 001000 000 110100100
+----
 
 		*** The first six binary bits indicate the object type.
 			**** `001000` indicates a regular file. (As seen in this case.)
@@ -132,18 +135,22 @@ image::git-ls-files.png[alt="'git ls-files --stage' command", 600, 600]
 * It contains a commit's SHA-1 hash when link:#_commits_sha[a specific commit or tag is checked out]. (link:#_detached_head[Detached HEAD] state.)
 * link:#_head[More on the `HEAD` file.]
 * Eg:
-
-	# in the 'main' branch
-	$ cat .git/HEAD
-	ref: refs/heads/main
-	$ git switch test_branch
-	Switched to branch 'test_branch'
-	$ cat .git/HEAD
-	ref: refs/heads/test_branch
++
+[source, shell]
+----
+# in the 'main' branch
+$ cat .git/HEAD
+ref: refs/heads/main
+$ git switch test_branch
+Switched to branch 'test_branch'
+$ cat .git/HEAD
+ref: refs/heads/test_branch
+----
 
 ==== The `refs` Directory
 
-```
+[source, shell]
+----
 .git
 ├───...
 └───refs
@@ -155,7 +162,7 @@ image::git-ls-files.png[alt="'git ls-files --stage' command", 600, 600]
     ├───stash
     └───tags
         └───<tag_name(s)>
-```
+----
 
 * This directory holds the reference to the latest commit in every local branch and fetched remote branch in the form of the SHA-1 hash of the commit.
 * It also stores the SHA-1 hash of the commit which has been [tagged].
@@ -175,7 +182,8 @@ image::cat-packed-refs.png[alt="Print the packed-ref file", 600, 600]
 
 ==== The `logs` Directory
 
-```
+[source, shell]
+----
 .git
 ├───...
 └───logs
@@ -187,7 +195,7 @@ image::cat-packed-refs.png[alt="Print the packed-ref file", 600, 600]
         │   └───<remote_alias(es)>
         │       └───<branch_name(s)>
         └───stash
-```
+----
 
 * Contains the history of all commits in order.
 
@@ -227,7 +235,8 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
 
 ==== The `objects` Directory
 
-```
+[source, shell]
+----
 .git
 ├───...
 └───objects
@@ -237,7 +246,7 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
     └───pack
         ├───<*.idx>
         └───<*.pack>
-```
+----
 
 * The most important directory in the `.git` directory.
 * It houses the data (SHA-1 hashes) of all the link:#_git_objects[commit, tree and blob objects] in the repository.
@@ -246,12 +255,13 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
 
 ==== The `info` Directory
 
-```
+[source, shell]
+----
 .git
 ├───...
 └───info
     └───exclude
-```
+----
 
 * It contains the `exclude` file which behaves like the link:#_gitignore_file[`.gitignore` file], but is used to ignore files locally without modifying `.gitignore`.
 * link:#_ignore_files_locally_without_modifying_gitignore[More on the `exclude` file.]

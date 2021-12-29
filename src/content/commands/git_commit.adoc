@@ -42,7 +42,8 @@ TIP: _Don't_ commit half-done or incomplete work.
 
 * General commit message structure below
 
-```
+[source, plaintext]
+----
   :sparkles: feat: add hat wobble (#26)
   ^--------^ ^---^ ^------------^ ^---^
        |       |         |          |
@@ -53,7 +54,7 @@ TIP: _Don't_ commit half-done or incomplete work.
        |       +----> Type:- chore, docs, feat, fix, refactor,style, test, etc.
        |
        +----> Emoji:- :tada: :bookmark: :sparkles: :bug: :books: :wrench: :truck:
-```
+----
 
 IMPORTANT: More on https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79[types and emojis^].
 

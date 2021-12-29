@@ -43,11 +43,12 @@ NOTE: The `git pull` step can be split into `git fetch` & `git merge` as well.
 
 * Summary of the important commands to sync a fork
 
-```
-git remote add originalRepo <link_to_original_repo>.git
-git pull originalRepo <branch_name>
-git push -u origin <branch_name>
-```
+[source, shell]
+----
+$ git remote add originalRepo <link_to_original_repo>.git
+$ git pull originalRepo <branch_name>
+$ git push -u origin <branch_name>
+----
 
 (where `originalRepo` = original remote repo alias & `origin` = remote forked repo alias)
 

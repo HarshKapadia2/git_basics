@@ -150,9 +150,12 @@ image::cat-file-p-2.jpg[alt="Check contents", 600, 600]
 Tree object content format
 
 * `100644` is the mode of the file. It is an octal number.
-
-	Octal: 100644
-	Binary: 001000 000 110100100
++
+[source, plaintext]
+----
+Octal: 100644
+Binary: 001000 000 110100100
+----
 
 	** The first six binary bits indicate the object type.
 		*** `001000` indicates a regular file. (As seen in this case.)
@@ -277,7 +280,8 @@ So is Git inefficient at handling huge files? No. The content of the file has ch
 
 ==== The `pack` Directory
 
-```
+[source, shell]
+----
 .git
 ├───...
 └───objects
@@ -285,7 +289,7 @@ So is Git inefficient at handling huge files? No. The content of the file has ch
     └───pack
         ├───<*.idx>
         └───<*.pack>
-```
+----
 
 *Delta compression* is carried out when code is pushed/pulled to/from GitHub or when aggressive garbage collection (`git gc --aggressive`) is carried out.
 

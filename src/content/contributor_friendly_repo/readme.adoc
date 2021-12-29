@@ -7,7 +7,8 @@
 * A `README.md` file usually includes a brief description of the project with its features, a link to the link:#_contributing_md[`CONTRIBUTING.md`] file, a link to the link:#_code_of_conduct[`CODE_OF_CONDUCT`] file, a link to the link:#_license[`LICENSE`] file and any other section that the repository owner wants to add.
 * Sample template
 
-```
+[source, markdown]
+----
 # repo name (or logo/picture)
 <Add badges (shields) here>
 <Hosting URL of project (if any)>
@@ -34,7 +35,7 @@ Welcome all contributions & add a link to the `CONTRIBUTING.md` file.
 ## Code of Conduct
 
 Add a link to the `CODE_OF_CONDUCT.md` file.
-```
+----
 
 NOTE: link:https://github.com/HarshKapadia2/attendance_management/blob/master/README.md[Source of the above template^].
 
