@@ -46,31 +46,35 @@
 Asciidoctor parses files starting from `index.adoc` and follows `include::` to the **relative location** of the next file, to finally get to the file with the content.
 
 **Example**:
-This is how the content of `git_add.adoc` is displayed:
 
--   In `index.adoc`:
+This is how the content of [`git_add.adoc`](https://github.com/HarshKapadia2/git_basics/blob/main/src/content/commands/git_add.adoc) is displayed:
 
-```
-== Commands
-include::./refs/commands.adoc[]
-```
+> Check the raw file contents for the exact syntax.
 
-👇
+-   In [`index.adoc`](https://github.com/HarshKapadia2/git_basics/blob/main/src/index.adoc#commands):
 
--   In `./refs/commands.adoc`:
+    ```asciidoc
+    == Commands
+    include::./refs/commands.adoc[]
+    ```
 
-```
-include::../content/commands/git_add.adoc[]
-```
+    👇
 
-👇
+-   In [`./refs/commands.adoc`](https://github.com/HarshKapadia2/git_basics/blob/main/src/refs/commands.adoc#:~:text=../content/commands/git_add.adoc):
 
--   In `../content/commands/git_add.adoc`:
+    ```asciidoc
+    include::../content/commands/git_add.adoc[]
+    ```
 
-```
-=== git add
-<actual content that is displayed>
-```
+    👇
+
+-   In [`../content/commands/git_add.adoc`](https://github.com/HarshKapadia2/git_basics/blob/main/src/content/commands/git_add.adoc):
+
+    ```asciidoc
+    === git add
+
+    // Actual content that is displayed
+    ```
 
 ### Static Files
 
