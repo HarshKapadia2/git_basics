@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
+<link rel="stylesheet" href="./static/highlight/styles/github-light-dark.min.css">
 <meta
 	name="keywords"
 	content="git, github, git_basics, basics of git, basics of github"
@@ -1715,7 +1715,7 @@ Commit changes frequently. This makes it easier to revert back to older versions
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">  :sparkles: feat: add hat wobble (#26)
+<pre class="highlightjs highlight"><code class="language-plaintext hljs" data-lang="plaintext">  :sparkles: feat: add hat wobble (#26)
   ^--------^ ^---^ ^------------^ ^---^
        |       |         |          |
        |       |         |          +----&gt; PR or issue resolved (if any).
@@ -3389,9 +3389,9 @@ The <code>git pull</code> step can be split into <code>git fetch</code> &amp; <c
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">git remote add originalRepo &lt;link_to_original_repo&gt;.git
-git pull originalRepo &lt;branch_name&gt;
-git push -u origin &lt;branch_name&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ git remote add originalRepo &lt;link_to_original_repo&gt;.git
+$ git pull originalRepo &lt;branch_name&gt;
+$ git push -u origin &lt;branch_name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3702,7 +3702,7 @@ The two articles have been covered as a talk as well. (<a href="https://www.yout
 <h4 id="_the_git_directory_contents"><a class="anchor" href="#_the_git_directory_contents"></a>The <code>.git</code> Directory Contents</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───addp-hunk-edit.diff
 ├───COMMIT_EDITMSG
 ├───config
@@ -3820,10 +3820,10 @@ The words 'index', 'stage' and 'cache' are the same in Git and are used intercha
 <ul>
 <li>
 <p><code>100644</code> is the mode of the file. It is an octal number.</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Octal: 100644
-Binary: 001000 000 110100100</pre>
+<pre class="highlightjs highlight"><code class="language-plaintext hljs" data-lang="plaintext">Octal: 100644
+Binary: 001000 000 110100100</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -3918,15 +3918,15 @@ Binary: 001000 000 110100100</pre>
 </li>
 <li>
 <p>Eg:</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre># in the 'main' branch
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell"># in the 'main' branch
 $ cat .git/HEAD
 ref: refs/heads/main
 $ git switch test_branch
 Switched to branch 'test_branch'
 $ cat .git/HEAD
-ref: refs/heads/test_branch</pre>
+ref: refs/heads/test_branch</code></pre>
 </div>
 </div>
 </li>
@@ -3937,7 +3937,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_refs_directory"><a class="anchor" href="#_the_refs_directory"></a>The <code>refs</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───...
 └───refs
     ├───heads
@@ -4002,7 +4002,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_logs_directory"><a class="anchor" href="#_the_logs_directory"></a>The <code>logs</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───...
 └───logs
     ├───HEAD
@@ -4114,7 +4114,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_objects_directory"><a class="anchor" href="#_the_objects_directory"></a>The <code>objects</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───...
 └───objects
     ├───&lt;first_2_SHA-1_characters&gt;
@@ -4146,7 +4146,7 @@ ref: refs/heads/test_branch</pre>
 <h4 id="_the_info_directory"><a class="anchor" href="#_the_info_directory"></a>The <code>info</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───...
 └───info
     └───exclude</code></pre>
@@ -4587,10 +4587,10 @@ A tree object is the equivalent of a (sub)directory: it contains a list of filen
 <ul>
 <li>
 <p><code>100644</code> is the mode of the file. It is an octal number.</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Octal: 100644
-Binary: 001000 000 110100100</pre>
+<pre class="highlightjs highlight"><code class="language-plaintext hljs" data-lang="plaintext">Octal: 100644
+Binary: 001000 000 110100100</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -4865,7 +4865,7 @@ The directory content size (1376 kb) is greater than the image size (1374 kb) as
 <h4 id="_the_pack_directory"><a class="anchor" href="#_the_pack_directory"></a>The <code>pack</code> Directory</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">.git
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">.git
 ├───...
 └───objects
     ├───...
@@ -5193,7 +5193,7 @@ A good place to get to know how a repository compares with the recommended commu
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs"># repo name (or logo/picture)
+<pre class="highlightjs highlight"><code class="language-markdown hljs" data-lang="markdown"># repo name (or logo/picture)
 &lt;Add badges (shields) here&gt;
 &lt;Hosting URL of project (if any)&gt;
 &lt;Tag line&gt;
@@ -6608,8 +6608,7 @@ Alone we can do so little; Together we can do so much.
 </div>
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/shell.min.js"></script>
+<script src="./static/highlight/highlight.min.js"></script>
 <script>
 if (!hljs.initHighlighting.called) {
   hljs.initHighlighting.called = true
