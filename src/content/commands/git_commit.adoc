@@ -92,6 +92,12 @@ CAUTION: This command re-writes the history of the repository as it entirely rep
 * Automatically stages files that have been modified or deleted, but untracked files are not affected.
 * Eg: `git commit -a -m "<commit_message>" -m "<commit_description>"`
 
+===== --allow-empty
+
+* Allows creating a commit without making any changes.
+* One usecase can be to trigger a CI/CD workflow without making changes to the project.
+* Eg: `git commit --allow-empty -m "<commit_message>"`.
+
 ===== -m "Add only_this_file.ext from all staged files" only_this_file.ext
 
 * Partially committing staged changes
