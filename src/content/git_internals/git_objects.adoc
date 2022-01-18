@@ -11,6 +11,7 @@
 * link:#_renaming_files[Renaming Files]
 * link:#_modifying_large_files[Modifying Large Files]
 * link:#_the_pack_directory[The `pack` Directory]
+* link:#_empty_commits[Empty Commits]
 
 ==== Introduction
 
@@ -25,7 +26,7 @@ Git carries out its version control using these objects to store data and the in
 
 Some part of the internal working of Git will be explored through an example in this section.
 
-NOTE: Feel free to follow along with this article and create the graphs below using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+NOTE: Feel free to follow along and create the graphs below using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
 
 Run `git init` to initialize an empty link:#_repository[repository] in the `inside_git` directory (root directory). A hidden directory `.git` is created in this root folder.
 
@@ -212,6 +213,8 @@ From the commit object, tree object and HEAD position, the connection graph look
 
 image::connection-graph-2.png[alt="Connection graph", 600, 600]
 
+NOTE: This graph can be created using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+
 ==== Creating Directories
 
 Create a new file (`master_dir_1_file_3.txt`) inside a directory (`dir_1`), add it, commit it and look at the contents of the commit file.
@@ -240,6 +243,8 @@ The graph of the repository as it stands now
 
 image::connection-graph-3.png[alt="Connection Graph", 600, 600]
 
+NOTE: This graph can be created using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+
 ==== Renaming Files
 
 Rename `master_file_1.txt` to `the_master_file.txt` to see how Git handles it internally.
@@ -259,6 +264,8 @@ From the last line, the hash `1a385` is same as the hash of the original file na
 The structure of the repo.
 
 image::connection-graph-4.png[alt="Connection Graph", 800, 800]
+
+NOTE: This graph can be created using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
 
 ==== Modifying Large Files
 
@@ -348,5 +355,41 @@ link:https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More on Packfiles.^]
 Finally, take a look at the log of the repository.
 
 image::log-1.jpg[alt="Log of repository", 600, 600]
+
+==== Empty Commits
+
+The link:#_allow_empty[`--allow-empty` option in `git commit`] allows creating commits without changes in any files.
+
+As empty commits have no changes to any files, they always point to the *latest* link:#_the_tree_object[Tree Object] in the link:#_branches[branch].
+
+To illustrate this, set up a repo using the following commands
+
+[source, shell]
+----
+$ git init
+$ touch file_1.txt
+$ git add .
+$ git commit -m "Add file_1.txt"
+$ git commit --allow-empty -m "Empty commit #1"
+$ git commit --allow-empty -m "Empty commit #2"
+
+# Now run
+$ git log --oneline --graph
+* 208cead (HEAD -> main) Empty commit #2
+* 64cf914 Empty commit #1
+* be0c1ec Add file_1.txt
+----
+
+Use the `git cat-file -p <hash>` command as done in previous sub-sections to create the graph.
+
+The graph of the above repository
+
+image::connection-graph-5.png[alt="Connection Graph", 600, 600]
+
+[NOTE]
+====
+* If the empty commit is the first commit in the repository (initial commit), then it will have its own empty Tree Object associated with it. In all other cases an empty commit will point to the latest Tree Object in the branch.
+* This graph can be created using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+====
 
 '''
