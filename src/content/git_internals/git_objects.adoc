@@ -25,6 +25,8 @@ Git carries out its version control using these objects to store data and the in
 
 Some part of the internal working of Git will be explored through an example in this section.
 
+NOTE: Feel free to follow along with this article and create the graphs below using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+
 Run `git init` to initialize an empty link:#_repository[repository] in the `inside_git` directory (root directory). A hidden directory `.git` is created in this root folder.
 
 image::git-init.jpg[alt="git init", 600, 600]
@@ -177,7 +179,11 @@ The connections between the commit, tree and blob files till now. (link:#_the_he
 
 image::connection-graph-1.png[alt="Connection graph", 600, 600]
 
-NOTE: The blob `e69de` has been modified to blob `1a385` and so is not connected to the tree `1b219`. Only the latest blob of every added file is connected to the new tree object when a commit is made.
+[NOTE]
+====
+* The blob `e69de` has been modified to blob `1a385` and so is not connected to the tree `1b219`. Only the latest blob of every added file is connected to the new tree object when a commit is made.
+* This graph can be created using link:https://harshkapadia2.github.io/git-graph[Git Graph^].
+====
 
 ==== Parent Commits
 
