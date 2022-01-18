@@ -4271,6 +4271,9 @@ ref: refs/heads/test_branch</code></pre>
 <li>
 <p><a href="#_the_pack_directory">The <code>pack</code> Directory</a></p>
 </li>
+<li>
+<p><a href="#_empty_commits">Empty Commits</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -4300,6 +4303,18 @@ ref: refs/heads/test_branch</code></pre>
 </div>
 <div class="paragraph">
 <p>Some part of the internal working of Git will be explored through an example in this section.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+Feel free to follow along and create the graphs below using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Run <code>git init</code> to initialize an empty <a href="#_repository">repository</a> in the <code>inside_git</code> directory (root directory). A hidden directory <code>.git</code> is created in this root folder.</p>
@@ -4678,7 +4693,16 @@ Binary: 001000 000 110100100</code></pre>
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so is not connected to the tree <code>1b219</code>. Only the latest blob of every added file is connected to the new tree object when a commit is made.
+<div class="ulist">
+<ul>
+<li>
+<p>The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so is not connected to the tree <code>1b219</code>. Only the latest blob of every added file is connected to the new tree object when a commit is made.</p>
+</li>
+<li>
+<p>This graph can be created using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -4732,6 +4756,18 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <img loading="lazy" src="./static/img/connection-graph-2.png" alt="Connection graph" width="600" height="600">
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+This graph can be created using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_creating_directories"><a class="anchor" href="#_creating_directories"></a>Creating Directories</h4>
@@ -4784,6 +4820,18 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <img loading="lazy" src="./static/img/connection-graph-3.png" alt="Connection Graph" width="600" height="600">
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+This graph can be created using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_renaming_files"><a class="anchor" href="#_renaming_files"></a>Renaming Files</h4>
@@ -4821,6 +4869,18 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 <div class="content">
 <img loading="lazy" src="./static/img/connection-graph-4.png" alt="Connection Graph" width="800" height="800">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+This graph can be created using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -4998,6 +5058,66 @@ The <code>.idx</code> (index) file stores the same content as the <code>.pack</c
 <div class="content">
 <img loading="lazy" src="./static/img/log-1.jpg" alt="Log of repository" width="600" height="600">
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_empty_commits"><a class="anchor" href="#_empty_commits"></a>Empty Commits</h4>
+<div class="paragraph">
+<p>The <a href="#_allow_empty"><code>--allow-empty</code> option in <code>git commit</code></a> allows creating commits without changes in any files.</p>
+</div>
+<div class="paragraph">
+<p>As empty commits have no changes to any files, they always point to the <strong>latest</strong> <a href="#_the_tree_object">Tree Object</a> in the <a href="#_branches">branch</a>.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate this, set up a repo using the following commands</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ git init
+$ touch file_1.txt
+$ git add .
+$ git commit -m "Add file_1.txt"
+$ git commit --allow-empty -m "Empty commit #1"
+$ git commit --allow-empty -m "Empty commit #2"
+
+# Now run
+$ git log --oneline --graph
+* 208cead (HEAD -&gt; main) Empty commit #2
+* 64cf914 Empty commit #1
+* be0c1ec Add file_1.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the <code>git cat-file -p &lt;hash&gt;</code> command as done in previous sub-sections to create the graph.</p>
+</div>
+<div class="paragraph">
+<p>The graph of the above repository</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img loading="lazy" src="./static/img/connection-graph-5.png" alt="Connection Graph" width="600" height="600">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If the empty commit is the first commit in the repository (initial commit), then it will have its own empty Tree Object associated with it. In all other cases an empty commit will point to the latest Tree Object in the branch.</p>
+</li>
+<li>
+<p>This graph can be created using <a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph</a>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <hr>
 </div>
@@ -6489,6 +6609,9 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 <li>
 <p><a href="http://git-school.github.io/visualizing-git" target="_blank" rel="noopener">Visualize a commit graph</a></p>
 </li>
+<li>
+<p><a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph: Visualize Commit, Tree and Blob objects</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -6567,6 +6690,9 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 </li>
 <li>
 <p><a href="https://www.youtube.com/watch?v=P6jD966jzlk" target="_blank" rel="noopener">Fear Not The SHA!</a></p>
+</li>
+<li>
+<p><a href="https://harshkapadia2.github.io/git-graph" target="_blank" rel="noopener">Git Graph: Visualize Commit, Tree and Blob objects</a></p>
 </li>
 <li>
 <p><a href="https://git.wiki.kernel.org/index.php/Git" target="_blank" rel="noopener">Git Design Overview</a></p>
