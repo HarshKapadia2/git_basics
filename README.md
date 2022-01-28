@@ -16,9 +16,9 @@
 
 ### Author's Sessions
 
--   [Git Basics - The basics of Git and GitHub!](https://www.youtube.com/watch?v=HF12-91iazM)
--   [Hacktoberfest, Open Source and Pull Requests](https://www.youtube.com/watch?v=uJdFNksgKJA)
--   [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=TZRS9llBBYU)
+-   [Git Basics - The basics of Git and GitHub!](https://talks.harshkapadia.me/git_basics)
+-   [Git Internals - How Does Git Work!?](https://talks.harshkapadia.me/git_internals)
+-   [Hacktoberfest, Open Source and Pull Requests](https://talks.harshkapadia.me/otc_open_source_hacktoberfest_2020)
 
 ### Contributions
 
