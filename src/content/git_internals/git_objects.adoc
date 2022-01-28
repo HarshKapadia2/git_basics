@@ -93,6 +93,8 @@ image::sha1sum.png[alt="Generating hash for the string", 600, 600]
 
 **So, Git generates the hash of the file using the string `<object_type> <content_length>\0<file_content>` and stores that string in the file after compressing it.** (The name of the file is the last 38 characters of the 40 character hash that was generated. The first two characters are used for bucketing.)
 
+NOTE: Blob Objects do not store the diff/delta of files. They store the entire contents of files.
+
 [TIP]
 ====
 The process of finding the contents of the file using `cat` is pretty cumbersome. It is a better idea to use the `git cat-file` [plumbing command] provided by Git.
@@ -196,8 +198,8 @@ Check the contents of the commit file (using part of the hash `8282663` as seen 
 
 image::cat-file-p-3.jpg[alt="Create another master file", 600, 600]
 
-[.word-break-all]
-A new line `parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65` is seen. Remember, this is the hash of the previous commit. **Git is thus creating a graph.** A Directed Acyclic Graph to be precise. (Check image below.)
+[.word-break-all#_dag]
+A new line `parent d5b8f77ce1dc1a37b29885026055c8656c3e0b65` is seen. Remember, this is the hash of the previous commit. **Git is thus creating a graph. A Directed Acyclic Graph to be precise.** (Check image below.)
 
 Also, the link:#_the_head_file[`HEAD`] will now automatically point to this (latest - `82826`) commit rather than the parent (previous - `d5b8f`) commit as it was doing before. To verify, check where the `HEAD` is pointing.
 
@@ -300,61 +302,78 @@ So is Git inefficient at handling huge files? No. The content of the file has ch
 └───objects
     ├───...
     └───pack
+        ├───multi-pack-index
         ├───<*.idx>
         └───<*.pack>
 ----
 
-*Delta compression* is carried out when code is pushed/pulled to/from GitHub or when aggressive garbage collection (`git gc --aggressive`) is carried out.
+*Delta compression* is carried out every time a clone, push or pull is executed, or if Garbage Collection (`git gc``) is run.
 
-Delta compression creates two files in `.git/objects/pack`
+Delta compression creates two types of files in `.git/objects/pack`
 
-* A pack file (.pack)
-* An index file (.idx)
+* Pack (`.pack`) file(s)
+* Index (`.idx`) file(s)
+
+[NOTE]
+====
+* Multiple Packfiles can exist in one repo.
+* There is one Index file per Packfile.
+* The link:https://www.git-scm.com/docs/multi-pack-index[`multi-pack-index` (MIDX) file^] might also be created in extreme cases, but is not considered here.
+====
 
 The current state of the repo
 
 image::du-c-3.jpg[alt="Du -c", 600, 600]
 
-The size of `.git/objects/pack` in the above image is 0 kb.
+Note that the size of `.git/objects/pack` in the above image is 0 kb.
 
-Aggressive garbage collection will be used to carry out Delta Compression and then `du -c` to view the changes.
+Garbage Collection (`git gc`) will be used to carry out Delta Compression and then `du -c` will be used to view the changes.
 
 image::du-c-4.jpg[alt="Du -c", 600, 600]
 
-NOTE: The total size of the `.git` directory went down from 4220kb (seen in the first `du -c` image in this sub-section) to 2838kb (as seen in the above image). This is a 32.75% reduction in the size of the local repository!
+Notice in the above image that the size of `.git/objects/pack` is now 1380 kb (from 0 kb) and a lot of the files in `.git/objects` have disappeared, except for `.git/objects/e6`.
 
-Notice in the above image that the size of `.git/objects/pack` is 1380 kb and a lot of the files in `.git/objects` have disappeared, except for `.git/objects/e6`.
+NOTE: The total size of the `.git` directory went down from 4220 kb (as seen in the first `du -c` image in this sub-section) to 2838 kb (as seen in the above image). This is a **32.75% reduction in the size of the local repository**!
 
 The contents of `.git/objects/pack`
 
-
 image::dir-2.jpg[alt="Content of directory", 600, 600]
 
-As mentioned above, two files (a pack file `.pack` and an index file `.idx`) are created.
+As mentioned above, two types of files (a pack `.pack` file and an index `.idx` file) are created in `.git/objects/pack`.
 
-Check the contents of both the files using the plumbing command `git verify-pack -v path/to/pack/file/<file_name>.pack` (-v = verbose). (Works with the `.idx` file as well.)
+Check the contents of the Packfile using the plumbing command `git verify-pack -v path/to/pack/file/<file_name>.pack` (`-v` = verbose).
 
 image::verify-pack-1.jpg[alt="Contents of files", 600, 600]
 
-**The pack file is a single file containing the contents of all the objects that were removed from the file system.**
+From the above image, it can be understood that **the Packfile contains all the Git objects**. The Pack file is a file that contains all the Git Objects (along with their content) stored in it link:https://codewords.recurse.com/issues/three/unpacking-git-packfiles[in a particular format^]. All the objects stored in the Packfile are removed from the `.git/objects` directory.
 
-The size of the newly modified image (hash `1f7af`) is very large. The blob of the original image (hash `ca893`) is very small in size in comparison and it has the hash of the modified image (`1f7af`) mentioned after it, indicating that its parent is the newly modified file. **Thus, Git stored the entire new file and only a diff for the older file with a pointer to the newer file rather than storing the entire file twice, making it space efficient.**
+From the above image, it can also be understood that the size of the newly modified image (hash `1f7af`) is very large in comparison to the original image (hash `ca893`). The blob of the original image (hash `ca893`) also has the hash of the modified image (`1f7af`) mentioned after it, indicating that its parent is the newly modified image file (hash `1f7af`). Thus **Git stored the entire new file and only a diff/delta for the older file with a pointer to the newer file, rather than storing the entire file again, making it space efficient.**
 
-The pack file has a graph in it, just like the commit, tree and blob files have one.
+NOTE: The newer file (hash `1f7af`) will usually be accessed more than the older one (hash `ca893`), so storing the entirety of the newer file and a delta/diff for the older one makes more sense than storing the entirety of the old file and a delta/diff for the new one. As the newer file will usually be accessed more, it would be inefficient to apply the delta/diff of the newer file to the entirety of the older file to generate the newer file every time. It is cheaper to apply the delta/diff of the older file to the entirety of the newer file, as the older file won't be accessed as frequently.
 
-NOTE: The `.idx` (index) file stores the same content as the `.pack` file and is a file that **contains offsets into the pack file so you can quickly seek to a specific object**.
+[NOTE]
+====
+* The pack file has a graph in it just like link:#_dag[the Directed Acyclic Graph that the Commit, Tree and Blob objects form].
+* The Index (`.idx`) file contains offsets into its corresponding Pack (`.pack`) file so that a specific object can be found quickly.
+* link:https://codewords.recurse.com/issues/three/unpacking-git-packfiles#:~:text=each%20object%20begins.-,IDX%20files,-While%20it%E2%80%99s%20possible[The Index (`.idx`) file has its own file structure.^]
+* Do not confuse these `.idx` Index files with link:#_the_index_file[the staging area `index` file]. They are not related.
+====
 
-On running the aggressive garbage collection, Git got rid of all the files in `.git/objects` **that were connected with commits** and added them to the pack file.
+On running aggressive Garbage Collection (`git gc --aggressive`), Git got rid of all the files in `.git/objects` **that were referenced in a tree** and added them to the Pack file. The `.git/objects/e6` directory did not get removed as it was not referenced (listed) in any link:#_the_tree_object[Tree Object].
 
-The `.git/objects/e6` directory did not get removed as it was not related (connected) to any tree object.
+As mentioned at the start of this sub-section, these Packfiles and Index files are created every time a clone, push or pull is executed, or if Garbage Collection (`git gc`) is run. Why is this so? Network bandwidth and clone/push/pull command execution time are the main reasons. Applying Delta compression and putting in all objects into one file makes it simpler and faster to transfer data over the Network and also saves storage space (~32% space was saved through packing in this case).
 
-link:https://gist.github.com/matthewmccullough/2695758[An example similar to the one discussed in this sub-section.^]
-
-link:https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More on Packfiles.^]
-
-Finally, take a look at the log of the repository.
+Take a look at the log of the repository.
 
 image::log-1.jpg[alt="Log of repository", 600, 600]
+
+.Related
+****
+* link:https://codewords.recurse.com/issues/three/unpacking-git-packfiles[Unpacking Git Packfiles^]
+* link:https://git-scm.com/book/en/v2/Git-Internals-Packfiles[More on Packfiles.^]
+* link:https://gist.github.com/matthewmccullough/2695758[A packfile example similar to the one discussed in this sub-section.^]
+* link:https://www.youtube.com/watch?v=cauIy20JhFs[How To Unpack All Objects Of A Git Repository^]
+****
 
 ==== Empty Commits
 
