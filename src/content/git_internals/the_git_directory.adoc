@@ -63,7 +63,10 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 │   ├───<first_2_SHA-1_characters>
 │   │   └───<remaining_38_SHA-1_characters>
 │   ├───info
+│   │   ├───commit-graph
+│   │   └───packs
 │   └───pack
+│       ├───multi-pack-index
 │       ├───<*.idx>
 │       └───<*.pack>
 ├───ORIG_HEAD
@@ -91,7 +94,11 @@ On executing the link:#_git_init[`git init` command] in a directory, Git creates
 
 * This file contains the details of link:#_added_files[staged (added) files] and is the staging area of the repository.
 
-NOTE: The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
+[NOTE]
+====
+* The words 'index', 'stage' and 'cache' are the same in Git and are used interchangeably.
+* Do not confuse this `index` file with link:#_the_pack_directory[the `.idx` Index files in `.git/objects/pack`]. They are not related.
+====
 
 * It is created when files are added for the first time and is updated every time the link:#_git_add[`git add` command] is executed.
 
@@ -171,14 +178,14 @@ ref: refs/heads/test_branch
 ==== The `packed-refs` File
 
 * One file is created per branch and tag in the link:#_the_refs_directory[`refs` directory].
-* In a repository with a lot of branches and tags, there is a huge number of refs and a lot of the refs and tags are not actively used/changed.
+* In a repository with a lot of branches and tags, there are a lot of references (refs) and most of them are not actively used/changed.
 * These refs occupy a lot of storage space and cause performance issues.
-* The `git pack-refs` command is used to solve this problem. It stores all the refs in a single file called `packed-refs`.
+* The `git pack-refs` command is used to solve this problem. It stores all the refs in a single file called `packed-refs`. The `git gc` command also does this.
 
 image::cat-packed-refs.png[alt="Print the packed-ref file", 600, 600]
 
-* If a ref is missing from the usual `refs` directory after packing, it is looked up in this file and used if found.
-* Subsequent updates to a packed branch ref creates a new file in the `refs` directory as usual.
+* If a ref is missing from the usual `refs` directory after packing, it is looked up in this file.
+* Subsequent updates (new commit or a pull or push with changes) to a branch whose ref is packed creates a new file with the name of the branch in the `refs` directory as usual, but does not update the hash of that branch in the `packed-refs` file with the latest one. (A new `packed-refs` file will have to be generated for that.)
 
 ==== The `logs` Directory
 
@@ -243,7 +250,10 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
     ├───<first_2_SHA-1_characters>
     │   └───<remaining_38_SHA-1_characters>
     ├───info
+    │   ├───commit-graph
+    │   └───packs
     └───pack
+        ├───multi-pack-index
         ├───<*.idx>
         └───<*.pack>
 ----
@@ -265,6 +275,7 @@ image::cat-logs.png[alt="Print a branch's log file", 1000, 1000]
 
 * It contains the `exclude` file which behaves like the link:#_gitignore_file[`.gitignore` file], but is used to ignore files locally without modifying `.gitignore`.
 * link:#_ignore_files_locally_without_modifying_gitignore[More on the `exclude` file.]
+* Do not confuse this directory with `.git/objects/info`. They are not related.
 
 ==== The `config` File
 
