@@ -2,9 +2,9 @@
 
 ==== Sessions by the Author
 
-* link:https://www.youtube.com/watch?v=HF12-91iazM[Git Basics - The basics of Git and GitHub!^]
-* link:https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
-* link:https://www.youtube.com/watch?v=TZRS9llBBYU[Git Internals - How Does Git Work!?^]
+* link:https://talks.harshkapadia.me/git_basics[Git Basics - The basics of Git and GitHub!^]
+* link:https://talks.harshkapadia.me/git_internals[Git Internals - How Does Git Work!?^]
+* link:https://talks.harshkapadia.me/otc_open_source_hacktoberfest_2020[Hacktoberfest, Open Source and Pull Requests^]
 
 ==== Getting Started with Git and GitHub
 
@@ -43,16 +43,5 @@
 ==== Articles
 
 * link:https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1[CS Visualized: Useful Git Commands^]
-
-==== Git Deep
-
-* link:https://tom.preston-werner.com/2009/05/19/the-git-parable.html[The Git Parable^]
-* link:https://www.youtube.com/watch?v=DjOk0jnqsLk[Git for software engineers^]
-* link:https://www.youtube.com/watch?v=P6jD966jzlk[Fear Not The SHA!^]
-* link:https://harshkapadia2.github.io/git-graph[Git Graph: Visualize Commit, Tree and Blob objects^]
-* link:https://git.wiki.kernel.org/index.php/Git[Git Design Overview^]
-* link:https://www.youtube.com/watch?v=yI0BtEzdGtw[Rules To Git By^]
-* link:https://matthew-brett.github.io/curious-git[Curious git^]
-* link:https://github.com/pluralsight/git-internals-pdf[Git Internals PDF^]
 
 '''

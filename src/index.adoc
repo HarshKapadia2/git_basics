@@ -33,9 +33,9 @@ For further questions, please feel free to contact the author, link:https://hars
 ====
 Git and GitHub sessions by the author:
 
-* link:https://www.youtube.com/watch?v=HF12-91iazM[Git Basics - The basics of Git and GitHub!^]
-* link:https://www.youtube.com/watch?v=uJdFNksgKJA[Hacktoberfest, Open Source and Pull Requests^]
-* link:https://www.youtube.com/watch?v=TZRS9llBBYU[Git Internals - How Does Git Work!?^]
+* link:https://talks.harshkapadia.me/git_basics[Git Basics - The basics of Git and GitHub!^]
+* link:https://talks.harshkapadia.me/git_internals[Git Internals - How Does Git Work!?^]
+* link:https://talks.harshkapadia.me/otc_open_source_hacktoberfest_2020[Hacktoberfest, Open Source and Pull Requests^]
 
 ====
 
@@ -76,8 +76,9 @@ include::./refs/correcting_common_mistakes.adoc[]
 
 * link:#_the_git_directory[The `.git` Directory]
 * link:#_git_objects[Git Objects]
+* link:#_git_deep[Git Deep]
 
-NOTE: The two articles have been covered as a talk as well. (link:https://www.youtube.com/watch?v=TZRS9llBBYU[Git Internals - How Does Git Work!?^])
+NOTE: The two articles have been covered as a talk as well. (link:https://talks.harshkapadia.me/git_internals[Git Internals - How Does Git Work!?^])
 
 include::./refs/git_internals.adoc[]
 
