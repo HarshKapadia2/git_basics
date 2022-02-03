@@ -72,13 +72,7 @@ include::./refs/correcting_common_mistakes.adoc[]
 
 == Git Internals
 
-=== Table of Contents
-
-* link:#_the_git_directory[The `.git` Directory]
-* link:#_git_objects[Git Objects]
-* link:#_git_deep[Git Deep]
-
-NOTE: The two articles have been covered as a talk as well. (link:https://talks.harshkapadia.me/git_internals[Git Internals - How Does Git Work!?^])
+Moved to link:https://git.harshkapadia.me[git.harshkapadia.me^].
 
 include::./refs/git_internals.adoc[]
 

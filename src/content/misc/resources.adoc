@@ -22,8 +22,8 @@
 
 ==== Visualization
 
-* link:http://git-school.github.io/visualizing-git[Visualize a commit graph^]
 * link:https://harshkapadia2.github.io/git-graph[Git Graph: Visualize Commit, Tree and Blob objects^]
+* link:http://git-school.github.io/visualizing-git[Visualize a commit graph^]
 
 ==== Documentation
 
@@ -43,5 +43,10 @@
 ==== Articles
 
 * link:https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1[CS Visualized: Useful Git Commands^]
+
+==== Advanced
+
+* link:https://git.harshkapadia.me[Git Internals^] by the author.
+* link:https://talks.harshkapadia.me/git_internals[Git Internals - How Does Git Work!?^] (By the autor.)
 
 '''

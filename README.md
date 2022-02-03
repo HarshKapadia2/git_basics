@@ -20,6 +20,8 @@
 -   [Git Internals - How Does Git Work!?](https://talks.harshkapadia.me/git_internals)
 -   [Hacktoberfest, Open Source and Pull Requests](https://talks.harshkapadia.me/otc_open_source_hacktoberfest_2020)
 
+> To learn the internals of Git, refer to the [Git Internals](https://git.harshkapadia.me) PWA.
+
 ### Contributions
 
 -   All contributions are most welcome!
