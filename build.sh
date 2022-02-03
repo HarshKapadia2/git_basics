@@ -4,6 +4,8 @@ set -eu;
 
 script_dir=$(dirname "${0}");
 
+echo "Building site...";
+
 # Create the 'build' directory if it doesn't exist
 mkdir -p "${script_dir}/build";
 
@@ -27,4 +29,4 @@ asciidoctor "${script_dir}/src/index.adoc" -a webfonts! -o "${script_dir}/build/
 # Lazy load images
 sed -i -e 's/<img/<img loading="lazy"/g' "${script_dir}/build/index.html";
 
-echo "Asciidoctor Jet static site build complete.";
+echo "Asciidoctor Jet site build complete!";
