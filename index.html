@@ -2294,10 +2294,10 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="ulist">
 <ul>
 <li>
-<p>Shallow clone only upto a certain number of latest commits and history either in a <code>--single-branch</code> (assumed) or in all branches (<code>--no-single-branch</code>).</p>
+<p><strong>Shallow clone</strong> only upto a certain number of latest commits and history either in a <code>--single-branch</code> (default) or in all branches (<code>--no-single-branch</code>).</p>
 </li>
 <li>
-<p>Specify the branch name using <code>-b</code> or <code>--branch</code> for <code>--single-branch</code>. The <code>master</code> branch is assumed, if not specified.</p>
+<p>Specify the branch name using <code>-b</code> or <code>--branch</code> for <code>--single-branch</code>. The <code>main</code> (previously called <code>master</code>) branch is assumed, if not specified.</p>
 </li>
 </ul>
 </div>
@@ -2314,6 +2314,18 @@ This command re-writes the history of the repository as it entirely replaces the
 </li>
 </ul>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<a href="https://stackoverflow.com/a/28985327/11958552" target="_blank" rel="noopener">Shallow clones cannot be pushed to a new repository</a>. The shallow clone will either have to be [unshallowed] or the <a href="https://git.harshkapadia.me/#_the_git_directory" target="_blank" rel="noopener"><code>.git</code> directory</a> will have to be deleted (start afresh by <a href="#_git_init">initializing a new repository</a>).
+</td>
+</tr>
+</table>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related</div>
@@ -2323,7 +2335,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <p><a href="https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch" target="_blank" rel="noopener"><code>-b</code> reference</a></p>
 </li>
 <li>
-<p><a href="https://linuxhint.com/git-shallow-clone-and-clone-depth/" target="_blank" rel="noopener">Shallow clone reference</a></p>
+<p><a href="https://linuxhint.com/git-shallow-clone-and-clone-depth" target="_blank" rel="noopener">Shallow clone reference</a></p>
 </li>
 </ul>
 </div>
