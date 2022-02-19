@@ -37,18 +37,20 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 
 ===== --depth <depth_number>
 
-* Shallow clone only upto a certain number of latest commits and history either in a `--single-branch` (assumed) or in all branches (`--no-single-branch`).
-* Specify the branch name using `-b` or `--branch` for `--single-branch`. The `master` branch is assumed, if not specified.
+* **Shallow clone** only upto a certain number of latest commits and history either in a `--single-branch` (default) or in all branches (`--no-single-branch`).
+* Specify the branch name using `-b` or `--branch` for `--single-branch`. The `main` (previously called `master`) branch is assumed, if not specified.
 
 [.word-break-all]
 * Eg: `git clone -b v2 --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
 * With `--no-single-branch`, use link:#_git_branch[`git branch -a`] to view the fetched branches and link:#_git_switch[`git switch <branch_name>`] to use it.
 * Eg: `git clone --no-single-branch --depth 1 https://github.com/HarshKapadia2/attendance_manager.git`
 
+WARNING: link:https://stackoverflow.com/a/28985327/11958552[Shallow clones cannot be pushed to a new repository^]. The shallow clone will either have to be [unshallowed] or the link:https://git.harshkapadia.me/#_the_git_directory[`.git` directory^] will have to be deleted (start afresh by link:#_git_init[initializing a new repository]).
+
 .Related
 ****
-* https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[`-b` reference^]
-* https://linuxhint.com/git-shallow-clone-and-clone-depth/[Shallow clone reference^]
+* link:https://www.ithands.com/blog/advanced-git-features/#:~:text=Cloning%20a%20Specific%20Branch[`-b` reference^]
+* link:https://linuxhint.com/git-shallow-clone-and-clone-depth[Shallow clone reference^]
 ****
 
 '''
