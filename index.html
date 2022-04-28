@@ -2248,10 +2248,10 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="sect3">
 <h4 id="_description_12"><a class="anchor" href="#_description_12"></a>Description</h4>
 <div class="paragraph">
-<p>Clone/copy an entire <a href="#_repositories_its_types/:~:text=Remote%20repository%20is%20the%20repo%20on%20the%20server">remote repo</a> into the current folder (to which the git CLI is pointing).</p>
+<p>Clone/copy an entire <a href="#_repositories_its_types">local or a remote repository</a> into the current directory (to which the CLI is pointing).</p>
 </div>
 <div class="paragraph">
-<p>A new folder will be created with the name of the repo. <code>cd</code> (change directory) into that folder to start using it.</p>
+<p>A new directory will be created with the name of the repository. <code>cd</code> (change directory) into that directory to start using it.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2261,7 +2261,17 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="#_default_branch">default branch</a> of the remote repo will be cloned locally into a new folder with the same name as the remote repo.</p>
+<p>The <a href="#_default_branch">default branch</a> of the local or remote repository will be cloned into a new directory with the same name as the repository.</p>
+</li>
+</ul>
+</div>
+<div class="ulist word-break-all">
+<ul>
+<li>
+<p>Cloning a remote repository: <code>git clone <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+</li>
+<li>
+<p>Cloning a local repository: <code>git clone x:/coding/git/local_repo</code></p>
 </li>
 </ul>
 </div>
@@ -2281,7 +2291,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <div class="ulist word-break-all">
 <ul>
 <li>
-<p>Eg: <code>git clone -b master <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code> or <code>git clone -b master --single-branch <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+<p>Eg: <code>git clone -b main <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code> or <code>git clone -b main --single-branch <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
 </li>
 <li>
 <p><code>--single-branch</code> is assumed.</p>
@@ -2906,7 +2916,7 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 <div class="sect3">
 <h4 id="_description_16"><a class="anchor" href="#_description_16"></a>Description</h4>
 <div class="paragraph">
-<p>Helps to make or break connections to the remote repo from the local repo.</p>
+<p>Helps to make, view or break connections to other remote or local repositories.</p>
 </div>
 <div class="paragraph">
 <p>To add a remote repo to a local repo:</p>
@@ -2914,13 +2924,10 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 <div class="ulist">
 <ul>
 <li>
-<p>On GitHub, create a repo without a <a href="#_license">license</a>, <a href="#_readme_md">README.md</a> or <a href="#_gitignore_file">.gitignore</a>.</p>
+<p>Create a remote repo on GitHub, GitLab, BitBucket, etc.</p>
 </li>
 <li>
-<p>In the bash, type <code>git remote add origin &lt;link_to_repo&gt;.git</code></p>
-</li>
-<li>
-<p>Do add a license, README.md and .gitignore (more on all 3 later).</p>
+<p>On the CLI, type <code>git remote add origin &lt;link_to_repo&gt;.git</code></p>
 </li>
 </ul>
 </div>
@@ -2932,7 +2939,7 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 <div class="ulist">
 <ul>
 <li>
-<p>Lists the remote repos.</p>
+<p>Lists the repos to which connections exist.</p>
 </li>
 </ul>
 </div>
@@ -2942,34 +2949,37 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 <div class="ulist">
 <ul>
 <li>
-<p>It gives the <a href="#_aliases">alias</a> and corresponding URL of the <code>remote</code> (aka the remote repo).</p>
+<p>It gives the <a href="#_aliases">alias</a> and corresponding URL of the connected repos.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_add_remote_repo_alias_remote_repo_url_git"><a class="anchor" href="#_add_remote_repo_alias_remote_repo_url_git"></a>add &lt;remote_repo_alias&gt; &lt;remote_repo_url&gt;.git</h5>
+<h5 id="_add_connecting_repo_alias_connecting_repo_url_git"><a class="anchor" href="#_add_connecting_repo_alias_connecting_repo_url_git"></a>add &lt;connecting_repo_alias&gt; &lt;connecting_repo_url&gt;&lt;.git&gt;</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>To add a remote repo to a local repo.</p>
+<p>To connect to a local or remote repo.</p>
 </li>
 </ul>
 </div>
 <div class="ulist word-break-all">
 <ul>
 <li>
-<p>Eg: <code>git remote add origin <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+<p>To connect to a remote repo: <code>git remote add origin <a href="https://github.com/HarshKapadia2/git_basics.git" class="bare">https://github.com/HarshKapadia2/git_basics.git</a></code></p>
+</li>
+<li>
+<p>To connect to a local repo: <code>git remote add origin x:/coding/git/local_repo</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_rm_remote_repo_alias"><a class="anchor" href="#_rm_remote_repo_alias"></a>rm &lt;remote_repo_alias&gt;</h5>
+<h5 id="_rm_connected_repo_alias"><a class="anchor" href="#_rm_connected_repo_alias"></a>rm &lt;connected_repo_alias&gt;</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Removes the remote repo from the local repo.</p>
+<p>Removes an existing repo connection.</p>
 </li>
 <li>
 <p>Eg: <code>git remote rm origin</code></p>
@@ -2983,7 +2993,7 @@ This condition will land you in a <a href="#_head">detached HEAD</a> state.
 <img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
 </td>
 <td class="content">
-This command only removes the connection between the local and remote repo. It does not delete any data.
+This command only removes the connection between two repos. It does not delete any data.
 </td>
 </tr>
 </table>
