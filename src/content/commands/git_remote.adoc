@@ -13,36 +13,36 @@ The following term is required to be understood:
 
 ==== Description
 
-Helps to make or break connections to the remote repo from the local repo.
+Helps to make, view or break connections to other remote or local repositories.
 
 To add a remote repo to a local repo:
 
-    * On GitHub, create a repo without a link:#_license[license], link:#_readme_md[README.md] or link:#_gitignore_file[.gitignore].
-    * In the bash, type `git remote add origin <link_to_repo>.git`
-    * Do add a license, README.md and .gitignore (more on all 3 later).
+* Create a remote repo on GitHub, GitLab, BitBucket, etc.
+* On the CLI, type `git remote add origin <link_to_repo>.git`
 
 ==== Options/Flags
 
 ===== <no_option>
 
-* Lists the remote repos.
+* Lists the repos to which connections exist.
 
 ===== -v or --verbose
 
-* It gives the link:#_aliases[alias] and corresponding URL of the `remote` (aka the remote repo).
+* It gives the link:#_aliases[alias] and corresponding URL of the connected repos.
 
-===== add <remote_repo_alias> <remote_repo_url>.git
+===== add <connecting_repo_alias> <connecting_repo_url><.git>
 
-* To add a remote repo to a local repo.
+* To connect to a local or remote repo.
 
 [.word-break-all]
-* Eg: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+* To connect to a remote repo: `git remote add origin https://github.com/HarshKapadia2/git_basics.git`
+* To connect to a local repo: `git remote add origin x:/coding/git/local_repo`
 
-===== rm <remote_repo_alias>
+===== rm <connected_repo_alias>
 
-* Removes the remote repo from the local repo.
+* Removes an existing repo connection.
 * Eg: `git remote rm origin`
 
-NOTE: This command only removes the connection between the local and remote repo. It does not delete any data.
+NOTE: This command only removes the connection between two repos. It does not delete any data.
 
 '''

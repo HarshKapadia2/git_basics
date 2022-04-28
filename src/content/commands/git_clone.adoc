@@ -16,15 +16,19 @@ The following terms are required to be understood:
 
 ==== Description
 
-Clone/copy an entire link:#_repositories_its_types/:~:text=Remote%20repository%20is%20the%20repo%20on%20the%20server[remote repo] into the current folder (to which the git CLI is pointing).
+Clone/copy an entire link:#_repositories_its_types[local or a remote repository] into the current directory (to which the CLI is pointing).
 
-A new folder will be created with the name of the repo. `cd` (change directory) into that folder to start using it.
+A new directory will be created with the name of the repository. `cd` (change directory) into that directory to start using it.
 
 ==== Options/Flags
 
 ===== No option
 
-* The link:#_default_branch[default branch] of the remote repo will be cloned locally into a new folder with the same name as the remote repo.
+* The link:#_default_branch[default branch] of the local or remote repository will be cloned into a new directory with the same name as the repository.
+
+[.word-break-all]
+* Cloning a remote repository: `git clone https://github.com/HarshKapadia2/git_basics.git`
+* Cloning a local repository: `git clone x:/coding/git/local_repo`
 
 ===== -b <branch_name> or --branch <branch_name>
 
@@ -32,7 +36,7 @@ A new folder will be created with the name of the repo. `cd` (change directory) 
 * It is useful to fetch the required branch quickly to fix the issues in a big project.
 
 [.word-break-all]
-* Eg: `git clone -b master https://github.com/HarshKapadia2/git_basics.git` or `git clone -b master --single-branch https://github.com/HarshKapadia2/git_basics.git`
+* Eg: `git clone -b main https://github.com/HarshKapadia2/git_basics.git` or `git clone -b main --single-branch https://github.com/HarshKapadia2/git_basics.git`
 * `--single-branch` is assumed.
 
 ===== --depth <depth_number>
