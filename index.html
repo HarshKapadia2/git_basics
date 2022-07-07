@@ -1096,6 +1096,9 @@ git - the stupid content tracker
 <div class="ulist">
 <ul>
 <li>
+<p>Modify Git&#8217;s global (system-wide) configuration. These settings affect all Git repositories on a system.</p>
+</li>
+<li>
 <p>Set user&#8217;s name: <code>git config --global user.name "&lt;name&gt;"</code></p>
 </li>
 <li>
@@ -1129,13 +1132,6 @@ git - the stupid content tracker
 </td>
 </tr>
 </table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_aliases">Aliases can also be set</a> using this flag.</p>
-</li>
-</ul>
 </div>
 <div id="_change_default_branch_name" class="ulist">
 <ul>
@@ -1179,6 +1175,39 @@ git - the stupid content tracker
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the default editor for committing, rebasing and other Git operations</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Command: <code>git config --global core.editor "&lt;editor_name&gt;"</code></p>
+</li>
+<li>
+<p>Some editor options</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Vim: <code>vim</code></p>
+</li>
+<li>
+<p>VS Code: <code>code --wait</code></p>
+</li>
+<li>
+<p>Sublime Text: <code>subl --wait</code> or <code>\"full/path/to/subl.exe\" -w</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_aliases">Aliases can also be set</a> using this flag.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect4">
@@ -1705,7 +1734,17 @@ Commit changes frequently. This makes it easier to revert back to older versions
 <p>Short, crisp and to-the-point commit messages are preferred (&lt;50 characters).</p>
 </li>
 <li>
-<p>Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>. Eg: <code>git commit -m "Update README.md"</code></p>
+<p>Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like <code>git merge</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Another way to think about commit messages is to write them such that the codebase is being instructed to do something.</p>
+</li>
+<li>
+<p>Eg: <code>git commit -m ":truck: feat: Implement Debouncing for search box"</code></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>General commit message structure below</p>
@@ -1738,16 +1777,6 @@ More on <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1a
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>If extra information is needed to be given, add it to the <strong>description</strong> of the commit.</p>
-</li>
-<li>
-<p>When only changing documentation, include <code>[ci skip]</code> (ci = continuous integration) in the commit title.</p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -1760,7 +1789,7 @@ More on <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1a
 <p>Just running <code>git commit</code> will launch a text editor prompting you for a commit message.</p>
 </li>
 <li>
-<p>After you’ve entered a message, save the file and close the editor using <code>:wq</code> or just save and exit the editor to create the actual commit.</p>
+<p>After you&#8217;ve entered a message, save the file and close the editor using <code>:wq</code> or just save and exit the editor to create the actual commit.</p>
 </li>
 </ul>
 </div>
@@ -1865,11 +1894,31 @@ This command re-writes the history of the repository as it entirely replaces the
 </div>
 </div>
 <div class="sect4">
+<h5 id="_s_or_signoff"><a class="anchor" href="#_s_or_signoff"></a>-s or --signoff</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds <code>Signed-off-by: Author Name &lt;<a href="mailto:author@email.com">author@email.com</a>&gt;</code> at the end of the commit message.</p>
+</li>
+<li>
+<p>The meaning of a signoff depends on the project being contributed to.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eg: The Git and Linux Kernel projects use the signoff as a way to certify that the committer agrees with the <a href="https://developercertificate.org" target="_blank" rel="noopener">Developer&#8217;s Certificate of Origin</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
 <h5 id="_git_ls_tree_full_tree_r_head"><a class="anchor" href="#_git_ls_tree_full_tree_r_head"></a>git ls-tree --full-tree -r HEAD</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>This command shows all files within your git repo that it’s tracking.</p>
+<p>This command shows all files within your git repo that it is tracking.</p>
 </li>
 </ul>
 </div>
