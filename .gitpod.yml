@@ -1,0 +1,28 @@
+tasks:
+    - name: Setup
+      before: |
+          # Needs to be in `before` since Gitpod resets the container every time
+
+          # Install Asciidoctor
+          gem install asciidoctor
+
+          # Globally install `serve`
+          npm install --location=global serve
+
+          exit
+
+vscode:
+    extensions:
+        - esbenp.prettier-vscode
+        - asciidoctor.asciidoctor-vscode
+        - redhat.vscode-yaml
+        - streetsidesoftware.code-spell-checker
+        - ritwickdey.liveserver
+
+ports:
+    - port: 3000
+      onOpen: open-browser
+      visibility: public
+    - port: 5500
+      onOpen: open-browser
+      visibility: public

@@ -16,6 +16,29 @@
 > -   This project is a [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) and a [TWA](https://developer.chrome.com/docs/android/trusted-web-activity). ([Asset links file](https://github.com/HarshKapadia2/harshkapadia2.github.io/blob/main/.well-known/assetlinks.json))
 > -   GitHub Actions has been set up on this repo, so a built web site does not have to be committed.
 
+## Gitpod Setup
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/HarshKapadia2/git_basics)
+
+-   On clicking on the above 'Open in Gitpod' button, a Gitpod Workspace with [Asciidoctor](https://asciidoctor.org) and other dependencies installed will open up.
+-   A [GitHub integration](https://gitpod.io/integrations) will be required on Gitpod if not already done. Also, make sure to give appropriate permissions to GitHub on the [Integrations page](https://gitpod.io/integrations).
+-   **Please adhere to the [file structure](#file-structure) and [language, code and syntax rules](#language-code-and-syntax) followed in this project.**
+-   [Make a new Git branch](https://harshkapadia2.github.io/git_basics/#_branch_name_2) on Gitpod and [switch to the newly created branch](https://harshkapadia2.github.io/git_basics/#_git_switch).
+-   For testing, generate the web site in a directory called `build` in the root directory by running the command `sh build.sh` from the root directory.
+    -   To host the site locally from the `build` directory, run the command `serve build` from the root directory.
+        -   One can also use the Live Server VS Code extension that should have been automatically been installed.
+            -   Click on the 'Go Live' button in the Status Bar at the bottom of the window.
+    -   Please **do not** commit this `build` directory, as the CI process will build the site on merge.
+    -   A browser window with the web app should automatically open up, but if it doesn't, <kbd>ctrl + click</kbd> the link in the terminal to open up a window.
+    -   NOTE: The summary will have to be built manually using the `sh build.sh` command every time there is a change. The browser will then have to be refreshed to view the change.
+-   Make the required contribution(s) on Gitpod in the new branch.
+    -   Please follow the [commit message format](https://harshkapadia2.github.io/git_basics/#_commit_messagetitle).
+-   To open a PR
+    -   Fork this repo. (Top right corner on GitHub.)
+    -   On Gitpod, [add the forked repo as a remote](https://harshkapadia2.github.io/git_basics/#_add_connecting_repo_alias_connecting_repo_url_git).
+    -   [Push the new branch to the forked repo.](https://harshkapadia2.github.io/git_basics/#_command_16)
+    -   [Open a PR as usual](https://github.com/firstcontributions/first-contributions#submit-your-changes-for-review) from the forked repo on GitHub.
+
 ## Local Setup
 
 -   Fork this repo. (Top right corner.)
