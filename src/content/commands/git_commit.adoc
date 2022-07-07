@@ -35,11 +35,10 @@ TIP: _Don't_ commit half-done or incomplete work.
 ===== Commit message/title
 
 * Every commit has a commit message associated with it which describes the overall change made.
-
 * Short, crisp and to-the-point commit messages are preferred (<50 characters).
-
-* Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like `git merge`. Eg: `git commit -m "Update README.md"`
-
+* Use the imperative, present tense (eg: 'change', not 'changed' or 'changes') in commit messages, to be consistent with generated messages from commands like `git merge`.
+    ** Another way to think about commit messages is to write them such that the codebase is being instructed to do something.
+    ** Eg: `git commit -m ":truck: feat: Implement Debouncing for search box"`
 * General commit message structure below
 
 [source, plaintext]
@@ -58,16 +57,12 @@ TIP: _Don't_ commit half-done or incomplete work.
 
 IMPORTANT: More on https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79[types and emojis^].
 
-* If extra information is needed to be given, add it to the *description* of the commit.
-
-* When only changing documentation, include `[ci skip]` (ci = continuous integration) in the commit title.
-
 ==== Options/Flags
 
 ===== No option
 
 * Just running `git commit` will launch a text editor prompting you for a commit message.
-* After you’ve entered a message, save the file and close the editor using `:wq` or just save and exit the editor to create the actual commit.
+* After you've entered a message, save the file and close the editor using `:wq` or just save and exit the editor to create the actual commit.
 
 ===== -m "<commit_msg>"
 
@@ -102,9 +97,15 @@ CAUTION: This command re-writes the history of the repository as it entirely rep
 
 * Partially committing staged changes
 
+===== -s or --signoff
+
+* Adds `Signed-off-by: Author Name <author@email.com>` at the end of the commit message.
+* The meaning of a signoff depends on the project being contributed to.
+    ** Eg: The Git and Linux Kernel projects use the signoff as a way to certify that the committer agrees with the link:https://developercertificate.org[Developer's Certificate of Origin^].
+
 ===== git ls-tree --full-tree -r HEAD
 
-* This command shows all files within your git repo that it’s tracking.
+* This command shows all files within your git repo that it is tracking.
 
 .Related
 ****
