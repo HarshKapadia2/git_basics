@@ -20,6 +20,7 @@ Get and set repository or global options.
 
 ===== --global
 
+* Modify Git's global (system-wide) configuration. These settings affect all Git repositories on a system.
 * Set user's name: `git config --global user.name "<name>"`
 * Set user's e-mail: `git config --global user.email "<e-mail_id>"`
 
@@ -30,8 +31,6 @@ Get and set repository or global options.
 * This is the name and e-mail ID that will be associated with each commit.
 * The global name and e-mail need to be set just once, ie, when Git is used for the first time ever on a computer (but can be modified if need be).
 ====
-
-* link:#_aliases[Aliases can also be set] using this flag.
 
 [#_change_default_branch_name]
 * Change default branch name created on running link:#_git_init[`git init`] command: `git config --global init.defaultBranch "<branch_name>"`
@@ -47,6 +46,14 @@ Get and set repository or global options.
 * To combat this change on GitHub, it would be advisable to change the name of the default branch of the local Git client to 'main' using the command `git config --global init.defaultBranch "main"`.
 * NOTE: Cloned repositories will not be impacted unless the remote repository's default branch is changed on GitHub after cloning (in which case GitHub will provide commands to rename the local branch on visiting the repository page on GitHub for the first time after the renaming).
 ====
+
+* Change the default editor for committing, rebasing and other Git operations
+    ** Command: `git config --global core.editor "<editor_name>"`
+    ** Some editor options
+        *** Vim: `vim`
+        *** VS Code: `code --wait`
+        *** Sublime Text: `subl --wait` or `\"full/path/to/subl.exe\" -w`
+* link:#_aliases[Aliases can also be set] using this flag.
 
 ===== --list
 
