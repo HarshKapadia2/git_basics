@@ -56,7 +56,7 @@ jobs:
                   apk add rsync
 
             - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@4.1.8
+              uses: JamesIves/github-pages-deploy-action@4.3.4
               with:
                   branch: gh-pages
                   folder: build
