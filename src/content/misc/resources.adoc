@@ -22,7 +22,7 @@
 
 ==== Visualization
 
-* link:https://harshkapadia2.github.io/git-graph[Git Graph: Visualize Commit, Tree and Blob objects^]
+* link:https://git-graph.harshkapadia.me[Git Graph: Visualize Commit, Tree and Blob objects^]
 * link:http://git-school.github.io/visualizing-git[Visualize a commit graph^]
 
 ==== Documentation
