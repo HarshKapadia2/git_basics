@@ -1815,6 +1815,19 @@ More on <a href="https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1a
 </div>
 </div>
 <div class="sect4">
+<h5 id="_a_or_all"><a class="anchor" href="#_a_or_all"></a>-a or --all</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Automatically stages files that have been modified or deleted, but untracked files are not affected.</p>
+</li>
+<li>
+<p>Eg: <code>git commit -a -m "&lt;commit_message&gt;"</code> or <code>git commit -am "&lt;commit_message&gt;"</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
 <h5 id="_amend"><a class="anchor" href="#_amend"></a>--amend</h5>
 <div class="ulist">
 <ul>
@@ -1848,21 +1861,40 @@ This command will change the commit message of the latest commit only. Refer to 
 <img loading="lazy" src="./static/img/admonition_icons/caution.png" alt="Caution">
 </td>
 <td class="content">
-This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this only for commits that are not <a href="#_git_push">pushed</a>.
+Any amend command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this only for commits that are not <a href="#_git_push">pushed</a>.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_a_or_all"><a class="anchor" href="#_a_or_all"></a>-a or --all</h5>
+<h5 id="_amend_no_edit"><a class="anchor" href="#_amend_no_edit"></a>--amend --no-edit</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Automatically stages files that have been modified or deleted, but untracked files are not affected.</p>
+<p>Allows amending a commit without having to change the commit message originally/already associated with that commit.</p>
 </li>
 <li>
-<p>Eg: <code>git commit -a -m "&lt;commit_message&gt;" -m "&lt;commit_description&gt;"</code></p>
+<p>One usecase can be that if a user has forgotten to add a few files to the last commit, they can add the files using <a href="#_git_add"><code>git add</code></a> and then amend the last commit with the <code>--no-edit</code> option.</p>
+</li>
+<li>
+<p>Eg: <code>git commit --amend --no-edit</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_amend_authorauthor_name_authoremail_com"><a class="anchor" href="#_amend_authorauthor_name_authoremail_com"></a>--amend --author="Author Name &lt;<a href="mailto:author@email.com">author@email.com</a>&gt;"</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows changing the author of the last commit. This does not change the committer of the previous commit.</p>
+</li>
+<li>
+<p>Eg: <code>git commit --amend --author="Harsh Kapadia &lt;<a href="mailto:contact@harshkapadia.me">contact@harshkapadia.me</a>&gt;</code></p>
+</li>
+<li>
+<p>If both, the author and the committer of the last commit need to be changed, edit the <a href="#_git_config">local or global Git config</a> and then amend the last commit using the <code>git commit --amend --no-edit</code> command.</p>
 </li>
 </ul>
 </div>
