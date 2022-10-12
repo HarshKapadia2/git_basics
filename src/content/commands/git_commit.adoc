@@ -72,6 +72,11 @@ IMPORTANT: More on https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a
 
 * Enter the commit message and commit description if needed.
 
+===== -a or --all
+
+* Automatically stages files that have been modified or deleted, but untracked files are not affected.
+* Eg: `git commit -a -m "<commit_message>"` or `git commit -am "<commit_message>"`
+
 ===== --amend
 
 * To change the commit message of the latest commit.
@@ -80,12 +85,19 @@ IMPORTANT: More on https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a
 
 NOTE: This command will change the commit message of the latest commit only. Refer to link:#_git_rebase[`git rebase`] for changing older commit messages.
 
-CAUTION: This command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this only for commits that are not link:#_git_push[pushed].
+CAUTION: Any amend command re-writes the history of the repository as it entirely replaces the previous latest commit with the new one, so use this only for commits that are not link:#_git_push[pushed].
 
-===== -a or --all
+===== --amend --no-edit
 
-* Automatically stages files that have been modified or deleted, but untracked files are not affected.
-* Eg: `git commit -a -m "<commit_message>" -m "<commit_description>"`
+* Allows amending a commit without having to change the commit message originally/already associated with that commit.
+* One usecase can be that if a user has forgotten to add a few files to the last commit, they can add the files using link:#_git_add[`git add`] and then amend the last commit with the `--no-edit` option.
+* Eg: `git commit --amend --no-edit`
+
+===== --amend --author="Author Name <author@email.com>"
+
+* Allows changing the author of the last commit. This does not change the committer of the previous commit.
+* Eg: `git commit --amend --author="Harsh Kapadia <contact@harshkapadia.me>`
+* If both, the author and the committer of the last commit need to be changed, edit the link:#_git_config[local or global Git config] and then amend the last commit using the `git commit --amend --no-edit` command.
 
 ===== --allow-empty
 
