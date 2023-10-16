@@ -5,7 +5,10 @@
 `git clone <remote_repo_url>.git`
 
 [.word-break-all]
-Eg: `git clone https://github.com/HarshKapadia2/git_basics.git`
+Eg:
+
+* `git clone https://github.com/HarshKapadia2/git_basics.git`
+* `git clone ssh://username@hostname:port/absolute/path/to/repo`
 
 ==== Prerequisites
 
