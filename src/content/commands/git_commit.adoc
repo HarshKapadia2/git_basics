@@ -115,6 +115,10 @@ CAUTION: Any amend command re-writes the history of the repository as it entirel
 * The meaning of a signoff depends on the project being contributed to.
     ** Eg: The Git and Linux Kernel projects use the signoff as a way to certify that the committer agrees with the link:https://developercertificate.org[Developer's Certificate of Origin^].
 
+===== -e or --edit
+
+* Forces opening the default Git/commit editor configured.
+
 ===== git ls-tree --full-tree -r HEAD
 
 * This command shows all files within your git repo that it is tracking.
