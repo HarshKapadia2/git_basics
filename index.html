@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.22">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <meta name="author" content="Harsh Kapadia">
 <link rel="icon" type="image/x-icon" href="./static/img/favicon.ico">
 <title>git_basics</title>
@@ -3263,10 +3263,68 @@ From the two pictures above, it can be inferred that Git will allow pushing only
 <div class="paragraph">
 <p>Saving changes temporarily.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img loading="lazy" src="./static/img/admonition_icons/note.png" alt="Note">
+</td>
+<td class="content">
+All <a href="#_added_files">tracked</a> and <a href="#_untracked_filed">untracked</a> local changes are stashed, i.e., all changes in the <a href="#_working_tree">working tree</a> are stashed.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><a href="https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing" target="_blank" rel="noopener">Commands and explanation</a></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_optionsflags_16"><a class="anchor" href="#_optionsflags_16"></a>Options/Flags</h4>
+<div class="sect4">
+<h5 id="_no_option_6"><a class="anchor" href="#_no_option_6"></a>No option</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Saves the current working tree to the stash.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_list_2"><a class="anchor" href="#_list_2"></a>list</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all the available stashes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_show_p_stash0"><a class="anchor" href="#_show_p_stash0"></a>show -p stash@{0}</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the changes in a particular stash entry.</p>
+</li>
+<li>
+<p>Find the stash number using the <code>git stash list</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_pop"><a class="anchor" href="#_pop"></a>pop</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Apply the changes of the latest stash entry.</p>
+</li>
+</ul>
+</div>
 <hr>
+</div>
 </div>
 </div>
 <div class="sect2">
