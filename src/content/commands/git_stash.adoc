@@ -8,6 +8,27 @@
 
 Saving changes temporarily.
 
+NOTE: All link:#_added_files[tracked] and link:#_untracked_filed[untracked] local changes are stashed, i.e., all changes in the link:#_working_tree[working tree] are stashed.
+
 https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/stashing[Commands and explanation^]
+
+==== Options/Flags
+
+===== No option
+
+* Saves the current working tree to the stash.
+
+===== list
+
+* Lists all the available stashes
+
+===== show -p stash@{0}
+
+* Shows the changes in a particular stash entry.
+* Find the stash number using the `git stash list` command.
+
+===== pop
+
+* Apply the changes of the latest stash entry.
 
 '''
